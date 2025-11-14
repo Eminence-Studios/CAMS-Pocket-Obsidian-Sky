@@ -14,10 +14,10 @@ public class Movement : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        body = GetComponent<Rigidbody2D>();
+        body = gameObject.GetComponent<Rigidbody2D>();
         currentX = PlayerPrefs.GetInt("xDirection", 1);
         currentY = PlayerPrefs.GetInt("yDirection", 1);
-        spriteRenderer = GetComponent<SpriteRenderer>();
+        spriteRenderer = gameObject.GetComponent<SpriteRenderer>();
         speed = 200;
 
     }
@@ -41,7 +41,6 @@ public class Movement : MonoBehaviour
         else if ((Input.GetAxis("Vertical") > 0 && currentY == -1)
             || (Input.GetAxis("Vertical") < 0 && currentY == 1))
         {
-            Debug.Log("vertical");
             turn(1);
         }
     }
