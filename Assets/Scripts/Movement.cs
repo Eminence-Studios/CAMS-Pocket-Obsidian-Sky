@@ -18,7 +18,7 @@ public class Movement : MonoBehaviour
         currentX = PlayerPrefs.GetInt("xDirection", 1);
         currentY = PlayerPrefs.GetInt("yDirection", 1);
         spriteRenderer = gameObject.GetComponent<SpriteRenderer>();
-        speed = 200;
+        speed = 400;
 
     }
 
