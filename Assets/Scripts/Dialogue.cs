@@ -1,31 +1,36 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
 public class Dialogue : MonoBehaviour
 {
-    [SerializeField] public TextMeshProUGUI textBox;
-    [SerializeField] Canvas oldScreen;
+    [SerializeField] TextMeshProUGUI textBox;
     [SerializeField] Canvas dialogueScreen;
+    [SerializeField] Canvas nextScreen;
     public string[] lines;
+    public bool hasCharName;
 
-    private int index;
+    public bool changeScene;
+    public int sceneID;
 
     [SerializeField] Canvas otherSpeaker;
     [SerializeField] Image self;
-
     // Self = 0
     // Other = 1
     public int[] speakers;
+
+    private int index;
+
+    private string charName;
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        textBox.text = string.Empty;
-        dialogueScreen.gameObject.SetActive(false);
+
     }
 
     // Update is called once per frame
@@ -47,9 +52,17 @@ public class Dialogue : MonoBehaviour
 
     public void startDialogue()
     {
+        if (hasCharName)
+        {
+            charName = PlayerPrefs.GetString("charName", "Coyote");
+
+            for (int i = 0; i < lines.Length; i++)
+            {
+                lines[i] = lines[i].Replace("charName", charName);
+                Debug.Log(lines[i]);
+            }
+        }
         index = 0;
-        oldScreen.gameObject.SetActive(false);
-        dialogueScreen.gameObject.SetActive(true);
         textBox.gameObject.SetActive(true);
         textBox.text = string.Empty;
         StartCoroutine(printLine());
@@ -61,7 +74,7 @@ public class Dialogue : MonoBehaviour
         foreach (char c in lines[index].ToCharArray())
         {
             textBox.text += c;
-            yield return new WaitForSeconds(0.05f);
+            yield return new WaitForSeconds(0.02f);
         }
     }
 
@@ -73,11 +86,17 @@ public class Dialogue : MonoBehaviour
             textBox.text = string.Empty;
             StartCoroutine(printLine());
         }
+        else if (changeScene)
+        {
+            textBox.gameObject.SetActive(false);
+            dialogueScreen.gameObject.SetActive(false);
+            SceneManager.LoadScene(sceneID);
+        }
         else
         {
             dialogueScreen.gameObject.SetActive(false);
             textBox.gameObject.SetActive(false);
-            oldScreen.gameObject.SetActive(true);
+            nextScreen.gameObject.SetActive(true);
         }
         alternateSpeaker();
     }
