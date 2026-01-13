@@ -7,10 +7,9 @@ using TMPro;
 
 public class RunePuzzle : MonoBehaviour
 {
-    [SerializeField] TextMeshProUGUI numbers;
+    [SerializeField] TextMeshProUGUI input;
     [SerializeField] TextMeshProUGUI progress;
 
-    private int length = 0;
     private string code = "521";
 
     public Image[] placeholders;
@@ -28,7 +27,7 @@ public class RunePuzzle : MonoBehaviour
     void Update()
     {
         
-        if (length == 3 && !isCheck)
+        if (input.text.Length == 3 && !isCheck)
         {
             isCheck = true;
             progress.text = "Attempting to cast spell...";
@@ -41,7 +40,7 @@ public class RunePuzzle : MonoBehaviour
 
     public void checkCode()
     {
-        if (numbers.text == code)
+        if (input.text == code)
         {
             progress.text = "Success! Spell casted!";
             
@@ -67,17 +66,16 @@ public class RunePuzzle : MonoBehaviour
         {
             i.sprite = null;
         }
-        numbers.text = "";
-        length = 0;
+        input.text = "";
         Debug.Log("cleared");
     }
 
     public void addSymbol(int index)
     {
-        placeholders[length++].sprite = options[index].sprite;
-        numbers.text += index;
+        input.text += index;
+        placeholders[input.text.Length - 1].sprite = options[index].sprite;
         Debug.Log("added symbol");
-        Debug.Log(numbers.text);
+        Debug.Log(input.text);
     }
     
     
