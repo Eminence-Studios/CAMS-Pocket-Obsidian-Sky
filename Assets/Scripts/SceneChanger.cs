@@ -6,6 +6,7 @@ using System.Collections.Generic;
 
 public class SceneChanger : MonoBehaviour
 {
+    [SerializeField] private int sceneID;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -19,8 +20,13 @@ public class SceneChanger : MonoBehaviour
         
     }
 
-    public void MoveToScene(int SceneID)
+    public void MoveToScene()
     {
-        SceneManager.LoadScene(SceneID);
+        SceneManager.LoadScene(sceneID);
+    }
+
+    void OnCollisionEnter2D(Collision2D col)
+    {
+        MoveToScene();
     }
 }
