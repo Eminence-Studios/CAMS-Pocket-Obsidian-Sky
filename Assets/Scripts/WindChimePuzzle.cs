@@ -9,8 +9,13 @@ using UnityEngine.UI;
 public class WindChimePuzzle : MonoBehaviour
 {
     [SerializeField] TextMeshProUGUI input;
+    [SerializeField] TextMeshProUGUI progress;
+    [SerializeField] Canvas puzzle;
+    [SerializeField] Collider2D collider;
 
-    private string melody = "123456";
+    private string melody = "012345";
+    public Movement playerMovement;
+
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -26,17 +31,14 @@ public class WindChimePuzzle : MonoBehaviour
         {
             if (input.text == melody)
             {
-                Debug.Log("success"); ;
+                progress.text = "Beautiful tune!";
+                Invoke("closePuzzle", 2);
 
             }
             else
             {
                 input.text = input.text.Substring(1);
-                Debug.Log("removed note");
-                Debug.Log(input.text);
             }
-            Debug.Log("checked code");
-
         }
         
         
@@ -45,9 +47,12 @@ public class WindChimePuzzle : MonoBehaviour
     public void playNote (int index)
     {
         input.text += index;
-        // play note
-        Debug.Log("played note");
-        Debug.Log(input.text);
+    }
+
+    public void closePuzzle()
+    {
+        playerMovement.enableMovement = true;
+        puzzle.gameObject.SetActive(false);
     }
     
     

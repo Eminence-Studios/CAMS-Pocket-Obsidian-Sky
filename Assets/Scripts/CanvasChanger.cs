@@ -2,13 +2,16 @@ using UnityEngine;
 
 public class CanvasChanger : MonoBehaviour
 {
-    [SerializeField] public Canvas oldCanvas;
-    [SerializeField] public Canvas newCanvas;
+    [SerializeField] Canvas oldCanvas;
+    [SerializeField] Canvas newCanvas;
 
     // 0 = old
     // 1 = new
     public int setActive;
     public int setNOTActive;
+
+    [SerializeField] GameObject popUp;
+    public Movement playerMovement;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -55,5 +58,12 @@ public class CanvasChanger : MonoBehaviour
             newCanvas.gameObject.SetActive(false);
         }
     }
-    
+
+    void OnCollisionEnter2D(Collision2D col)
+    {
+        playerMovement.enableMovement = false;
+        popUp.SetActive(true);
+        Debug.Log("SetActive");
+    }
+
 }
