@@ -3,7 +3,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-public class WaterPlantsPuzzle : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
+public class HoldButtonPuzzle : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
 {
     private bool isHold = false;
     private bool completed = false;
@@ -19,6 +19,7 @@ public class WaterPlantsPuzzle : MonoBehaviour, IPointerDownHandler, IPointerUpH
     [SerializeField] Sprite stem;
     [SerializeField] Sprite bud;
     [SerializeField] Sprite flower;
+    [SerializeField] Button close;
 
     public Movement playerMovement;
 
@@ -26,11 +27,14 @@ public class WaterPlantsPuzzle : MonoBehaviour, IPointerDownHandler, IPointerUpH
     public string inProgressText;
     public string completedText;
 
+    public string PlayerPrefVariable;
+
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         progress.text = notStartedText;
+        gauge.maxValue = requiredTime;
     }
 
     // Update is called once per frame
@@ -38,6 +42,7 @@ public class WaterPlantsPuzzle : MonoBehaviour, IPointerDownHandler, IPointerUpH
     {
         if (isHold && !completed)
         {
+            close.gameObject.SetActive(false);
             plant.sprite = bud;
             heldTime += Time.deltaTime;
             gauge.value = heldTime;
@@ -51,6 +56,7 @@ public class WaterPlantsPuzzle : MonoBehaviour, IPointerDownHandler, IPointerUpH
         }
         else if (!completed)
         {
+            close.gameObject.SetActive(true);
             plant.sprite = stem;
             progress.text = notStartedText;
             gauge.value = 0;
@@ -63,6 +69,7 @@ public class WaterPlantsPuzzle : MonoBehaviour, IPointerDownHandler, IPointerUpH
         progress.text = completedText;
         gauge.value = requiredTime;
         collider.SetActive(false);
+        PlayerPrefs.SetInt(PlayerPrefVariable, 1);
         Invoke("closePuzzle", 2);
     }
     public void closePuzzle()

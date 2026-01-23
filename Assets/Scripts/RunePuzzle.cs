@@ -11,8 +11,11 @@ public class RunePuzzle : MonoBehaviour
     [SerializeField] TextMeshProUGUI progress;
     [SerializeField] Canvas puzzle;
     [SerializeField] Collider2D collider;
+    [SerializeField] Button closeButton;
+    [SerializeField] Button clearButton;
 
-    private string code = "521";
+    public string code;
+    public string playerPrefVariable;
 
     public Image[] placeholders;
     public Sprite[] originalPlaceholders;
@@ -32,8 +35,10 @@ public class RunePuzzle : MonoBehaviour
     void Update()
     {
         
-        if (input.text.Length == 3 && !isCheck)
+        if (input.text.Length == originalPlaceholders.Length && !isCheck)
         {
+            closeButton.gameObject.SetActive(false);
+            clearButton.gameObject.SetActive(false);
             isCheck = true;
             progress.text = "Attempting to cast spell...";
             Invoke("checkCode", 2);
@@ -47,7 +52,8 @@ public class RunePuzzle : MonoBehaviour
         if (input.text == code)
         {
             progress.text = "Success! Spell casted!";
-            PlayerPrefs.SetInt("RunePuzzle", 1);
+
+            PlayerPrefs.SetInt(playerPrefVariable, 1);
             collider.gameObject.SetActive(false);
             Invoke("closePuzzle", 2);
 
@@ -58,6 +64,8 @@ public class RunePuzzle : MonoBehaviour
             clear();
             Invoke("clearProgress", 1);
             isCheck = false;
+            closeButton.gameObject.SetActive(true);
+            clearButton.gameObject.SetActive(true);
         }
         Debug.Log("checked code");
     }

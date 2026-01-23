@@ -1,6 +1,4 @@
-using Mono.Cecil.Cil;
-using System.Collections;
-using System.Collections.Generic;
+using System.Collections;using System.Collections.Generic;
 using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
@@ -12,6 +10,7 @@ public class WindChimePuzzle : MonoBehaviour
     [SerializeField] TextMeshProUGUI progress;
     [SerializeField] Canvas puzzle;
     [SerializeField] Collider2D collider;
+    [SerializeField] Button close;
 
     private string melody = "012345";
     public Movement playerMovement;
@@ -31,7 +30,10 @@ public class WindChimePuzzle : MonoBehaviour
         {
             if (input.text == melody)
             {
+                close.gameObject.SetActive(false);
+                PlayerPrefs.SetInt("JohnsonPuzzle", 1);
                 progress.text = "Beautiful tune!";
+                collider.gameObject.SetActive(false);
                 Invoke("closePuzzle", 2);
 
             }
