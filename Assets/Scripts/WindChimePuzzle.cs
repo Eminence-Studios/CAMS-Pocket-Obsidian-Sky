@@ -22,6 +22,11 @@ public class WindChimePuzzle : MonoBehaviour
         
     }
 
+    private void OnEnable()
+    {
+        playerMovement.enableMovement = false;
+    }
+
     // Update is called once per frame
     void Update()
     {

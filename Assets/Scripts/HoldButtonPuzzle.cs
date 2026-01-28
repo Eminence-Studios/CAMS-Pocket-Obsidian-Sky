@@ -20,6 +20,7 @@ public class HoldButtonPuzzle : MonoBehaviour, IPointerDownHandler, IPointerUpHa
     [SerializeField] Sprite bud;
     [SerializeField] Sprite flower;
     [SerializeField] Button close;
+    [SerializeField] MultiPuzzleManager puzzleManager;
 
     public Movement playerMovement;
 
@@ -63,6 +64,11 @@ public class HoldButtonPuzzle : MonoBehaviour, IPointerDownHandler, IPointerUpHa
         }
     }
 
+    private void OnEnable()
+    {
+        playerMovement.enableMovement = false;
+    }
+
     private void puzzleComplete()
     {
         plant.sprite = flower;
@@ -70,6 +76,7 @@ public class HoldButtonPuzzle : MonoBehaviour, IPointerDownHandler, IPointerUpHa
         gauge.value = requiredTime;
         collider.SetActive(false);
         PlayerPrefs.SetInt(PlayerPrefVariable, 1);
+        puzzleManager.checkAllComplete();
         Invoke("closePuzzle", 2);
     }
     public void closePuzzle()

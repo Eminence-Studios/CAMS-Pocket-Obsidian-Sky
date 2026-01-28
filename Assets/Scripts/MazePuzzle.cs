@@ -2,6 +2,8 @@ using UnityEngine;
 
 public class MazePuzzle : MonoBehaviour
 {
+    public Movement playerMovement;
+
     private Rigidbody2D body;
     private int speed;
 
@@ -19,6 +21,11 @@ public class MazePuzzle : MonoBehaviour
         currentY = PlayerPrefs.GetInt("yDirection", 1);
         spriteRenderer = gameObject.GetComponent<SpriteRenderer>();
         speed = 400;
+    }
+
+    private void OnEnable()
+    {
+        playerMovement.enableMovement = false;
     }
 
     // Update is called once per frame

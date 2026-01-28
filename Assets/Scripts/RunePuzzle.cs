@@ -47,6 +47,10 @@ public class RunePuzzle : MonoBehaviour
         
         
     }
+    private void OnEnable()
+    {
+        playerMovement.enableMovement = false;
+    }
     private void checkCode()
     {
         if (input.text == code)
@@ -67,7 +71,7 @@ public class RunePuzzle : MonoBehaviour
             closeButton.gameObject.SetActive(true);
             clearButton.gameObject.SetActive(true);
         }
-        Debug.Log("checked code");
+        // Debug.Log("checked code");
     }
 
     private void clearProgress()
@@ -83,7 +87,7 @@ public class RunePuzzle : MonoBehaviour
             placeholders[i].sprite = originalPlaceholders[i];
         }
         input.text = "";
-        Debug.Log("cleared");
+        // Debug.Log("cleared");
     }
 
     public void closePuzzle()
@@ -96,8 +100,8 @@ public class RunePuzzle : MonoBehaviour
     {
         input.text += index;
         placeholders[input.text.Length - 1].sprite = options[index].sprite;
-        Debug.Log("added symbol");
-        Debug.Log(input.text);
+        // Debug.Log("added symbol");
+        // Debug.Log(input.text);
     }
     
     
