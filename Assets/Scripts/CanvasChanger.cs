@@ -2,13 +2,8 @@ using UnityEngine;
 
 public class CanvasChanger : MonoBehaviour
 {
-    [SerializeField] public Canvas oldCanvas;
-    [SerializeField] public Canvas newCanvas;
-
-    // 0 = old
-    // 1 = new
-    public int setActive;
-    public int setNOTActive;
+    [SerializeField] Canvas oldCanvas;
+    [SerializeField] Canvas newCanvas;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -28,32 +23,10 @@ public class CanvasChanger : MonoBehaviour
         newCanvas.gameObject.SetActive(true);
     }
 
-    
-    public void setActiveCanvas()
+    void OnCollisionEnter2D(Collision2D col)
     {
-        if (setActive == 0)
-        {
-            oldCanvas.gameObject.SetActive(true);
+        newCanvas.gameObject.SetActive(true);
 
-        }
-        else
-        {
-            newCanvas.gameObject.SetActive(true);
-        }
-        
     }
 
-    public void setNOTActiveCanvas()
-    {
-        if (setActive == 0)
-        {
-            oldCanvas.gameObject.SetActive(false);
-
-        }
-        else
-        {
-            newCanvas.gameObject.SetActive(false);
-        }
-    }
-    
 }

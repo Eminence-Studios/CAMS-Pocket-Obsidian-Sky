@@ -337,8 +337,8 @@ Canvas:
   m_GameObject: {fileID: 442817608}
   m_Enabled: 1
   serializedVersion: 3
-  m_RenderMode: 0
-  m_Camera: {fileID: 0}
+  m_RenderMode: 1
+  m_Camera: {fileID: 1019525918}
   m_PlaneDistance: 100
   m_PixelPerfect: 0
   m_ReceivesEvents: 1
@@ -457,8 +457,8 @@ Canvas:
   m_GameObject: {fileID: 606406050}
   m_Enabled: 1
   serializedVersion: 3
-  m_RenderMode: 0
-  m_Camera: {fileID: 0}
+  m_RenderMode: 1
+  m_Camera: {fileID: 1019525918}
   m_PlaneDistance: 100
   m_PixelPerfect: 0
   m_ReceivesEvents: 1
@@ -696,9 +696,12 @@ MonoBehaviour:
   hasCharName: 0
   changeScene: 0
   sceneID: 0
-  otherSpeaker: {fileID: 1523045560}
-  self: {fileID: 622300485}
-  speakers: 000000000000000000000000
+  isTeacherDialogue: 0
+  teacherInteractionManager: {fileID: 0}
+  hasSwitchSpeakers: 0
+  otherSpeaker: {fileID: 0}
+  self: {fileID: 0}
+  speakers: 
 --- !u!1 &750731867
 GameObject:
   m_ObjectHideFlags: 0
@@ -1013,8 +1016,8 @@ Canvas:
   m_GameObject: {fileID: 919963804}
   m_Enabled: 1
   serializedVersion: 3
-  m_RenderMode: 0
-  m_Camera: {fileID: 0}
+  m_RenderMode: 1
+  m_Camera: {fileID: 1019525918}
   m_PlaneDistance: 100
   m_PixelPerfect: 0
   m_ReceivesEvents: 1
@@ -1220,10 +1223,13 @@ MonoBehaviour:
   - Get to know the campus and your peers! Assembly dismissed.
   hasCharName: 0
   changeScene: 1
-  sceneID: 3
-  otherSpeaker: {fileID: 1800531725}
-  self: {fileID: 1985448052}
-  speakers: 01000000010000000100000001000000
+  sceneID: 2
+  isTeacherDialogue: 0
+  teacherInteractionManager: {fileID: 0}
+  hasSwitchSpeakers: 0
+  otherSpeaker: {fileID: 0}
+  self: {fileID: 0}
+  speakers: 
 --- !u!1 &1019525916
 GameObject:
   m_ObjectHideFlags: 0
@@ -1630,18 +1636,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 716863191}
-        m_TargetAssemblyTypeName: Dialogue, Assembly-CSharp
-        m_MethodName: startDialogue
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!114 &1213100373
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1656,8 +1650,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::CanvasChanger
   oldCanvas: {fileID: 606406054}
   newCanvas: {fileID: 2133404808}
-  setActive: 0
-  setNOTActive: 0
 --- !u!1 &1363935753
 GameObject:
   m_ObjectHideFlags: 0
@@ -2024,7 +2016,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1523045556
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2565,8 +2557,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::CanvasChanger
   oldCanvas: {fileID: 919963805}
   newCanvas: {fileID: 442817611}
-  setActive: 0
-  setNOTActive: 0
 --- !u!114 &1815989519
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2614,18 +2604,6 @@ MonoBehaviour:
       - m_Target: {fileID: 1815989518}
         m_TargetAssemblyTypeName: CanvasChanger, Assembly-CSharp
         m_MethodName: changeCanvas
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 972417732}
-        m_TargetAssemblyTypeName: Dialogue, Assembly-CSharp
-        m_MethodName: startDialogue
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2816,8 +2794,8 @@ Canvas:
   m_GameObject: {fileID: 2133404804}
   m_Enabled: 1
   serializedVersion: 3
-  m_RenderMode: 0
-  m_Camera: {fileID: 0}
+  m_RenderMode: 1
+  m_Camera: {fileID: 1019525918}
   m_PlaneDistance: 100
   m_PixelPerfect: 0
   m_ReceivesEvents: 1

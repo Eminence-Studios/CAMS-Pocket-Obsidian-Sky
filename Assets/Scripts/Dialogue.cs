@@ -16,14 +16,19 @@ public class Dialogue : MonoBehaviour
     public bool changeScene;
     public int sceneID;
 
+    public bool isTeacherDialogue;
+    // public string teacherName;
+    public TeacherInteraction teacherInteractionManager;
+
+    public bool hasSwitchSpeakers;
     [SerializeField] Canvas otherSpeaker;
     [SerializeField] Image self;
+
     // Self = 0
     // Other = 1
     public int[] speakers;
 
     private int index;
-
     private string charName;
 
 
@@ -50,6 +55,27 @@ public class Dialogue : MonoBehaviour
         }
     }
 
+    private void OnEnable()
+    {
+        startDialogue();
+    }
+
+    private void OnDisable()
+    {
+        if (changeScene)
+        {
+            SceneManager.LoadScene(sceneID);
+        }
+        else if (isTeacherDialogue)
+        {
+            teacherInteractionManager.loadNext();
+        }
+        else
+        {
+            nextScreen.gameObject.SetActive(true);
+        }
+    }
+
     public void startDialogue()
     {
         if (hasCharName)
@@ -63,10 +89,9 @@ public class Dialogue : MonoBehaviour
             }
         }
         index = 0;
-        textBox.gameObject.SetActive(true);
         textBox.text = string.Empty;
         StartCoroutine(printLine());
-        alternateSpeaker();
+        if (hasSwitchSpeakers) { alternateSpeaker(); };
     }
 
     IEnumerator printLine()
@@ -86,21 +111,14 @@ public class Dialogue : MonoBehaviour
             textBox.text = string.Empty;
             StartCoroutine(printLine());
         }
-        else if (changeScene)
-        {
-            textBox.gameObject.SetActive(false);
-            dialogueScreen.gameObject.SetActive(false);
-            SceneManager.LoadScene(sceneID);
-        }
         else
         {
             dialogueScreen.gameObject.SetActive(false);
-            textBox.gameObject.SetActive(false);
-            nextScreen.gameObject.SetActive(true);
         }
-        alternateSpeaker();
+        if (hasSwitchSpeakers) { alternateSpeaker(); }
+        ;
     }
-
+        
     void alternateSpeaker()
     {
         if (speakers[index] == 0)
@@ -114,5 +132,6 @@ public class Dialogue : MonoBehaviour
             otherSpeaker.gameObject.SetActive(true);
         }
     }
+    
     
 }
