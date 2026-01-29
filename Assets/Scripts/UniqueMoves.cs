@@ -17,7 +17,7 @@ public class UniqueMoves : MonoBehaviour
     // [atk, def, spd, acc, status effect]
     public List<int> determineUniqueMove() // will return the list of parameters to be used in general buff/debuff procedure
     {
-        unit unitComponent = GetComponent<unit>();
+        Unit unitComponent = GetComponent<Unit>();
         if (moveNumber == 1) // sonic boom
         {
             moveParameters = new List<int> { 1, 5, 2, 0, 0 };

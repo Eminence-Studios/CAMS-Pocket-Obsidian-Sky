@@ -38,13 +38,13 @@ public class BattleSystem : MonoBehaviour
 
     public BattleState state;
 
-    public battleHUD playerHUD;
-    public battleHUD enemyHUD;
+    public BattleHUD playerHUD;
+    public BattleHUD enemyHUD;
 
-    unit playerUnit;
-    unit enemyUnit;
-    uniqueMoves playerMoveset;
-    uniqueMoves enemyMoveset;
+    Unit playerUnit;
+    Unit enemyUnit;
+    UniqueMoves playerMoveset;
+    UniqueMoves enemyMoveset;
     public int turnCount = 1;
     // unit references that will be used across other scripts for stats 
     void Start()
@@ -60,10 +60,10 @@ public class BattleSystem : MonoBehaviour
         GameObject enemyGO = Instantiate(enemyPrefab);
         // reference to the player and enemy game objects that are being spawned 
 
-        playerUnit = playerGO.GetComponent<unit>();
-        enemyUnit = enemyGO.GetComponent<unit>();
-        playerMoveset = playerGO.GetComponent<uniqueMoves>();
-        enemyMoveset = enemyGO.GetComponent<uniqueMoves>();
+        playerUnit = playerGO.GetComponent<Unit>();
+        enemyUnit = enemyGO.GetComponent<Unit>();
+        playerMoveset = playerGO.GetComponent<UniqueMoves>();
+        enemyMoveset = enemyGO.GetComponent<UniqueMoves>();
 
         playerHUD.setHUD(playerUnit);
         enemyHUD.setHUD(enemyUnit);
@@ -90,7 +90,7 @@ public class BattleSystem : MonoBehaviour
         }
     }
 
-    void considerSpeedBuffs(unit unit)
+    void considerSpeedBuffs(Unit unit)
     {
         int Threshold = unit.unitSpd + unit.unitSpd / 2; // something similar to 1.5x their speed
 

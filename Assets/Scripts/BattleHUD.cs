@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class BattleHUD : MonoBehaviour
 {
     public Slider hpSlider;
-    public void setHUD(unit unit)
+    public void setHUD(Unit unit)
     {
         hpSlider.maxValue = 10;
         hpSlider.value = unit.unitHp; // should be their max, might change later
