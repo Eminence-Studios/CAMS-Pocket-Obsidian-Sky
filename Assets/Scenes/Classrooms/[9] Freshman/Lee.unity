@@ -452,9 +452,16 @@ MonoBehaviour:
   teacherName: Lee
   dialoguePopUp: {fileID: 1256853252}
   dialogueManager: {fileID: 1682790333}
-  initalLines: []
-  afterPuzzleLines: []
-  afterBattleLines: []
+  initalLines:
+  - Hello friend.
+  - "It\u2019s important to be precise with your rune choice when writing spells."
+  - Look around to create a well-constructed incantation.
+  afterPuzzleLines:
+  - 'Full points. '
+  - "Let\u2019s round things out with a discussion, using magic."
+  afterBattleLines:
+  - 'You made some good points. '
+  - "Here\u2019s a new spell for you."
   afterSpellLines: []
 --- !u!1 &150686736
 GameObject:
@@ -4834,8 +4841,8 @@ MonoBehaviour:
   hasCharName: 0
   changeScene: 0
   sceneID: 0
-  isTeacherDialogue: 0
-  teacherInteractionManager: {fileID: 0}
+  isTeacherDialogue: 1
+  teacherInteractionManager: {fileID: 150576266}
   hasSwitchSpeakers: 0
   otherSpeaker: {fileID: 0}
   self: {fileID: 0}

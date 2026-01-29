@@ -1,4 +1,5 @@
 using UnityEngine;
+using static UnityEditor.FilePathAttribute;
 
 public class MazePuzzle : MonoBehaviour
 {
@@ -42,6 +43,19 @@ public class MazePuzzle : MonoBehaviour
     }
     void OnCollisionEnter2D(Collision2D col)
     {
-        // success
+        Collider2D hitCollider = col.collider;
+        if (hitCollider.name == "End")
+        {
+            // success
+        }
+        else if (hitCollider.name == "Edge")
+        {
+            restart();
+        }
+    }
+
+    private void restart()
+    {
+        body.position = new Vector3 (0, 0, 0);
     }
 }
