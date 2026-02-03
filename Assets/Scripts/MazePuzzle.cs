@@ -1,32 +1,34 @@
+using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 using static UnityEditor.FilePathAttribute;
 
 public class MazePuzzle : MonoBehaviour
 {
-    public Movement playerMovement;
+    [SerializeField] Movement playerMovement;
+    [SerializeField] GameObject puzzle;
+    [SerializeField] Rigidbody2D body;
 
-    private Rigidbody2D body;
-    private int speed;
+    [SerializeField] TextMeshProUGUI progress;
+    [SerializeField] Button closeButton;
+    [SerializeField] Collider2D collider;
 
-    private int currentX;
-    private int currentY;
+    public string puzzleName;
 
-    private SpriteRenderer spriteRenderer;
-    public bool enableMovement = false;
+    public int speed;
+
+    private bool enableMovement = false;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        body = gameObject.GetComponent<Rigidbody2D>();
-        currentX = PlayerPrefs.GetInt("xDirection", 1);
-        currentY = PlayerPrefs.GetInt("yDirection", 1);
-        spriteRenderer = gameObject.GetComponent<SpriteRenderer>();
-        speed = 400;
+
     }
 
     private void OnEnable()
     {
         playerMovement.enableMovement = false;
+        enableMovement = true;
     }
 
     // Update is called once per frame
@@ -41,21 +43,24 @@ public class MazePuzzle : MonoBehaviour
             body.linearVelocity = Vector2.zero;
         }
     }
-    void OnCollisionEnter2D(Collision2D col)
+
+    public void close()
     {
-        Collider2D hitCollider = col.collider;
-        if (hitCollider.name == "End")
-        {
-            // success
-        }
-        else if (hitCollider.name == "Edge")
-        {
-            restart();
-        }
+        playerMovement.enableMovement = true;
+        enableMovement = false;
+        puzzle.SetActive(false);
     }
 
-    private void restart()
+    void OnCollisionEnter2D(Collision2D col)
     {
-        body.position = new Vector3 (0, 0, 0);
+        if (col.gameObject.name == "End")
+        {
+            PlayerPrefs.SetInt(puzzleName, 1);
+            closeButton.gameObject.SetActive(false);
+            progress.text = "You reached the end!";
+            collider.gameObject.SetActive(false);
+            Invoke("close", 2);
+
+        }
     }
 }
