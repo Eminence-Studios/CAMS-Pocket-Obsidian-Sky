@@ -1,11 +1,12 @@
-using UnityEngine;
+using System;
 using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
-using UnityEngine.UI;
 using TMPro;
+using Unity.VisualScripting;
+using UnityEngine;
+using UnityEngine.UI;
 
-public class RunePuzzle : MonoBehaviour
+public class OrderPuzzle : MonoBehaviour
 {
     [SerializeField] TextMeshProUGUI input;
     [SerializeField] TextMeshProUGUI progress;
@@ -17,9 +18,12 @@ public class RunePuzzle : MonoBehaviour
     public string code;
     public string playerPrefVariable;
 
+    // instructions, attemping, failed, success
+    public string[] progressTexts;
+
     public Image[] placeholders;
     public Sprite[] originalPlaceholders;
-    public Image[] options;
+    public GameObject[] options;
 
     private bool isCheck = false;
     public Movement playerMovement;
@@ -40,7 +44,7 @@ public class RunePuzzle : MonoBehaviour
             closeButton.gameObject.SetActive(false);
             clearButton.gameObject.SetActive(false);
             isCheck = true;
-            progress.text = "Attempting to cast spell...";
+            progress.text = progressTexts[1];
             Invoke("checkCode", 2);
             
         }
@@ -55,7 +59,7 @@ public class RunePuzzle : MonoBehaviour
     {
         if (input.text == code)
         {
-            progress.text = "Success! Spell casted!";
+            progress.text = progressTexts[3];
 
             PlayerPrefs.SetInt(playerPrefVariable, 1);
             collider.gameObject.SetActive(false);
@@ -64,7 +68,7 @@ public class RunePuzzle : MonoBehaviour
         }
         else
         {
-            progress.text = "Spell failed";
+            progress.text = progressTexts[2];
             clear();
             Invoke("clearProgress", 1);
             isCheck = false;
@@ -76,7 +80,7 @@ public class RunePuzzle : MonoBehaviour
 
     private void clearProgress()
     {
-        progress.text = "Enter the runes in the correct order to cast the spell";
+        progress.text = progressTexts[0];
 
     }
 
@@ -85,6 +89,10 @@ public class RunePuzzle : MonoBehaviour
         for (int i = 0; i < placeholders.Length; i++)
         {
             placeholders[i].sprite = originalPlaceholders[i];
+        }
+        for (int i = 0; i < options.Length; i++)
+        {
+            options[i].GetComponent<Button>().interactable = true;
         }
         input.text = "";
         // Debug.Log("cleared");
@@ -99,7 +107,8 @@ public class RunePuzzle : MonoBehaviour
     public void addSymbol(int index)
     {
         input.text += index;
-        placeholders[input.text.Length - 1].sprite = options[index].sprite;
+        placeholders[input.text.Length - 1].sprite = options[index].GetComponent<Image>().sprite;
+        options[index].GetComponent<Button>().interactable = false;
         // Debug.Log("added symbol");
         // Debug.Log(input.text);
     }
