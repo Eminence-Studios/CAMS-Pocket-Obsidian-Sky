@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
@@ -27,7 +28,10 @@ public class FallingObjectManager : MonoBehaviour
     public int speed;
 
     public Boolean isCatch;
-    private float time = 21;
+    public int catchAmt;
+    public float dodgeTime;
+
+    private float time;
 
     void Awake()
     {
@@ -36,7 +40,7 @@ public class FallingObjectManager : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-
+        time = dodgeTime + 1;
     }
 
     private void OnEnable()
@@ -52,6 +56,10 @@ public class FallingObjectManager : MonoBehaviour
     void FixedUpdate()
     {
         body.linearVelocity = new Vector2(Input.GetAxis("Horizontal") * speed, 0);
+
+        Vector3 currentRotation = transform.eulerAngles;
+        Vector3 newRotation = new Vector3(currentRotation.x, currentRotation.y, 0);
+        transform.eulerAngles = newRotation;
 
     }
 
@@ -74,6 +82,7 @@ public class FallingObjectManager : MonoBehaviour
 
     public void start()
     {
+        StartCoroutine(waitUntilScreenCleared());
         Time.timeScale = 1f;
         resultText.gameObject.SetActive(false);
         closeButton.gameObject.SetActive(false);
@@ -82,23 +91,34 @@ public class FallingObjectManager : MonoBehaviour
         Debug.Log("restarted");
         
         score = 0;
-        time = 21f;
+        time = dodgeTime + 1;
 
+        
+
+    }
+
+    public bool clearScreen()
+    {
         FallingObject[] leftovers = FindObjectsByType<FallingObject>(FindObjectsSortMode.None);
         foreach (FallingObject obj in leftovers)
         {
             Destroy(obj.gameObject);
         }
-
+        return true;
     }
 
+    private IEnumerator waitUntilScreenCleared()
+    {
+        yield return new WaitUntil(clearScreen);
+    }
     public void endGame()
     {
         Time.timeScale = 0f;
-       
+        StartCoroutine(waitUntilScreenCleared());
+        
         resultText.gameObject.SetActive(true);
         scoreText.gameObject.SetActive(false);
-        if (score != 5 && time > 0)
+        if (score != catchAmt && time > 0)
         {
             resultText.text = "Fail";
             buttonText.text = "Retry";
@@ -122,7 +142,7 @@ public class FallingObjectManager : MonoBehaviour
         if (isCatch)
         {
             score++;
-            if (score == 5)
+            if (score == catchAmt)
             {
                 endGame();
             }
