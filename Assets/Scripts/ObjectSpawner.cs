@@ -6,6 +6,14 @@ public class ObjectSpawner : MonoBehaviour
     public float spawnrate;
     private float time = 0;
     public GameObject spawnedObject;
+    public static ObjectSpawner instance;
+
+
+    void Awake()
+    {
+        instance = this;
+
+    }
     void Update()
     {
         if (time < spawnrate)
