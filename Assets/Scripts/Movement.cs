@@ -1,15 +1,16 @@
+using System;
 using UnityEngine;
 
 public class Movement : MonoBehaviour
 {
     private Rigidbody2D body;
-    private int speed;
+    public int speed;
 
     private int currentX;
     private int currentY;
 
     private SpriteRenderer spriteRenderer;
-
+    public bool enableMovement = true;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -18,16 +19,21 @@ public class Movement : MonoBehaviour
         currentX = PlayerPrefs.GetInt("xDirection", 1);
         currentY = PlayerPrefs.GetInt("yDirection", 1);
         spriteRenderer = gameObject.GetComponent<SpriteRenderer>();
-        speed = 400;
-
     }
 
     // Update is called once per frame
     void Update()
     {
-        body.linearVelocity = new Vector2(Input.GetAxis("Horizontal") * speed, Input.GetAxis("Vertical") * speed);
+        if (enableMovement)
+        {
+            body.linearVelocity = new Vector2(Input.GetAxis("Horizontal") * speed, Input.GetAxis("Vertical") * speed);
 
-        turnCheck();
+            turnCheck();
+        }
+        else
+        {
+            body.linearVelocity = Vector2.zero;
+        }
     }
 
     // Check if player turns

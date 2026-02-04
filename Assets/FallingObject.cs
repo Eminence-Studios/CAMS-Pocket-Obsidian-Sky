@@ -1,14 +1,16 @@
 using UnityEngine;
 
-public class Obj : MonoBehaviour
+public class FallingObject : MonoBehaviour
 {
-    public static Obj instance;
-    public float movespeed = 10;
-    public float ydeadzone = -6;
+    public static FallingObject instance;
+    private float movespeed;
+    public float ydeadzone;
 
     void Awake()
     {
         instance = this;
+        movespeed = Random.Range(5, 10);
+
     }
     void Update()
     {
@@ -16,12 +18,11 @@ public class Obj : MonoBehaviour
 
         if (transform.position.y < ydeadzone)
         {
-            CatchingObjUIManager.instance.loseGame();
-            Time.timeScale = 0f;
+            CatchObjectManager.instance.endGame();
         }
     }
 
-    public void destroyObj()
+    public void destroyObject()
     {
         Destroy(gameObject);
     }
