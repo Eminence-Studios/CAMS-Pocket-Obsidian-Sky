@@ -1,9 +1,10 @@
+using System;
 using UnityEngine;
 
 public class Movement : MonoBehaviour
 {
     private Rigidbody2D body;
-    private int speed;
+    public int speed;
 
     private int currentX;
     private int currentY;
@@ -19,8 +20,6 @@ public class Movement : MonoBehaviour
         currentX = PlayerPrefs.GetInt("xDirection", 1);
         currentY = PlayerPrefs.GetInt("yDirection", 1);
         spriteRenderer = gameObject.GetComponent<SpriteRenderer>();
-        speed = 400;
-
     }
 
     // Update is called once per frame
