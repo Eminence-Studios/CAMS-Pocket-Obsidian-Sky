@@ -92,9 +92,6 @@ public class FallingObjectManager : MonoBehaviour
         
         score = 0;
         time = dodgeTime + 1;
-
-        
-
     }
 
     public bool clearScreen()
