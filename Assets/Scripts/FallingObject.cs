@@ -3,19 +3,21 @@ using UnityEngine;
 
 public class FallingObject : MonoBehaviour
 {
-    private float movespeed;
+    public float maxMoveSpeed;
+    public float minMoveSpeed;
+    private float moveSpeed;
     public float ydeadzone;
 
     public Boolean isCatch;
 
     void Awake()
     {
-        movespeed = UnityEngine.Random.Range(300, 400);
+        moveSpeed = UnityEngine.Random.Range(maxMoveSpeed, minMoveSpeed);
 
     }
     void Update()
     {
-        transform.position += (Vector3.down * movespeed) * Time.deltaTime;
+        transform.position += (Vector3.down * moveSpeed) * Time.deltaTime;
 
         if (transform.position.y < ydeadzone)
         {
@@ -32,10 +34,16 @@ public class FallingObject : MonoBehaviour
     }
     void OnCollisionEnter2D(Collision2D collision)
     {
-        Destroy(gameObject);
+        Debug.Log("Collided");
+        
         if (collision.gameObject.name == "DodgingPlayer")
         {
+            Destroy(gameObject);
             FallingObjectManager.instance.endGame();
+        }
+        else if (collision.gameObject.name == "CatchingPlayer")
+        {
+            Destroy(gameObject);
         }
     }
 
