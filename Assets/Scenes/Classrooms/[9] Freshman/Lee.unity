@@ -146,15 +146,15 @@ RectTransform:
   m_GameObject: {fileID: 22280176}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.38113424, y: 0.38113424, z: 0.38113424}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 629078209}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.2, y: 0.3}
   m_AnchorMax: {x: 0.2, y: 0.3}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 374.68298, y: 471.42102}
+  m_AnchoredPosition: {x: 0, y: -5}
+  m_SizeDelta: {x: 100, y: 150}
   m_Pivot: {x: 0.5, y: 0}
 --- !u!114 &22280178
 MonoBehaviour:
@@ -169,14 +169,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 0, b: 0, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 423971171140905283, guid: 9a78aaf5b10e6614b82eccabc24b7601, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -307,8 +307,8 @@ Transform:
   m_GameObject: {fileID: 150576260}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -932.6079, y: 40.4093, z: 0}
-  m_LocalScale: {x: -101.64193, y: 233.5342, z: 1}
+  m_LocalPosition: {x: -1042, y: 57, z: 0}
+  m_LocalScale: {x: 13, y: 13, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1075348657}
@@ -425,7 +425,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
+  m_Sprite: {fileID: 423971171140905283, guid: 9a78aaf5b10e6614b82eccabc24b7601, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -462,7 +462,8 @@ MonoBehaviour:
   afterBattleLines:
   - 'You made some good points. '
   - "Here\u2019s a new spell for you."
-  afterSpellLines: []
+  afterSpellLines:
+  - Good luck, friend.
 --- !u!1 &150686736
 GameObject:
   m_ObjectHideFlags: 0
@@ -1746,6 +1747,11 @@ MonoBehaviour:
   clearButton: {fileID: 1311640675}
   code: 521
   playerPrefVariable: LeePuzzle
+  progressTexts:
+  - Enter the runes in the correct order to cast the spell
+  - Attempting to cast spell...
+  - Spell failed
+  - Success! Spell casted!
   placeholders:
   - {fileID: 2121056280}
   - {fileID: 964247518}
@@ -1755,12 +1761,12 @@ MonoBehaviour:
   - {fileID: 4269402262024427707, guid: b9e68f10f9d6c574e9ab2f920d60c28a, type: 3}
   - {fileID: 6412608267462445547, guid: 986c4a598b1a86e489f38e44bd206ab9, type: 3}
   options:
-  - {fileID: 494031626}
-  - {fileID: 701048448}
-  - {fileID: 1318215578}
-  - {fileID: 698258797}
-  - {fileID: 1379040664}
-  - {fileID: 468141164}
+  - {fileID: 494031623}
+  - {fileID: 701048445}
+  - {fileID: 1318215575}
+  - {fileID: 698258794}
+  - {fileID: 1379040661}
+  - {fileID: 468141161}
   playerMovement: {fileID: 916875898}
 --- !u!1 &886600913
 GameObject:
@@ -1966,6 +1972,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: acdcad5681f1c1b41aa5c9db65a3a5a0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Movement
+  speed: 0
   enableMovement: 1
 --- !u!212 &916875899
 SpriteRenderer:
@@ -2383,7 +2390,7 @@ MonoBehaviour:
   m_LightType: 3
   m_BlendStyleIndex: 0
   m_FalloffIntensity: 0.38
-  m_Color: {r: 0.15496778, g: 0, b: 1, a: 1}
+  m_Color: {r: 1, g: 0.21087603, b: 0, a: 1}
   m_Intensity: 1
   m_LightVolumeIntensity: 1
   m_LightVolumeEnabled: 1
@@ -3726,7 +3733,7 @@ Transform:
   m_GameObject: {fileID: 1411225885}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 836, y: 464, z: 0}
+  m_LocalPosition: {x: 665, y: 415, z: 0}
   m_LocalScale: {x: -202.40503, y: 335.2182, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
