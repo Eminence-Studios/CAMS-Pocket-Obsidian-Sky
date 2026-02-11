@@ -1,11 +1,49 @@
 using System.Collections;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class NewMonoBehaviourScript : MonoBehaviour
+public class RandomDicePuzzle : MonoBehaviour
 {
     public int tempDiceNum;
     public GameObject[] diceFaces;
+
+    [SerializeField] Canvas puzzle;
+    [SerializeField] Collider2D collider;
+    [SerializeField] Button closeButton;
+    [SerializeField] Button rollButton;
+    [SerializeField] TextMeshProUGUI progress;
+
+    public bool isManager;
+
+    private int rollCount = 0;
+
+    public string playerPrefVariable;
+
+    public Movement playerMovement;
+    public RandomDicePuzzle other;
+
+    void OnEnable()
+    {
+        if (isManager)
+        {
+            playerMovement.enableMovement = false;
+        }
+    }
+
+    public void closePuzzle()
+    {
+        playerMovement.enableMovement = true;
+        puzzle.gameObject.SetActive(false);
+    }
+
+    private void success()
+    {
+        progress.text = "Success!";
+        PlayerPrefs.SetInt(playerPrefVariable, 1);
+        collider.gameObject.SetActive(false);
+        Invoke("closePuzzle", 2);
+    }
 
     public void clearRolls()
     {
@@ -15,12 +53,33 @@ public class NewMonoBehaviourScript : MonoBehaviour
             diceFaces[i].GetComponent<RandomDiceHUD>().displayDice();
         }
     }
+
+    private void checkDice()
+    {
+        if((tempDiceNum == 2 && other.tempDiceNum == 6) || (tempDiceNum == 6 && other.tempDiceNum == 2))
+        {
+            success();
+        }
+        else
+        {
+            closeButton.gameObject.SetActive(true);
+            rollButton.interactable = true;
+        }    
+    }
     
     public void onRollButtonClick()
     {
+        if (isManager)
+        {
+            closeButton.gameObject.SetActive(false);
+            rollButton.interactable = false;
+        }
+        rollCount++;
         displayNeutralDice();
         clearRolls();
         StartCoroutine(rollDice());
+
+        
     }
     IEnumerator rollDice()
     {
@@ -38,12 +97,29 @@ public class NewMonoBehaviourScript : MonoBehaviour
                 diceFaces[j].GetComponent<RandomDiceHUD>().displayDice();
             }
         }
+        if (rollCount >= 15)
+        {
+            int chance = Random.Range(1, 3);
+            if (chance == 1)
+            {
+                finalRoll = 2;
+                tempDiceNum = 2;
+            }
+            else
+            {
+                finalRoll = 6;
+                tempDiceNum = 6;
+            }
+        }
         diceFaces[finalRoll - 1].GetComponent<RandomDiceHUD>().on = true;
         for (int i = 0; i < 6; i++)
         {
             diceFaces[i].GetComponent<RandomDiceHUD>().displayDice();
         }
-        
+        if (isManager)
+        {
+            checkDice();
+        }
     }
 
     public void displayNeutralDice()
