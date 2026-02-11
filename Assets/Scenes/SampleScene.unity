@@ -689,13 +689,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 42313b35a89fafe419e3a4fcd3f93319, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::battleSystem
-  playerPrefab: {fileID: 0}
-  enemyPrefab: {fileID: 0}
+  playerPrefab: {fileID: 7447560617879348617, guid: 78b9b1cb57826d0459e4fd43b1c2e539, type: 3}
+  enemyPrefab: {fileID: 8773051478488518510, guid: 5eae00165f897d744bd948bd8cf74e89, type: 3}
   playerBattleStation: {fileID: 0}
   enemyBattleStation: {fileID: 0}
   state: 0
-  playerHUD: {fileID: 0}
-  enemyHUD: {fileID: 0}
+  playerHUD: {fileID: 1623787685}
+  enemyHUD: {fileID: 844660975}
   turnCount: 1
 --- !u!4 &616006018
 Transform:
@@ -799,7 +799,7 @@ GameObject:
   - component: {fileID: 844660976}
   - component: {fileID: 844660975}
   m_Layer: 5
-  m_Name: healthBar
+  m_Name: healthBar2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -838,7 +838,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 474f6c6ebffae5d4ea909855a6b4b377, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::battleHUD
-  hpSlider: {fileID: 0}
+  hpSlider: {fileID: 844660976}
 --- !u!114 &844660976
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1704,7 +1704,7 @@ GameObject:
   - component: {fileID: 1623787686}
   - component: {fileID: 1623787685}
   m_Layer: 5
-  m_Name: healthBar2
+  m_Name: healthBar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1728,7 +1728,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -458, y: -358}
+  m_AnchoredPosition: {x: -564.9, y: -454.6}
   m_SizeDelta: {x: 50, y: 6.246}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1623787685
@@ -1743,7 +1743,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 474f6c6ebffae5d4ea909855a6b4b377, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::battleHUD
-  hpSlider: {fileID: 0}
+  hpSlider: {fileID: 1623787686}
 --- !u!114 &1623787686
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1892,7 +1892,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 3737897332693287829, guid: f740fb38dc9aa1c46a70faa965e52ca0, type: 3}
+  m_Sprite: {fileID: 3737897332693287829, guid: a98190b46c9ac624f92e78fd8015d4d2, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2100,7 +2100,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 3737897332693287829, guid: f740fb38dc9aa1c46a70faa965e52ca0, type: 3}
+  m_Sprite: {fileID: 3737897332693287829, guid: a98190b46c9ac624f92e78fd8015d4d2, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2197,6 +2197,6 @@ CanvasRenderer:
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
+  - {fileID: 616006018}
   - {fileID: 567581073}
   - {fileID: 922768273}
-  - {fileID: 616006018}
