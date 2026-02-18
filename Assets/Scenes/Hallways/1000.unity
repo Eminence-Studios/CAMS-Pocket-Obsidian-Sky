@@ -838,7 +838,7 @@ GameObject:
   - component: {fileID: 860073636}
   - component: {fileID: 860073635}
   m_Layer: 0
-  m_Name: Bodeur Trigger
+  m_Name: Brodeur Trigger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1116,7 +1116,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: acdcad5681f1c1b41aa5c9db65a3a5a0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Movement
-  speed: 0
+  speed: 400
   enableMovement: 1
 --- !u!212 &1154160687
 SpriteRenderer:
@@ -1829,7 +1829,10 @@ MonoBehaviour:
   player: {fileID: 1154160683}
   loadTrigger: 0
   playerPrefTrigger: []
-  triggers: []
+  triggers:
+  - {fileID: 860073633}
+  - {fileID: 1788893997}
+  - {fileID: 666671381}
 --- !u!1 &1467568516
 GameObject:
   m_ObjectHideFlags: 0

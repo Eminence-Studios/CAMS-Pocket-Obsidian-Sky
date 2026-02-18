@@ -411,7 +411,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: acdcad5681f1c1b41aa5c9db65a3a5a0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Movement
-  speed: 0
+  speed: 400
   enableMovement: 1
 --- !u!212 &80391539
 SpriteRenderer:
@@ -1060,7 +1060,8 @@ MonoBehaviour:
   player: {fileID: 80391535}
   loadTrigger: 0
   playerPrefTrigger: []
-  triggers: []
+  triggers:
+  - {fileID: 2106070846}
 --- !u!114 &836025253
 MonoBehaviour:
   m_ObjectHideFlags: 0
