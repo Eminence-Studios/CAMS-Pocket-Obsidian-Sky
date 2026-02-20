@@ -1974,7 +1974,6 @@ RectTransform:
   m_Children:
   - {fileID: 1682790332}
   - {fileID: 2059387756}
-  - {fileID: 1534679182}
   - {fileID: 629078209}
   - {fileID: 1262352013}
   - {fileID: 1433809719}
@@ -2994,81 +2993,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1524707449}
   m_CullTransparentMesh: 1
---- !u!1 &1534679181
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1534679182}
-  - component: {fileID: 1534679184}
-  - component: {fileID: 1534679183}
-  m_Layer: 0
-  m_Name: Self
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &1534679182
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1534679181}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1256853256}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 582, y: -23}
-  m_SizeDelta: {x: 374.683, y: 470.421}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1534679183
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1534679181}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 0, b: 0, a: 0}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Sprite: {fileID: 0}
-  m_Type: 0
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
---- !u!222 &1534679184
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1534679181}
-  m_CullTransparentMesh: 1
 --- !u!1 &1682790331
 GameObject:
   m_ObjectHideFlags: 0
@@ -3115,7 +3039,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Dialogue
   textBox: {fileID: 1433809720}
   dialogueScreen: {fileID: 1256853255}
-  nextScreen: {fileID: 0}
   lines:
   - Hello friend.
   - "It\u2019s important to be precise with your rune choice when writing spells."
@@ -3126,10 +3049,8 @@ MonoBehaviour:
   sceneID: 0
   isTeacherDialogue: 1
   teacherInteractionManager: {fileID: 150576266}
-  hasSwitchSpeakers: 0
-  otherSpeaker: {fileID: 0}
-  self: {fileID: 0}
-  speakers: 
+  hasNextScene: 0
+  nextScreen: {fileID: 0}
 --- !u!1 &1686821027
 GameObject:
   m_ObjectHideFlags: 0
