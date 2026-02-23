@@ -946,7 +946,7 @@ MonoBehaviour:
   player: {fileID: 0}
   loadTrigger: 1
   playerPrefTrigger:
-  - LeePuzzle
+  - MaestasPuzzle
   triggers:
   - {fileID: 1411225885}
 --- !u!1 &822229935
@@ -3093,11 +3093,14 @@ MonoBehaviour:
   closeButton: {fileID: 2140091918}
   buttonText: {fileID: 1524707451}
   startingText: Dodge fireballs for 20 seconds
+  ground: -250
   body: {fileID: 1686821029}
   speed: 400
   isCatch: 0
+  isRising: 0
   catchAmt: 0
   dodgeTime: 20
+  jumpForce: 800
 --- !u!50 &1686821029
 Rigidbody2D:
   serializedVersion: 5
@@ -3227,8 +3230,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1686821027}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -342, z: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: -250, z: 1}
   m_LocalScale: {x: 10, y: 10, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3608,7 +3611,7 @@ Transform:
   m_GameObject: {fileID: 1828723788}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 800, z: 10}
+  m_LocalPosition: {x: 0, y: 500, z: 10}
   m_LocalScale: {x: 108.023895, y: 108.023895, z: 108.023895}
   m_ConstrainProportionsScale: 0
   m_Children: []
