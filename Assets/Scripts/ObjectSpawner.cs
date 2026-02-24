@@ -25,6 +25,7 @@ public class ObjectSpawner : MonoBehaviour
         else
         {
             spawnObject();
+            Debug.Log(index);
             time = 0;
         }
     }
@@ -32,7 +33,7 @@ public class ObjectSpawner : MonoBehaviour
     {
         float lowestX = transform.position.x - xoffset;
         float highestX = transform.position.x + xoffset;
-        Instantiate(spawnedObject[index++], new Vector3(Random.Range(lowestX, highestX), transform.position.y, 0), transform.rotation);
+        Instantiate(spawnedObject[index++], new Vector3(Random.Range(lowestX, highestX), transform.localPosition.y, 0), transform.rotation);
         if (index > spawnedObject.Length - 1)
         {
             index = 0;

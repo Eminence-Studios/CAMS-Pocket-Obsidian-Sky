@@ -23,7 +23,7 @@ public class FallingObject : MonoBehaviour
         {
             if (isCatch)
             {
-                FallingObjectManager.instance.endGame();
+                DodgingObjectManager.instance.endGame();
 
             }
             else
@@ -39,7 +39,7 @@ public class FallingObject : MonoBehaviour
         if (collision.gameObject.name == "DodgingPlayer")
         {
             Destroy(gameObject);
-            FallingObjectManager.instance.endGame();
+            DodgingObjectManager.instance.endGame();
         }
         else if (collision.gameObject.name == "CatchingPlayer")
         {

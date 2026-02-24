@@ -9,7 +9,7 @@ public class Dialogue : MonoBehaviour
 {
     [SerializeField] TextMeshProUGUI textBox;
     [SerializeField] Canvas dialogueScreen;
-    [SerializeField] Canvas nextScreen;
+    
     public string[] lines;
     public bool hasCharName;
 
@@ -20,13 +20,16 @@ public class Dialogue : MonoBehaviour
     // public string teacherName;
     public TeacherInteraction teacherInteractionManager;
 
-    public bool hasSwitchSpeakers;
-    [SerializeField] Canvas otherSpeaker;
-    [SerializeField] Image self;
+    public bool hasNextScene;
+    [SerializeField] Canvas nextScreen;
+
+    // public bool hasSwitchSpeakers;
+    // [SerializeField] Canvas otherSpeaker;
+    // [SerializeField] Image self;
 
     // Self = 0
     // Other = 1
-    public int[] speakers;
+    // public int[] speakers;
 
     private int index;
     private string charName;
@@ -70,7 +73,7 @@ public class Dialogue : MonoBehaviour
         {
             teacherInteractionManager.loadNext();
         }
-        else
+        else if (hasNextScene)
         {
             nextScreen.gameObject.SetActive(true);
         }
@@ -91,7 +94,7 @@ public class Dialogue : MonoBehaviour
         index = 0;
         textBox.text = string.Empty;
         StartCoroutine(printLine());
-        if (hasSwitchSpeakers) { alternateSpeaker(); };
+        // if (hasSwitchSpeakers) { alternateSpeaker(); };
     }
 
     IEnumerator printLine()
@@ -115,10 +118,10 @@ public class Dialogue : MonoBehaviour
         {
             dialogueScreen.gameObject.SetActive(false);
         }
-        if (hasSwitchSpeakers) { alternateSpeaker(); }
-        ;
+        // if (hasSwitchSpeakers) { alternateSpeaker(); }
     }
-        
+       
+    /*
     void alternateSpeaker()
     {
         if (speakers[index] == 0)
@@ -132,6 +135,7 @@ public class Dialogue : MonoBehaviour
             otherSpeaker.gameObject.SetActive(true);
         }
     }
+    */
     
     
 }

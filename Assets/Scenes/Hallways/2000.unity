@@ -239,6 +239,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: acdcad5681f1c1b41aa5c9db65a3a5a0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Movement
+  speed: 400
   enableMovement: 1
 --- !u!212 &34342686
 SpriteRenderer:
@@ -346,7 +347,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d2bd44c9a38b7a14abb5c5e2a1bcc9aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SceneChanger
-  sceneID: 0
+  sceneID: 22
   playerPrefVariable: 2000Location
   playerPrefValue: 2
 --- !u!50 &155675245
@@ -518,7 +519,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d2bd44c9a38b7a14abb5c5e2a1bcc9aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SceneChanger
-  sceneID: 13
+  sceneID: 16
   playerPrefVariable: 2000Location
   playerPrefValue: 1
 --- !u!50 &171101087
@@ -896,7 +897,7 @@ Transform:
   m_GameObject: {fileID: 1000018626}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 916.4894, y: 0.15843964, z: -10}
+  m_LocalPosition: {x: 916.1884, y: 0.15843964, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1014,7 +1015,11 @@ MonoBehaviour:
   player: {fileID: 34342682}
   loadTrigger: 0
   playerPrefTrigger: []
-  triggers: []
+  triggers:
+  - {fileID: 171101084}
+  - {fileID: 155675242}
+  - {fileID: 1887566215}
+  - {fileID: 1734224875}
 --- !u!114 &1002540052
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1536,7 +1541,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d2bd44c9a38b7a14abb5c5e2a1bcc9aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SceneChanger
-  sceneID: 14
+  sceneID: 17
   playerPrefVariable: 2000Location
   playerPrefValue: 4
 --- !u!50 &1734224878
@@ -1792,7 +1797,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d2bd44c9a38b7a14abb5c5e2a1bcc9aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SceneChanger
-  sceneID: 0
+  sceneID: 24
   playerPrefVariable: 2000Location
   playerPrefValue: 3
 --- !u!50 &1887566218

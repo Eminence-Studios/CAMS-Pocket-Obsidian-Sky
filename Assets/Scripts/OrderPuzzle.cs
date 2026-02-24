@@ -21,25 +21,32 @@ public class OrderPuzzle : MonoBehaviour
     // instructions, attemping, failed, success
     public string[] progressTexts;
 
+    private Sprite[] placeholderImages;
+    
     public Image[] placeholders;
-    public Sprite[] originalPlaceholders;
     public GameObject[] options;
 
     private bool isCheck = false;
     public Movement playerMovement;
 
+    public GameObject nextPuzzleTriggers;
+
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-
+        placeholderImages = new Sprite[placeholders.Length];
+        for (int i = 0; i < placeholders.Length; i++)
+        {
+            placeholderImages[i] = placeholders[i].sprite;
+        }
     }
 
     // Update is called once per frame
     void Update()
     {
         
-        if (input.text.Length == originalPlaceholders.Length && !isCheck)
+        if (input.text.Length == placeholderImages.Length && !isCheck)
         {
             closeButton.gameObject.SetActive(false);
             clearButton.gameObject.SetActive(false);
@@ -63,6 +70,10 @@ public class OrderPuzzle : MonoBehaviour
 
             PlayerPrefs.SetInt(playerPrefVariable, 1);
             collider.gameObject.SetActive(false);
+            if (playerPrefVariable == "NishiyamaPuzzle0")
+            {
+                nextPuzzleTriggers.SetActive(true);
+            }
             Invoke("closePuzzle", 2);
 
         }
@@ -88,7 +99,7 @@ public class OrderPuzzle : MonoBehaviour
     {
         for (int i = 0; i < placeholders.Length; i++)
         {
-            placeholders[i].sprite = originalPlaceholders[i];
+            placeholders[i].sprite = placeholderImages[i];
         }
         for (int i = 0; i < options.Length; i++)
         {
@@ -109,8 +120,8 @@ public class OrderPuzzle : MonoBehaviour
         input.text += index;
         placeholders[input.text.Length - 1].sprite = options[index].GetComponent<Image>().sprite;
         options[index].GetComponent<Button>().interactable = false;
-        // Debug.Log("added symbol");
-        // Debug.Log(input.text);
+        Debug.Log("added symbol");
+        Debug.Log(input.text);
     }
     
     
