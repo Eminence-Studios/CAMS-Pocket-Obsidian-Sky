@@ -1116,7 +1116,7 @@ MonoBehaviour:
   player: {fileID: 0}
   loadTrigger: 1
   playerPrefTrigger:
-  - LeePuzzle
+  - BritoPuzzle
   triggers:
   - {fileID: 1411225885}
 --- !u!1 &712861044
@@ -3620,7 +3620,7 @@ Transform:
   m_GameObject: {fileID: 1784737740}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 916.4705, y: 157.00002, z: -10}
+  m_LocalPosition: {x: 916.66016, y: 157.00002, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3744,11 +3744,14 @@ MonoBehaviour:
   closeButton: {fileID: 443251052}
   buttonText: {fileID: 1151376997}
   startingText: Dodge lightning bolts for 30 seconds
+  ground: 0
   body: {fileID: 1866874428}
   speed: 400
   isCatch: 0
+  isRising: 0
   catchAmt: 0
   dodgeTime: 30
+  jumpForce: 0
 --- !u!50 &1866874428
 Rigidbody2D:
   serializedVersion: 5

@@ -1286,7 +1286,7 @@ MonoBehaviour:
   player: {fileID: 0}
   loadTrigger: 1
   playerPrefTrigger:
-  - SarnoPuzzle
+  - VirakPuzzle
   triggers:
   - {fileID: 1411225885}
 --- !u!1 &689902237
@@ -1811,10 +1811,6 @@ MonoBehaviour:
   - {fileID: 2121056280}
   - {fileID: 964247518}
   - {fileID: 1499664453}
-  originalPlaceholders:
-  - {fileID: 1028605137730515054, guid: eed61365040f3204fadddeded2e6aeaa, type: 3}
-  - {fileID: 4116245167648703374, guid: 9dcc233dbf27b5a4f8b81d000d14f8c5, type: 3}
-  - {fileID: -9113784435853376636, guid: 106dcb5982ff2db44a2d335b317a0b77, type: 3}
   options:
   - {fileID: 494031623}
   - {fileID: 701048445}
@@ -1823,6 +1819,7 @@ MonoBehaviour:
   - {fileID: 1379040661}
   - {fileID: 468141161}
   playerMovement: {fileID: 916875898}
+  nextPuzzleTriggers: {fileID: 0}
 --- !u!1 &886600913
 GameObject:
   m_ObjectHideFlags: 0
@@ -2750,17 +2747,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Dialogue
   textBox: {fileID: 900208950}
   dialogueScreen: {fileID: 208243416}
-  nextScreen: {fileID: 0}
   lines: []
   hasCharName: 0
   changeScene: 0
   sceneID: 0
   isTeacherDialogue: 1
   teacherInteractionManager: {fileID: 620195738}
-  hasSwitchSpeakers: 0
-  otherSpeaker: {fileID: 0}
-  self: {fileID: 0}
-  speakers: 
+  hasNextScene: 0
+  nextScreen: {fileID: 0}
 --- !u!4 &1165950375
 Transform:
   m_ObjectHideFlags: 0

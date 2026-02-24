@@ -26,6 +26,12 @@ public class LoadScene : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        if (!PlayerPrefs.HasKey("NishiyamaNotReady"))
+        {
+            PlayerPrefs.SetInt("NishiyamaNotReady", 1);
+            PlayerPrefs.SetFloat("SFXVolume", 1f);
+        }
+
         if (loadLocation)
         { 
             createLocations();
