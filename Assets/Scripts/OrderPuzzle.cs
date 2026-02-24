@@ -72,6 +72,7 @@ public class OrderPuzzle : MonoBehaviour
             collider.gameObject.SetActive(false);
             if (playerPrefVariable == "NishiyamaPuzzle0")
             {
+                PlayerPrefs.SetInt("NishiyamaNotReady", 0);
                 nextPuzzleTriggers.SetActive(true);
             }
             Invoke("closePuzzle", 2);

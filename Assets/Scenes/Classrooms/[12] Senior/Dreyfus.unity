@@ -1115,7 +1115,7 @@ MonoBehaviour:
   player: {fileID: 0}
   loadTrigger: 1
   playerPrefTrigger:
-  - LeePuzzle
+  - DreyfusPuzzle
   triggers:
   - {fileID: 1411225885}
 --- !u!1 &712861044
@@ -3743,11 +3743,14 @@ MonoBehaviour:
   closeButton: {fileID: 443251052}
   buttonText: {fileID: 1151376997}
   startingText: Dodge lightning bolts for 30 seconds
+  ground: 0
   body: {fileID: 1866874428}
   speed: 400
   isCatch: 1
+  isRising: 0
   catchAmt: 5
   dodgeTime: 10
+  jumpForce: 0
 --- !u!50 &1866874428
 Rigidbody2D:
   serializedVersion: 5
