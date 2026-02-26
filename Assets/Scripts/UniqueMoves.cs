@@ -36,6 +36,12 @@ public class UniqueMoves : MonoBehaviour
             Debug.Log(unitComponent.unitName + " used Wall of Foliage! Defense increased by 2");
             return moveParameters;
         }
+        if (moveNumber == 4) // flamethrower
+        {
+            moveParameters = new List<int> { 2, 0, 0, 0, 1 }; // +2 atk, inflicts burn status effect
+            Debug.Log(unitComponent.unitName + " used Flamethrower! Attack may increase by 2");
+            return moveParameters;
+        }
         else
         {
             return null; // placeholder for now
