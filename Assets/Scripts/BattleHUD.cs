@@ -27,7 +27,7 @@ public class BattleHUD : MonoBehaviour
         }
     }
 
-    public void setEnergyHUD(Unit unit)
+    public void setEnergyHUD(Unit unit) // serves to initialize and just update the visual
     {
         energySlider.maxValue = unit.maxEnergy;
         energySlider.value = unit.energy;
@@ -46,5 +46,21 @@ public class BattleHUD : MonoBehaviour
             return false;
         }
     }
+
+        public bool setEnergy(int energy, Unit unit)
+    {
+        if (energy <= unit.energy)
+        {
+            unit.energy -= energy;
+            energySlider.value = unit.energy;
+            return true;
+        }
+        else
+        {
+            Debug.Log("There is not enough energy to perform this move");
+            return false;
+        }
+    }
+
 
 }
