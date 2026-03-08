@@ -316,7 +316,7 @@ MonoBehaviour:
   textBox: {fileID: 1288882120}
   dialogueScreen: {fileID: 1533272063}
   lines:
-  - Moon Rune\nsmth smth
+  - Aion Rune\nRenders a flame eternal, burning as long as the caster lives
   hasCharName: 0
   changeScene: 0
   sceneID: 0
@@ -421,7 +421,7 @@ GameObject:
   - component: {fileID: 100214820}
   - component: {fileID: 100214819}
   m_Layer: 5
-  m_Name: Infinity Rune
+  m_Name: Bomb Rune
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -775,6 +775,9 @@ MonoBehaviour:
   initalLines:
   - Hello friend.
   - "It\u2019s important to be precise with your rune choice when writing spells."
+  - I prepared a task for you to practice.
+  - "Take a look at that dying flame. Reignite it, making sure it won\u2019t burn
+    out again. Then, turn it to a calm hearth."
   - Look around to create a well-constructed incantation.
   afterPuzzleLines:
   - 'Full points. '
@@ -952,7 +955,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 2.75, y: 2.67}
+  m_Size: {x: 2.6, y: 2.63}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -971,7 +974,7 @@ GameObject:
   - component: {fileID: 226554572}
   - component: {fileID: 226554571}
   m_Layer: 5
-  m_Name: Water Rune
+  m_Name: Lamp Rune
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1111,7 +1114,7 @@ MonoBehaviour:
   textBox: {fileID: 658213699}
   dialogueScreen: {fileID: 226554570}
   lines:
-  - Water Rune\nsmth smth
+  - Hestia Rune\nCalms fires into gentle flames, providing warmth and safety
   hasCharName: 0
   changeScene: 0
   sceneID: 0
@@ -1316,7 +1319,8 @@ MonoBehaviour:
   textBox: {fileID: 1829425942}
   dialogueScreen: {fileID: 100214818}
   lines:
-  - Infinity Rune\nsmth smth
+  - Vulcan Rune\nGenerates an explosive fire, embodying the destructive nature of
+    fire
   hasCharName: 0
   changeScene: 0
   sceneID: 0
@@ -1434,7 +1438,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.18}
   m_AnchorMax: {x: 0.5, y: 0.18}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 1201.09, y: 191.547}
+  m_SizeDelta: {x: 1400, y: 191.547}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &402603177
 MonoBehaviour:
@@ -1582,7 +1586,7 @@ MonoBehaviour:
   textBox: {fileID: 402603177}
   dialogueScreen: {fileID: 1020554849}
   lines:
-  - Pi Rune\nsmth smth
+  - Sol Rune\nEmits a light during nighttime, shining the way in darkness
   hasCharName: 0
   changeScene: 0
   sceneID: 0
@@ -1677,7 +1681,7 @@ SpriteRenderer:
   m_Size: {x: 2.75, y: 2.67}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &459499542
@@ -1768,7 +1772,7 @@ GameObject:
   - component: {fileID: 468141164}
   - component: {fileID: 468141163}
   m_Layer: 5
-  m_Name: Wave Rune
+  m_Name: Log Rune
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1869,7 +1873,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 8324852499357617970, guid: 8bb4a1feee62bf44089e20b148575675, type: 3}
+  m_Sprite: {fileID: -8410394334133721831, guid: 841f26ed2f8321d4ab8dc6c1f21cf8c4, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2367,7 +2371,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 2.75, y: 2.67}
+  m_Size: {x: 2.45, y: 2.77}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -2508,7 +2512,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.18}
   m_AnchorMax: {x: 0.5, y: 0.18}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 1201.09, y: 191.547}
+  m_SizeDelta: {x: 1400, y: 191.547}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &658213699
 MonoBehaviour:
@@ -2904,7 +2908,7 @@ GameObject:
   - component: {fileID: 701048448}
   - component: {fileID: 701048447}
   m_Layer: 5
-  m_Name: Moon Rune
+  m_Name: Bomb Rune
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3005,7 +3009,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -6685751729324177682, guid: 956a72b51ba0d074ca1d4761a52bbbc2, type: 3}
+  m_Sprite: {fileID: 8894177165286071812, guid: 618c434269af0e546a0726de396268de, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -3169,7 +3173,7 @@ MonoBehaviour:
   collider: {fileID: 1411225889}
   closeButton: {fileID: 934314146}
   clearButton: {fileID: 1311640675}
-  code: 521
+  code: 502
   playerPrefVariable: LeePuzzle
   progressTexts:
   - Enter the runes in the correct order to cast the spell
@@ -3637,7 +3641,7 @@ GameObject:
   - component: {fileID: 942054223}
   - component: {fileID: 942054222}
   m_Layer: 5
-  m_Name: Pi Rune Trigger
+  m_Name: Bomb Rune Trigger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3672,7 +3676,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CanvasChanger
   oldCanvas: {fileID: 0}
-  newCanvas: {fileID: 1020554849}
+  newCanvas: {fileID: 100214818}
 --- !u!50 &942054223
 Rigidbody2D:
   serializedVersion: 5
@@ -3853,7 +3857,7 @@ MonoBehaviour:
       m_Calls: []
   m_Sprite: {fileID: 4269402262024427707, guid: b9e68f10f9d6c574e9ab2f920d60c28a, type: 3}
   m_Type: 0
-  m_PreserveAspect: 0
+  m_PreserveAspect: 1
   m_FillCenter: 1
   m_FillMethod: 4
   m_FillAmount: 1
@@ -3956,7 +3960,7 @@ SpriteRenderer:
   m_Size: {x: 2.75, y: 2.67}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &1020554847
@@ -3972,7 +3976,7 @@ GameObject:
   - component: {fileID: 1020554851}
   - component: {fileID: 1020554850}
   m_Layer: 5
-  m_Name: Pi Rune
+  m_Name: Sun Rune
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4112,7 +4116,8 @@ MonoBehaviour:
   textBox: {fileID: 2146243365}
   dialogueScreen: {fileID: 1804632259}
   lines:
-  - Wave Rune\nsmth smth
+  - Somnus Rune\nReleases an aromatic stream of smoke, calming nerves and inducing
+    sleep
   hasCharName: 0
   changeScene: 0
   sceneID: 0
@@ -4167,7 +4172,7 @@ MonoBehaviour:
   textBox: {fileID: 1250356813}
   dialogueScreen: {fileID: 1478962910}
   lines:
-  - Sun Rune\nsmth smth
+  - Kindling Rune\nReignites a dying flame, fueling it until the rune crumbles
   hasCharName: 0
   changeScene: 0
   sceneID: 0
@@ -4348,7 +4353,7 @@ GameObject:
   - component: {fileID: 1156514897}
   - component: {fileID: 1156514896}
   m_Layer: 5
-  m_Name: Water Rune Trigger
+  m_Name: Sun Rune Trigger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4383,7 +4388,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CanvasChanger
   oldCanvas: {fileID: 0}
-  newCanvas: {fileID: 226554570}
+  newCanvas: {fileID: 1020554849}
 --- !u!50 &1156514897
 Rigidbody2D:
   serializedVersion: 5
@@ -4840,7 +4845,7 @@ SpriteRenderer:
   m_Size: {x: 2.75, y: 2.67}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &1218831031
@@ -4857,7 +4862,7 @@ GameObject:
   - component: {fileID: 1218831034}
   - component: {fileID: 1218831033}
   m_Layer: 5
-  m_Name: Infinity Rune Trigger
+  m_Name: Log Rune Trigger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4892,7 +4897,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CanvasChanger
   oldCanvas: {fileID: 0}
-  newCanvas: {fileID: 100214818}
+  newCanvas: {fileID: 1478962910}
 --- !u!50 &1218831034
 Rigidbody2D:
   serializedVersion: 5
@@ -5049,7 +5054,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.18}
   m_AnchorMax: {x: 0.5, y: 0.18}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 1201.09, y: 191.547}
+  m_SizeDelta: {x: 1400, y: 191.547}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1250356813
 MonoBehaviour:
@@ -5502,7 +5507,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.18}
   m_AnchorMax: {x: 0.5, y: 0.18}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 1201.09, y: 191.547}
+  m_SizeDelta: {x: 1400, y: 191.547}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1288882120
 MonoBehaviour:
@@ -5749,7 +5754,7 @@ GameObject:
   - component: {fileID: 1318215578}
   - component: {fileID: 1318215577}
   m_Layer: 5
-  m_Name: Pi Rune
+  m_Name: Lamp Rune
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5850,7 +5855,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -7706740570524838912, guid: 000fc8de1e3c4fd4d8fb5248bf72aa70, type: 3}
+  m_Sprite: {fileID: 3025440222989521106, guid: ee2f063b37548ef4e9d363bc047f990b, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -6206,7 +6211,7 @@ GameObject:
   - component: {fileID: 1379040664}
   - component: {fileID: 1379040663}
   m_Layer: 5
-  m_Name: Tear Rune
+  m_Name: Smoke Rune
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6307,7 +6312,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 8965476623648985018, guid: 477aa0446f0ddbd40b7e94e4e4f8f2fe, type: 3}
+  m_Sprite: {fileID: -2637464019359440470, guid: 2c4cdafbf0071414f857fd37c497693d, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -6615,7 +6620,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.18}
   m_AnchorMax: {x: 0.5, y: 0.18}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 1201.09, y: 191.547}
+  m_SizeDelta: {x: 1400, y: 191.547}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1433809720
 MonoBehaviour:
@@ -6730,7 +6735,7 @@ GameObject:
   - component: {fileID: 1463352603}
   - component: {fileID: 1463352602}
   m_Layer: 5
-  m_Name: Sun Rune Trigger
+  m_Name: Lamp Rune Trigger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6765,7 +6770,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CanvasChanger
   oldCanvas: {fileID: 0}
-  newCanvas: {fileID: 1478962910}
+  newCanvas: {fileID: 226554570}
 --- !u!50 &1463352603
 Rigidbody2D:
   serializedVersion: 5
@@ -7007,7 +7012,7 @@ GameObject:
   - component: {fileID: 1478962912}
   - component: {fileID: 1478962911}
   m_Layer: 5
-  m_Name: Sun Rune
+  m_Name: Log Rune
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7159,7 +7164,7 @@ MonoBehaviour:
       m_Calls: []
   m_Sprite: {fileID: 6412608267462445547, guid: 986c4a598b1a86e489f38e44bd206ab9, type: 3}
   m_Type: 0
-  m_PreserveAspect: 0
+  m_PreserveAspect: 1
   m_FillCenter: 1
   m_FillMethod: 4
   m_FillAmount: 1
@@ -7189,7 +7194,7 @@ GameObject:
   - component: {fileID: 1526783139}
   - component: {fileID: 1526783138}
   m_Layer: 5
-  m_Name: Wave Rune Trigger
+  m_Name: Smoke Rune Trigger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7359,7 +7364,7 @@ GameObject:
   - component: {fileID: 1533272065}
   - component: {fileID: 1533272064}
   m_Layer: 5
-  m_Name: Moon Rune
+  m_Name: Infinity Rune
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7917,11 +7922,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Dialogue
   textBox: {fileID: 1433809720}
   dialogueScreen: {fileID: 1256853255}
-  lines:
-  - Hello friend.
-  - "It\u2019s important to be precise with your rune choice when writing spells."
-  - "Hello friend. It\u2019s important to be precise with your rune choice when writing
-    spells. Look around to create a well-constructed incantation."
+  lines: []
   hasCharName: 0
   changeScene: 0
   sceneID: 0
@@ -8194,7 +8195,7 @@ SpriteRenderer:
   m_Size: {x: 2.75, y: 2.67}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &1784737740
@@ -8380,7 +8381,7 @@ GameObject:
   - component: {fileID: 1804632261}
   - component: {fileID: 1804632260}
   m_Layer: 5
-  m_Name: Wave Rune
+  m_Name: Smoke Rune
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8508,7 +8509,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.18}
   m_AnchorMax: {x: 0.5, y: 0.18}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 1201.09, y: 191.547}
+  m_SizeDelta: {x: 1400, y: 191.547}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1829425942
 MonoBehaviour:
@@ -9204,7 +9205,7 @@ GameObject:
   - component: {fileID: 2088175898}
   - component: {fileID: 2088175897}
   m_Layer: 5
-  m_Name: Moon Rune Trigger
+  m_Name: Infinity Rune Trigger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9420,7 +9421,7 @@ MonoBehaviour:
       m_Calls: []
   m_Sprite: {fileID: -3010827500415559812, guid: 3ec5d0807f851f641a32205613edfc75, type: 3}
   m_Type: 0
-  m_PreserveAspect: 0
+  m_PreserveAspect: 1
   m_FillCenter: 1
   m_FillMethod: 4
   m_FillAmount: 1
@@ -9607,7 +9608,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.18}
   m_AnchorMax: {x: 0.5, y: 0.18}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 1201.09, y: 191.547}
+  m_SizeDelta: {x: 1400, y: 191.547}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2146243365
 MonoBehaviour:

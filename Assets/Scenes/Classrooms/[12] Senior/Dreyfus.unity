@@ -146,15 +146,15 @@ RectTransform:
   m_GameObject: {fileID: 22280176}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.4, y: 0.4, z: 0.38113424}
+  m_LocalScale: {x: 1, y: 1, z: 0.38113424}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 629078209}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.2, y: 0.3}
   m_AnchorMax: {x: 0.2, y: 0.3}
-  m_AnchoredPosition: {x: 0, y: -5}
-  m_SizeDelta: {x: 374.68298, y: 471.42102}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 150, y: 150}
   m_Pivot: {x: 0.5, y: 0}
 --- !u!114 &22280178
 MonoBehaviour:
@@ -176,9 +176,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 423971171140905283, guid: 66ad8ca1282165046b4a20c47d55e6c0, type: 3}
+  m_Sprite: {fileID: -1247358431702299797, guid: 14a984c8221d3c2498378a69aab5fdbe, type: 3}
   m_Type: 0
-  m_PreserveAspect: 0
+  m_PreserveAspect: 1
   m_FillCenter: 1
   m_FillMethod: 4
   m_FillAmount: 1
@@ -544,7 +544,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 423971171140905283, guid: 66ad8ca1282165046b4a20c47d55e6c0, type: 3}
+  m_Sprite: {fileID: -1247358431702299797, guid: 14a984c8221d3c2498378a69aab5fdbe, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -613,7 +613,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 17.18, y: 20.15}
+    oldSize: {x: 11.29, y: 11.04}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -876,7 +876,7 @@ Transform:
   m_GameObject: {fileID: 543162151}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -83, y: -253, z: -10}
+  m_LocalPosition: {x: -754, y: -362, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1503,7 +1503,7 @@ Transform:
   m_GameObject: {fileID: 916875894}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -83, y: -253, z: 0}
+  m_LocalPosition: {x: -754, y: -362, z: 0}
   m_LocalScale: {x: 50.077293, y: 123.19607, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2817,7 +2817,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.18}
   m_AnchorMax: {x: 0.5, y: 0.18}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 1201.09, y: 191.547}
+  m_SizeDelta: {x: 1400, y: 191.547}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1433809720
 MonoBehaviour:
@@ -3341,11 +3341,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Dialogue
   textBox: {fileID: 1433809720}
   dialogueScreen: {fileID: 1256853255}
-  lines:
-  - Hello friend.
-  - "It\u2019s important to be precise with your rune choice when writing spells."
-  - "Hello friend. It\u2019s important to be precise with your rune choice when writing
-    spells. Look around to create a well-constructed incantation."
+  lines: []
   hasCharName: 0
   changeScene: 0
   sceneID: 0
@@ -3619,7 +3615,7 @@ Transform:
   m_GameObject: {fileID: 1784737740}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -83, y: -253, z: -10}
+  m_LocalPosition: {x: -754, y: -362, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4019,7 +4015,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Ms. Maestas
+  m_text: Ms. Dreyfus
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: d6bdea585905fb44da289730651c8c1f, type: 2}
   m_sharedMaterial: {fileID: -3929634279447016833, guid: d6bdea585905fb44da289730651c8c1f, type: 2}

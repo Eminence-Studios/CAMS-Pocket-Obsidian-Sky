@@ -268,7 +268,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.18}
   m_AnchorMax: {x: 0.5, y: 0.18}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 1201.09, y: 191.547}
+  m_SizeDelta: {x: 1400, y: 191.547}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &21396253
 MonoBehaviour:
@@ -506,12 +506,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Dialogue
   textBox: {fileID: 694583873}
   dialogueScreen: {fileID: 1419386127}
-  lines:
-  - Hello friend.
-  - "It\u2019s important to be precise with your rune choice when writing spells."
-  - "Hello friend. It\u2019s important to be precise with your rune choice when writing
-    spells. Look around to create a well-constructed incantation."
-  hasCharName: 0
+  lines: []
+  hasCharName: 1
   changeScene: 0
   sceneID: 0
   isTeacherDialogue: 1
@@ -2176,7 +2172,6 @@ GameObject:
   - component: {fileID: 675540153}
   - component: {fileID: 675540152}
   - component: {fileID: 675540150}
-  - component: {fileID: 675540151}
   m_Layer: 5
   m_Name: Placeholder 1
   m_TagString: Untagged
@@ -2214,62 +2209,6 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &675540151
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 675540149}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Button
-  m_Navigation:
-    m_Mode: 3
-    m_WrapAround: 0
-    m_SelectOnUp: {fileID: 0}
-    m_SelectOnDown: {fileID: 0}
-    m_SelectOnLeft: {fileID: 0}
-    m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
-  m_Colors:
-    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
-    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
-    m_ColorMultiplier: 1
-    m_FadeDuration: 0.1
-  m_SpriteState:
-    m_HighlightedSprite: {fileID: 0}
-    m_PressedSprite: {fileID: 0}
-    m_SelectedSprite: {fileID: 0}
-    m_DisabledSprite: {fileID: 0}
-  m_AnimationTriggers:
-    m_NormalTrigger: Normal
-    m_HighlightedTrigger: Highlighted
-    m_PressedTrigger: Pressed
-    m_SelectedTrigger: Selected
-    m_DisabledTrigger: Disabled
-  m_Interactable: 1
-  m_TargetGraphic: {fileID: 675540150}
-  m_OnClick:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1539780933}
-        m_TargetAssemblyTypeName: RunePuzzle, Assembly-CSharp
-        m_MethodName: addSymbol
-        m_Mode: 3
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!222 &675540152
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2431,7 +2370,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.18}
   m_AnchorMax: {x: 0.5, y: 0.18}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 1201.09, y: 191.547}
+  m_SizeDelta: {x: 1400, y: 191.547}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &705748226
 GameObject:
@@ -2449,7 +2388,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &705748227
 Transform:
   m_ObjectHideFlags: 0
@@ -2480,7 +2419,8 @@ MonoBehaviour:
   textBox: {fileID: 1263548325}
   dialogueScreen: {fileID: 196321572}
   lines:
-  - Blue Crystal\nsmth smth
+  - Blue Crystal\nThese high energy blue crystals are able to carry between 500-700
+    Luminas. Even a few of these can power our school for months.
   hasCharName: 0
   changeScene: 0
   sceneID: 0
@@ -2951,7 +2891,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.18}
   m_AnchorMax: {x: 0.5, y: 0.18}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 1201.09, y: 191.547}
+  m_SizeDelta: {x: 1400, y: 191.547}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &774136793
 MonoBehaviour:
@@ -3342,6 +3282,7 @@ RectTransform:
   - {fileID: 1246077102}
   - {fileID: 771395529}
   - {fileID: 209546485}
+  - {fileID: 2065865546}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -3528,7 +3469,7 @@ GameObject:
   - component: {fileID: 959703715}
   - component: {fileID: 959703714}
   m_Layer: 5
-  m_Name: Pink Crystal
+  m_Name: Red Crystal
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3704,7 +3645,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Ms. Lee
+  m_text: Mr. Carpenter
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: d6bdea585905fb44da289730651c8c1f, type: 2}
   m_sharedMaterial: {fileID: -3929634279447016833, guid: d6bdea585905fb44da289730651c8c1f, type: 2}
@@ -3992,7 +3933,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.18}
   m_AnchorMax: {x: 0.5, y: 0.18}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 1201.09, y: 191.547}
+  m_SizeDelta: {x: 1400, y: 191.547}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1101780916
 MonoBehaviour:
@@ -4682,18 +4623,22 @@ MonoBehaviour:
   dialoguePopUp: {fileID: 1419386126}
   dialogueManager: {fileID: 47686131}
   initalLines:
-  - Hello friend.
-  - "It\u2019s important to be precise with your rune choice when writing spells."
-  - Look around to create a well-constructed incantation.
+  - "I\u2019ve been expecting you, charName."
+  - Many students have stood in your place before.
+  - To channel electric magic, you have to recognize and harness the power of each
+    cyrstal.
+  - Go sort them in order of ascending energy.
   afterPuzzleLines:
-  - 'Full points. '
-  - "Let\u2019s round things out with a discussion, using magic."
+  - You sure took your sweet time with that.
+  - "I trust you\u2019ve memorized them thoroughly, then."
+  - Show me what you know.
   afterBattleLines:
-  - 'You made some good points. '
-  - "Here\u2019s a new spell for you."
+  - Not bad.
+  - "I think you\u2019re ready to learn a new spell."
+  - "Watch closely\u2026you have to stay within the correct charging tolerances."
   afterSpellLines:
-  - I hope you've realized your potential.
-  - Your journey has only just begun.
+  - This is about as far I take you in your journey.
+  - Best of luck.
 --- !u!70 &1246077104
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -4967,7 +4912,8 @@ MonoBehaviour:
   textBox: {fileID: 774136793}
   dialogueScreen: {fileID: 2089592578}
   lines:
-  - Red Crystal\nsmth smth
+  - Red Crystal\nThis small energy red crystal can only hold between 50-100 Luminas,
+    often used to power small devices such as flashlights.
   hasCharName: 0
   changeScene: 0
   sceneID: 0
@@ -5010,7 +4956,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.18}
   m_AnchorMax: {x: 0.5, y: 0.18}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 1201.09, y: 191.547}
+  m_SizeDelta: {x: 1400, y: 191.547}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1263548325
 MonoBehaviour:
@@ -5397,7 +5343,8 @@ MonoBehaviour:
   textBox: {fileID: 21396253}
   dialogueScreen: {fileID: 37159605}
   lines:
-  - Yellow Crystal\nsmth smth
+  - Yellow Crystal\nOne of the most commonly used crystals, yellow crystals range
+    between 100-350 will power most household electrical devices.
   hasCharName: 0
   changeScene: 0
   sceneID: 0
@@ -5765,7 +5712,6 @@ GameObject:
   - component: {fileID: 1489756999}
   - component: {fileID: 1489756998}
   - component: {fileID: 1489756996}
-  - component: {fileID: 1489756997}
   m_Layer: 5
   m_Name: Placeholder 3
   m_TagString: Untagged
@@ -5803,62 +5749,6 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &1489756997
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1489756995}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Button
-  m_Navigation:
-    m_Mode: 3
-    m_WrapAround: 0
-    m_SelectOnUp: {fileID: 0}
-    m_SelectOnDown: {fileID: 0}
-    m_SelectOnLeft: {fileID: 0}
-    m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
-  m_Colors:
-    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
-    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
-    m_ColorMultiplier: 1
-    m_FadeDuration: 0.1
-  m_SpriteState:
-    m_HighlightedSprite: {fileID: 0}
-    m_PressedSprite: {fileID: 0}
-    m_SelectedSprite: {fileID: 0}
-    m_DisabledSprite: {fileID: 0}
-  m_AnimationTriggers:
-    m_NormalTrigger: Normal
-    m_HighlightedTrigger: Highlighted
-    m_PressedTrigger: Pressed
-    m_SelectedTrigger: Selected
-    m_DisabledTrigger: Disabled
-  m_Interactable: 1
-  m_TargetGraphic: {fileID: 1489756996}
-  m_OnClick:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1539780933}
-        m_TargetAssemblyTypeName: RunePuzzle, Assembly-CSharp
-        m_MethodName: addSymbol
-        m_Mode: 3
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!222 &1489756998
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -5972,7 +5862,6 @@ GameObject:
   - component: {fileID: 1537793301}
   - component: {fileID: 1537793300}
   - component: {fileID: 1537793298}
-  - component: {fileID: 1537793299}
   m_Layer: 5
   m_Name: Placeholder 4
   m_TagString: Untagged
@@ -6010,62 +5899,6 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &1537793299
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1537793297}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Button
-  m_Navigation:
-    m_Mode: 3
-    m_WrapAround: 0
-    m_SelectOnUp: {fileID: 0}
-    m_SelectOnDown: {fileID: 0}
-    m_SelectOnLeft: {fileID: 0}
-    m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
-  m_Colors:
-    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
-    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
-    m_ColorMultiplier: 1
-    m_FadeDuration: 0.1
-  m_SpriteState:
-    m_HighlightedSprite: {fileID: 0}
-    m_PressedSprite: {fileID: 0}
-    m_SelectedSprite: {fileID: 0}
-    m_DisabledSprite: {fileID: 0}
-  m_AnimationTriggers:
-    m_NormalTrigger: Normal
-    m_HighlightedTrigger: Highlighted
-    m_PressedTrigger: Pressed
-    m_SelectedTrigger: Selected
-    m_DisabledTrigger: Disabled
-  m_Interactable: 1
-  m_TargetGraphic: {fileID: 1537793298}
-  m_OnClick:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1539780933}
-        m_TargetAssemblyTypeName: RunePuzzle, Assembly-CSharp
-        m_MethodName: addSymbol
-        m_Mode: 3
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!222 &1537793300
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -6129,10 +5962,10 @@ MonoBehaviour:
   collider: {fileID: 209546488}
   closeButton: {fileID: 1278346215}
   clearButton: {fileID: 124347255}
-  code: 0123
+  code: 1302
   playerPrefVariable: CarpenterPuzzle
   progressTexts:
-  - 'Arrange the crystals by increasing voltage to harness their power '
+  - 'Arrange the crystals by increasing energy to harness their power '
   - "Attempting to harness\u2026 "
   - Attempt failed
   - 'Success! Power harnessed! '
@@ -7114,7 +6947,6 @@ GameObject:
   - component: {fileID: 1920210060}
   - component: {fileID: 1920210059}
   - component: {fileID: 1920210057}
-  - component: {fileID: 1920210058}
   m_Layer: 5
   m_Name: Placeholder 2
   m_TagString: Untagged
@@ -7152,62 +6984,6 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &1920210058
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1920210056}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Button
-  m_Navigation:
-    m_Mode: 3
-    m_WrapAround: 0
-    m_SelectOnUp: {fileID: 0}
-    m_SelectOnDown: {fileID: 0}
-    m_SelectOnLeft: {fileID: 0}
-    m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
-  m_Colors:
-    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
-    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
-    m_ColorMultiplier: 1
-    m_FadeDuration: 0.1
-  m_SpriteState:
-    m_HighlightedSprite: {fileID: 0}
-    m_PressedSprite: {fileID: 0}
-    m_SelectedSprite: {fileID: 0}
-    m_DisabledSprite: {fileID: 0}
-  m_AnimationTriggers:
-    m_NormalTrigger: Normal
-    m_HighlightedTrigger: Highlighted
-    m_PressedTrigger: Pressed
-    m_SelectedTrigger: Selected
-    m_DisabledTrigger: Disabled
-  m_Interactable: 1
-  m_TargetGraphic: {fileID: 1920210057}
-  m_OnClick:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1539780933}
-        m_TargetAssemblyTypeName: RunePuzzle, Assembly-CSharp
-        m_MethodName: addSymbol
-        m_Mode: 3
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!222 &1920210059
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -7698,7 +7474,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Arrange the crystals by increasing voltage to harness their power '
+  m_text: 'Arrange the crystals by increasing energy to harness their power '
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -7829,7 +7605,7 @@ Transform:
   - {fileID: 1635390209}
   - {fileID: 178523279}
   - {fileID: 764490036}
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 891274931}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2089592576
 GameObject:
@@ -8074,7 +7850,8 @@ MonoBehaviour:
   textBox: {fileID: 1101780916}
   dialogueScreen: {fileID: 1301353071}
   lines:
-  - Green Crystal\nsmth smth
+  - Green Crystal\nA versatile crystal, the green crystal holds between 350-500 and
+    are commonly found in automobiles and larger appliances.
   hasCharName: 0
   changeScene: 0
   sceneID: 0
@@ -8170,4 +7947,3 @@ SceneRoots:
   - {fileID: 430907264}
   - {fileID: 1633303137}
   - {fileID: 1976420031}
-  - {fileID: 2065865546}

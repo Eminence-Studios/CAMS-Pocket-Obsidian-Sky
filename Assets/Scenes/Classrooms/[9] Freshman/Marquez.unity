@@ -3855,6 +3855,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::MultiPuzzleManager
   mainPuzzleName: MarquezPuzzle
   numOfPuzzles: 5
+  isTwoStep: 0
 --- !u!1 &876585870
 GameObject:
   m_ObjectHideFlags: 0
@@ -3961,17 +3962,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Dialogue
   textBox: {fileID: 1229214144}
   dialogueScreen: {fileID: 510418886}
-  nextScreen: {fileID: 0}
   lines: []
   hasCharName: 0
   changeScene: 0
   sceneID: 0
   isTeacherDialogue: 1
   teacherInteractionManager: {fileID: 1697977735}
-  hasSwitchSpeakers: 0
-  otherSpeaker: {fileID: 0}
-  self: {fileID: 0}
-  speakers: 
+  hasNextScene: 0
+  nextScreen: {fileID: 0}
 --- !u!4 &949658291
 Transform:
   m_ObjectHideFlags: 0
@@ -5221,7 +5219,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.18}
   m_AnchorMax: {x: 0.5, y: 0.18}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 1201.09, y: 191.547}
+  m_SizeDelta: {x: 1400, y: 191.547}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1232405586
 GameObject:
@@ -6985,7 +6983,7 @@ MonoBehaviour:
   - The future is looking bright. Try this to harness more potent light energy next
     time.
   afterSpellLines:
-  - Get those gears turning.
+  - Get those gears turning!
 --- !u!70 &1697977736
 CapsuleCollider2D:
   m_ObjectHideFlags: 0

@@ -137,7 +137,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!223 &2280403
 Canvas:
   m_ObjectHideFlags: 0
@@ -266,11 +266,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Dialogue
   textBox: {fileID: 694583873}
   dialogueScreen: {fileID: 1419386127}
-  lines:
-  - Hello friend.
-  - "It\u2019s important to be precise with your rune choice when writing spells."
-  - "Hello friend. It\u2019s important to be precise with your rune choice when writing
-    spells. Look around to create a well-constructed incantation."
+  lines: []
   hasCharName: 0
   changeScene: 0
   sceneID: 0
@@ -521,7 +517,6 @@ GameObject:
   - component: {fileID: 126063209}
   - component: {fileID: 126063212}
   - component: {fileID: 126063211}
-  - component: {fileID: 126063210}
   m_Layer: 5
   m_Name: Plant 4
   m_TagString: Untagged
@@ -549,62 +544,6 @@ RectTransform:
   m_AnchoredPosition: {x: 300, y: 115}
   m_SizeDelta: {x: 190, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &126063210
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 126063208}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Button
-  m_Navigation:
-    m_Mode: 3
-    m_WrapAround: 0
-    m_SelectOnUp: {fileID: 0}
-    m_SelectOnDown: {fileID: 0}
-    m_SelectOnLeft: {fileID: 0}
-    m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
-  m_Colors:
-    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
-    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
-    m_ColorMultiplier: 1
-    m_FadeDuration: 0.1
-  m_SpriteState:
-    m_HighlightedSprite: {fileID: 0}
-    m_PressedSprite: {fileID: 0}
-    m_SelectedSprite: {fileID: 0}
-    m_DisabledSprite: {fileID: 0}
-  m_AnimationTriggers:
-    m_NormalTrigger: Normal
-    m_HighlightedTrigger: Highlighted
-    m_PressedTrigger: Pressed
-    m_SelectedTrigger: Selected
-    m_DisabledTrigger: Disabled
-  m_Interactable: 1
-  m_TargetGraphic: {fileID: 126063211}
-  m_OnClick:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1539780933}
-        m_TargetAssemblyTypeName: RunePuzzle, Assembly-CSharp
-        m_MethodName: addSymbol
-        m_Mode: 3
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!114 &126063211
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1346,7 +1285,6 @@ GameObject:
   - component: {fileID: 366453916}
   - component: {fileID: 366453919}
   - component: {fileID: 366453918}
-  - component: {fileID: 366453917}
   m_Layer: 5
   m_Name: Plant 3
   m_TagString: Untagged
@@ -1374,62 +1312,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 170}
   m_SizeDelta: {x: 190, y: 300}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &366453917
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 366453915}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Button
-  m_Navigation:
-    m_Mode: 3
-    m_WrapAround: 0
-    m_SelectOnUp: {fileID: 0}
-    m_SelectOnDown: {fileID: 0}
-    m_SelectOnLeft: {fileID: 0}
-    m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
-  m_Colors:
-    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
-    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
-    m_ColorMultiplier: 1
-    m_FadeDuration: 0.1
-  m_SpriteState:
-    m_HighlightedSprite: {fileID: 0}
-    m_PressedSprite: {fileID: 0}
-    m_SelectedSprite: {fileID: 0}
-    m_DisabledSprite: {fileID: 0}
-  m_AnimationTriggers:
-    m_NormalTrigger: Normal
-    m_HighlightedTrigger: Highlighted
-    m_PressedTrigger: Pressed
-    m_SelectedTrigger: Selected
-    m_DisabledTrigger: Disabled
-  m_Interactable: 1
-  m_TargetGraphic: {fileID: 366453918}
-  m_OnClick:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1539780933}
-        m_TargetAssemblyTypeName: RunePuzzle, Assembly-CSharp
-        m_MethodName: addSymbol
-        m_Mode: 3
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!114 &366453918
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2049,7 +1931,8 @@ MonoBehaviour:
   textBox: {fileID: 996329639}
   dialogueScreen: {fileID: 1005970071}
   lines:
-  - Swiss Cheese (Monstera Deliciosa)\nsmth smth
+  - Swiss Cheese (Monstera Deliciosa)\nGrowing up to 65 feet in the wild, these climbers
+    also produce a rare fruit that takes over a year to ripen.
   hasCharName: 0
   changeScene: 0
   sceneID: 0
@@ -2375,7 +2258,9 @@ MonoBehaviour:
   textBox: {fileID: 1749631087}
   dialogueScreen: {fileID: 463749352}
   lines:
-  - Mint (Mentha)\nsmth smth
+  - "Mint (Mentha)\\nAlthough notorious for being invasive, this plant\u2019s strong
+    aroma naturally deters pests, and its rich menthol aids digestion, nausea, and
+    headaches."
   hasCharName: 0
   changeScene: 0
   sceneID: 0
@@ -2502,7 +2387,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.18}
   m_AnchorMax: {x: 0.5, y: 0.18}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 1201.09, y: 191.547}
+  m_SizeDelta: {x: 1400, y: 191.547}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &665486093
 MonoBehaviour:
@@ -2962,7 +2847,6 @@ GameObject:
   - component: {fileID: 688957647}
   - component: {fileID: 688957650}
   - component: {fileID: 688957649}
-  - component: {fileID: 688957648}
   m_Layer: 5
   m_Name: Plant 1
   m_TagString: Untagged
@@ -2990,62 +2874,6 @@ RectTransform:
   m_AnchoredPosition: {x: -600, y: 200}
   m_SizeDelta: {x: 190, y: 370}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &688957648
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 688957646}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Button
-  m_Navigation:
-    m_Mode: 3
-    m_WrapAround: 0
-    m_SelectOnUp: {fileID: 0}
-    m_SelectOnDown: {fileID: 0}
-    m_SelectOnLeft: {fileID: 0}
-    m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
-  m_Colors:
-    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
-    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
-    m_ColorMultiplier: 1
-    m_FadeDuration: 0.1
-  m_SpriteState:
-    m_HighlightedSprite: {fileID: 0}
-    m_PressedSprite: {fileID: 0}
-    m_SelectedSprite: {fileID: 0}
-    m_DisabledSprite: {fileID: 0}
-  m_AnimationTriggers:
-    m_NormalTrigger: Normal
-    m_HighlightedTrigger: Highlighted
-    m_PressedTrigger: Pressed
-    m_SelectedTrigger: Selected
-    m_DisabledTrigger: Disabled
-  m_Interactable: 1
-  m_TargetGraphic: {fileID: 688957649}
-  m_OnClick:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1539780933}
-        m_TargetAssemblyTypeName: RunePuzzle, Assembly-CSharp
-        m_MethodName: addSymbol
-        m_Mode: 3
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!114 &688957649
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3218,7 +3046,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.18}
   m_AnchorMax: {x: 0.5, y: 0.18}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 1201.09, y: 191.547}
+  m_SizeDelta: {x: 1400, y: 191.547}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &727230126
 GameObject:
@@ -3947,7 +3775,8 @@ MonoBehaviour:
   textBox: {fileID: 665486093}
   dialogueScreen: {fileID: 485955917}
   lines:
-  - Barrel Cactus (Ferocactus)\nsmth smth
+  - 'Barrel Cactus (Ferocactus)\nKnown for their long lives spanning between 50-100
+    years, these succulents store water which can be consumed in emergencies. '
   hasCharName: 0
   changeScene: 0
   sceneID: 0
@@ -4119,7 +3948,7 @@ Transform:
   m_GameObject: {fileID: 868659408}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 916.66016, y: 127.70003, z: -10}
+  m_LocalPosition: {x: 916.3759, y: 127.70003, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4625,7 +4454,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.18}
   m_AnchorMax: {x: 0.5, y: 0.18}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 1201.09, y: 191.547}
+  m_SizeDelta: {x: 1400, y: 191.547}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &996329639
 MonoBehaviour:
@@ -4976,7 +4805,6 @@ GameObject:
   - component: {fileID: 1029279073}
   - component: {fileID: 1029279076}
   - component: {fileID: 1029279075}
-  - component: {fileID: 1029279074}
   m_Layer: 5
   m_Name: Plant 5
   m_TagString: Untagged
@@ -5004,62 +4832,6 @@ RectTransform:
   m_AnchoredPosition: {x: 600, y: 200}
   m_SizeDelta: {x: 240, y: 370}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1029279074
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1029279072}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Button
-  m_Navigation:
-    m_Mode: 3
-    m_WrapAround: 0
-    m_SelectOnUp: {fileID: 0}
-    m_SelectOnDown: {fileID: 0}
-    m_SelectOnLeft: {fileID: 0}
-    m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
-  m_Colors:
-    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
-    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
-    m_ColorMultiplier: 1
-    m_FadeDuration: 0.1
-  m_SpriteState:
-    m_HighlightedSprite: {fileID: 0}
-    m_PressedSprite: {fileID: 0}
-    m_SelectedSprite: {fileID: 0}
-    m_DisabledSprite: {fileID: 0}
-  m_AnimationTriggers:
-    m_NormalTrigger: Normal
-    m_HighlightedTrigger: Highlighted
-    m_PressedTrigger: Pressed
-    m_SelectedTrigger: Selected
-    m_DisabledTrigger: Disabled
-  m_Interactable: 1
-  m_TargetGraphic: {fileID: 1029279075}
-  m_OnClick:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1539780933}
-        m_TargetAssemblyTypeName: RunePuzzle, Assembly-CSharp
-        m_MethodName: addSymbol
-        m_Mode: 3
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!114 &1029279075
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5155,7 +4927,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Ms. Lee
+  m_text: Mr. Gonzales
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: d6bdea585905fb44da289730651c8c1f, type: 2}
   m_sharedMaterial: {fileID: -3929634279447016833, guid: d6bdea585905fb44da289730651c8c1f, type: 2}
@@ -5511,15 +5283,15 @@ RectTransform:
   m_GameObject: {fileID: 1142613610}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.38113424, y: 0.38113424, z: 0.38113424}
+  m_LocalScale: {x: 1, y: 1, z: 0.38113424}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1248596487}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.2, y: 0.3}
   m_AnchorMax: {x: 0.2, y: 0.3}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 374.68298, y: 471.42102}
+  m_AnchoredPosition: {x: -5, y: 0}
+  m_SizeDelta: {x: 110, y: 200}
   m_Pivot: {x: 0.5, y: 0}
 --- !u!114 &1142613612
 MonoBehaviour:
@@ -5534,16 +5306,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 0, b: 0, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 8550463751882788731, guid: c30dc7e18a4853c41b9110eac08ecfbe, type: 3}
   m_Type: 0
-  m_PreserveAspect: 0
+  m_PreserveAspect: 1
   m_FillCenter: 1
   m_FillMethod: 4
   m_FillAmount: 1
@@ -6003,10 +5775,27 @@ MonoBehaviour:
   teacherName: Gonzales
   dialoguePopUp: {fileID: 1419386126}
   dialogueManager: {fileID: 47686131}
-  initalLines: []
-  afterPuzzleLines: []
-  afterBattleLines: []
-  afterSpellLines: []
+  initalLines:
+  - Hey there!
+  - Learning more about life magic are we?
+  - "Everyone calls it plant magic, but it\u2019s so much more than that; precision
+    is important."
+  - To fully harness the power of this magic, you have to understand the fundamental
+    makeup of various plants.
+  - Learn more about the plants around the room.
+  afterPuzzleLines:
+  - You did it.
+  - See, what you did was sensing the energy signature in each plant.
+  - Now get a taste of this energy, observe and learn.
+  afterBattleLines:
+  - Not bad.
+  - Take this spell.
+  afterSpellLines:
+  - "A word of caution\u2026I\u2019m sure you\u2019ve seen Obsidian around, those
+    dark black rocks. Stay away from them."
+  - They absorb energy. Many of the other teachers are researching them, but I think
+    we know enough about them to just keep them secure, hidden in the school.
+  - Stay safe. Get on your way.
 --- !u!70 &1246077104
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -6647,7 +6436,8 @@ MonoBehaviour:
   textBox: {fileID: 2071108810}
   dialogueScreen: {fileID: 126423684}
   lines:
-  - Boxwood (Buxus)\nsmth smth
+  - "Boxwood (Buxus)\\nThis plant\u2019s use ranges from tools and instruments due
+    to its dense, hard wood to medicine, being the only evergreen to be used pharmaceutically. "
   hasCharName: 0
   changeScene: 0
   sceneID: 0
@@ -7012,7 +6802,6 @@ GameObject:
   - component: {fileID: 1481837610}
   - component: {fileID: 1481837613}
   - component: {fileID: 1481837612}
-  - component: {fileID: 1481837611}
   m_Layer: 5
   m_Name: Plant 2
   m_TagString: Untagged
@@ -7040,62 +6829,6 @@ RectTransform:
   m_AnchoredPosition: {x: -300, y: 140}
   m_SizeDelta: {x: 190, y: 250}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1481837611
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1481837609}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Button
-  m_Navigation:
-    m_Mode: 3
-    m_WrapAround: 0
-    m_SelectOnUp: {fileID: 0}
-    m_SelectOnDown: {fileID: 0}
-    m_SelectOnLeft: {fileID: 0}
-    m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
-  m_Colors:
-    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
-    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
-    m_ColorMultiplier: 1
-    m_FadeDuration: 0.1
-  m_SpriteState:
-    m_HighlightedSprite: {fileID: 0}
-    m_PressedSprite: {fileID: 0}
-    m_SelectedSprite: {fileID: 0}
-    m_DisabledSprite: {fileID: 0}
-  m_AnimationTriggers:
-    m_NormalTrigger: Normal
-    m_HighlightedTrigger: Highlighted
-    m_PressedTrigger: Pressed
-    m_SelectedTrigger: Selected
-    m_DisabledTrigger: Disabled
-  m_Interactable: 1
-  m_TargetGraphic: {fileID: 1481837612}
-  m_OnClick:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1539780933}
-        m_TargetAssemblyTypeName: RunePuzzle, Assembly-CSharp
-        m_MethodName: addSymbol
-        m_Mode: 3
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!114 &1481837612
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7433,7 +7166,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1539780933
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8223,7 +7956,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.18}
   m_AnchorMax: {x: 0.5, y: 0.18}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 1201.09, y: 191.547}
+  m_SizeDelta: {x: 1400, y: 191.547}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1749631087
 MonoBehaviour:
@@ -8581,7 +8314,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.18}
   m_AnchorMax: {x: 0.5, y: 0.18}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 1201.09, y: 191.547}
+  m_SizeDelta: {x: 1400, y: 191.547}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1769761756
 MonoBehaviour:
@@ -9969,7 +9702,9 @@ MonoBehaviour:
   textBox: {fileID: 1769761756}
   dialogueScreen: {fileID: 1981118531}
   lines:
-  - Snake Plant (Dracaena Trifasciata)\nsmth smth
+  - "Snake Plant (Dracaena Trifasciata)\\nDubbed the \u201CNeglect-Me\u201D for its
+    incredible ability to thrive with almost no care, these air-purifying succulents
+    are considered symbols of good luck and commonly found in homes. "
   hasCharName: 0
   changeScene: 0
   sceneID: 0
@@ -10148,7 +9883,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.18}
   m_AnchorMax: {x: 0.5, y: 0.18}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 1201.09, y: 191.547}
+  m_SizeDelta: {x: 1400, y: 191.547}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2071108810
 MonoBehaviour:

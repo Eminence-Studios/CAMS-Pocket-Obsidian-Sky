@@ -972,10 +972,29 @@ MonoBehaviour:
   teacherName: Almeida
   dialoguePopUp: {fileID: 208243415}
   dialogueManager: {fileID: 1165950374}
-  initalLines: []
-  afterPuzzleLines: []
-  afterBattleLines: []
-  afterSpellLines: []
+  initalLines:
+  - Hello! Bonjour! Ciao! Hej!
+  - Welcome in, charName!
+  - I like to think of myself as a culture enthusiast, and my recent fascination
+    is the ancient magic of these Obsidian blocks.
+  - "But you\u2019re here for a trial, yes?"
+  - You must be sensitive to respond to the barest traces of water to harness water
+    magic.
+  - Go try dodging those water jets.
+  afterPuzzleLines:
+  - Whew, that was a little tiring.
+  - "But I\u2019m ready to go, the force of a wave can\u2019t be stopped, on to our
+    duel."
+  afterBattleLines:
+  - "Here\u2019s what I\u2019ve discovered, charName. These Obsidian blocks are surely
+    made out of ancient magic, much older than you and me."
+  - "I don\u2019t exactly like having so much of it around, but it\u2019s important
+    to understand how they work, to prevent any uprisings from happening like before\u2026
+    Err, I\u2019ve probably said too much."
+  - Here, to help you on your way to becoming an even more powerful magician.
+  afterSpellLines:
+  - "Remember, it\u2019s not always the more the merrier, even when it comes to knowledge."
+  - Pick and choose your masteries carefully.
 --- !u!70 &620195739
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -1552,7 +1571,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.18}
   m_AnchorMax: {x: 0.5, y: 0.18}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 1201.09, y: 191.547}
+  m_SizeDelta: {x: 1400, y: 191.547}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &915088265
 GameObject:

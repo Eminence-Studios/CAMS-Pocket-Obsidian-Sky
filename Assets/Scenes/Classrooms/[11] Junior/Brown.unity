@@ -153,7 +153,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.2, y: 0.3}
   m_AnchorMax: {x: 0.2, y: 0.3}
-  m_AnchoredPosition: {x: 0, y: -5}
+  m_AnchoredPosition: {x: 0, y: 5}
   m_SizeDelta: {x: 100, y: 150}
   m_Pivot: {x: 0.5, y: 0}
 --- !u!114 &22280178
@@ -176,9 +176,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 423971171140905283, guid: 9a78aaf5b10e6614b82eccabc24b7601, type: 3}
+  m_Sprite: {fileID: -5829722220832839305, guid: 5942ba8d420b6e743a9c33a405216a17, type: 3}
   m_Type: 0
-  m_PreserveAspect: 0
+  m_PreserveAspect: 1
   m_FillCenter: 1
   m_FillMethod: 4
   m_FillAmount: 1
@@ -283,7 +283,7 @@ GameObject:
   - component: {fileID: 91039863}
   - component: {fileID: 91039862}
   m_Layer: 5
-  m_Name: Spiral Shell Trigger
+  m_Name: Hydra Rune Trigger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -529,7 +529,7 @@ GameObject:
   - component: {fileID: 102377410}
   - component: {fileID: 102377409}
   m_Layer: 5
-  m_Name: River Shell Trigger
+  m_Name: Fontus Rune Trigger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -916,7 +916,7 @@ GameObject:
   - component: {fileID: 126571463}
   - component: {fileID: 126571462}
   m_Layer: 5
-  m_Name: Tear Shell Trigger
+  m_Name: Pontus Rune Trigger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1086,7 +1086,7 @@ GameObject:
   - component: {fileID: 150260672}
   - component: {fileID: 150260671}
   m_Layer: 5
-  m_Name: Spiral Shell
+  m_Name: Hydra Rune
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1353,10 +1353,27 @@ MonoBehaviour:
   teacherName: Brown
   dialoguePopUp: {fileID: 1256853252}
   dialogueManager: {fileID: 1682790333}
-  initalLines: []
-  afterPuzzleLines: []
-  afterBattleLines: []
-  afterSpellLines: []
+  initalLines:
+  - Come in, come in!
+  - "I\u2019m Ms. Brown. Nice to meet you."
+  - "I see you\u2019ve come to master water, one of the most diverse and strongest
+    elements in my opinion."
+  - Lucky for you, I have just the task to help you get started. See those walls
+    of ice over there?
+  - Try turning them to water. Then try taming some sea creatures using the water.
+  - But beware! The tide will be slightly off, so make sure to correct it before
+    calling creatures from the deep.
+  - "Come back once you\u2019re successful."
+  afterPuzzleLines:
+  - Wonderful job, wonderful job!
+  - It seems you are prepared for a harder test. Shall we start?
+  afterBattleLines:
+  - Water is a diverse discipline.
+  - "You\u2019re sure to find a specialty in it. Here, take this spell."
+  afterSpellLines:
+  - "Don\u2019t be afraid of the depths."
+  - We often fear what is unknown, but it is only by conquering those fears can we
+    push the limits.
 --- !u!1 &151359841
 GameObject:
   m_ObjectHideFlags: 0
@@ -1371,7 +1388,7 @@ GameObject:
   - component: {fileID: 151359844}
   - component: {fileID: 151359843}
   m_Layer: 5
-  m_Name: Wave Shell Trigger
+  m_Name: Nereus Rune Trigger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1935,7 +1952,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.18}
   m_AnchorMax: {x: 0.5, y: 0.18}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 1201.09, y: 191.547}
+  m_SizeDelta: {x: 1400, y: 191.547}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &353239830
 MonoBehaviour:
@@ -2083,7 +2100,8 @@ MonoBehaviour:
   textBox: {fileID: 1990177150}
   dialogueScreen: {fileID: 1922935393}
   lines:
-  - Tear Shell\nsmth smth
+  - Pontus Rune\nGrants water healing properties, allowing it to be used for medical
+    aid in dire situations
   hasCharName: 0
   changeScene: 0
   sceneID: 0
@@ -2228,7 +2246,8 @@ MonoBehaviour:
   textBox: {fileID: 870473012}
   dialogueScreen: {fileID: 800255206}
   lines:
-  - Whirlpool Shell\nsmth smth
+  - Venilia Rune\nChanges the physical state of any water to either liquid, vapor,
+    or ice
   hasCharName: 0
   changeScene: 0
   sceneID: 0
@@ -2381,7 +2400,7 @@ GameObject:
   - component: {fileID: 493979817}
   - component: {fileID: 493979816}
   m_Layer: 5
-  m_Name: Splash Shell
+  m_Name: Glaucus Rune
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2769,7 +2788,7 @@ GameObject:
   - component: {fileID: 536977351}
   - component: {fileID: 536977350}
   m_Layer: 5
-  m_Name: Wave Shell
+  m_Name: Nereus Rune
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2897,7 +2916,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.18}
   m_AnchorMax: {x: 0.5, y: 0.18}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 1201.09, y: 191.547}
+  m_SizeDelta: {x: 1400, y: 191.547}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &542718834
 MonoBehaviour:
@@ -3465,7 +3484,7 @@ GameObject:
   - component: {fileID: 658992202}
   - component: {fileID: 658992201}
   m_Layer: 5
-  m_Name: River Shell
+  m_Name: Fontus Rune
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3857,7 +3876,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.18}
   m_AnchorMax: {x: 0.5, y: 0.18}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 1201.09, y: 191.547}
+  m_SizeDelta: {x: 1400, y: 191.547}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &709610008
 MonoBehaviour:
@@ -3993,7 +4012,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.18}
   m_AnchorMax: {x: 0.5, y: 0.18}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 1201.09, y: 191.547}
+  m_SizeDelta: {x: 1400, y: 191.547}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &767272888
 MonoBehaviour:
@@ -4107,7 +4126,7 @@ GameObject:
   - component: {fileID: 800255208}
   - component: {fileID: 800255207}
   m_Layer: 5
-  m_Name: Whirlpool Shell
+  m_Name: Venilia Rune
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4309,7 +4328,7 @@ MonoBehaviour:
   collider: {fileID: 1411225889}
   closeButton: {fileID: 934314146}
   clearButton: {fileID: 1311640675}
-  code: 0123
+  code: 4156
   playerPrefVariable: BrownPuzzle
   progressTexts:
   - Enter the runes in the correct order to cast the spell
@@ -4607,7 +4626,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.18}
   m_AnchorMax: {x: 0.5, y: 0.18}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 1201.09, y: 191.547}
+  m_SizeDelta: {x: 1400, y: 191.547}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &870473012
 MonoBehaviour:
@@ -4722,7 +4741,7 @@ GameObject:
   - component: {fileID: 877477967}
   - component: {fileID: 877477966}
   m_Layer: 5
-  m_Name: Splash Shell Trigger
+  m_Name: Glaucus Rune Trigger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5323,7 +5342,8 @@ MonoBehaviour:
   textBox: {fileID: 1760328786}
   dialogueScreen: {fileID: 150260670}
   lines:
-  - Spiral Shell\nsmth smth
+  - Hydra Rune\nStirs whirlpools capable of sinking even the greatest ships when
+    merged with other runes
   hasCharName: 0
   changeScene: 0
   sceneID: 0
@@ -5528,7 +5548,7 @@ MonoBehaviour:
   textBox: {fileID: 709610008}
   dialogueScreen: {fileID: 1157293242}
   lines:
-  - Tide Shell\nsmth smth
+  - Triton Rune\nReverses the tide and current of the water
   hasCharName: 0
   changeScene: 0
   sceneID: 0
@@ -5658,7 +5678,8 @@ MonoBehaviour:
   textBox: {fileID: 1463198669}
   dialogueScreen: {fileID: 493979815}
   lines:
-  - Splash Shell\nsmth smth
+  - Glaucus Rune\nAllows the caster to communicate and tame sea creatures for a short
+    period of time
   hasCharName: 0
   changeScene: 0
   sceneID: 0
@@ -5713,7 +5734,7 @@ MonoBehaviour:
   textBox: {fileID: 353239830}
   dialogueScreen: {fileID: 658992200}
   lines:
-  - River Shell\nsmth smth
+  - Fontus Rune\nCleanses water, rendering it suitable for drinking
   hasCharName: 0
   changeScene: 0
   sceneID: 0
@@ -5852,7 +5873,8 @@ MonoBehaviour:
   textBox: {fileID: 767272888}
   dialogueScreen: {fileID: 536977349}
   lines:
-  - Wave Shell\nsmth smth
+  - Nereus Rune\nReflects the caster in the water, providing words of advice needed
+    most
   hasCharName: 0
   changeScene: 0
   sceneID: 0
@@ -6086,7 +6108,7 @@ GameObject:
   - component: {fileID: 1157293244}
   - component: {fileID: 1157293243}
   m_Layer: 5
-  m_Name: Tide Shell
+  m_Name: Triton Rune
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7738,7 +7760,7 @@ GameObject:
   - component: {fileID: 1400831463}
   - component: {fileID: 1400831462}
   m_Layer: 5
-  m_Name: Whirlpool Shell Trigger
+  m_Name: Venilia Rune Trigger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8260,7 +8282,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.18}
   m_AnchorMax: {x: 0.5, y: 0.18}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 1201.09, y: 191.547}
+  m_SizeDelta: {x: 1400, y: 191.547}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1433809720
 MonoBehaviour:
@@ -8396,7 +8418,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.18}
   m_AnchorMax: {x: 0.5, y: 0.18}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 1201.09, y: 191.547}
+  m_SizeDelta: {x: 1400, y: 191.547}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1463198669
 MonoBehaviour:
@@ -9101,7 +9123,7 @@ GameObject:
   - component: {fileID: 1642044415}
   - component: {fileID: 1642044414}
   m_Layer: 5
-  m_Name: Hook Shell Trigger
+  m_Name: Ceto Rune Trigger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9648,11 +9670,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Dialogue
   textBox: {fileID: 1433809720}
   dialogueScreen: {fileID: 1256853255}
-  lines:
-  - Hello friend.
-  - "It\u2019s important to be precise with your rune choice when writing spells."
-  - "Hello friend. It\u2019s important to be precise with your rune choice when writing
-    spells. Look around to create a well-constructed incantation."
+  lines: []
   hasCharName: 0
   changeScene: 0
   sceneID: 0
@@ -9948,7 +9966,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.18}
   m_AnchorMax: {x: 0.5, y: 0.18}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 1201.09, y: 191.547}
+  m_SizeDelta: {x: 1400, y: 191.547}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1760328786
 MonoBehaviour:
@@ -10316,7 +10334,7 @@ GameObject:
   - component: {fileID: 1820391665}
   - component: {fileID: 1820391664}
   m_Layer: 5
-  m_Name: Hook Shell
+  m_Name: Ceto Rune
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10456,7 +10474,7 @@ MonoBehaviour:
   textBox: {fileID: 542718834}
   dialogueScreen: {fileID: 1820391663}
   lines:
-  - Hook Shell\nsmth smth
+  - Ceto Rune\nCalls upon sea monsters hidden in the depths of the sea
   hasCharName: 0
   changeScene: 0
   sceneID: 0
@@ -10562,7 +10580,7 @@ GameObject:
   - component: {fileID: 1893927050}
   - component: {fileID: 1893927049}
   m_Layer: 5
-  m_Name: Tide Shell Trigger
+  m_Name: Triton Rune Trigger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -11004,7 +11022,7 @@ GameObject:
   - component: {fileID: 1922935395}
   - component: {fileID: 1922935394}
   m_Layer: 5
-  m_Name: Tear Shell
+  m_Name: Pontus Rune Trigger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -11132,7 +11150,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.18}
   m_AnchorMax: {x: 0.5, y: 0.18}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 1201.09, y: 191.547}
+  m_SizeDelta: {x: 1400, y: 191.547}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1990177150
 MonoBehaviour:
@@ -11554,7 +11572,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Ms. Lee
+  m_text: Ms. Brown
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: d6bdea585905fb44da289730651c8c1f, type: 2}
   m_sharedMaterial: {fileID: -3929634279447016833, guid: d6bdea585905fb44da289730651c8c1f, type: 2}
