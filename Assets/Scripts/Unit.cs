@@ -22,7 +22,7 @@ public class Unit : MonoBehaviour
     public int unitSpDef; // special defense
     public int statusCondition;
 
-    public int specialization;
+    public int specialization; // 0 for physical attack and 1 for magicial attack
 
     public int energy = 0;
     public int maxEnergy = 6;

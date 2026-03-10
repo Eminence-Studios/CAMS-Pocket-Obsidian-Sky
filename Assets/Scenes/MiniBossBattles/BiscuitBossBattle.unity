@@ -507,7 +507,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BattleSystem
   playerPrefab: {fileID: 7447560617879348617, guid: 78b9b1cb57826d0459e4fd43b1c2e539, type: 3}
-  enemyPrefab: {fileID: 6326979869521894091, guid: 3efb901040089d744864c0994c35db3f, type: 3}
+  enemyPrefab: {fileID: 6326979869521894091, guid: cb5a69611a281b0429990add1bf93639, type: 3}
   playerBattleStation: {fileID: 0}
   enemyBattleStation: {fileID: 0}
   state: 0
@@ -586,7 +586,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Buff
+  m_text: Fourth
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1332,9 +1332,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Heal
-
-'
+  m_text: Third
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -2609,8 +2607,8 @@ GameObject:
   m_Component:
   - component: {fileID: 2037194615}
   - component: {fileID: 2037194618}
-  - component: {fileID: 2037194617}
   - component: {fileID: 2037194616}
+  - component: {fileID: 2037194617}
   m_Layer: 5
   m_Name: Button3
   m_TagString: Untagged
@@ -2684,12 +2682,24 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 257947101}
         m_TargetAssemblyTypeName: BattleSystem, Assembly-CSharp
-        m_MethodName: onHealButton
+        m_MethodName: onThirdButton
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: -3893745703522269357, guid: 78b9b1cb57826d0459e4fd43b1c2e539, type: 3}
+        m_TargetAssemblyTypeName: UniqueMoves, Assembly-CSharp
+        m_MethodName: changeUniqueMove
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 3
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0

@@ -351,7 +351,11 @@ public class BattleSystem : MonoBehaviour
                 Debug.Log("(blank) attack couldn't break through the defense!");
             }
 
-            yield return new WaitForSeconds(1f);
+            List<int> buffParameters = playerMoveset.determineUniqueMove();
+            playerUnit.buffStats(buffParameters);
+            yield return new WaitForSeconds(2f);
+
+            
             if (isDead)
             {
                 state = BattleState.WON;

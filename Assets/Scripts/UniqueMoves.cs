@@ -1,6 +1,7 @@
 using UnityEngine;
 using System;
 using System.Collections.Generic;
+using UnityEditor;
 
 /*
     - Handles unique moves that units can use in battle by assigning each one a number that
@@ -17,23 +18,25 @@ public class UniqueMoves : MonoBehaviour
     // [atk, def, spd, acc, status effect]
     public List<int> determineUniqueMove() // will return the list of parameters to be used in general buff/debuff procedure
     {
+        Unit moveType = GetComponent<Unit>();
         Unit unitComponent = GetComponent<Unit>();
         if (moveNumber == 1) // sonic boom
         {
-            moveParameters = new List<int> { 1, 5, 2, 0, 0 };
-            Debug.Log(unitComponent.unitName + " used Sonic Boom! Defense increased by 5, Speed increased by 2!");
+            moveParameters = new List<int> { 0, 5, 2, 0, 0 };
+            Debug.Log(unitComponent.unitName + " used Sonic Boom! Chance to increase defense by 5 and speed by 2!");
+            moveType.specialization = 1;
             return moveParameters;
         }
         if (moveNumber == 2) // thunderbolt
         {
             moveParameters = new List<int> { 0, 2, 2, 2, 0 };
-            Debug.Log(unitComponent.unitName + " used Thunderbolt! Defense increased by 2, Speed increased by 2, Accuracy increased by 2!");
+            Debug.Log(unitComponent.unitName + " used Thunderbolt! Chance to increase defense by 2, speed by 2, and accuracy by 2!");
             return moveParameters;
         }
         if (moveNumber == 3) // wall of foliage
         {
             moveParameters = new List<int> { 0, 2, 0, 0, 0 };
-            Debug.Log(unitComponent.unitName + " used Wall of Foliage! Defense increased by 2");
+            Debug.Log(unitComponent.unitName + " used Wall of Foliage! Chance to increase defense by 2");
             return moveParameters;
         }
         if (moveNumber == 4) // flamethrower
@@ -50,5 +53,12 @@ public class UniqueMoves : MonoBehaviour
         // {
 
         //  }
+    }
+
+    public void changeUniqueMove(int newMoveNumber) // will be called by the button methods
+    {
+        Unit unitSpecialization = GetComponent<Unit>();
+        UniqueMoves unitComponent = GetComponent<Unit>().GetComponent<UniqueMoves>();
+        unitComponent.moveNumber = newMoveNumber;
     }
 }
