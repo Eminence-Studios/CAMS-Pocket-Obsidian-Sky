@@ -18,11 +18,13 @@ public class UniqueMoves : MonoBehaviour
     // [atk, def, spd, acc, status effect]
     public List<int> determineUniqueMove() // will return the list of parameters to be used in general buff/debuff procedure
     {
+        Unit moveType = GetComponent<Unit>();
         Unit unitComponent = GetComponent<Unit>();
         if (moveNumber == 1) // sonic boom
         {
             moveParameters = new List<int> { 0, 5, 2, 0, 0 };
             Debug.Log(unitComponent.unitName + " used Sonic Boom! Chance to increase defense by 5 and speed by 2!");
+            moveType.specialization = 1;
             return moveParameters;
         }
         if (moveNumber == 2) // thunderbolt
@@ -55,7 +57,7 @@ public class UniqueMoves : MonoBehaviour
 
     public void changeUniqueMove(int newMoveNumber) // will be called by the button methods
     {
-        
+        Unit unitSpecialization = GetComponent<Unit>();
         UniqueMoves unitComponent = GetComponent<Unit>().GetComponent<UniqueMoves>();
         unitComponent.moveNumber = newMoveNumber;
     }
