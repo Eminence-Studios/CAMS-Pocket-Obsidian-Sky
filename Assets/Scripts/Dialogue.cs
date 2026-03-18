@@ -13,13 +13,16 @@ public class Dialogue : MonoBehaviour
     public string[] lines;
     public bool hasCharName;
 
+    [Header("Changing Scene Parameters")]
     public bool changeScene;
     public int sceneID;
 
+    [Header("Teacher Dialogue Parameters")]
     public bool isTeacherDialogue;
     // public string teacherName;
     public TeacherInteraction teacherInteractionManager;
 
+    [Header("Following Canvas Parameters")]
     public bool hasNextScene;
     [SerializeField] Canvas nextScreen;
 

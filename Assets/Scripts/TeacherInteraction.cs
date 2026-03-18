@@ -8,6 +8,7 @@ public class TeacherInteraction : MonoBehaviour
     [SerializeField] GameObject dialoguePopUp;
     [SerializeField] Dialogue dialogueManager;
 
+    [Header("Teacher Lines")]
     public string[] initalLines;
     public string[] afterPuzzleLines;
     public string[] afterBattleLines;
