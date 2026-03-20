@@ -2,6 +2,7 @@ using UnityEngine;
 using System;
 using System.Collections.Generic;
 using UnityEditor;
+using UnityEngine.Rendering.Universal.Internal;
 
 /*
     - Handles unique moves that units can use in battle by assigning each one a number that
@@ -13,9 +14,16 @@ using UnityEditor;
 public class UniqueMoves : MonoBehaviour
 {
     public int moveNumber; // moves will be identified by numbers
+    public int basicMoveNumber; // will be used to store the original move number for the unit so that it can be restored after using a unique move
+    private int moveBeingUsed;
     List<int> moveParameters = new List<int>(); // list to hold parameters for each unique move
     // the list of parameters will be structured as follows vv
     // [atk, def, spd, acc, status effect]
+
+    public void basicUniqueMove(int tempMoveNum) // is for the bosses to swtich in between boss turns and normal turns 
+    {
+        moveBeingUsed = moveNumber;
+    }
     public List<int> determineUniqueMove() // will return the list of parameters to be used in general buff/debuff procedure
     {
         Unit moveType = GetComponent<Unit>();
@@ -45,6 +53,24 @@ public class UniqueMoves : MonoBehaviour
             Debug.Log(unitComponent.unitName + " used Flamethrower! Attack may increase by 2");
             return moveParameters;
         }
+        if (moveNumber == 5) // slam dunk
+        {
+            moveParameters = new List<int> { 1, 0, 0, 0, 0 }; // inflicts paralysis status effect
+            Debug.Log(unitComponent.unitName + " used Slam Dunk! Chance to increase attack by 1");
+            moveType.specialization = 0;
+            return moveParameters;
+        }
+        if (moveNumber == 6) // guard
+        {
+            moveParameters = new List<int> { 0, 1, 0, 0, 0 }; // +1 def
+            Debug.Log(unitComponent.unitName + " used Guard! Chance to increase defense by 1");
+            moveType.specialization = 0;
+            return moveParameters;
+        }
+        if (moveNumber == 7)
+        {
+            return null;
+        }
         else
         {
             return null; // placeholder for now
@@ -60,5 +86,20 @@ public class UniqueMoves : MonoBehaviour
         Unit unitSpecialization = GetComponent<Unit>();
         UniqueMoves unitComponent = GetComponent<Unit>().GetComponent<UniqueMoves>();
         unitComponent.moveNumber = newMoveNumber;
+        Debug.Log(unitComponent.moveNumber);
+    }
+
+    public void changeUniqueMove(bool isBossTurn) // overloaded method for bosses to switch between normal and boss turns
+    {
+        Unit unitSpecialization = GetComponent<Unit>();
+        UniqueMoves unitComponent = GetComponent<Unit>().GetComponent<UniqueMoves>();  
+        if (isBossTurn)
+        {
+            moveBeingUsed = unitComponent.moveNumber; // will use sonic boom on boss turns
+        }
+        else
+        {
+            moveBeingUsed = basicMoveNumber; // will switch back to the original move on normal turns
+        }
     }
 }

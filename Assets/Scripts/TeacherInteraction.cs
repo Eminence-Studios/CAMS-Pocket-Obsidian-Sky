@@ -13,6 +13,8 @@ public class TeacherInteraction : MonoBehaviour
     public string[] afterBattleLines;
     public string[] afterSpellLines;
 
+    public GameObject battleCanvas;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -67,7 +69,7 @@ public class TeacherInteraction : MonoBehaviour
         {
             // open battle canvas
             Debug.Log("Open Battle");
-
+            battleCanvas.SetActive(true);
         }
         else
         {

@@ -10,6 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 398384215205103568}
   - component: {fileID: 7216690576865162144}
+  - component: {fileID: -2953420978907551061}
+  - component: {fileID: 1236665923831225381}
   m_Layer: 0
   m_Name: Lee
   m_TagString: Untagged
@@ -26,8 +28,8 @@ Transform:
   m_GameObject: {fileID: 7779419570542410751}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 6.62, y: 1.54, z: 0}
+  m_LocalScale: {x: 0.5247606, y: 0.3837649, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -79,7 +81,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
+  m_Sprite: {fileID: 423971171140905283, guid: 9a78aaf5b10e6614b82eccabc24b7601, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -90,3 +92,43 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &-2953420978907551061
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7779419570542410751}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8d77f9c6f62240445a4cd355d08f7f85, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Unit
+  unitSpd: 5
+  unitAcc: 4
+  unitName: Lee
+  playerName: 
+  unitHp: 25
+  unitMaxHp: 25
+  unitAtk: 4
+  unitSpAtk: 3
+  unitDef: 4
+  unitSpDef: 3
+  statusCondition: 0
+  specialization: 0
+  energy: 0
+  maxEnergy: 6
+--- !u!114 &1236665923831225381
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7779419570542410751}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5ba745fa70966c84aaaf539ba944547d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::UniqueMoves
+  moveNumber: 6
+  basicMoveNumber: 5

@@ -214,6 +214,14 @@ public class BattleSystem : MonoBehaviour
             StartCoroutine(playerUniqueMove(attackStarted));
         }
     }
+
+    public void onSkipButton()
+    {
+        if (state != BattleState.PLAYERTURN)
+            return; // do nothing
+
+        StartCoroutine(playerSkipTurn());
+    }
     IEnumerator playerAttack(bool attackStarted)
     {
         if (attackStarted)
@@ -350,7 +358,7 @@ public class BattleSystem : MonoBehaviour
             {
                 Debug.Log("(blank) attack couldn't break through the defense!");
             }
-
+            
             List<int> buffParameters = playerMoveset.determineUniqueMove();
             playerUnit.buffStats(buffParameters);
             yield return new WaitForSeconds(2f);
@@ -435,6 +443,20 @@ public class BattleSystem : MonoBehaviour
             yield return null;
         }
     }
+
+    IEnumerator playerSkipTurn()
+    {
+        Debug.Log("Player skips turn to preserve and gain energy.");
+        yield return new WaitForSeconds(2f);
+
+        // Gain additional energy for skipping (in addition to the +1 from playerTurn)
+        playerUnit.energy += 1;
+        playerHUD.setEnergyHUD(playerUnit);
+
+        state = BattleState.ENEMYTURN;
+        StartCoroutine(basicEnemyTurn());
+    }
+
     void endBattle()
     {
         if (state == BattleState.WON)
@@ -461,7 +483,11 @@ public class BattleSystem : MonoBehaviour
 
             yield return new WaitForSeconds(2f);
 
-            bool isDead = playerUnit.takeDamage(enemyUnit.unitAtk, 0);
+            bool isDead = playerUnit.takeDamage(enemyUnit.unitAtk, enemyUnit.specialization);
+            enemyMoveset.changeUniqueMove(false);
+            List<int> buffParameters = enemyMoveset.determineUniqueMove();
+            enemyUnit.buffStats(buffParameters); // will proc the chance for it's special move to buff stats
+
             if (playerUnit.unitHp == playerHUD.hpSlider.value)
             {
                 Debug.Log("The attack couldn't break through the defense!");
@@ -499,6 +525,7 @@ public class BattleSystem : MonoBehaviour
         else if (playerUnit.unitHp == playerHUD.hpSlider.value && choice != 0)
         {
             // still goes through with the buffs despite no damage being done
+            enemyMoveset.changeUniqueMove(true);
             List<int> buffParameters = enemyMoveset.determineUniqueMove();
             enemyUnit.buffStats(buffParameters); // will proc the chance for it's special move to buff stats
             yield return new WaitForSeconds(2f);
@@ -532,8 +559,8 @@ public class BattleSystem : MonoBehaviour
 
     int bossDecision()
     {
-        int decision = UnityEngine.Random.Range(1, 3);
-        if (decision == 1)
+        int decision = UnityEngine.Random.Range(1, 11);
+        if (decision < 8) 
         {
             if (enemyUnit.specialization == 0)
             {
