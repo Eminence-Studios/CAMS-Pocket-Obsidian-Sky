@@ -13,6 +13,8 @@ public class LoadScene : MonoBehaviour
     public string[] playerPrefTrigger;
     public GameObject[] triggers;
 
+    public SpellbookManager spellbookManager;
+
     private Vector3[] locationsCampus;
     private Vector3[] locations1000;
     private Vector3[] locations2000;
@@ -41,6 +43,18 @@ public class LoadScene : MonoBehaviour
             if (playerPrefLocation.Equals("CampusLocation"))
             {
                 player.position = locationsCampus[location];
+                GameObject rootCanvas = spellbookManager.transform.root.gameObject;
+
+                
+                if (SpellbookManager.instance != null && spellbookManager != SpellbookManager.instance)
+                {
+                    Destroy(rootCanvas);
+                    return;
+                }
+                
+
+                SpellbookManager.instance = spellbookManager;
+                DontDestroyOnLoad(rootCanvas);
             }
             else if (playerPrefLocation.Equals("1000Location"))
             {
@@ -189,7 +203,7 @@ public class LoadScene : MonoBehaviour
     void createLocations()
     {
         // 1000. 2000, 3000, 4000, 6000
-        locationsCampus = new Vector3[] { new Vector3(970, -1450, 0), new Vector3(700, -850, 0), new Vector3(700, 500, 0), new Vector3(700, 1850, 0), new Vector3(-800, -100, 0) };
+        locationsCampus = new Vector3[] { new Vector3(963, -2268, 0), new Vector3(1465, -1166, 0), new Vector3(1462, 317, 0), new Vector3(1454, 1539, 0), new Vector3(-1215, -436, 0) };
 
         // campus, Brodeur, Davis, Imatomi, Gonzales
         locations1000 = new Vector3[] { new Vector3(-1400, 80, 0), new Vector3(-1000, -50, 0), new Vector3(-600, -50, 0), new Vector3(700, -50, 0), new Vector3(1100, -50, 0)};
