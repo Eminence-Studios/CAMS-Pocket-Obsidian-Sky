@@ -13,6 +13,8 @@ public class LoadScene : MonoBehaviour
     public string[] playerPrefTrigger;
     public GameObject[] triggers;
 
+    public SpellbookManager spellbookManager;
+
     private Vector3[] locationsCampus;
     private Vector3[] locations1000;
     private Vector3[] locations2000;
@@ -41,6 +43,18 @@ public class LoadScene : MonoBehaviour
             if (playerPrefLocation.Equals("CampusLocation"))
             {
                 player.position = locationsCampus[location];
+                GameObject rootCanvas = spellbookManager.transform.root.gameObject;
+
+                
+                if (SpellbookManager.instance != null && spellbookManager != SpellbookManager.instance)
+                {
+                    Destroy(rootCanvas);
+                    return;
+                }
+                
+
+                SpellbookManager.instance = spellbookManager;
+                DontDestroyOnLoad(rootCanvas);
             }
             else if (playerPrefLocation.Equals("1000Location"))
             {

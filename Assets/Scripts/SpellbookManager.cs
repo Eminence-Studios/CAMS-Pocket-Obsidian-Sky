@@ -11,6 +11,7 @@ public class SpellbookManager : MonoBehaviour
     private int numHotbarSpells = 0;
     public TextMeshProUGUI warningText;
     public GameObject hotbar;
+    // public Canvas spellbookOverlay;
 
     [Header("Description Box")]
     public GameObject descriptionBox;
@@ -27,7 +28,18 @@ public class SpellbookManager : MonoBehaviour
 
     void Awake()
     {
+        /*
+        GameObject rootCanvas = transform.root.gameObject;
+
+        if (instance != null && instance != this)
+        {
+            Destroy(rootCanvas);
+            return;
+        }
+
         instance = this;
+        DontDestroyOnLoad(rootCanvas);
+        */
         spellbookSlots = GetComponentsInChildren<SpellSlot>(true);
         hotbarSlots = hotbar.GetComponentsInChildren<SpellSlot>(true);
 
@@ -37,6 +49,16 @@ public class SpellbookManager : MonoBehaviour
     void Update()
     {
         
+    }
+
+    private void OnEnable()
+    {
+        Time.timeScale = 0f;
+    }
+
+    private void OnDisable()
+    {
+        Time.timeScale = 1f;
     }
 
     public void learnSpell(Spell newSpell)
