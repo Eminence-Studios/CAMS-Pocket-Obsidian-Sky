@@ -61,6 +61,4 @@ public class BattleHUD : MonoBehaviour
             return false;
         }
     }
-
-
 }

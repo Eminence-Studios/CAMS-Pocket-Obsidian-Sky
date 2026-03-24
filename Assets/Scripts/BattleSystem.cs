@@ -306,7 +306,19 @@ public class BattleSystem : MonoBehaviour
         enemyUnit.energy += 1;
         if (enemyUnit.statusCondition == 2)
         {
-            Debug.Log("Enemy could not break through shield!");
+            playerUnit.buffStats(new List<int>{0, 99, 0, 0, 0});
+            Debug.Log("Enemy's turn!");
+
+            yield return new WaitForSeconds(2f);
+
+            bool isDead = playerUnit.takeDamage(enemyUnit.unitAtk, 0);
+            if (playerUnit.unitHp == playerHUD.hpSlider.value)
+            {
+                Debug.Log("The attack couldn't break through the defense!");
+            }
+            playerHUD.setHP(playerUnit.unitHp);
+            playerUnit.buffStats(new List<int>{0, -99, 0, 0, 0});
+
             state = BattleState.PLAYERTURN;
             playerTurn();
             enemyUnit.statusCondition = 0;
