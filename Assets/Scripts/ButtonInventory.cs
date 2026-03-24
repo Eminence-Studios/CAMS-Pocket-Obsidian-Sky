@@ -13,7 +13,6 @@ public class ButtonInventory : MonoBehaviour
     {
         GameObject buttonChanged = buttons[index];
         string buttonText = buttonChanged.GetComponentInChildren<TextMeshProUGUI>().text;
-        Debug.Log(buttonText);
         buttonChanged.GetComponentInChildren<TextMeshProUGUI>().text = "Changed";
     }
     // Start is called once before the first execution of Update after the MonoBehaviour is created

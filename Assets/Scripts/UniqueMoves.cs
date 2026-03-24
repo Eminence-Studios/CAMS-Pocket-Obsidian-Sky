@@ -86,7 +86,6 @@ public class UniqueMoves : MonoBehaviour
         Unit unitSpecialization = GetComponent<Unit>();
         UniqueMoves unitComponent = GetComponent<Unit>().GetComponent<UniqueMoves>();
         unitComponent.moveNumber = newMoveNumber;
-        Debug.Log(unitComponent.moveNumber);
     }
 
     public void changeUniqueMove(bool isBossTurn) // overloaded method for bosses to switch between normal and boss turns
