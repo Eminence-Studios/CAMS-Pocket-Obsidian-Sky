@@ -26,7 +26,8 @@ public class CanvasChanger : MonoBehaviour
     void OnCollisionEnter2D(Collision2D col)
     {
         newCanvas.gameObject.SetActive(true);
-
+        SpellbookManager.instance.transform.root.gameObject.SetActive(false);
+        
     }
-
+    
 }
