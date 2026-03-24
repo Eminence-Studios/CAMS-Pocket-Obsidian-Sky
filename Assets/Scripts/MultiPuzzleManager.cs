@@ -1,3 +1,4 @@
+using System;
 using Unity.VisualScripting;
 using UnityEngine;
 
@@ -6,6 +7,8 @@ public class MultiPuzzleManager : MonoBehaviour
     public string mainPuzzleName;
     public int numOfPuzzles;
     private string[] componentPuzzles;
+
+    public Boolean isTwoStep;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()

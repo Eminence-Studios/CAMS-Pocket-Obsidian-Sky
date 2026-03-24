@@ -7,15 +7,16 @@ using UnityEngine.UI;
 public class BattleHUD : MonoBehaviour
 {
     public Slider hpSlider;
+    public Slider energySlider;
     public void setHUD(Unit unit)
     {
-        hpSlider.maxValue = 10;
-        hpSlider.value = unit.unitHp; // should be their max, might change later
+        hpSlider.maxValue = unit.unitMaxHp;
+        hpSlider.value = unit.unitMaxHp; // should be their max, might change later
     }
 
     public bool setHP(int hp)
     {
-        if (hpSlider.value != hp)
+        if (hpSlider.value != hp) // matches the calculated changed hp to the visual slider value
         {
             hpSlider.value = hp;
             return true;
@@ -25,5 +26,41 @@ public class BattleHUD : MonoBehaviour
             return false;
         }
     }
+
+    public void setEnergyHUD(Unit unit) // serves to initialize and just update the visual
+    {
+        energySlider.maxValue = unit.maxEnergy;
+        energySlider.value = unit.energy;
+    }
+
+    public bool setEnergy(int energy)
+    {
+        if (energy <= energySlider.value)
+        {
+            energySlider.value -= energy;
+            return true;
+        }
+        else
+        {
+            Debug.Log("There is not enough energy to perform this move");
+            return false;
+        }
+    }
+
+        public bool setEnergy(int energy, Unit unit)
+    {
+        if (energy <= unit.energy)
+        {
+            unit.energy -= energy;
+            energySlider.value = unit.energy;
+            return true;
+        }
+        else
+        {
+            Debug.Log("There is not enough energy to perform this move");
+            return false;
+        }
+    }
+
 
 }
