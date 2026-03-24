@@ -22,42 +22,51 @@ public class Unit : MonoBehaviour
     public int unitSpDef; // special defense
     public int statusCondition;
 
-    public bool takePhysicalDamage(int damage)
+    public int specialization; // 0 for physical attack and 1 for magicial attack
+
+    public int energy = 0;
+    public int maxEnergy = 6;
+    public bool takeDamage(int damage, int type) // type of damage here will be either 0 or 1, 0 for physcial, 1 for special 
     {
         statusEffect();
-        damage -= unitDef; // reduce damage by defense
-        if (damage < 0)
-            damage = 0; // prevent negative damage
-        Debug.Log("The attack couldn't penetrate the defense!");
+        if (type == 0) // for physical damage
+        {
+            damage -= unitDef; // reduce damage by defense
+            if (damage < 0)
+            {
+                damage = 0; // prevent negative damage
+            }
 
-        unitHp -= damage; // just accounts the damage taken, not updated
-        if (unitHp <= 0)
-        {
-            unitHp = 0;
-            return true;
+            unitHp -= damage; // just accounts the damage taken, not updated
+            if (unitHp <= 0)
+            {
+                unitHp = 0;
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
-        else
-        {
-            return false;
-        }
-    }
 
-    public bool takeSpecialDamage(int damage)
-    {
-        statusEffect();
-        damage -= unitSpDef;
-        if (damage < 0)
-            damage = 0; // prevent negative damage
-
-        unitHp -= damage; // just accounts the damage taken, not updated
-        if (unitHp <= 0)
+        else // for special damage
         {
-            unitHp = 0;
-            return true;
-        }
-        else
-        {
-            return false;
+            damage -= unitSpDef;
+            if (damage < 0)
+            {    
+                damage = 0; // prevent negative damage
+            }
+            
+            unitHp -= damage; // just accounts the damage taken, not updated
+            if (unitHp <= 0)
+            {
+                unitHp = 0;
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
     }
 
@@ -90,14 +99,22 @@ public class Unit : MonoBehaviour
 
     public void buffStats(List<int> list)
     {
-        unitAtk += list[0];
-        unitSpAtk += list[0];
-        unitDef += list[1];
-        unitSpDef += list[1];
-        unitSpd += list[2];
-        unitAcc += list[3];
-        statusCondition += list[4]; // might add random chance later
-        statusEffect();
+        int chance = UnityEngine.Random.Range(1,11);
+        if (chance <= 5)
+        {
+            unitAtk += list[0];
+            unitSpAtk += list[0];
+            unitDef += list[1];
+            unitSpDef += list[1];
+            unitSpd += list[2];
+            unitAcc += list[3];
+            statusEffect();
+            Debug.Log("Stats Increased");
+        }
+        else
+        {
+            // do nothing
+        }
     }
 
     public void statusEffect()

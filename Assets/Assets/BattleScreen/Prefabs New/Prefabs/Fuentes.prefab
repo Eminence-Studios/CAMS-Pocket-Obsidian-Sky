@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &7447560617879348617
+--- !u!1 &4527545984530198202
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,62 +8,38 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 2262498036058601663}
-  - component: {fileID: 5050496893894536983}
-  - component: {fileID: 4596460217248537899}
-  - component: {fileID: -3893745703522269357}
+  - component: {fileID: 6551259443846349437}
+  - component: {fileID: 1961728232348632652}
+  - component: {fileID: 965289182099271646}
   m_Layer: 0
-  m_Name: Circle
+  m_Name: Fuentes
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &2262498036058601663
+--- !u!4 &6551259443846349437
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7447560617879348617}
+  m_GameObject: {fileID: 4527545984530198202}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.4, y: -2.3, z: 0}
-  m_LocalScale: {x: 3, y: 3, z: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &5050496893894536983
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7447560617879348617}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8d77f9c6f62240445a4cd355d08f7f85, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::attributes
-  unitSpd: 2
-  unitAcc: 0
-  unitName: A
-  playerName: 
-  unitHp: 10
-  unitMaxHp: 10
-  unitAtk: 1
-  unitSpAtk: 3
-  unitDef: 0
-  unitSpDef: 1
-  statusCondition: 0
---- !u!212 &4596460217248537899
+--- !u!212 &1961728232348632652
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7447560617879348617}
+  m_GameObject: {fileID: 4527545984530198202}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -115,16 +91,29 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &-3893745703522269357
+--- !u!114 &965289182099271646
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7447560617879348617}
+  m_GameObject: {fileID: 4527545984530198202}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5ba745fa70966c84aaaf539ba944547d, type: 3}
+  m_Script: {fileID: 11500000, guid: 8d77f9c6f62240445a4cd355d08f7f85, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::uniqueMoves
-  moveNumber: 1
+  m_EditorClassIdentifier: Assembly-CSharp::Unit
+  unitSpd: 3
+  unitAcc: 4
+  unitName: Fuentes
+  playerName: 
+  unitHp: 30
+  unitMaxHp: 30
+  unitAtk: 4
+  unitSpAtk: 3
+  unitDef: 4
+  unitSpDef: 3
+  statusCondition: 0
+  specialization: 0
+  energy: 0
+  maxEnergy: 6

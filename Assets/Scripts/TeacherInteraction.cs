@@ -72,7 +72,6 @@ public class TeacherInteraction : MonoBehaviour
         {
             // open battle canvas
             Debug.Log("Open Battle");
-
         }
         else
         {
