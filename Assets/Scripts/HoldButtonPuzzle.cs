@@ -67,6 +67,7 @@ public class HoldButtonPuzzle : MonoBehaviour, IPointerDownHandler, IPointerUpHa
     private void OnEnable()
     {
         playerMovement.enableMovement = false;
+        SpellbookManager.instance.transform.root.gameObject.SetActive(false);
     }
 
     private void puzzleComplete()
@@ -82,6 +83,7 @@ public class HoldButtonPuzzle : MonoBehaviour, IPointerDownHandler, IPointerUpHa
     public void closePuzzle()
     {
         playerMovement.enableMovement = true;
+        SpellbookManager.instance.transform.root.gameObject.SetActive(true);
         puzzle.SetActive(false);
     }
     public void OnPointerDown(PointerEventData eventData)

@@ -566,10 +566,23 @@ MonoBehaviour:
   teacherName: Gallardo
   dialoguePopUp: {fileID: 1256853252}
   dialogueManager: {fileID: 1682790333}
-  initalLines: []
-  afterPuzzleLines: []
-  afterBattleLines: []
-  afterSpellLines: []
+  initalLines:
+  - Oh hey! Ready for an electrifying experience?
+  - Get it? Because this is an electric-type classroom?
+  - "Take your time to prepare yourself\u2014and don\u2019t forget to set down anything
+    that might get singed or short circuited!"
+  - Huh?
+  - "Usually we have a video to demonstrate\u2026looks like something\u2019s gone
+    wrong though."
+  - "You\u2019ll be just fine! You just need to dodge the bolts. Good luck!"
+  afterPuzzleLines:
+  - "How hair-raising\u2026good job!"
+  - I want to get in on this action.
+  - "Time for your final exam. Be careful\u2014I\u2019ve been working out!"
+  afterBattleLines:
+  - If we ever spar again, use one of these spells next time.
+  afterSpellLines:
+  - Keep up the energy and that fighting spirit!
 --- !u!61 &150576267
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1273,6 +1286,7 @@ MonoBehaviour:
   - GallardoPuzzle
   triggers:
   - {fileID: 1411225885}
+  spellbookManager: {fileID: 0}
 --- !u!1 &712861044
 GameObject:
   m_ObjectHideFlags: 0

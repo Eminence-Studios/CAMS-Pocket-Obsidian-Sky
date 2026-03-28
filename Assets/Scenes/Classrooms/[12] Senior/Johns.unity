@@ -659,10 +659,25 @@ MonoBehaviour:
   teacherName: Johns
   dialoguePopUp: {fileID: 1256853252}
   dialogueManager: {fileID: 1682790333}
-  initalLines: []
-  afterPuzzleLines: []
-  afterBattleLines: []
-  afterSpellLines: []
+  initalLines:
+  - "Oh! Hi! Hold on\u2026give me a second! \u2026.."
+  - Okay! Hi there!
+  - "You\u2019re here to continue your studies of plant magic, right?"
+  - "You can\u2019t fully master plant magic without learning the meanings of each
+    plant\u2014the wonder of flower language!"
+  - Flowers are very powerful ways to communicate thoughts and feelings without words
+  - "Study my beloved flowers and their meanings\u2026deduce which ones belong together
+    and which are quiet poisons lying in wait!"
+  afterPuzzleLines:
+  - Wow! Good work!
+  - Think of this as some on the spot practical analysis now.
+  - Ready yourself for a battle in full bloom!
+  afterBattleLines:
+  - Thank you for the fascinating duel.
+  - "I\u2019m confident in your fluency with flower language! Take this spell and
+    become stronger!"
+  afterSpellLines:
+  - Go forth, explore the world and let your true colors shine!
 --- !u!58 &150576267
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -2977,6 +2992,7 @@ MonoBehaviour:
   - JohnsPuzzle
   triggers:
   - {fileID: 0}
+  spellbookManager: {fileID: 0}
 --- !u!1 &687763595
 GameObject:
   m_ObjectHideFlags: 0

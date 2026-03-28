@@ -883,10 +883,23 @@ MonoBehaviour:
   teacherName: Davis
   dialoguePopUp: {fileID: 208243415}
   dialogueManager: {fileID: 1165950374}
-  initalLines: []
-  afterPuzzleLines: []
-  afterBattleLines: []
-  afterSpellLines: []
+  initalLines:
+  - What are you doing here?
+  - "How\u2019d you get here?"
+  - Who sent you?
+  - "My delivery isn\u2019t coming for a few days\u2026"
+  - "You\u2019re here to learn my magic?"
+  - "If you want to learn from me, you\u2019ll need to finish the great dirt maze
+    using earth magic! Good luck with that"
+  afterPuzzleLines:
+  - You actually completed it?
+  - Color me impressed.
+  - "I guess I can humor you\u2026 if you can manage to best my magic!"
+  afterBattleLines:
+  - "You\u2019re stronger than I thought."
+  afterSpellLines:
+  - Dirt may be small, but it tells us so much about the land.
+  - Pay mind to the small details, and your magic can become more powerful too.
 --- !u!70 &620195739
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -1109,6 +1122,7 @@ MonoBehaviour:
   - DavisPuzzle
   triggers:
   - {fileID: 1411225885}
+  spellbookManager: {fileID: 0}
 --- !u!1 &689902237
 GameObject:
   m_ObjectHideFlags: 0

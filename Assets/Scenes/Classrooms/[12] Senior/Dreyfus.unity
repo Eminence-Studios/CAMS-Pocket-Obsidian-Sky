@@ -571,10 +571,23 @@ MonoBehaviour:
   teacherName: Dreyfus
   dialoguePopUp: {fileID: 1256853252}
   dialogueManager: {fileID: 1682790333}
-  initalLines: []
-  afterPuzzleLines: []
-  afterBattleLines: []
-  afterSpellLines: []
+  initalLines:
+  - Do you know the relationship between numbers and the world?
+  - Numbers are formulaic, each equation forming an answer, and each equation can
+    be broken into its smaller parts.
+  - The same can be said for magic, each spell weaved precisely. If you break apart
+    a spell you can analyze its parts, and by further understanding your magic, you
+    can become more powerful.
+  - "Try to put it into practice and break apart Taylor\u2019s magic over there."
+  afterPuzzleLines:
+  - Breaking a problem into smaller pieces always helps analyze the greater whole.
+  - "I\u2019ll give you a new problem to solve."
+  afterBattleLines:
+  - You really broke down that problem well.
+  - "It seems you\u2019ve picked up on the mathematical side of math."
+  afterSpellLines:
+  - "Smaller tasks are more manageable than larger ones, but don\u2019t forget the
+    bigger picture. Make sure you can put together what you learn."
 --- !u!61 &150576267
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1118,6 +1131,7 @@ MonoBehaviour:
   - DreyfusPuzzle
   triggers:
   - {fileID: 1411225885}
+  spellbookManager: {fileID: 0}
 --- !u!1 &712861044
 GameObject:
   m_ObjectHideFlags: 0

@@ -28,6 +28,8 @@ public class MazePuzzle : MonoBehaviour
     {
         playerMovement.enableMovement = false;
         enableMovement = true;
+        SpellbookManager.instance.transform.root.gameObject.SetActive(false);
+
     }
 
     // Update is called once per frame
@@ -46,8 +48,10 @@ public class MazePuzzle : MonoBehaviour
     public void close()
     {
         playerMovement.enableMovement = true;
+        SpellbookManager.instance.transform.root.gameObject.SetActive(true);
         enableMovement = false;
         puzzle.SetActive(false);
+
     }
 
     void OnCollisionEnter2D(Collision2D col)

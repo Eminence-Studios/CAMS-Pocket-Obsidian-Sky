@@ -1651,6 +1651,7 @@ MonoBehaviour:
   - AvalosPuzzle
   triggers:
   - {fileID: 206288563}
+  spellbookManager: {fileID: 0}
 --- !u!1 &733990568
 GameObject:
   m_ObjectHideFlags: 0
@@ -2397,10 +2398,21 @@ MonoBehaviour:
   teacherName: Avalos
   dialoguePopUp: {fileID: 188390945}
   dialogueManager: {fileID: 2140464427}
-  initalLines: []
-  afterPuzzleLines: []
-  afterBattleLines: []
-  afterSpellLines: []
+  initalLines:
+  - Hello there! You interested in chance?
+  - Oh, magic.
+  - Well, magic and chance go hand in hand.
+  - "You\u2019ll be given opportunities to change and grow and it\u2019s your choice
+    to take it. It\u2019s all a game of chance."
+  - "Let\u2019s see what sort of chances you\u2019ll be given, roll these dice and
+    get a two and six. If you struggle doing so I\u2019ll help boost your odds."
+  afterPuzzleLines:
+  - Fortune favors the bold.
+  - "The odds are in my favor, but let\u2019s see if you can use your chances wisely."
+  afterBattleLines:
+  - I look forward to seeing the transformations you go through as you flourish.
+  afterSpellLines:
+  - 'Change is constant, you just need to become comfortable with the process. '
 --- !u!114 &870140103
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4421,9 +4433,9 @@ RectTransform:
   m_Children:
   - {fileID: 1981528744}
   - {fileID: 213539029}
+  - {fileID: 870140097}
   - {fileID: 206288564}
   - {fileID: 1550364062}
-  - {fileID: 870140097}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}

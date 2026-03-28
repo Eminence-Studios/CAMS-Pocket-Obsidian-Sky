@@ -635,10 +635,31 @@ MonoBehaviour:
   teacherName: Nishiyama
   dialoguePopUp: {fileID: 1256853252}
   dialogueManager: {fileID: 1682790333}
-  initalLines: []
-  afterPuzzleLines: []
-  afterBattleLines: []
-  afterSpellLines: []
+  initalLines:
+  - "Kon\u2019nichiwa! Hello and welcome in!"
+  - "As long as you work hard, you\u2019ll be fluent in light magic in no time."
+  - "In Japanese culture, among many folktales and festivals, there\u2019s one that\u2019s
+    very closely related to the stars and light magic. This is the tale of Tanabata.
+    There is a pair of lovers, Orihime the Weaver Princess and Hikoboshi the Cowherd."
+  - "They are separated by the Milky Way which is like an impassable river. Once
+    a year, on the night of Tanabata or the Japanese Star Festival, the lovers\u2019
+    wish to be reunited comes true if there are clear skies. The magpies form a bridge
+    for them."
+  - "People make their own wishes on this night, writing their wishes on special
+    papers called Tanzaku. Though it really doesn\u2019t matter what color paper
+    you use, there are traditional meanings to each color."
+  - "If you can understand them, it\u2019ll boost your light powers. Ganbatte!"
+  afterPuzzleLines:
+  - Did you notice that each Tanzaku had the image of a star on it?
+  - Feel the light energy flowing through you even more!
+  - "Let\u2019s have a discussion\u2014show me what you remember from the folktale
+    I told you! Ikimashou!"
+  afterBattleLines:
+  - Subarashii! Excellent job.
+  - "Your light shines brighter with every moment. You\u2019re ready for a new spell."
+  afterSpellLines:
+  - "Bring light to this world! Keep a positive attitude and you\u2019ll go very
+    far!"
 --- !u!61 &150576267
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4908,6 +4929,7 @@ MonoBehaviour:
   - {fileID: 929888553}
   - {fileID: 1403104201}
   - {fileID: 260336665}
+  spellbookManager: {fileID: 0}
 --- !u!1 &686530110
 GameObject:
   m_ObjectHideFlags: 0

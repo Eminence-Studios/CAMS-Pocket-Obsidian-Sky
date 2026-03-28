@@ -331,10 +331,26 @@ MonoBehaviour:
   teacherName: Bucko
   dialoguePopUp: {fileID: 1256853252}
   dialogueManager: {fileID: 1682790333}
-  initalLines: []
-  afterPuzzleLines: []
-  afterBattleLines: []
-  afterSpellLines: []
+  initalLines:
+  - Good morning.
+  - Are you here for the deep-reaching magic of plants?
+  - "Listen well, magic leaves traces. You can use your own magic to search for the
+    signs of it\u2014plant magic is especially good for this."
+  - "Active enchantments and past spells can be seen\u2026or rather\u2026felt through
+    plant magic, deep in the roots."
+  - "Try it with this first assignment! Dodge this tree\u2019s roots!"
+  afterPuzzleLines:
+  - Well done, charName!
+  - "I personally have a great fondness for plant magic, both for how this form contains
+    stories, like a tree\u2019s rings and the sense of peace I find, even in the
+    heat of battle."
+  - "Let us duel. Take a breath and show me what you\u2019ve learned!"
+  afterBattleLines:
+  - Did you feel it? The growth of your courage and the deepening of your wisdom?
+  - Stay curious, young sapling! Take this spell as a token of your progress as a
+    magician.
+  afterSpellLines:
+  - Stay curious, young sapling! Know that you have a village supporting you.
 --- !u!61 &150576267
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -745,6 +761,7 @@ MonoBehaviour:
   - BuckoPuzzle
   triggers:
   - {fileID: 707915787}
+  spellbookManager: {fileID: 0}
 --- !u!1 &707915787
 GameObject:
   m_ObjectHideFlags: 0

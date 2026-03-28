@@ -63,6 +63,10 @@ public class Dialogue : MonoBehaviour
 
     private void OnEnable()
     {
+        if (SpellbookManager.instance != null)
+        {
+            SpellbookManager.instance.transform.root.gameObject.SetActive(false);
+        }
         startDialogue();
     }
 
@@ -120,6 +124,10 @@ public class Dialogue : MonoBehaviour
         else
         {
             dialogueScreen.gameObject.SetActive(false);
+            if (SpellbookManager.instance != null)
+            {
+                SpellbookManager.instance.transform.root.gameObject.SetActive(true);
+            }
         }
         // if (hasSwitchSpeakers) { alternateSpeaker(); }
     }

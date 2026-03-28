@@ -1060,10 +1060,24 @@ MonoBehaviour:
   teacherName: Virak
   dialoguePopUp: {fileID: 208243415}
   dialogueManager: {fileID: 1165950374}
-  initalLines: []
-  afterPuzzleLines: []
-  afterBattleLines: []
-  afterSpellLines: []
+  initalLines:
+  - "What\u2019s up?"
+  - "Other than me, I know I\u2019m pretty tall."
+  - "Earth magic is such a broad term for so many different magic focuses, and I
+    think that \u2018rocks\u2019."
+  - From crystals to rocks and metals to sand, control over our surroundings is a
+    lot to juggle.
+  - Once you get to my level you can even create golems like the one over there.
+  - "How about you test your \u2018metal\u2019 against my bot?"
+  afterPuzzleLines:
+  - Done already?
+  - Then we should begin a proper time trial.
+  afterBattleLines:
+  - Zero errors. Well done.
+  - Take this rubber ducky in case you run into larger errors in the future.
+  afterSpellLines:
+  - Remember, all complex problems can be broken down, just as all complex structures
+    stem from simple components like rocks, sands, or metals.
 --- !u!70 &620195739
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -1286,6 +1300,7 @@ MonoBehaviour:
   - VirakPuzzle
   triggers:
   - {fileID: 1411225885}
+  spellbookManager: {fileID: 0}
 --- !u!1 &689902237
 GameObject:
   m_ObjectHideFlags: 0

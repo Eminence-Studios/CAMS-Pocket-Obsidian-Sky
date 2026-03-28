@@ -1409,10 +1409,21 @@ MonoBehaviour:
   teacherName: Luu
   dialoguePopUp: {fileID: 208243415}
   dialogueManager: {fileID: 1165950374}
-  initalLines: []
-  afterPuzzleLines: []
-  afterBattleLines: []
-  afterSpellLines: []
+  initalLines:
+  - Hi, you here to learn wind magic?
+  - "It\u2019s such a versatile skill that can help you achieve your dreams!"
+  - Soaring through the sky from place to place with wind magic just feels so romantic.
+  - "If you want to master the element like me, you\u2019ll need the control. Try
+    to solve this marble maze with only your wind magic."
+  afterPuzzleLines:
+  - I see. That was well-controlled wind magic.
+  - "Well, I suppose now it\u2019s time for me to assess your abilities personally."
+  afterBattleLines:
+  - Well done!
+  - Here is a new spell for you.
+  afterSpellLines:
+  - "Hm\u2026that\u2026was unusual\u2026"
+  - Continue on your journey, MC.
 --- !u!70 &620195739
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -1635,6 +1646,7 @@ MonoBehaviour:
   - LuuPuzzle
   triggers:
   - {fileID: 1411225885}
+  spellbookManager: {fileID: 0}
 --- !u!1 &689902237
 GameObject:
   m_ObjectHideFlags: 0
@@ -2783,7 +2795,7 @@ MonoBehaviour:
   textBox: {fileID: 900208950}
   dialogueScreen: {fileID: 208243416}
   lines: []
-  hasCharName: 0
+  hasCharName: 1
   changeScene: 0
   sceneID: 0
   isTeacherDialogue: 1

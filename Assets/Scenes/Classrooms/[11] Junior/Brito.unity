@@ -572,10 +572,22 @@ MonoBehaviour:
   teacherName: Brito
   dialoguePopUp: {fileID: 1256853252}
   dialogueManager: {fileID: 1682790333}
-  initalLines: []
-  afterPuzzleLines: []
-  afterBattleLines: []
-  afterSpellLines: []
+  initalLines:
+  - "\xA1Hola! \xBFC\xF3mo est\xE1s?"
+  - Hispanic culture is so diverse and beautiful.
+  - I love traveling to different countries to learn about the culture and eat la
+    comida! There are so many different stories influenced by local culture and events.
+  - "La Llorona, or The Weeping Woman, is a popular story in M\xE9xico about a woman
+    who lurks in water, mourning her children she drowned after her lover left."
+  - "A story of love and tragedy \xBFqu\xE9 triste, no? Let\u2019s see if you can
+    beat the strength of someone who lost everything."
+  afterPuzzleLines:
+  - "You\u2019re stronger than you let on."
+  - "Let\u2019s see if you\u2019re stronger than me."
+  afterBattleLines:
+  - "You\u2019ll do greater things from here."
+  afterSpellLines:
+  - "\xA1Tenga un buen d\xEDa y buena suerte!"
 --- !u!61 &150576267
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1119,6 +1131,7 @@ MonoBehaviour:
   - BritoPuzzle
   triggers:
   - {fileID: 1411225885}
+  spellbookManager: {fileID: 0}
 --- !u!1 &712861044
 GameObject:
   m_ObjectHideFlags: 0

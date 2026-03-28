@@ -76,6 +76,7 @@ public class TeacherInteraction : MonoBehaviour
         else
         {
             playerMovement.enableMovement = true;
+            SpellbookManager.instance.transform.root.gameObject.SetActive(true);
         }
     }
 }

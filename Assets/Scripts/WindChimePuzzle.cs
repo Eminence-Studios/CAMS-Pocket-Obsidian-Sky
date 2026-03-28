@@ -25,6 +25,7 @@ public class WindChimePuzzle : MonoBehaviour
     private void OnEnable()
     {
         playerMovement.enableMovement = false;
+        SpellbookManager.instance.transform.root.gameObject.SetActive(false);
     }
 
     // Update is called once per frame
@@ -59,9 +60,11 @@ public class WindChimePuzzle : MonoBehaviour
     public void closePuzzle()
     {
         playerMovement.enableMovement = true;
+        SpellbookManager.instance.transform.root.gameObject.SetActive(true);
         puzzle.gameObject.SetActive(false);
+
     }
-    
-    
+
+
 
 }

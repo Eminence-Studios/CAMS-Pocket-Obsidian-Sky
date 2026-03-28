@@ -61,7 +61,9 @@ public class OrderPuzzle : MonoBehaviour
     private void OnEnable()
     {
         playerMovement.enableMovement = false;
+        SpellbookManager.instance.transform.root.gameObject.SetActive(false);
     }
+
     private void checkCode()
     {
         if (input.text == code)
@@ -113,6 +115,7 @@ public class OrderPuzzle : MonoBehaviour
     public void closePuzzle()
     {
         playerMovement.enableMovement = true;
+        SpellbookManager.instance.transform.root.gameObject.SetActive(true);
         puzzle.gameObject.SetActive(false);
     }
 

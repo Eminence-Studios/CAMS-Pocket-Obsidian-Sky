@@ -1060,10 +1060,22 @@ MonoBehaviour:
   teacherName: Tomas
   dialoguePopUp: {fileID: 208243415}
   dialogueManager: {fileID: 1165950374}
-  initalLines: []
-  afterPuzzleLines: []
-  afterBattleLines: []
-  afterSpellLines: []
+  initalLines:
+  - "What\u2019s up? How\u2019s campus?"
+  - "There\u2019s a shocking variety of magic to learn, right?"
+  - "Don\u2019t get discouraged if it gets difficult!"
+  - The pressure at such a prestigious school might suck, but if ya use it as motivation,
+    you can blast them right outta the park!
+  - "Gotta roll with the punches, y\u2019know?"
+  - "While we\u2019re rolling, how about you practice your electric control by rolling
+    my golf cart through my baseball maze!"
+  afterPuzzleLines:
+  - "Hey, you\u2019re pretty good at that!"
+  - "Let\u2019s see if you can roll with my punches."
+  afterBattleLines:
+  - "Here\u2019s a little something that might make your time here easier."
+  afterSpellLines:
+  - Keep up that spirit and keep on learning!
 --- !u!70 &620195739
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -1286,6 +1298,7 @@ MonoBehaviour:
   - TomasPuzzle
   triggers:
   - {fileID: 1411225885}
+  spellbookManager: {fileID: 0}
 --- !u!1 &689902237
 GameObject:
   m_ObjectHideFlags: 0
