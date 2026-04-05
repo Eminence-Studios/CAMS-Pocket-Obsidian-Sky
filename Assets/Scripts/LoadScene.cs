@@ -5,13 +5,19 @@ public class LoadScene : MonoBehaviour
 
     private int location;
 
+    [Header("Location Parameters")]
     public bool loadLocation;
     public string playerPrefLocation;
     [SerializeField] Transform player;
 
+    [Header("Trigger Parameters")]
     public bool loadTrigger;
     public string[] playerPrefTrigger;
     public GameObject[] triggers;
+
+    [Header("Campus Map Parameters")]
+    public GameObject agulto;
+    public GameObject[] hallways;
 
     public SpellbookManager spellbookManager;
 
@@ -55,6 +61,16 @@ public class LoadScene : MonoBehaviour
 
                 SpellbookManager.instance = spellbookManager;
                 DontDestroyOnLoad(rootCanvas);
+
+                if (PlayerPrefs.GetInt("tutorialFinished", 0) == 0)
+                {
+                    agulto.SetActive(true);
+                    SpellbookManager.instance.transform.root.gameObject.SetActive(false);
+                    foreach (GameObject trigger in hallways)
+                    {
+                        trigger.SetActive(false);
+                    }
+                }
             }
             else if (playerPrefLocation.Equals("1000Location"))
             {
@@ -202,8 +218,8 @@ public class LoadScene : MonoBehaviour
 
     void createLocations()
     {
-        // 1000. 2000, 3000, 4000, 6000
-        locationsCampus = new Vector3[] { new Vector3(963, -2268, 0), new Vector3(1465, -1166, 0), new Vector3(1462, 317, 0), new Vector3(1454, 1539, 0), new Vector3(-1215, -436, 0) };
+        // default, 1000. 2000, 3000, 4000, 6000
+        locationsCampus = new Vector3[] { new Vector3(300, -2000, 0), new Vector3(963, -2268, 0), new Vector3(1465, -1166, 0), new Vector3(1462, 317, 0), new Vector3(1454, 1539, 0), new Vector3(-1215, -436, 0) };
 
         // campus, Brodeur, Davis, Imatomi, Gonzales
         locations1000 = new Vector3[] { new Vector3(-1400, 80, 0), new Vector3(-1000, -50, 0), new Vector3(-600, -50, 0), new Vector3(700, -50, 0), new Vector3(1100, -50, 0)};

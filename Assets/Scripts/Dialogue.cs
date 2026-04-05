@@ -13,6 +13,11 @@ public class Dialogue : MonoBehaviour
     public string[] lines;
     public bool hasCharName;
 
+    [Header("User Input Parameters")]
+    public bool isTutorial;
+    [SerializeField] Canvas inputPopup;
+    [SerializeField] TMP_InputField userInputField;
+
     [Header("Changing Scene Parameters")]
     public bool changeScene;
     public int sceneID;
@@ -51,7 +56,15 @@ public class Dialogue : MonoBehaviour
         {
             if (textBox.text == lines[index])
             {
-                printNext();
+                if (index < lines.Length - 1 && lines[index + 1] == "userInput")
+                {
+                    StopAllCoroutines();
+                    inputPopup.gameObject.SetActive(true);
+                }
+                else
+                {
+                    printNext();
+                }
             }
             else
             {
@@ -90,18 +103,23 @@ public class Dialogue : MonoBehaviour
     {
         if (hasCharName)
         {
-            charName = PlayerPrefs.GetString("charName", "Coyote");
-
-            for (int i = 0; i < lines.Length; i++)
-            {
-                lines[i] = lines[i].Replace("charName", charName);
-                Debug.Log(lines[i]);
-            }
+            replaceCharName();
         }
         index = 0;
         textBox.text = string.Empty;
         StartCoroutine(printLine());
         // if (hasSwitchSpeakers) { alternateSpeaker(); };
+    }
+
+    void replaceCharName()
+    {
+        charName = PlayerPrefs.GetString("charName", "Coyote");
+
+        for (int i = 0; i < lines.Length; i++)
+        {
+            lines[i] = lines[i].Replace("charName", charName);
+            Debug.Log(lines[i]);
+        }
     }
 
     IEnumerator printLine()
@@ -120,9 +138,14 @@ public class Dialogue : MonoBehaviour
             index++;
             textBox.text = string.Empty;
             StartCoroutine(printLine());
+                
         }
         else
         {
+            if (isTutorial)
+            {
+                PlayerPrefs.SetInt("tutorialFinished", 1);
+            }
             dialogueScreen.gameObject.SetActive(false);
             if (SpellbookManager.instance != null)
             {
@@ -131,6 +154,18 @@ public class Dialogue : MonoBehaviour
         }
         // if (hasSwitchSpeakers) { alternateSpeaker(); }
     }
+
+    public void nameEntered()
+    {
+        PlayerPrefs.SetString("charName", userInputField.text);
+        PlayerPrefs.Save();
+        // replaceCharName();
+        inputPopup.gameObject.SetActive(false);
+        index++;
+        lines[index + 1] = lines[index + 1].Replace("Coyote", userInputField.text);
+        printNext();
+    }
+
        
     /*
     void alternateSpeaker()
