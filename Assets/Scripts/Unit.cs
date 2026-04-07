@@ -100,7 +100,7 @@ public class Unit : MonoBehaviour
     public void buffStats(List<int> list)
     {
         int chance = UnityEngine.Random.Range(1,11);
-        if (chance <= 5)
+        if (chance <= 3)
         {
             unitAtk += list[0];
             unitSpAtk += list[0];
