@@ -88,9 +88,8 @@ public class BattleSystem : MonoBehaviour
         }
         else
         {
-            state = BattleState.ENEMYTURN;
+            NextTurn();
             enemyUnit.energy = 2;
-            StartCoroutine(basicEnemyTurn());
         }
     }
 
@@ -108,8 +107,7 @@ public class BattleSystem : MonoBehaviour
             }
             else
             {
-                state = BattleState.ENEMYTURN;
-                StartCoroutine(basicEnemyTurn());
+                NextTurn();
             }
 
         }
@@ -117,14 +115,6 @@ public class BattleSystem : MonoBehaviour
 
     void playerTurn()
     {
-        if (neutralTurn())
-        {
-            // do nothing for neutral turn (boss logic handles state change)
-            return;
-        }
-
-        turnCount += 1;
-
         // even though the player will get the +1 energy, for now this punishes exhausting all energy
         if (playerUnit.energy <= 0)
         {
@@ -132,8 +122,7 @@ public class BattleSystem : MonoBehaviour
             playerUnit.energy += 1; // still recharge for next cycle
             playerHUD.setEnergyHUD(playerUnit);
 
-            state = BattleState.ENEMYTURN;
-            StartCoroutine(basicEnemyTurn());
+            NextTurn();
             return;
         }
 
@@ -226,8 +215,7 @@ public class BattleSystem : MonoBehaviour
     {
         if (attackStarted)
         {
-            state = BattleState.ENEMYTURN;
-            StartCoroutine(basicEnemyTurn());
+            NextTurn();
             yield return new WaitForSeconds(2f);
             yield break; // exit the coroutine if attack has already started
         }
@@ -236,8 +224,7 @@ public class BattleSystem : MonoBehaviour
         {
             Debug.Log(playerUnit.unitName + " is frozen and cannot attack!");
             yield return new WaitForSeconds(2f);
-            state = BattleState.ENEMYTURN;
-            StartCoroutine(basicEnemyTurn());
+            NextTurn();
             yield return new WaitForSeconds(2f);
             yield return null;
         }
@@ -264,8 +251,7 @@ public class BattleSystem : MonoBehaviour
             }
             else
             {
-                state = BattleState.ENEMYTURN;
-                StartCoroutine(basicEnemyTurn());
+                NextTurn();
                 yield return new WaitForSeconds(2f);
             }
 
@@ -282,8 +268,7 @@ public class BattleSystem : MonoBehaviour
         {
             Debug.Log(playerUnit.unitName + " is frozen and cannot attack!");
             yield return new WaitForSeconds(2f);
-            state = BattleState.ENEMYTURN;
-            StartCoroutine(basicEnemyTurn());
+            NextTurn();
             yield return new WaitForSeconds(2f);
             yield return null;
         }
@@ -310,8 +295,7 @@ public class BattleSystem : MonoBehaviour
             }
             else
             {
-                state = BattleState.ENEMYTURN;
-                StartCoroutine(basicEnemyTurn());
+                NextTurn();
                 yield return new WaitForSeconds(2f);
             }
             yield return null;
@@ -328,8 +312,7 @@ public class BattleSystem : MonoBehaviour
         {
             Debug.Log(playerUnit.unitName + " is frozen and cannot act!");
             yield return new WaitForSeconds(2f);
-            state = BattleState.ENEMYTURN;
-            StartCoroutine(basicEnemyTurn());
+            NextTurn();
             yield return new WaitForSeconds(2f);
             yield return null;
         }
@@ -372,8 +355,7 @@ public class BattleSystem : MonoBehaviour
             }
             else
             {
-                state = BattleState.ENEMYTURN;
-                StartCoroutine(basicEnemyTurn());
+                NextTurn();
                 yield return new WaitForSeconds(2f);
             }
 
@@ -391,8 +373,7 @@ public class BattleSystem : MonoBehaviour
         {
             Debug.Log(playerUnit.unitName + " is frozen and cannot act!");
             yield return new WaitForSeconds(2f);
-            state = BattleState.ENEMYTURN;
-            StartCoroutine(basicEnemyTurn());
+            NextTurn();
             yield return new WaitForSeconds(2f);
             yield return null;
         }
@@ -435,8 +416,7 @@ public class BattleSystem : MonoBehaviour
             }
             else
             {
-                state = BattleState.ENEMYTURN;
-                StartCoroutine(basicEnemyTurn());
+                NextTurn();
                 yield return new WaitForSeconds(2f);
             }
 
@@ -453,8 +433,7 @@ public class BattleSystem : MonoBehaviour
         playerUnit.energy += 1;
         playerHUD.setEnergyHUD(playerUnit);
 
-        state = BattleState.ENEMYTURN;
-        StartCoroutine(basicEnemyTurn());
+        NextTurn();
     }
 
     void endBattle()
@@ -471,11 +450,35 @@ public class BattleSystem : MonoBehaviour
 
     IEnumerator basicEnemyTurn()
     {
-        turnCount += 1;
         enemyUnit.energy += 1;
-        if (neutralTurn())
+        if (enemyUnit.statusCondition == 4)
         {
-            // do nothing
+            Debug.Log("Enemy's turn!");
+            playerUnit.buffStats(new List<int>{0, 99, 0, 0, 0});
+            yield return new WaitForSeconds(2f);
+            bool isDead = playerUnit.takeDamage(enemyUnit.unitAtk, enemyUnit.specialization);
+            enemyMoveset.changeUniqueMove(false);
+            List<int> buffParameters = enemyMoveset.determineUniqueMove();
+            enemyUnit.buffStats(buffParameters); // will proc the chance for it's special move to buff stats
+
+            if (playerUnit.unitHp == playerHUD.hpSlider.value)
+            {
+                Debug.Log("The attack couldn't break through the defense!");
+            }
+            playerHUD.setHP(playerUnit.unitHp);
+
+            enemyUnit.statusCondition = 0;
+            playerUnit.buffStats(new List<int>{0, -99, 0, 0, 0});
+            if (isDead)
+            {
+                state = BattleState.LOST;
+                endBattle();
+            }
+            else
+            {
+                state = BattleState.PLAYERTURN;
+                playerTurn();
+            }
         }
         else
         {
@@ -510,7 +513,6 @@ public class BattleSystem : MonoBehaviour
 
     IEnumerator bossEnemyTurn()
     {
-        turnCount += 1;
         Debug.Log(enemyUnit.unitName + "'s Boss Turn");
 
         yield return new WaitForSeconds(2f);
@@ -578,16 +580,45 @@ public class BattleSystem : MonoBehaviour
             return 0; // boss will do no damage, essentially skipping turn
         }
     }
-    bool neutralTurn()
+    bool CheckNeutralTurn()
+{
+    if ((turnCount % 6 == 0) || (turnCount % 8 == 0))
     {
-        if (turnCount % 4 == 0 || turnCount % 3 == 0)
+        StartCoroutine(bossEnemyTurn());
+        return true;
+    }
+    else
+    {
+           StartCoroutine(basicEnemyTurn());
+           return true;
+    }
+    return false;
+    
+}
+
+    public void shieldAbility()
+    {
+        enemyUnit.statusCondition = 4;
+        Debug.Log("Shield Used");
+        NextTurn();
+    }
+
+    void NextTurn()
+    {
+        turnCount++;
+
+        // Boss/neutral turn check FIRST
+        if (CheckNeutralTurn())
+            return;
+
+        if (state == BattleState.PLAYERTURN)
         {
-            StartCoroutine(bossEnemyTurn());
-            return true;
+            NextTurn();
         }
         else
         {
-            return false;
+            state = BattleState.PLAYERTURN;
+            playerTurn();
         }
     }
 }
