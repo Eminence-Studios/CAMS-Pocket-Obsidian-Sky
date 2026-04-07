@@ -15,6 +15,8 @@ public class WindChimePuzzle : MonoBehaviour
     private string melody = "012345";
     public Movement playerMovement;
 
+    public AudioSource successSound;
+
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -39,6 +41,7 @@ public class WindChimePuzzle : MonoBehaviour
                 close.gameObject.SetActive(false);
                 PlayerPrefs.SetInt("JohnsonPuzzle", 1);
                 progress.text = "Beautiful tune!";
+                successSound.Play();
                 collider.gameObject.SetActive(false);
                 Invoke("closePuzzle", 2);
 

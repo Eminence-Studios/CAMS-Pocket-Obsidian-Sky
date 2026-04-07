@@ -922,6 +922,9 @@ MonoBehaviour:
   lines:
   - Iris\n<i>Hope and Trust<i>
   hasCharName: 0
+  isTutorial: 0
+  inputPopup: {fileID: 0}
+  userInputField: {fileID: 0}
   changeScene: 0
   sceneID: 0
   isTeacherDialogue: 0
@@ -1322,6 +1325,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::CanvasChanger
   oldCanvas: {fileID: 0}
   newCanvas: {fileID: 550295691}
+  player: {fileID: 0}
 --- !u!50 &368709310
 Rigidbody2D:
   serializedVersion: 5
@@ -1803,6 +1807,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::CanvasChanger
   oldCanvas: {fileID: 0}
   newCanvas: {fileID: 1540160879}
+  player: {fileID: 0}
 --- !u!50 &445902184
 Rigidbody2D:
   serializedVersion: 5
@@ -1937,6 +1942,9 @@ MonoBehaviour:
   lines:
   - Tulip\n<i>Affection and Good Wishes<i>
   hasCharName: 0
+  isTutorial: 0
+  inputPopup: {fileID: 0}
+  userInputField: {fileID: 0}
   changeScene: 0
   sceneID: 0
   isTeacherDialogue: 0
@@ -2264,6 +2272,8 @@ RectTransform:
   - {fileID: 1345958590}
   - {fileID: 1565917505}
   - {fileID: 301550676}
+  - {fileID: 846581261}
+  - {fileID: 597759802}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -2397,6 +2407,8 @@ MonoBehaviour:
   collider: {fileID: 368709311}
   closeButton: {fileID: 301550677}
   clearButton: {fileID: 1565917502}
+  successSound: {fileID: 597759803}
+  failureSound: {fileID: 846581262}
   code: 0123
   playerPrefVariable: JohnsPuzzle
   progressTexts:
@@ -2572,12 +2584,148 @@ MonoBehaviour:
   lines:
   - Marigold\n<i>Energy and Confidence<i>
   hasCharName: 0
+  isTutorial: 0
+  inputPopup: {fileID: 0}
+  userInputField: {fileID: 0}
   changeScene: 0
   sceneID: 0
   isTeacherDialogue: 0
   teacherInteractionManager: {fileID: 0}
   hasNextScene: 0
   nextScreen: {fileID: 0}
+--- !u!1 &597759801
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 597759802}
+  - component: {fileID: 597759803}
+  m_Layer: 5
+  m_Name: Success
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &597759802
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 597759801}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0, y: 0, z: 0}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 550295694}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!82 &597759803
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 597759801}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_Resource: {fileID: 8300000, guid: 2a9ca6da33bf38d43a5d4aa96d931d6c, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &599007006
 GameObject:
   m_ObjectHideFlags: 0
@@ -2992,6 +3140,8 @@ MonoBehaviour:
   - JohnsPuzzle
   triggers:
   - {fileID: 0}
+  agulto: {fileID: 0}
+  hallways: []
   spellbookManager: {fileID: 0}
 --- !u!1 &687763595
 GameObject:
@@ -3294,6 +3444,139 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 810908625}
   m_CullTransparentMesh: 1
+--- !u!1 &846581260
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 846581261}
+  - component: {fileID: 846581262}
+  m_Layer: 5
+  m_Name: Failure
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &846581261
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 846581260}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0, y: 0, z: 0}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 550295694}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!82 &846581262
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 846581260}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_Resource: {fileID: 8300000, guid: d12550abb2732ad4db799cfcec19b643, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &867486689
 GameObject:
   m_ObjectHideFlags: 0
@@ -5013,6 +5296,9 @@ MonoBehaviour:
   lines:
   - Balloon\n<i>Admiration and Respect<i>
   hasCharName: 0
+  isTutorial: 0
+  inputPopup: {fileID: 0}
+  userInputField: {fileID: 0}
   changeScene: 0
   sceneID: 0
   isTeacherDialogue: 0
@@ -5607,6 +5893,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::CanvasChanger
   oldCanvas: {fileID: 0}
   newCanvas: {fileID: 1492569414}
+  player: {fileID: 0}
 --- !u!50 &1339803540
 Rigidbody2D:
   serializedVersion: 5
@@ -6670,6 +6957,9 @@ MonoBehaviour:
   lines:
   - Lily\n<i>Happiness and Humility<i>
   hasCharName: 0
+  isTutorial: 0
+  inputPopup: {fileID: 0}
+  userInputField: {fileID: 0}
   changeScene: 0
   sceneID: 0
   isTeacherDialogue: 0
@@ -6953,6 +7243,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::CanvasChanger
   oldCanvas: {fileID: 0}
   newCanvas: {fileID: 1853648833}
+  player: {fileID: 0}
 --- !u!50 &1526198532
 Rigidbody2D:
   serializedVersion: 5
@@ -7944,6 +8235,9 @@ MonoBehaviour:
   dialogueScreen: {fileID: 1256853255}
   lines: []
   hasCharName: 0
+  isTutorial: 0
+  inputPopup: {fileID: 0}
+  userInputField: {fileID: 0}
   changeScene: 0
   sceneID: 0
   isTeacherDialogue: 1
@@ -8882,6 +9176,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::CanvasChanger
   oldCanvas: {fileID: 0}
   newCanvas: {fileID: 1252374777}
+  player: {fileID: 0}
 --- !u!50 &1904391264
 Rigidbody2D:
   serializedVersion: 5
@@ -9138,6 +9433,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::CanvasChanger
   oldCanvas: {fileID: 0}
   newCanvas: {fileID: 918865590}
+  player: {fileID: 0}
 --- !u!50 &1961523721
 Rigidbody2D:
   serializedVersion: 5
@@ -9347,6 +9643,9 @@ MonoBehaviour:
   lines:
   - Gladiolus\n<i>Deep Love and Passion<i>
   hasCharName: 0
+  isTutorial: 0
+  inputPopup: {fileID: 0}
+  userInputField: {fileID: 0}
   changeScene: 0
   sceneID: 0
   isTeacherDialogue: 0
@@ -9449,6 +9748,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::CanvasChanger
   oldCanvas: {fileID: 0}
   newCanvas: {fileID: 1492569414}
+  player: {fileID: 0}
 --- !u!50 &2035069928
 Rigidbody2D:
   serializedVersion: 5

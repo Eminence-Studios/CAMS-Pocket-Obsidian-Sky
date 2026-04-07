@@ -18,6 +18,8 @@ public class MazePuzzle : MonoBehaviour
 
     private bool enableMovement = false;
 
+    public AudioSource successSound;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -61,6 +63,7 @@ public class MazePuzzle : MonoBehaviour
             PlayerPrefs.SetInt(puzzleName, 1);
             closeButton.gameObject.SetActive(false);
             progress.text = "You reached the end!";
+            successSound.Play();
             collider.gameObject.SetActive(false);
             Invoke("close", 2);
 

@@ -5,6 +5,8 @@ public class CanvasChanger : MonoBehaviour
     [SerializeField] Canvas oldCanvas;
     [SerializeField] Canvas newCanvas;
 
+    [SerializeField] Movement player;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -25,8 +27,20 @@ public class CanvasChanger : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D col)
     {
+
         newCanvas.gameObject.SetActive(true);
         
     }
-    
+
+    public void openPopUp()
+    {
+        player.enableMovement = false;
+        newCanvas.gameObject.SetActive(true);
+    }
+
+    public void closePopUp()
+    {
+        player.enableMovement = true;
+        oldCanvas.gameObject.SetActive(false);
+    }
 }

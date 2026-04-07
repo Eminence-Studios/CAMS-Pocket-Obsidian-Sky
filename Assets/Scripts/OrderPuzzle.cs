@@ -15,6 +15,9 @@ public class OrderPuzzle : MonoBehaviour
     [SerializeField] Button closeButton;
     [SerializeField] Button clearButton;
 
+    public AudioSource successSound;
+    public AudioSource failureSound;
+
     public string code;
     public string playerPrefVariable;
 
@@ -30,6 +33,8 @@ public class OrderPuzzle : MonoBehaviour
     public Movement playerMovement;
 
     public GameObject nextPuzzleTriggers;
+
+    
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -71,6 +76,7 @@ public class OrderPuzzle : MonoBehaviour
             progress.text = progressTexts[3];
 
             PlayerPrefs.SetInt(playerPrefVariable, 1);
+            successSound.Play();
             collider.gameObject.SetActive(false);
             if (playerPrefVariable == "NishiyamaPuzzle0")
             {
@@ -85,6 +91,7 @@ public class OrderPuzzle : MonoBehaviour
             progress.text = progressTexts[2];
             clear();
             Invoke("clearProgress", 1);
+            failureSound.Play();
             isCheck = false;
             closeButton.gameObject.SetActive(true);
             clearButton.gameObject.SetActive(true);

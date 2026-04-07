@@ -30,6 +30,7 @@ public class HoldButtonPuzzle : MonoBehaviour, IPointerDownHandler, IPointerUpHa
 
     public string PlayerPrefVariable;
 
+    public AudioSource successSound;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -75,6 +76,7 @@ public class HoldButtonPuzzle : MonoBehaviour, IPointerDownHandler, IPointerUpHa
         plant.sprite = flower;
         progress.text = completedText;
         gauge.value = requiredTime;
+        successSound.Play();
         collider.SetActive(false);
         PlayerPrefs.SetInt(PlayerPrefVariable, 1);
         puzzleManager.checkAllComplete();

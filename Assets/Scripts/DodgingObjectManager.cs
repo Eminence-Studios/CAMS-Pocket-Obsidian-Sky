@@ -43,6 +43,8 @@ public class DodgingObjectManager : MonoBehaviour
     private bool isGrounded = true;
     private float rotationY = 0;
 
+    public AudioSource successSound;
+    public AudioSource failureSound;
     void Awake()
     {
         instance = this;
@@ -204,6 +206,7 @@ public class DodgingObjectManager : MonoBehaviour
         {
             resultText.text = "Fail";
             buttonText.text = "Retry";
+            failureSound.Play();
             closeButton.gameObject.SetActive(true);
             retryButton.gameObject.SetActive(true);
         }
@@ -212,6 +215,7 @@ public class DodgingObjectManager : MonoBehaviour
             ObjectSpawner.instance.gameObject.SetActive(false);
             collider.SetActive(false);
             resultText.text = "Success!";
+            successSound.Play();
             PlayerPrefs.SetInt(PlayerPrefVariable, 1);
             Time.timeScale = 1f;
             Invoke("closePuzzle", 2);

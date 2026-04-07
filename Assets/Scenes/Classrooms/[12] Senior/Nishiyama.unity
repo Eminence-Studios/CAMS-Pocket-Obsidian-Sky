@@ -1107,6 +1107,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::CanvasChanger
   oldCanvas: {fileID: 0}
   newCanvas: {fileID: 2116886328}
+  player: {fileID: 0}
 --- !u!50 &253542728
 Rigidbody2D:
   serializedVersion: 5
@@ -1459,6 +1460,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::CanvasChanger
   oldCanvas: {fileID: 0}
   newCanvas: {fileID: 650623401}
+  player: {fileID: 0}
 --- !u!50 &260336668
 Rigidbody2D:
   serializedVersion: 5
@@ -2423,6 +2425,9 @@ MonoBehaviour:
   lines:
   - Red (Fire) Tanzaku\nWishes regarding gratitude and ancestors
   hasCharName: 0
+  isTutorial: 0
+  inputPopup: {fileID: 0}
+  userInputField: {fileID: 0}
   changeScene: 0
   sceneID: 0
   isTeacherDialogue: 0
@@ -4197,6 +4202,8 @@ MonoBehaviour:
   collider: {fileID: 1411225889}
   closeButton: {fileID: 1386572950}
   clearButton: {fileID: 1406961861}
+  successSound: {fileID: 2075370896}
+  failureSound: {fileID: 2057202010}
   code: 24013
   playerPrefVariable: NishiyamaPuzzle0
   progressTexts:
@@ -4929,6 +4936,8 @@ MonoBehaviour:
   - {fileID: 929888553}
   - {fileID: 1403104201}
   - {fileID: 260336665}
+  agulto: {fileID: 0}
+  hallways: []
   spellbookManager: {fileID: 0}
 --- !u!1 &686530110
 GameObject:
@@ -5129,6 +5138,9 @@ MonoBehaviour:
   lines:
   - Blue (Wood) Tanzaku\nWishes regarding self-improvement and calmness
   hasCharName: 0
+  isTutorial: 0
+  inputPopup: {fileID: 0}
+  userInputField: {fileID: 0}
   changeScene: 0
   sceneID: 0
   isTeacherDialogue: 0
@@ -5184,6 +5196,9 @@ MonoBehaviour:
   lines:
   - Purple (Water) Tanzaku\nWishes regarding academics and skills
   hasCharName: 0
+  isTutorial: 0
+  inputPopup: {fileID: 0}
+  userInputField: {fileID: 0}
   changeScene: 0
   sceneID: 0
   isTeacherDialogue: 0
@@ -5755,6 +5770,9 @@ MonoBehaviour:
   lines:
   - White (Metal) Tanzaku\nWishes regarding duty and responsibility
   hasCharName: 0
+  isTutorial: 0
+  inputPopup: {fileID: 0}
+  userInputField: {fileID: 0}
   changeScene: 0
   sceneID: 0
   isTeacherDialogue: 0
@@ -6804,6 +6822,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::CanvasChanger
   oldCanvas: {fileID: 0}
   newCanvas: {fileID: 2061308768}
+  player: {fileID: 0}
 --- !u!50 &929888556
 Rigidbody2D:
   serializedVersion: 5
@@ -6973,6 +6992,7 @@ MonoBehaviour:
   inProgressText: Hanging...
   completedText: White tanzaku hung!
   PlayerPrefVariable: NishiyamaPuzzle4
+  successSound: {fileID: 2075370896}
 --- !u!114 &964717502
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7207,6 +7227,9 @@ MonoBehaviour:
   lines:
   - Yellow (Earth) Tanzaku\nWishes regarding friendships and relationships
   hasCharName: 0
+  isTutorial: 0
+  inputPopup: {fileID: 0}
+  userInputField: {fileID: 0}
   changeScene: 0
   sceneID: 0
   isTeacherDialogue: 0
@@ -8985,6 +9008,7 @@ MonoBehaviour:
   inProgressText: Hanging...
   completedText: Blue tanzaku hung!
   PlayerPrefVariable: NishiyamaPuzzle1
+  successSound: {fileID: 2075370896}
 --- !u!114 &1291508197
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10017,6 +10041,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::CanvasChanger
   oldCanvas: {fileID: 0}
   newCanvas: {fileID: 410280162}
+  player: {fileID: 0}
 --- !u!50 &1403104204
 Rigidbody2D:
   serializedVersion: 5
@@ -10321,6 +10346,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::CanvasChanger
   oldCanvas: {fileID: 0}
   newCanvas: {fileID: 2145104466}
+  player: {fileID: 0}
 --- !u!50 &1411225888
 Rigidbody2D:
   serializedVersion: 5
@@ -10717,6 +10743,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::CanvasChanger
   oldCanvas: {fileID: 0}
   newCanvas: {fileID: 1348044631}
+  player: {fileID: 0}
 --- !u!50 &1451781948
 Rigidbody2D:
   serializedVersion: 5
@@ -11071,6 +11098,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::CanvasChanger
   oldCanvas: {fileID: 0}
   newCanvas: {fileID: 1324222030}
+  player: {fileID: 0}
 --- !u!50 &1472824677
 Rigidbody2D:
   serializedVersion: 5
@@ -11456,6 +11484,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::CanvasChanger
   oldCanvas: {fileID: 0}
   newCanvas: {fileID: 1506732882}
+  player: {fileID: 0}
 --- !u!50 &1530083589
 Rigidbody2D:
   serializedVersion: 5
@@ -12065,6 +12094,7 @@ MonoBehaviour:
   inProgressText: Hanging...
   completedText: Yellow tanzaku hung!
   PlayerPrefVariable: NishiyamaPuzzle5
+  successSound: {fileID: 2075370896}
 --- !u!114 &1609334073
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12352,6 +12382,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::CanvasChanger
   oldCanvas: {fileID: 0}
   newCanvas: {fileID: 259417604}
+  player: {fileID: 0}
 --- !u!50 &1629789025
 Rigidbody2D:
   serializedVersion: 5
@@ -12874,6 +12905,9 @@ MonoBehaviour:
   dialogueScreen: {fileID: 1256853255}
   lines: []
   hasCharName: 0
+  isTutorial: 0
+  inputPopup: {fileID: 0}
+  userInputField: {fileID: 0}
   changeScene: 0
   sceneID: 0
   isTeacherDialogue: 1
@@ -13813,6 +13847,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::CanvasChanger
   oldCanvas: {fileID: 0}
   newCanvas: {fileID: 357747783}
+  player: {fileID: 0}
 --- !u!50 &1794568527
 Rigidbody2D:
   serializedVersion: 5
@@ -14020,6 +14055,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::CanvasChanger
   oldCanvas: {fileID: 0}
   newCanvas: {fileID: 1645306570}
+  player: {fileID: 0}
 --- !u!50 &1842974040
 Rigidbody2D:
   serializedVersion: 5
@@ -14491,6 +14527,7 @@ MonoBehaviour:
   inProgressText: Hanging...
   completedText: Purple tanzaku hung!
   PlayerPrefVariable: NishiyamaPuzzle2
+  successSound: {fileID: 2075370896}
 --- !u!114 &1961398504
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14923,6 +14960,139 @@ Transform:
   - {fileID: 1794568525}
   m_Father: {fileID: 1472734445}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2057202009
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2057202011}
+  - component: {fileID: 2057202010}
+  m_Layer: 5
+  m_Name: Failure
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!82 &2057202010
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2057202009}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_Resource: {fileID: 8300000, guid: d12550abb2732ad4db799cfcec19b643, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!224 &2057202011
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2057202009}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0, y: 0, z: 0}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &2061308764
 GameObject:
   m_ObjectHideFlags: 0
@@ -15029,6 +15199,139 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 4
   m_TargetDisplay: 0
+--- !u!1 &2075370895
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2075370897}
+  - component: {fileID: 2075370896}
+  m_Layer: 5
+  m_Name: Success
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!82 &2075370896
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2075370895}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_Resource: {fileID: 8300000, guid: 2a9ca6da33bf38d43a5d4aa96d931d6c, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!224 &2075370897
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2075370895}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0, y: 0, z: 0}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &2111088854
 GameObject:
   m_ObjectHideFlags: 0
@@ -15625,6 +15928,7 @@ MonoBehaviour:
   inProgressText: Hanging...
   completedText: Red tanzaku hung!
   PlayerPrefVariable: NishiyamaPuzzle3
+  successSound: {fileID: 2075370896}
 --- !u!114 &2138891508
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16149,6 +16453,8 @@ SceneRoots:
   m_Roots:
   - {fileID: 1784737743}
   - {fileID: 886600915}
+  - {fileID: 2057202011}
+  - {fileID: 2075370897}
   - {fileID: 360859488}
   - {fileID: 1642650194}
   - {fileID: 2145104467}

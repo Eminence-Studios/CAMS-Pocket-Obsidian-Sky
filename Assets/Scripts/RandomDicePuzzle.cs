@@ -23,6 +23,9 @@ public class RandomDicePuzzle : MonoBehaviour
     public Movement playerMovement;
     public RandomDicePuzzle other;
 
+    public AudioSource successSound;
+    public AudioSource failureSound;
+
     void OnEnable()
     {
         if (isManager)
@@ -43,6 +46,7 @@ public class RandomDicePuzzle : MonoBehaviour
     private void success()
     {
         progress.text = "Success!";
+        successSound.Play();
         PlayerPrefs.SetInt(playerPrefVariable, 1);
         collider.gameObject.SetActive(false);
         Invoke("closePuzzle", 2);
@@ -65,6 +69,7 @@ public class RandomDicePuzzle : MonoBehaviour
         }
         else
         {
+            failureSound.Play();
             closeButton.gameObject.SetActive(true);
             rollButton.interactable = true;
         }    
