@@ -1054,7 +1054,7 @@ GameObject:
   - component: {fileID: 145413997}
   - component: {fileID: 145413996}
   m_Layer: 8
-  m_Name: SpellType
+  m_Name: SpellDescription
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2588,7 +2588,6 @@ GameObject:
   - component: {fileID: 319775469}
   - component: {fileID: 319775468}
   - component: {fileID: 319775467}
-  - component: {fileID: 319775466}
   m_Layer: 8
   m_Name: Spellbook
   m_TagString: Untagged
@@ -2617,8 +2616,8 @@ RectTransform:
   - {fileID: 259036004}
   - {fileID: 1615020174}
   - {fileID: 1531665188}
-  - {fileID: 1596945573}
   - {fileID: 1451703158}
+  - {fileID: 1596945573}
   - {fileID: 2141750117}
   - {fileID: 264336423}
   - {fileID: 1069993190}
@@ -2639,24 +2638,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &319775466
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 319775464}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e1af054c848ad51408196d0a6da9b864, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::SpellbookManager
-  warningText: {fileID: 1453732473}
-  hotbar: {fileID: 1213742658}
-  descriptionBox: {fileID: 173986082}
-  spellNameText: {fileID: 1837917040}
-  type: {fileID: 145413996}
-  description: {fileID: 1770005550}
 --- !u!114 &319775467
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3068,7 +3049,7 @@ MonoBehaviour:
   - {fileID: 1388718288}
   - {fileID: 1693125041}
   - {fileID: 579728451}
-  spellbookManager: {fileID: 319775466}
+  spellbookManager: {fileID: 0}
 --- !u!1 &361670418
 GameObject:
   m_ObjectHideFlags: 0
@@ -6298,7 +6279,6 @@ GameObject:
   - component: {fileID: 1012445123}
   - component: {fileID: 1012445122}
   - component: {fileID: 1012445121}
-  - component: {fileID: 1012445120}
   m_Layer: 8
   m_Name: Close
   m_TagString: Untagged
@@ -6326,21 +6306,6 @@ RectTransform:
   m_AnchoredPosition: {x: 640, y: 375}
   m_SizeDelta: {x: 50, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1012445120
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1012445118}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 43f613f39088e1a428703d31a92d970c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::CanvasChanger
-  oldCanvas: {fileID: 1283677087}
-  newCanvas: {fileID: 851520585}
-  player: {fileID: 0}
 --- !u!114 &1012445121
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6385,9 +6350,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1012445120}
-        m_TargetAssemblyTypeName: CanvasChanger, Assembly-CSharp
-        m_MethodName: changeCanvas
+      - m_Target: {fileID: 1664147068}
+        m_TargetAssemblyTypeName: SpellbookManager, Assembly-CSharp
+        m_MethodName: closeSpellbook
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -10890,6 +10855,7 @@ GameObject:
   - component: {fileID: 1664147066}
   - component: {fileID: 1664147065}
   - component: {fileID: 1664147064}
+  - component: {fileID: 1664147068}
   m_Layer: 8
   m_Name: Spellbook Overlay
   m_TagString: Untagged
@@ -10981,6 +10947,27 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &1664147068
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1664147063}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1af054c848ad51408196d0a6da9b864, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SpellbookManager
+  actualSpellbook: {fileID: 319775464}
+  spellbookCanvas: {fileID: 1283677085}
+  spellbookIcon: {fileID: 851520584}
+  warningText: {fileID: 1453732473}
+  hotbar: {fileID: 1213742658}
+  descriptionBox: {fileID: 173986082}
+  spellNameText: {fileID: 1837917040}
+  type: {fileID: 1770005550}
+  description: {fileID: 145413996}
 --- !u!1 &1693125041
 GameObject:
   m_ObjectHideFlags: 0
@@ -11405,7 +11392,7 @@ GameObject:
   - component: {fileID: 1770005551}
   - component: {fileID: 1770005550}
   m_Layer: 8
-  m_Name: SpellDescription
+  m_Name: SpellType
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -12124,7 +12111,6 @@ GameObject:
   - component: {fileID: 1845744237}
   - component: {fileID: 1845744236}
   - component: {fileID: 1845744235}
-  - component: {fileID: 1845744234}
   m_Layer: 8
   m_Name: Spellbook Icon
   m_TagString: Untagged
@@ -12151,21 +12137,6 @@ RectTransform:
   m_AnchoredPosition: {x: -125, y: 150}
   m_SizeDelta: {x: 176.12, y: 256.28}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1845744234
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1845744232}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 43f613f39088e1a428703d31a92d970c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::CanvasChanger
-  oldCanvas: {fileID: 851520585}
-  newCanvas: {fileID: 1283677087}
-  player: {fileID: 0}
 --- !u!114 &1845744235
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12210,9 +12181,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1845744234}
-        m_TargetAssemblyTypeName: CanvasChanger, Assembly-CSharp
-        m_MethodName: changeCanvas
+      - m_Target: {fileID: 1664147068}
+        m_TargetAssemblyTypeName: SpellbookManager, Assembly-CSharp
+        m_MethodName: openSpellbook
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

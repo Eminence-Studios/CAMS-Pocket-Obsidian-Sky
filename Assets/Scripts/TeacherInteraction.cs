@@ -7,6 +7,7 @@ public class TeacherInteraction : MonoBehaviour
     public string teacherName;
     [SerializeField] GameObject dialoguePopUp;
     [SerializeField] Dialogue dialogueManager;
+    [SerializeField] GameObject spellSelectionScreen;
 
     [Header("Teacher Lines")]
     public string[] initalLines;
@@ -56,15 +57,15 @@ public class TeacherInteraction : MonoBehaviour
     public void loadNext()
     {
         // if spell learned
-        if (PlayerPrefs.GetInt(teacherName + "Spell", 0) == 1)
+        /*if (PlayerPrefs.GetInt(teacherName + "Spell", 0) == 1)
         {
             SpellbookManager.instance.transform.root.gameObject.SetActive(true);
             playerMovement.enableMovement = true;
-        }
+        }*/
         // if finished battle
-        else if (PlayerPrefs.GetInt(teacherName + "Battle", 0) == 1)
+        if (PlayerPrefs.GetInt(teacherName + "Battle", 0) == 1)
         {
-            // open spell learning cavas
+            spellSelectionScreen.SetActive(true);
             Debug.Log("Open Spell");
         }
         // if puzzle completed
@@ -78,5 +79,19 @@ public class TeacherInteraction : MonoBehaviour
             playerMovement.enableMovement = true;
             SpellbookManager.instance.transform.root.gameObject.SetActive(true);
         }
+    }
+
+    public void selectSpell(Spell spell)
+    {
+        SpellbookManager.instance.learnSpell(spell);
+        
+        spellSelectionScreen.SetActive(false);
+        PlayerPrefs.SetInt(teacherName + "Spell", 1);
+
+        dialogueManager.lines = afterSpellLines;
+        SpellbookManager.instance.transform.root.gameObject.SetActive(false);
+        dialoguePopUp.SetActive(true);
+
+        // loadNext();
     }
 }

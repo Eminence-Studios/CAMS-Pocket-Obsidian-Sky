@@ -9,6 +9,9 @@ public class SpellbookManager : MonoBehaviour
     private int learnedSpells = 0;
     private int maxSpells = 25;
     private int numHotbarSpells = 0;
+    public GameObject actualSpellbook;
+    public GameObject spellbookCanvas;
+    public GameObject spellbookIcon;
     public TextMeshProUGUI warningText;
     public GameObject hotbar;
     // public Canvas spellbookOverlay;
@@ -53,16 +56,20 @@ public class SpellbookManager : MonoBehaviour
 
     private void OnEnable()
     {
-        Time.timeScale = 0f;
+        // Time.timeScale = 0f;
+        spellbookCanvas.SetActive(true);
+        spellbookCanvas.SetActive(false);
+
     }
 
     private void OnDisable()
     {
-        Time.timeScale = 1f;
+        // Time.timeScale = 1f;
     }
 
     public void learnSpell(Spell newSpell)
     {
+        Debug.Log("learnedSpell");
         spellbookSlots[learnedSpells++].setSpell(newSpell);
     }
 
@@ -82,6 +89,20 @@ public class SpellbookManager : MonoBehaviour
             numHotbarSpells++;
         }
 
+    }
+
+    public void closeSpellbook()
+    {
+        spellbookCanvas.gameObject.SetActive(false);
+        spellbookIcon.gameObject.SetActive(true);
+        Time.timeScale = 1f;
+    }
+
+    public void openSpellbook()
+    {
+        spellbookCanvas.gameObject.SetActive(true);
+        spellbookIcon.gameObject.SetActive(false);
+        Time.timeScale = 0f;
     }
 
     private SpellSlot nextOpen()
