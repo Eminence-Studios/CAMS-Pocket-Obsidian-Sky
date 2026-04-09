@@ -9,9 +9,10 @@ public class SpellbookManager : MonoBehaviour
     private int learnedSpells = 0;
     private int maxSpells = 25;
     private int numHotbarSpells = 0;
+
+    [Header("Spellbook")]
     public GameObject actualSpellbook;
     public GameObject spellbookCanvas;
-    public GameObject spellbookIcon;
     public TextMeshProUGUI warningText;
     public GameObject hotbar;
     // public Canvas spellbookOverlay;
@@ -22,7 +23,14 @@ public class SpellbookManager : MonoBehaviour
     public TextMeshProUGUI type;
     public TextMeshProUGUI description;
 
-    
+    [Header("Map Canvas")]
+    public GameObject mapCanvas;
+
+    [Header("Settings Canvas")]
+    public GameObject settingsCanvas;
+
+    [Header("Icon Canvas")]
+    public GameObject icons;
 
     public static SpellbookManager instance;
 
@@ -91,17 +99,40 @@ public class SpellbookManager : MonoBehaviour
 
     }
 
-    public void closeSpellbook()
+    public void closeCanvas(string whichCanvas)
     {
-        spellbookCanvas.gameObject.SetActive(false);
-        spellbookIcon.gameObject.SetActive(true);
+        if (whichCanvas.Equals("Map"))
+        {
+            mapCanvas.gameObject.SetActive(false);
+        }
+        else if (whichCanvas.Equals("Spellbook"))
+        {
+            spellbookCanvas.gameObject.SetActive(false);
+        }
+        else
+        {
+            settingsCanvas.gameObject.SetActive(false);
+        }
+        icons.gameObject.SetActive(true);
         Time.timeScale = 1f;
     }
 
-    public void openSpellbook()
+    public void openCanvas(string whichCanvas)
     {
-        spellbookCanvas.gameObject.SetActive(true);
-        spellbookIcon.gameObject.SetActive(false);
+        if (whichCanvas.Equals("Map"))
+        {
+            mapCanvas.gameObject.SetActive(true);
+        }
+        else if (whichCanvas.Equals("Spellbook"))
+        {
+            spellbookCanvas.gameObject.SetActive(true);
+        }
+        else
+        {
+            settingsCanvas.gameObject.SetActive(true);
+        }
+        icons.gameObject.SetActive(false);
+        
         Time.timeScale = 0f;
     }
 
