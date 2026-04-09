@@ -552,7 +552,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 78, y: -32, z: 0}
-  m_LocalScale: {x: 25, y: 25, z: 1}
+  m_LocalScale: {x: 27, y: 27, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1075348657}
@@ -659,6 +659,7 @@ MonoBehaviour:
   teacherName: Johns
   dialoguePopUp: {fileID: 1256853252}
   dialogueManager: {fileID: 1682790333}
+  spellSelectionScreen: {fileID: 0}
   initalLines:
   - "Oh! Hi! Hold on\u2026give me a second! \u2026.."
   - Okay! Hi there!
@@ -678,8 +679,8 @@ MonoBehaviour:
     become stronger!"
   afterSpellLines:
   - Go forth, explore the world and let your true colors shine!
---- !u!58 &150576267
-CircleCollider2D:
+--- !u!60 &150576267
+PolygonCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -713,7 +714,70 @@ CircleCollider2D:
   m_CompositeOperation: 0
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
-  m_Radius: 2.285
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 4.4900002, y: 4.57}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 1.3421106, y: -1.8677342}
+      - {x: 1.6546106, y: -1.6528904}
+      - {x: 2.0257044, y: -1.2427342}
+      - {x: 2.2014856, y: -0.83257794}
+      - {x: 2.2600794, y: -0.5786717}
+      - {x: 2.2600794, y: -0.109921694}
+      - {x: 2.2405481, y: 0.065859556}
+      - {x: 2.2014856, y: 0.104922056}
+      - {x: 2.064767, y: 0.14398456}
+      - {x: 2.064767, y: 0.49554706}
+      - {x: 1.9866419, y: 0.5150783}
+      - {x: 1.6741419, y: 0.3978908}
+      - {x: 1.7913294, y: 0.7885158}
+      - {x: 1.5764856, y: 0.9057033}
+      - {x: 1.4397669, y: 0.76898456}
+      - {x: 1.4202356, y: 1.7846096}
+      - {x: 1.3030481, y: 1.823672}
+      - {x: 0.99054813, y: 1.589297}
+      - {x: 0.6975794, y: 1.4525783}
+      - {x: 0.44367313, y: 2.1947658}
+      - {x: 0.34601688, y: 2.3119533}
+      - {x: 0.22882938, y: 2.3119533}
+      - {x: 0.092110634, y: 2.1947658}
+      - {x: -0.27898312, y: 1.6283596}
+      - {x: -0.35710812, y: 1.4721096}
+      - {x: -0.5524206, y: 1.901797}
+      - {x: -0.7086706, y: 2.0189846}
+      - {x: -0.84538937, y: 2.0189846}
+      - {x: -0.96257687, y: 1.9213283}
+      - {x: -1.0797644, y: 1.667422}
+      - {x: -1.2164831, y: 1.1010158}
+      - {x: -1.4703894, y: 1.276797}
+      - {x: -1.5680456, y: 1.276797}
+      - {x: -1.6461706, y: 1.1791408}
+      - {x: -1.7047644, y: 0.49554706}
+      - {x: -1.8610144, y: 0.1635158}
+      - {x: -2.1930456, y: 0.2025783}
+      - {x: -2.2516394, y: 0.085390806}
+      - {x: -2.2516394, y: -0.109921694}
+      - {x: -1.9977331, y: -0.59820294}
+      - {x: -2.1149206, y: -0.71539044}
+      - {x: -2.075858, y: -0.8521092}
+      - {x: -1.6657019, y: -1.4185154}
+      - {x: -1.2555456, y: -1.848203}
+      - {x: -0.9821081, y: -2.0239842}
+      - {x: -0.80632687, y: -2.2583592}
+      - {x: -0.6696081, y: -2.2583592}
+      - {x: -0.29851437, y: -2.2778904}
+      - {x: 0.26789188, y: -2.2778904}
+      - {x: 0.6975794, y: -2.2192967}
+      - {x: 0.9319544, y: -2.2192967}
+      - {x: 1.1858606, y: -2.1021092}
+  m_UseDelaunayMesh: 0
 --- !u!1 &177645006
 GameObject:
   m_ObjectHideFlags: 0
@@ -4639,7 +4703,7 @@ MonoBehaviour:
   m_LightType: 3
   m_BlendStyleIndex: 0
   m_FalloffIntensity: 0.38
-  m_Color: {r: 1, g: 0.33887702, b: 0, a: 1}
+  m_Color: {r: 0.085147165, g: 0.6415094, b: 0, a: 1}
   m_Intensity: 0.5
   m_LightVolumeIntensity: 1
   m_LightVolumeEnabled: 1
@@ -4663,8 +4727,8 @@ MonoBehaviour:
     m_Extent: {x: 0.9985302, y: 0.99853027, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
-  m_PointLightInnerRadius: 50
-  m_PointLightOuterRadius: 200
+  m_PointLightInnerRadius: 20
+  m_PointLightOuterRadius: 150
   m_ShapeLightParametricSides: 5
   m_ShapeLightParametricAngleOffset: 0
   m_ShapeLightParametricRadius: 1

@@ -1059,8 +1059,8 @@ GameObject:
   - component: {fileID: 620195737}
   - component: {fileID: 620195741}
   - component: {fileID: 620195740}
-  - component: {fileID: 620195739}
   - component: {fileID: 620195738}
+  - component: {fileID: 620195742}
   m_Layer: 5
   m_Name: Tomas
   m_TagString: Untagged
@@ -1077,8 +1077,8 @@ Transform:
   m_GameObject: {fileID: 620195736}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -932.6079, y: 40.4093, z: 0}
-  m_LocalScale: {x: -101.641914, y: 233.5342, z: 1}
+  m_LocalPosition: {x: -1143, y: 48, z: 0}
+  m_LocalScale: {x: 15, y: 15, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2041927904}
@@ -1100,6 +1100,7 @@ MonoBehaviour:
   teacherName: Tomas
   dialoguePopUp: {fileID: 208243415}
   dialogueManager: {fileID: 1165950374}
+  spellSelectionScreen: {fileID: 0}
   initalLines:
   - "What\u2019s up? How\u2019s campus?"
   - "There\u2019s a shocking variety of magic to learn, right?"
@@ -1116,43 +1117,6 @@ MonoBehaviour:
   - "Here\u2019s a little something that might make your time here easier."
   afterSpellLines:
   - Keep up that spirit and keep on learning!
---- !u!70 &620195739
-CapsuleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 620195736}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_CompositeOperation: 0
-  m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
-  m_Size: {x: 0.99999994, y: 1}
-  m_Direction: 0
 --- !u!50 &620195740
 Rigidbody2D:
   serializedVersion: 5
@@ -1227,7 +1191,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
+  m_Sprite: {fileID: -7228189240083097302, guid: 54b4135b88f24f549b3d970735f3d5b4, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1238,6 +1202,147 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!60 &620195742
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 620195736}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 4.71, y: 11.090001}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 2.0725012, y: -4.919374}
+      - {x: 1.9553137, y: -4.7435927}
+      - {x: 2.131095, y: -4.5873427}
+      - {x: 2.2678137, y: -4.3529677}
+      - {x: 2.3264074, y: -4.0795302}
+      - {x: 2.36547, y: -3.8451552}
+      - {x: 2.36547, y: -3.278749}
+      - {x: 2.1701574, y: -2.4584365}
+      - {x: 2.1506262, y: -1.7553115}
+      - {x: 2.0334387, y: -1.0326552}
+      - {x: 1.9357824, y: -0.79828024}
+      - {x: 2.0139074, y: -0.6615615}
+      - {x: 2.0139074, y: -0.60296774}
+      - {x: 1.7404699, y: 0.04156351}
+      - {x: 1.8381262, y: 0.21734476}
+      - {x: 1.9357824, y: 0.52984476}
+      - {x: 1.9162512, y: 0.9790635}
+      - {x: 1.8576574, y: 1.0767198}
+      - {x: 1.8185949, y: 1.7798448}
+      - {x: 1.7404699, y: 2.2095323}
+      - {x: 1.7990637, y: 2.4829698}
+      - {x: 1.6818762, y: 2.5415635}
+      - {x: 1.7600012, y: 2.8540635}
+      - {x: 1.8185949, y: 3.1079698}
+      - {x: 1.7990637, y: 3.7329698}
+      - {x: 1.6818762, y: 4.4751573}
+      - {x: 1.6623449, y: 4.9634385}
+      - {x: 1.5451574, y: 5.4907823}
+      - {x: 1.4279699, y: 5.549376}
+      - {x: 1.2131262, y: 5.549376}
+      - {x: 1.1154699, y: 5.4907823}
+      - {x: 0.9787512, y: 5.3345323}
+      - {x: 0.76390743, y: 4.9439073}
+      - {x: 0.56859493, y: 4.4165635}
+      - {x: 0.5100012, y: 4.2017198}
+      - {x: 0.43187618, y: 3.6548448}
+      - {x: 0.45140743, y: 3.049376}
+      - {x: 0.41234493, y: 2.9126573}
+      - {x: 0.23656368, y: 2.9321885}
+      - {x: -0.48609257, y: 2.9321885}
+      - {x: -0.6618738, y: 2.8345323}
+      - {x: -0.7399988, y: 3.3228135}
+      - {x: -0.9353113, y: 3.986876}
+      - {x: -1.1696863, y: 4.4360948}
+      - {x: -1.5993738, y: 5.158751}
+      - {x: -1.9314051, y: 5.4517198}
+      - {x: -2.16578, y: 5.4321885}
+      - {x: -2.2829676, y: 5.2564073}
+      - {x: -2.3610926, y: 4.7290635}
+      - {x: -2.3610926, y: 3.830626}
+      - {x: -2.2048426, y: 3.3423448}
+      - {x: -1.9118738, y: 2.7564073}
+      - {x: -1.8337488, y: 2.4829698}
+      - {x: -1.8337488, y: 2.346251}
+      - {x: -1.7946863, y: 2.0923448}
+      - {x: -1.8142176, y: 1.3110948}
+      - {x: -1.8532801, y: 1.2329698}
+      - {x: -1.8923426, y: 0.940001}
+      - {x: -1.8728113, y: 0.60796976}
+      - {x: -1.7556238, y: 0.37359476}
+      - {x: -1.5993738, y: 0.11968851}
+      - {x: -1.6970301, y: -0.05609274}
+      - {x: -1.8142176, y: -0.309999}
+      - {x: -1.8142176, y: -0.466249}
+      - {x: -1.7165613, y: -0.56390524}
+      - {x: -1.7751551, y: -0.75921774}
+      - {x: -1.8337488, y: -0.9740615}
+      - {x: -1.8923426, y: -1.481874}
+      - {x: -1.9118738, y: -2.2045302}
+      - {x: -1.9509363, y: -2.3217177}
+      - {x: -2.1071863, y: -2.966249}
+      - {x: -2.1267176, y: -3.747499}
+      - {x: -2.0681238, y: -4.0014052}
+      - {x: -1.9118738, y: -4.2357802}
+      - {x: -1.7556238, y: -4.5678115}
+      - {x: -1.8532801, y: -4.8021865}
+      - {x: -1.8728113, y: -5.075624}
+      - {x: -1.7556238, y: -5.231874}
+      - {x: -1.6579676, y: -5.2709365}
+      - {x: -1.4821863, y: -5.309999}
+      - {x: -1.1696863, y: -5.3295302}
+      - {x: -0.8181238, y: -5.2123427}
+      - {x: -0.48609257, y: -4.8998427}
+      - {x: -0.29078007, y: -4.8607802}
+      - {x: 0.060782433, y: -4.8998427}
+      - {x: 0.60765743, y: -4.8803115}
+      - {x: 0.76390743, y: -5.0560927}
+      - {x: 0.9787512, y: -5.2904677}
+      - {x: 1.2326574, y: -5.5248427}
+      - {x: 1.4084387, y: -5.544374}
+      - {x: 1.8381262, y: -5.544374}
+      - {x: 1.8967199, y: -5.5248427}
+      - {x: 2.0139074, y: -5.4467177}
+      - {x: 2.0920324, y: -5.309999}
+  m_UseDelaunayMesh: 0
 --- !u!1 &655455825
 GameObject:
   m_ObjectHideFlags: 0
@@ -5503,8 +5608,8 @@ MonoBehaviour:
   m_ComponentVersion: 2
   m_LightType: 3
   m_BlendStyleIndex: 0
-  m_FalloffIntensity: 0.38
-  m_Color: {r: 0.15496778, g: 0, b: 1, a: 1}
+  m_FalloffIntensity: 0.357
+  m_Color: {r: 0.034399312, g: 0.4198113, b: 0, a: 1}
   m_Intensity: 1
   m_LightVolumeIntensity: 1
   m_LightVolumeEnabled: 1
@@ -5529,7 +5634,7 @@ MonoBehaviour:
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 50
-  m_PointLightOuterRadius: 200
+  m_PointLightOuterRadius: 150
   m_ShapeLightParametricSides: 5
   m_ShapeLightParametricAngleOffset: 0
   m_ShapeLightParametricRadius: 1
