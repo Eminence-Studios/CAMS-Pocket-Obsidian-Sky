@@ -13,6 +13,7 @@ using UnityEngine.Rendering.Universal.Internal;
 */
 public class UniqueMoves : MonoBehaviour
 {
+    public static UniqueMoves instance;
     public int moveNumber; // moves will be identified by numbers
     public int basicMoveNumber; // will be used to store the original move number for the unit so that it can be restored after using a unique move
     private int moveBeingUsed;
@@ -20,7 +21,7 @@ public class UniqueMoves : MonoBehaviour
     // the list of parameters will be structured as follows vv
     // [atk, def, spd, acc, status effect]
 
-    public void basicUniqueMove(int tempMoveNum) // is for the bosses to swtich in between boss turns and normal turns 
+    public void basicUniqueMove(int tempMoveNum) // is for the bosses to switch in between boss turns and normal turns 
     {
         moveBeingUsed = moveNumber;
     }

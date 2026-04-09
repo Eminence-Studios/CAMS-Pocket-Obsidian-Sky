@@ -457,7 +457,7 @@ public class BattleSystem : MonoBehaviour
             playerUnit.buffStats(new List<int>{0, 99, 0, 0, 0});
             yield return new WaitForSeconds(2f);
             bool isDead = playerUnit.takeDamage(enemyUnit.unitAtk, enemyUnit.specialization);
-            enemyMoveset.changeUniqueMove(false);
+            enemyMoveset.changeUniqueMove(5);
             List<int> buffParameters = enemyMoveset.determineUniqueMove();
             enemyUnit.buffStats(buffParameters); // will proc the chance for it's special move to buff stats
 
