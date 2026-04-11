@@ -7,6 +7,8 @@ public class CanvasChanger : MonoBehaviour
 
     [SerializeField] Movement player;
 
+    public bool disablePlayer;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -29,6 +31,10 @@ public class CanvasChanger : MonoBehaviour
     {
 
         newCanvas.gameObject.SetActive(true);
+        if (disablePlayer)
+        {
+            player.enableMovement = false;
+        }
         
     }
 

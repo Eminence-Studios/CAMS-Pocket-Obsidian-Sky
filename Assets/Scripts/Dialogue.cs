@@ -145,12 +145,13 @@ public class Dialogue : MonoBehaviour
             if (isTutorial)
             {
                 PlayerPrefs.SetInt("tutorialFinished", 1);
+                Debug.Log("changed");
             }
-            dialogueScreen.gameObject.SetActive(false);
-            if (SpellbookManager.instance != null)
+            else if (SpellbookManager.instance != null)
             {
                 SpellbookManager.instance.transform.root.gameObject.SetActive(true);
             }
+            dialogueScreen.gameObject.SetActive(false);
         }
         // if (hasSwitchSpeakers) { alternateSpeaker(); }
     }

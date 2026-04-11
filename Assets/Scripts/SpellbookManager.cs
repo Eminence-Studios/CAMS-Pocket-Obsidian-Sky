@@ -25,6 +25,8 @@ public class SpellbookManager : MonoBehaviour
 
     [Header("Map Canvas")]
     public GameObject mapCanvas;
+    public Button mapIcon;
+    public Image mapImage;
 
     [Header("Settings Canvas")]
     public GameObject settingsCanvas;
@@ -73,6 +75,22 @@ public class SpellbookManager : MonoBehaviour
     private void OnDisable()
     {
         // Time.timeScale = 1f;
+    }
+
+    public void updateMap(Sprite newMap)
+    {
+        mapIcon.image.sprite = newMap;
+        mapImage.sprite = newMap;
+    }
+
+    public void hideMapIcon()
+    {
+        mapIcon.gameObject.SetActive(false);
+    }
+
+    public void showMapIcon()
+    {
+        mapIcon.gameObject.SetActive(true);
     }
 
     public void learnSpell(Spell newSpell)

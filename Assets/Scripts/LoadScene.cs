@@ -1,3 +1,5 @@
+using Unity.VisualScripting;
+using UnityEditor;
 using UnityEngine;
 
 public class LoadScene : MonoBehaviour
@@ -18,6 +20,9 @@ public class LoadScene : MonoBehaviour
     [Header("Campus Map Parameters")]
     public GameObject agulto;
     public GameObject[] hallways;
+
+    [Header("Corner Map Parameters")]
+    public Sprite sceneMap;
 
     public SpellbookManager spellbookManager;
 
@@ -51,51 +56,56 @@ public class LoadScene : MonoBehaviour
                 player.position = locationsCampus[location];
                 GameObject rootCanvas = spellbookManager.transform.root.gameObject;
 
-                
-                if (SpellbookManager.instance != null && spellbookManager != SpellbookManager.instance)
+                if (SpellbookManager.instance != null && SpellbookManager.instance != spellbookManager)
                 {
+                    updateOverlay();
+
                     Destroy(rootCanvas);
                     return;
                 }
-                
 
                 SpellbookManager.instance = spellbookManager;
                 DontDestroyOnLoad(rootCanvas);
-
-                if (PlayerPrefs.GetInt("tutorialFinished", 0) == 0)
-                {
-                    agulto.SetActive(true);
-                    SpellbookManager.instance.transform.root.gameObject.SetActive(false);
-                    foreach (GameObject trigger in hallways)
-                    {
-                        trigger.SetActive(false);
-                    }
-                }
+                updateOverlay();
             }
             else if (playerPrefLocation.Equals("1000Location"))
             {
                 player.position = locations1000[location];
+                SpellbookManager.instance.showMapIcon();
+                SpellbookManager.instance.updateMap(sceneMap);
                 load1000Hallway();
             }
             else if (playerPrefLocation.Equals("2000Location"))
             {
                 player.position = locations2000[location];
+                SpellbookManager.instance.showMapIcon();
+                SpellbookManager.instance.updateMap(sceneMap);
                 load2000Hallway();
             }
             else if (playerPrefLocation.Equals("3000Location"))
             {
                 player.position = locations3000[location];
+                SpellbookManager.instance.showMapIcon();
+                SpellbookManager.instance.updateMap(sceneMap);
                 load3000Hallway();
             }
             else if (playerPrefLocation.Equals("4000Location"))
             {
                 player.position = locations4000[location];
+                SpellbookManager.instance.showMapIcon();
+                SpellbookManager.instance.updateMap(sceneMap);
                 load4000Hallway();
             }
             else if (playerPrefLocation.Equals("6000Location"))
             {
                 player.position = locations6000[location];
+                SpellbookManager.instance.showMapIcon();
+                SpellbookManager.instance.updateMap(sceneMap);
                 load6000Hallway();
+            }
+            else // is a classroom
+            {
+                SpellbookManager.instance.hideMapIcon();
             }
         }
         if (loadTrigger)
@@ -212,6 +222,29 @@ public class LoadScene : MonoBehaviour
         {
             // hide senior classes
             triggers[0].SetActive(false);
+        }
+    }
+
+    void updateOverlay()
+    {
+        if (SpellbookManager.instance == null)
+        {
+            return;
+        }
+
+        GameObject root = SpellbookManager.instance.transform.root.gameObject;
+
+        if (PlayerPrefs.GetInt("tutorialFinished", 0) == 0)
+        {
+            agulto.SetActive(true);
+            root.SetActive(false);
+        }
+        else
+        {
+            agulto.SetActive(false); // Make sure Agulto is gone
+            root.SetActive(true);
+            SpellbookManager.instance.showMapIcon();
+            SpellbookManager.instance.updateMap(sceneMap);
         }
     }
 
