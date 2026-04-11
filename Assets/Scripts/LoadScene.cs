@@ -103,13 +103,11 @@ public class LoadScene : MonoBehaviour
                 SpellbookManager.instance.updateMap(sceneMap);
                 load6000Hallway();
             }
-            else // is a classroom
-            {
-                SpellbookManager.instance.hideMapIcon();
-            }
         }
         if (loadTrigger)
         {
+            SpellbookManager.instance.hideMapIcon();
+
             for (int i = 0; i < playerPrefTrigger.Length; i++)
             {
                 if (PlayerPrefs.GetInt(playerPrefTrigger[i], 0) == 1)
