@@ -10,6 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 6154562171136959811}
   - component: {fileID: 5996200208707651605}
+  - component: {fileID: -3764461993809433348}
+  - component: {fileID: -295360819322127921}
   m_Layer: 0
   m_Name: Imatomi
   m_TagString: Untagged
@@ -90,3 +92,43 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &-3764461993809433348
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4565317966360140088}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8d77f9c6f62240445a4cd355d08f7f85, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Unit
+  unitSpd: 2
+  unitAcc: 4
+  unitName: Imatomi
+  playerName: 
+  unitHp: 30
+  unitMaxHp: 30
+  unitAtk: 3
+  unitSpAtk: 5
+  unitDef: 4
+  unitSpDef: 2
+  statusCondition: 0
+  specialization: 0
+  energy: 0
+  maxEnergy: 6
+--- !u!114 &-295360819322127921
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4565317966360140088}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5ba745fa70966c84aaaf539ba944547d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::UniqueMoves
+  moveNumber: 11
+  basicMoveNumber: 12
