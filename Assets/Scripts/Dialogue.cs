@@ -31,6 +31,11 @@ public class Dialogue : MonoBehaviour
     public bool hasNextScene;
     [SerializeField] Canvas nextScreen;
 
+    [Header("Player Movement Parameters")]
+    public bool changePlayerMovement;
+    public Movement playerMovement;
+
+
     // public bool hasSwitchSpeakers;
     // [SerializeField] Canvas otherSpeaker;
     // [SerializeField] Image self;
@@ -80,6 +85,10 @@ public class Dialogue : MonoBehaviour
         {
             SpellbookManager.instance.transform.root.gameObject.SetActive(false);
         }
+        if (changePlayerMovement)
+        {
+            playerMovement.enabled = false;
+        }
         startDialogue();
     }
 
@@ -96,6 +105,10 @@ public class Dialogue : MonoBehaviour
         else if (hasNextScene)
         {
             nextScreen.gameObject.SetActive(true);
+        }
+        else if (changePlayerMovement)
+        {
+            playerMovement.enabled = true;
         }
     }
 

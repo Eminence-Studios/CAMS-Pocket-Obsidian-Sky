@@ -9,6 +9,9 @@ public class TeacherInteraction : MonoBehaviour
     [SerializeField] Dialogue dialogueManager;
     [SerializeField] GameObject spellSelectionScreen;
 
+    public string element;
+    public int totalNumOfElementSpells;
+
     [Header("Teacher Lines")]
     public string[] initalLines;
     public string[] afterPuzzleLines;
@@ -84,9 +87,24 @@ public class TeacherInteraction : MonoBehaviour
     public void selectSpell(Spell spell)
     {
         SpellbookManager.instance.learnSpell(spell);
-        
-        spellSelectionScreen.SetActive(false);
         PlayerPrefs.SetInt(teacherName + "Spell", 1);
+
+        PlayerPrefs.SetInt(element + "Spells", PlayerPrefs.GetInt(element + "Spells", 0) + 1);
+        int numMasteredElements = PlayerPrefs.GetInt("numOfMasteredElements", 0);
+
+        // check mastery of element
+        if (PlayerPrefs.GetInt(element + "Spells", 0) == totalNumOfElementSpells)
+        {
+            
+            numMasteredElements++;
+            PlayerPrefs.SetString("Element" + numMasteredElements, element);
+            PlayerPrefs.SetInt("numOfMasteredElements", numMasteredElements);
+
+            Debug.Log(element + " mastered");
+            Debug.Log("Elements Mastered: " + numMasteredElements);
+        }
+
+        spellSelectionScreen.SetActive(false);
 
         dialogueManager.lines = afterSpellLines;
         SpellbookManager.instance.transform.root.gameObject.SetActive(false);
@@ -94,4 +112,5 @@ public class TeacherInteraction : MonoBehaviour
 
         // loadNext();
     }
+
 }

@@ -5,9 +5,9 @@ public class CanvasChanger : MonoBehaviour
     [SerializeField] Canvas oldCanvas;
     [SerializeField] Canvas newCanvas;
 
-    [SerializeField] Movement player;
+    // [SerializeField] Movement player;
 
-    public bool disablePlayer;
+    // public bool disablePlayer;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -31,13 +31,16 @@ public class CanvasChanger : MonoBehaviour
     {
 
         newCanvas.gameObject.SetActive(true);
+        /*
         if (disablePlayer)
         {
             player.enableMovement = false;
         }
+        */
         
     }
 
+    /*
     public void openPopUp()
     {
         player.enableMovement = false;
@@ -49,4 +52,6 @@ public class CanvasChanger : MonoBehaviour
         player.enableMovement = true;
         oldCanvas.gameObject.SetActive(false);
     }
+
+    */
 }
