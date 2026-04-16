@@ -15,7 +15,7 @@ public class UniqueMoves : MonoBehaviour
 {
     public int moveNumber; // moves will be identified by numbers
     public int basicMoveNumber; // will be used to store the original move number for the unit so that it can be restored after using a unique move
-    private int moveBeingUsed;
+    public int moveBeingUsed = 6; // Default to Guard move (safe default)
     List<int> moveParameters = new List<int>(); // list to hold parameters for each unique move
     // the list of parameters will be structured as follows vv
     // [atk, def, spd, acc, status effect]
@@ -28,52 +28,51 @@ public class UniqueMoves : MonoBehaviour
     {
         Unit moveType = GetComponent<Unit>();
         Unit unitComponent = GetComponent<Unit>();
-        if (moveNumber == 1) // sonic boom
+        if (moveBeingUsed == 1) // sonic boom
         {
             moveParameters = new List<int> { 0, 5, 2, 0, 0 };
             Debug.Log(unitComponent.unitName + " used Sonic Boom! Chance to increase defense by 5 and speed by 2!");
             moveType.specialization = 1;
             return moveParameters;
         }
-        if (moveNumber == 2) // thunderbolt
+        if (moveBeingUsed == 2) // thunderbolt
         {
             moveParameters = new List<int> { 0, 2, 2, 2, 0 };
             Debug.Log(unitComponent.unitName + " used Thunderbolt! Chance to increase defense by 2, speed by 2, and accuracy by 2!");
             return moveParameters;
         }
-        if (moveNumber == 3) // wall of foliage
+        if (moveBeingUsed == 3) // wall of foliage
         {
             moveParameters = new List<int> { 0, 2, 0, 0, 0 };
             Debug.Log(unitComponent.unitName + " used Wall of Foliage! Chance to increase defense by 2");
             return moveParameters;
         }
-        if (moveNumber == 4) // flamethrower
+        if (moveBeingUsed == 4) // flamethrower
         {
             moveParameters = new List<int> { 2, 0, 0, 0, 1 }; // +2 atk, inflicts burn status effect
             Debug.Log(unitComponent.unitName + " used Flamethrower! Attack may increase by 2");
             return moveParameters;
         }
-        if (moveNumber == 5) // slam dunk
+        if (moveBeingUsed == 5) // slam dunk
         {
             moveParameters = new List<int> { 1, 0, 0, 0, 0 }; // inflicts paralysis status effect
             Debug.Log(unitComponent.unitName + " used Slam Dunk! Chance to increase attack by 1");
             moveType.specialization = 0;
             return moveParameters;
         }
-        if (moveNumber == 6) // guard
+        if (moveBeingUsed == 6) // guard
         {
             moveParameters = new List<int> { 0, 1, 0, 0, 0 }; // +1 def
             Debug.Log(unitComponent.unitName + " used Guard! Chance to increase defense by 1");
             moveType.specialization = 0;
             return moveParameters;
         }
-        if (moveNumber == 7)
-        {
-            return null;
-        }
         else
         {
-            return null; // placeholder for now
+            // Default fallback: Guard move (safe default with +1 def)
+            Debug.LogWarning("Unknown moveBeingUsed value: " + moveBeingUsed + ". Defaulting to Guard.");
+            moveParameters = new List<int> { 0, 1, 0, 0, 0 };
+            return moveParameters;
         }
         // else if (moveNumber == 2)
         // {
@@ -85,7 +84,7 @@ public class UniqueMoves : MonoBehaviour
     {
         Unit unitSpecialization = GetComponent<Unit>();
         UniqueMoves unitComponent = GetComponent<Unit>().GetComponent<UniqueMoves>();
-        unitComponent.moveNumber = newMoveNumber;
+        moveBeingUsed = newMoveNumber;
     }
 
     public void changeUniqueMove(bool isBossTurn) // overloaded method for bosses to switch between normal and boss turns
@@ -94,7 +93,7 @@ public class UniqueMoves : MonoBehaviour
         UniqueMoves unitComponent = GetComponent<Unit>().GetComponent<UniqueMoves>();  
         if (isBossTurn)
         {
-            moveBeingUsed = unitComponent.moveNumber; // will use sonic boom on boss turns
+            moveBeingUsed = unitComponent.moveNumber; // will use main move on boss turns
         }
         else
         {

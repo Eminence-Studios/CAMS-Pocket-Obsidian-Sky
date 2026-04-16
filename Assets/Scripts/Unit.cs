@@ -99,6 +99,12 @@ public class Unit : MonoBehaviour
 
     public void buffStats(List<int> list)
     {
+        if (list == null)
+        {
+            Debug.LogWarning("buffStats called with null list!");
+            return;
+        }
+        
         int chance = UnityEngine.Random.Range(1,11);
         if (chance <= 5)
         {
