@@ -132,6 +132,33 @@ public class Unit : MonoBehaviour
             // do nothing
         }
     }
+    public void buffStatsNoChance(List<int> list)
+    {
+        unitAtk += list[0];
+        unitSpAtk += list[0];
+        unitDef += list[1];
+        unitSpDef += list[1];
+        unitSpd += list[2];
+        unitAcc += list[3];
+        if (list[4] == 1)
+        {
+            statusCondition = 1;
+        }
+        if (list[4] == 2)
+        {
+            statusCondition = 2;
+        }
+        if (list[4] == 3)
+        {
+            statusCondition = 3;
+        }
+        if (list[4] == 4)
+        {
+            statusCondition = 4;
+        }
+        statusEffect();
+        Debug.Log("Stats Increased");
+    }
 
     public void statusEffect()
     {

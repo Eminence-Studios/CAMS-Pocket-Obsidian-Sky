@@ -28,6 +28,7 @@ public enum BattleState
 }
 public class BattleSystem : MonoBehaviour
 {
+    public static BattleSystem instance;
 
     public GameObject playerPrefab;
     public GameObject enemyPrefab;
@@ -451,63 +452,34 @@ public class BattleSystem : MonoBehaviour
     IEnumerator basicEnemyTurn()
     {
         enemyUnit.energy += 1;
+        Debug.Log("Enemy's turn!");
+        yield return new WaitForSeconds(2f);
+
+        bool isDead = playerUnit.takeDamage(enemyUnit.unitAtk, enemyUnit.specialization);
+        enemyMoveset.changeUniqueMove(false);
+        List<int> buffParameters = enemyMoveset.determineUniqueMove();
+        enemyUnit.buffStats(buffParameters); // will proc the chance for it's special move to buff stats
+
+        if (playerUnit.unitHp == playerHUD.hpSlider.value)
+        {
+            Debug.Log("The attack couldn't break through the defense!");
+        }
+        playerHUD.setHP(playerUnit.unitHp);
+
         if (enemyUnit.statusCondition == 4)
         {
-            Debug.Log("Enemy's turn!");
-            playerUnit.buffStats(new List<int>{0, 99, 0, 0, 0});
-            yield return new WaitForSeconds(2f);
-            bool isDead = playerUnit.takeDamage(enemyUnit.unitAtk, enemyUnit.specialization);
-            enemyMoveset.changeUniqueMove(false);
-            List<int> buffParameters = enemyMoveset.determineUniqueMove();
-            enemyUnit.buffStats(buffParameters); // will proc the chance for it's special move to buff stats
-
-            if (playerUnit.unitHp == playerHUD.hpSlider.value)
-            {
-                Debug.Log("The attack couldn't break through the defense!");
-            }
-            playerHUD.setHP(playerUnit.unitHp);
-
+            playerUnit.buffStatsNoChance(new List<int>{0, -99, 0, 0, 0});
             enemyUnit.statusCondition = 0;
-            playerUnit.buffStats(new List<int>{0, -99, 0, 0, 0});
-            if (isDead)
-            {
-                state = BattleState.LOST;
-                endBattle();
-            }
-            else
-            {
-                state = BattleState.PLAYERTURN;
-                playerTurn();
-            }
+        }
+        if (isDead)
+        {
+            state = BattleState.LOST;
+            endBattle();
         }
         else
         {
-            Debug.Log("Enemy's turn!");
-
-            yield return new WaitForSeconds(2f);
-
-            bool isDead = playerUnit.takeDamage(enemyUnit.unitAtk, enemyUnit.specialization);
-            enemyMoveset.changeUniqueMove(false);
-            List<int> buffParameters = enemyMoveset.determineUniqueMove();
-            enemyUnit.buffStats(buffParameters); // will proc the chance for it's special move to buff stats
-
-            if (playerUnit.unitHp == playerHUD.hpSlider.value)
-            {
-                Debug.Log("The attack couldn't break through the defense!");
-            }
-            playerHUD.setHP(playerUnit.unitHp);
-
-
-            if (isDead)
-            {
-                state = BattleState.LOST;
-                endBattle();
-            }
-            else
-            {
-                state = BattleState.PLAYERTURN;
-                playerTurn();
-            }
+            state = BattleState.PLAYERTURN;
+            playerTurn();
         }
     }
 
@@ -545,7 +517,11 @@ public class BattleSystem : MonoBehaviour
         
             playerHUD.setHP(playerUnit.unitHp);
         }
-
+        if (enemyUnit.statusCondition == 4)
+        {
+            playerUnit.buffStatsNoChance(new List<int>{0, -99, 0, 0, 0});
+            enemyUnit.statusCondition = 0;
+        }
         if (isDead)
         {
             state = BattleState.LOST;
@@ -585,16 +561,34 @@ public class BattleSystem : MonoBehaviour
 {
     if ((turnCount % 6 == 0) || (turnCount % 8 == 0))
     {
-        StartCoroutine(bossEnemyTurn());
-        return true;
+        if (enemyUnit.statusCondition == 4)
+            {
+                playerUnit.buffStatsNoChance(new List<int>{0, 99, 0, 0, 0});
+                StartCoroutine(bossEnemyTurn());
+                return true;
+            }
+        else
+        {
+            StartCoroutine(bossEnemyTurn());
+            return true;
+        }
+        
     }
     else
     {
+        if (enemyUnit.statusCondition == 4)
+            {
+                playerUnit.buffStatsNoChance(new List<int>{0, 99, 0, 0, 0});
+                StartCoroutine(basicEnemyTurn());
+                return true;
+            }
+        else
+        {
         StartCoroutine(basicEnemyTurn());
         return true;
+        }
     }
     return false;
-    
 }
 
     public void shieldAbility()
@@ -607,7 +601,6 @@ public class BattleSystem : MonoBehaviour
     void NextTurn()
     {
         turnCount++;
-
         // Boss/neutral turn check FIRST
         if (CheckNeutralTurn())
             return;
