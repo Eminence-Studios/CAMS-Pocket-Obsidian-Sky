@@ -18,7 +18,7 @@ public class RandomDicePuzzle : MonoBehaviour
 
     private int rollCount = 0;
 
-    public string playerPrefVariable;
+    public string teacherName;
 
     public Movement playerMovement;
     public RandomDicePuzzle other;
@@ -47,7 +47,8 @@ public class RandomDicePuzzle : MonoBehaviour
     {
         progress.text = "Success!";
         successSound.Play();
-        PlayerPrefs.SetInt(playerPrefVariable, 1);
+        GameManager.Instance.setPuzzleCompeletion(teacherName, 0);
+        GameManager.Instance.SaveGame(); 
         collider.gameObject.SetActive(false);
         Invoke("closePuzzle", 2);
     }

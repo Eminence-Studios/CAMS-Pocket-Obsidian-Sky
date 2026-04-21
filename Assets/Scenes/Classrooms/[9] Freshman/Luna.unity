@@ -687,6 +687,9 @@ MonoBehaviour:
   teacherName: Luna
   dialoguePopUp: {fileID: 1256853252}
   dialogueManager: {fileID: 1682790333}
+  spellSelectionScreen: {fileID: 0}
+  element: 
+  totalNumOfElementSpells: 0
   initalLines:
   - Hey! Rock on!
   - "Let\u2019s start with some exercises to warm up your awareness of the earth
@@ -1761,15 +1764,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LoadCampusMap
   loadLocation: 0
-  playerPrefLocation: 
+  locationIndex: 0
   player: {fileID: 0}
   loadTrigger: 1
-  playerPrefTrigger:
-  - LunaPuzzle
+  totalPuzzleCount: 1
+  teacherName: Luna
   triggers:
   - {fileID: 1411225885}
   agulto: {fileID: 0}
   hallways: []
+  sceneMap: {fileID: 0}
   spellbookManager: {fileID: 0}
 --- !u!1 &737995200
 GameObject:
@@ -2474,7 +2478,7 @@ MonoBehaviour:
   collider: {fileID: 1411225885}
   gameScreen: {fileID: 6707132}
   playerMovement: {fileID: 916875898}
-  PlayerPrefVariable: LunaPuzzle
+  teacherName: Luna
   scoreText: {fileID: 572758296}
   resultText: {fileID: 612340771}
   retryButton: {fileID: 71090640}
@@ -3495,7 +3499,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::CanvasChanger
   oldCanvas: {fileID: 0}
   newCanvas: {fileID: 6707135}
-  player: {fileID: 0}
 --- !u!50 &1411225888
 Rigidbody2D:
   serializedVersion: 5
@@ -3966,6 +3969,8 @@ MonoBehaviour:
   teacherInteractionManager: {fileID: 150576266}
   hasNextScene: 0
   nextScreen: {fileID: 0}
+  changePlayerMovement: 0
+  playerMovement: {fileID: 0}
 --- !u!1 &1687967705
 GameObject:
   m_ObjectHideFlags: 0

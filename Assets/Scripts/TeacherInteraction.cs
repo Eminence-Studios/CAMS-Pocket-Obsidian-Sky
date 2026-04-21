@@ -34,15 +34,17 @@ public class TeacherInteraction : MonoBehaviour
     {
         playerMovement.enableMovement = false;
 
-        if (PlayerPrefs.GetInt(teacherName + "Spell", 0) == 1)
+        TeacherProgress data = GameManager.Instance.getTeacher(teacherName);
+
+        if (data.spell)
         {
             dialogueManager.lines = afterSpellLines;
         }
-        else if (PlayerPrefs.GetInt(teacherName + "Battle", 0) == 1)
+        else if (data.battle)
         {
             dialogueManager.lines = afterBattleLines;
         }
-        else if (PlayerPrefs.GetInt(teacherName + "Puzzle", 0) == 1)
+        else if (data.puzzle)
         {
             dialogueManager.lines = afterPuzzleLines;
         }
@@ -52,27 +54,19 @@ public class TeacherInteraction : MonoBehaviour
         }
         SpellbookManager.instance.transform.root.gameObject.SetActive(false);
         dialoguePopUp.SetActive(true);
-
-        // dialogueManager.startDialogue();
-        // Debug.Log("SetActive");
     }
 
     public void loadNext()
     {
-        // if spell learned
-        /*if (PlayerPrefs.GetInt(teacherName + "Spell", 0) == 1)
-        {
-            SpellbookManager.instance.transform.root.gameObject.SetActive(true);
-            playerMovement.enableMovement = true;
-        }*/
-        // if finished battle
-        if (PlayerPrefs.GetInt(teacherName + "Battle", 0) == 1)
+        TeacherProgress data = GameManager.Instance.getTeacher(teacherName);
+
+        if (data.battle)
         {
             spellSelectionScreen.SetActive(true);
             Debug.Log("Open Spell");
         }
         // if puzzle completed
-        else if (PlayerPrefs.GetInt(teacherName + "Puzzle", 0) == 1)
+        else if (data.puzzle)
         {
             // open battle canvas
             Debug.Log("Open Battle");
@@ -87,30 +81,17 @@ public class TeacherInteraction : MonoBehaviour
     public void selectSpell(Spell spell)
     {
         SpellbookManager.instance.learnSpell(spell);
-        PlayerPrefs.SetInt(teacherName + "Spell", 1);
 
-        PlayerPrefs.SetInt(element + "Spells", PlayerPrefs.GetInt(element + "Spells", 0) + 1);
-        int numMasteredElements = PlayerPrefs.GetInt("numOfMasteredElements", 0);
-
-        // check mastery of element
-        if (PlayerPrefs.GetInt(element + "Spells", 0) == totalNumOfElementSpells)
-        {
-            
-            numMasteredElements++;
-            PlayerPrefs.SetString("Element" + numMasteredElements, element);
-            PlayerPrefs.SetInt("numOfMasteredElements", numMasteredElements);
-
-            Debug.Log(element + " mastered");
-            Debug.Log("Elements Mastered: " + numMasteredElements);
-        }
+        // Update teacher progress
+        TeacherProgress data = GameManager.Instance.getTeacher(teacherName);
+        data.spell = true;
+        GameManager.Instance.addSpelltoElement(element, totalNumOfElementSpells);
 
         spellSelectionScreen.SetActive(false);
-
         dialogueManager.lines = afterSpellLines;
+
         SpellbookManager.instance.transform.root.gameObject.SetActive(false);
         dialoguePopUp.SetActive(true);
-
-        // loadNext();
     }
 
 }

@@ -1,3 +1,4 @@
+using System.Linq;
 using Unity.VisualScripting;
 using UnityEditor;
 using UnityEngine;
@@ -5,16 +6,17 @@ using UnityEngine;
 public class LoadScene : MonoBehaviour
 {
 
-    private int location;
+    // private int location;
 
     [Header("Location Parameters")]
     public bool loadLocation;
-    public string playerPrefLocation;
+    public int locationIndex;
     [SerializeField] Transform player;
 
     [Header("Trigger Parameters")]
     public bool loadTrigger;
-    public string[] playerPrefTrigger;
+    public int totalPuzzleCount;
+    public string teacherName;
     public GameObject[] triggers;
 
     [Header("Campus Map Parameters")]
@@ -39,21 +41,24 @@ public class LoadScene : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        /*
         if (!PlayerPrefs.HasKey("NishiyamaNotReady"))
         {
             PlayerPrefs.SetInt("NishiyamaNotReady", 1);
-            PlayerPrefs.SetFloat("SFXVolume", 1f);
+            // PlayerPrefs.SetFloat("SFXVolume", 1f);
         }
+        */
 
         if (loadLocation)
-        { 
-            createLocations();
-            numOfElements = PlayerPrefs.GetInt("numOfMasteredElements", 0);
-            location = PlayerPrefs.GetInt(playerPrefLocation, 0);
+        {
 
-            if (playerPrefLocation.Equals("CampusLocation"))
+            createLocations();
+            numOfElements = GameManager.Instance.currentData.numOfMasteredElements;
+            // location = PlayerPrefs.GetInt(playerPrefLocation, 0);
+
+            if (locationIndex == 0)
             {
-                player.position = locationsCampus[location];
+                player.position = locationsCampus[GameManager.Instance.currentData.currentLocations[0]];
                 GameObject rootCanvas = spellbookManager.transform.root.gameObject;
 
                 if (SpellbookManager.instance != null && SpellbookManager.instance != spellbookManager)
@@ -68,37 +73,37 @@ public class LoadScene : MonoBehaviour
                 DontDestroyOnLoad(rootCanvas);
                 updateOverlay();
             }
-            else if (playerPrefLocation.Equals("1000Location"))
+            else if (locationIndex == 1)
             {
-                player.position = locations1000[location];
+                player.position = locations1000[GameManager.Instance.currentData.currentLocations[1]];
                 SpellbookManager.instance.showMapIcon();
                 SpellbookManager.instance.updateMap(sceneMap);
                 load1000Hallway();
             }
-            else if (playerPrefLocation.Equals("2000Location"))
+            else if (locationIndex == 2)
             {
-                player.position = locations2000[location];
+                player.position = locations2000[GameManager.Instance.currentData.currentLocations[2]];
                 SpellbookManager.instance.showMapIcon();
                 SpellbookManager.instance.updateMap(sceneMap);
                 load2000Hallway();
             }
-            else if (playerPrefLocation.Equals("3000Location"))
+            else if (locationIndex == 3)
             {
-                player.position = locations3000[location];
+                player.position = locations3000[GameManager.Instance.currentData.currentLocations[3]];
                 SpellbookManager.instance.showMapIcon();
                 SpellbookManager.instance.updateMap(sceneMap);
                 load3000Hallway();
             }
-            else if (playerPrefLocation.Equals("4000Location"))
+            else if (locationIndex == 4)
             {
-                player.position = locations4000[location];
+                player.position = locations4000[GameManager.Instance.currentData.currentLocations[4]];
                 SpellbookManager.instance.showMapIcon();
                 SpellbookManager.instance.updateMap(sceneMap);
                 load4000Hallway();
             }
-            else if (playerPrefLocation.Equals("6000Location"))
+            else if (locationIndex == 5)
             {
-                player.position = locations6000[location];
+                player.position = locations6000[GameManager.Instance.currentData.currentLocations[5]];
                 SpellbookManager.instance.showMapIcon();
                 SpellbookManager.instance.updateMap(sceneMap);
                 load6000Hallway();
@@ -108,9 +113,28 @@ public class LoadScene : MonoBehaviour
         {
             SpellbookManager.instance.hideMapIcon();
 
-            for (int i = 0; i < playerPrefTrigger.Length; i++)
+            GameManager.Instance.createTeacher(teacherName, totalPuzzleCount);
+            TeacherProgress data = GameManager.Instance.getTeacher(teacherName);
+
+            int startSearchIndex = 0;
+            if (teacherName.Equals("Nishiyama"))
             {
-                if (PlayerPrefs.GetInt(playerPrefTrigger[i], 0) == 1)
+                if (data.subPuzzles[0] == true)
+                {
+                    triggers[0].SetActive(false);
+                    startSearchIndex = 1;
+                }
+                else
+                {
+                    foreach(var trigger in triggers)
+                    {
+                        trigger.SetActive(false);
+                    }
+                }
+            }
+            for (int i = startSearchIndex; i < startSearchIndex + data.subPuzzles.Length; i++)
+            {
+                if (data.subPuzzles[i])
                 {
                     triggers[i].SetActive(false);
                 }
@@ -232,7 +256,7 @@ public class LoadScene : MonoBehaviour
 
         GameObject root = SpellbookManager.instance.transform.root.gameObject;
 
-        if (PlayerPrefs.GetInt("tutorialFinished", 0) == 0)
+        if (!GameManager.Instance.currentData.tutorialComplete)
         {
             agulto.SetActive(true);
             root.SetActive(false);

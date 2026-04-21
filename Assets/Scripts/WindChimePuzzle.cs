@@ -39,7 +39,8 @@ public class WindChimePuzzle : MonoBehaviour
             if (input.text == melody)
             {
                 close.gameObject.SetActive(false);
-                PlayerPrefs.SetInt("JohnsonPuzzle", 1);
+                GameManager.Instance.setPuzzleCompeletion("Johnson", 0);
+                GameManager.Instance.SaveGame();
                 progress.text = "Beautiful tune!";
                 successSound.Play();
                 collider.gameObject.SetActive(false);

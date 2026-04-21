@@ -7,8 +7,12 @@ using System.Collections.Generic;
 public class SceneChanger : MonoBehaviour
 {
     [SerializeField] private int sceneID;
-    public string playerPrefVariable;
-    public int playerPrefValue;
+ 
+    // Scene for which location is being saved. Corresponds with currentLocations list in GameData
+    public int locationIndex;
+    
+    // Actual location in scene. Index of location from LoadScene
+    public int locationValue;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -24,7 +28,7 @@ public class SceneChanger : MonoBehaviour
 
     public void MoveToScene()
     {
-        PlayerPrefs.SetInt(playerPrefVariable, playerPrefValue);
+        GameManager.Instance.currentData.currentLocations[locationIndex] = locationValue;
         SceneManager.LoadScene(sceneID);
     }
 

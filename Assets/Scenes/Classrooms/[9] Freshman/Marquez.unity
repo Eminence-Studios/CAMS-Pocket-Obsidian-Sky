@@ -423,7 +423,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::CanvasChanger
   oldCanvas: {fileID: 0}
   newCanvas: {fileID: 422019517}
-  player: {fileID: 0}
 --- !u!50 &111968992
 Rigidbody2D:
   serializedVersion: 5
@@ -587,12 +586,12 @@ MonoBehaviour:
   bud: {fileID: -7613956453667226090, guid: 47c5286d9e222854c9088861cd18b4d9, type: 3}
   flower: {fileID: 5718745748720444238, guid: 893d7ec31124f60468fca3499f6eee48, type: 3}
   close: {fileID: 1192227832}
-  puzzleManager: {fileID: 871137420}
   playerMovement: {fileID: 1134639859}
   notStartedText: Hold the solar panel to charge it with energy!
   inProgressText: Charging...
   completedText: Solar panel charged 100%
-  PlayerPrefVariable: MarquezPuzzle3
+  teacherName: Marquez
+  puzzleIndex: 2
   successSound: {fileID: 1426354608}
 --- !u!114 &114194950
 MonoBehaviour:
@@ -1563,7 +1562,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::CanvasChanger
   oldCanvas: {fileID: 0}
   newCanvas: {fileID: 358656438}
-  player: {fileID: 0}
 --- !u!50 &323016162
 Rigidbody2D:
   serializedVersion: 5
@@ -3661,12 +3659,12 @@ MonoBehaviour:
   bud: {fileID: -7613956453667226090, guid: 47c5286d9e222854c9088861cd18b4d9, type: 3}
   flower: {fileID: 5718745748720444238, guid: 893d7ec31124f60468fca3499f6eee48, type: 3}
   close: {fileID: 333770816}
-  puzzleManager: {fileID: 871137420}
   playerMovement: {fileID: 1134639859}
   notStartedText: Hold the solar panel to charge it with energy!
   inProgressText: Charging...
   completedText: Solar panel charged 100%
-  PlayerPrefVariable: MarquezPuzzle2
+  teacherName: Marquez
+  puzzleIndex: 1
   successSound: {fileID: 1426354608}
 --- !u!114 &801067111
 MonoBehaviour:
@@ -3855,9 +3853,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62a5e50abbdb9b5438c89a1c02d0c170, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MultiPuzzleManager
-  mainPuzzleName: MarquezPuzzle
+  teacherName: 
   numOfPuzzles: 5
-  isTwoStep: 0
+  startSearchIndex: 0
 --- !u!1 &876585870
 GameObject:
   m_ObjectHideFlags: 0
@@ -3975,6 +3973,8 @@ MonoBehaviour:
   teacherInteractionManager: {fileID: 1697977735}
   hasNextScene: 0
   nextScreen: {fileID: 0}
+  changePlayerMovement: 0
+  playerMovement: {fileID: 0}
 --- !u!4 &949658291
 Transform:
   m_ObjectHideFlags: 0
@@ -4176,7 +4176,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::CanvasChanger
   oldCanvas: {fileID: 0}
   newCanvas: {fileID: 1834858958}
-  player: {fileID: 0}
 --- !u!50 &1073634143
 Rigidbody2D:
   serializedVersion: 5
@@ -4687,7 +4686,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::CanvasChanger
   oldCanvas: {fileID: 0}
   newCanvas: {fileID: 549263695}
-  player: {fileID: 0}
 --- !u!50 &1176657261
 Rigidbody2D:
   serializedVersion: 5
@@ -5770,7 +5768,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::CanvasChanger
   oldCanvas: {fileID: 0}
   newCanvas: {fileID: 193775852}
-  player: {fileID: 0}
 --- !u!50 &1398379766
 Rigidbody2D:
   serializedVersion: 5
@@ -6275,12 +6272,12 @@ MonoBehaviour:
   bud: {fileID: -7613956453667226090, guid: 47c5286d9e222854c9088861cd18b4d9, type: 3}
   flower: {fileID: 5718745748720444238, guid: 893d7ec31124f60468fca3499f6eee48, type: 3}
   close: {fileID: 1406944329}
-  puzzleManager: {fileID: 871137420}
   playerMovement: {fileID: 1134639859}
   notStartedText: Hold the solar panel to charge it with energy!
   inProgressText: Charging...
   completedText: Solar panel charged 100%
-  PlayerPrefVariable: MarquezPuzzle1
+  teacherName: Marquez
+  puzzleIndex: 0
   successSound: {fileID: 1426354608}
 --- !u!114 &1577117089
 MonoBehaviour:
@@ -7122,15 +7119,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LoadScene
   loadLocation: 0
-  playerPrefLocation: 
+  locationIndex: 0
   player: {fileID: 0}
   loadTrigger: 1
-  playerPrefTrigger:
-  - MarquezPuzzle1
-  - MarquezPuzzle2
-  - MarquezPuzzle3
-  - MarquezPuzzle4
-  - MarquezPuzzle5
+  totalPuzzleCount: 5
+  teacherName: Marquez
   triggers:
   - {fileID: 1398379763}
   - {fileID: 1176657258}
@@ -7139,6 +7132,7 @@ MonoBehaviour:
   - {fileID: 111968989}
   agulto: {fileID: 0}
   hallways: []
+  sceneMap: {fileID: 0}
   spellbookManager: {fileID: 0}
 --- !u!1 &1697977733
 GameObject:
@@ -7193,6 +7187,8 @@ MonoBehaviour:
   dialoguePopUp: {fileID: 510418885}
   dialogueManager: {fileID: 949658290}
   spellSelectionScreen: {fileID: 0}
+  element: 
+  totalNumOfElementSpells: 0
   initalLines:
   - Hi there!
   - "Let\u2019s work together to help you harness the power of light magic."
@@ -7984,12 +7980,12 @@ MonoBehaviour:
   bud: {fileID: -7613956453667226090, guid: 47c5286d9e222854c9088861cd18b4d9, type: 3}
   flower: {fileID: 5718745748720444238, guid: 893d7ec31124f60468fca3499f6eee48, type: 3}
   close: {fileID: 617044992}
-  puzzleManager: {fileID: 871137420}
   playerMovement: {fileID: 1134639859}
   notStartedText: Hold the solar panel to charge it with energy!
   inProgressText: Charging...
   completedText: Solar panel charged 100%
-  PlayerPrefVariable: MarquezPuzzle4
+  teacherName: Marquez
+  puzzleIndex: 3
   successSound: {fileID: 1426354608}
 --- !u!114 &1754045349
 MonoBehaviour:
@@ -8739,12 +8735,12 @@ MonoBehaviour:
   bud: {fileID: -7613956453667226090, guid: 47c5286d9e222854c9088861cd18b4d9, type: 3}
   flower: {fileID: 5718745748720444238, guid: 893d7ec31124f60468fca3499f6eee48, type: 3}
   close: {fileID: 616071320}
-  puzzleManager: {fileID: 871137420}
   playerMovement: {fileID: 1134639859}
   notStartedText: Hold the solar panel to charge it with energy!
   inProgressText: Charging...
   completedText: Solar panel charged 100%
-  PlayerPrefVariable: MarquezPuzzle5
+  teacherName: Marquez
+  puzzleIndex: 4
   successSound: {fileID: 1426354608}
 --- !u!114 &1943359707
 MonoBehaviour:

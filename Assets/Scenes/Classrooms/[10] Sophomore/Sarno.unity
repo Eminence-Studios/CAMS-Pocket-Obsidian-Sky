@@ -169,7 +169,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::CanvasChanger
   oldCanvas: {fileID: 0}
   newCanvas: {fileID: 1982558796}
-  player: {fileID: 0}
 --- !u!50 &42305021
 Rigidbody2D:
   serializedVersion: 5
@@ -781,7 +780,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::CanvasChanger
   oldCanvas: {fileID: 0}
   newCanvas: {fileID: 2024854246}
-  player: {fileID: 0}
 --- !u!50 &208494559
 Rigidbody2D:
   serializedVersion: 5
@@ -1987,6 +1985,8 @@ MonoBehaviour:
   dialoguePopUp: {fileID: 208243415}
   dialogueManager: {fileID: 1165950374}
   spellSelectionScreen: {fileID: 0}
+  element: 
+  totalNumOfElementSpells: 0
   initalLines:
   - Hey! Welcome, welcome.
   - Wind can be a harsh discipline, but there is a gentle side to it.
@@ -2484,15 +2484,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LoadCampusMap
   loadLocation: 0
-  playerPrefLocation: 
+  locationIndex: 0
   player: {fileID: 0}
   loadTrigger: 1
-  playerPrefTrigger:
-  - SarnoPuzzle
+  totalPuzzleCount: 1
+  teacherName: Sarno
   triggers:
   - {fileID: 1411225885}
   agulto: {fileID: 0}
   hallways: []
+  sceneMap: {fileID: 0}
   spellbookManager: {fileID: 0}
 --- !u!1 &689902237
 GameObject:
@@ -3125,6 +3126,8 @@ MonoBehaviour:
   teacherInteractionManager: {fileID: 0}
   hasNextScene: 0
   nextScreen: {fileID: 0}
+  changePlayerMovement: 0
+  playerMovement: {fileID: 0}
 --- !u!1 &716418712
 GameObject:
   m_ObjectHideFlags: 0
@@ -3411,7 +3414,7 @@ MonoBehaviour:
   successSound: {fileID: 844560495}
   failureSound: {fileID: 1673351423}
   code: 213
-  playerPrefVariable: SarnoPuzzle
+  teacherName: Sarno
   progressTexts:
   - 'Enter the runes in the correct order to cast the spell '
   - "Attempting to cast spell\u2026 "
@@ -3488,6 +3491,8 @@ MonoBehaviour:
   teacherInteractionManager: {fileID: 0}
   hasNextScene: 0
   nextScreen: {fileID: 0}
+  changePlayerMovement: 0
+  playerMovement: {fileID: 0}
 --- !u!1 &844560493
 GameObject:
   m_ObjectHideFlags: 0
@@ -4580,7 +4585,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::CanvasChanger
   oldCanvas: {fileID: 0}
   newCanvas: {fileID: 1300222012}
-  player: {fileID: 0}
 --- !u!50 &1053395989
 Rigidbody2D:
   serializedVersion: 5
@@ -4761,6 +4765,8 @@ MonoBehaviour:
   teacherInteractionManager: {fileID: 0}
   hasNextScene: 0
   nextScreen: {fileID: 0}
+  changePlayerMovement: 0
+  playerMovement: {fileID: 0}
 --- !u!1 &1134552540
 GameObject:
   m_ObjectHideFlags: 0
@@ -5046,6 +5052,8 @@ MonoBehaviour:
   teacherInteractionManager: {fileID: 620195738}
   hasNextScene: 0
   nextScreen: {fileID: 0}
+  changePlayerMovement: 0
+  playerMovement: {fileID: 0}
 --- !u!4 &1165950375
 Transform:
   m_ObjectHideFlags: 0
@@ -5120,6 +5128,8 @@ MonoBehaviour:
   teacherInteractionManager: {fileID: 0}
   hasNextScene: 0
   nextScreen: {fileID: 0}
+  changePlayerMovement: 0
+  playerMovement: {fileID: 0}
 --- !u!1 &1196540412
 GameObject:
   m_ObjectHideFlags: 0
@@ -6831,7 +6841,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::CanvasChanger
   oldCanvas: {fileID: 0}
   newCanvas: {fileID: 1664738527}
-  player: {fileID: 0}
 --- !u!50 &1411225888
 Rigidbody2D:
   serializedVersion: 5
@@ -7095,6 +7104,8 @@ MonoBehaviour:
   teacherInteractionManager: {fileID: 0}
   hasNextScene: 0
   nextScreen: {fileID: 0}
+  changePlayerMovement: 0
+  playerMovement: {fileID: 0}
 --- !u!1 &1472734441
 GameObject:
   m_ObjectHideFlags: 0
@@ -8510,7 +8521,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::CanvasChanger
   oldCanvas: {fileID: 0}
   newCanvas: {fileID: 1199323802}
-  player: {fileID: 0}
 --- !u!50 &1822146835
 Rigidbody2D:
   serializedVersion: 5
@@ -8908,7 +8918,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::CanvasChanger
   oldCanvas: {fileID: 0}
   newCanvas: {fileID: 53757647}
-  player: {fileID: 0}
 --- !u!50 &1904384557
 Rigidbody2D:
   serializedVersion: 5
@@ -9352,7 +9361,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::CanvasChanger
   oldCanvas: {fileID: 0}
   newCanvas: {fileID: 1382024584}
-  player: {fileID: 0}
 --- !u!50 &1951655798
 Rigidbody2D:
   serializedVersion: 5
@@ -10203,6 +10211,8 @@ MonoBehaviour:
   teacherInteractionManager: {fileID: 0}
   hasNextScene: 0
   nextScreen: {fileID: 0}
+  changePlayerMovement: 0
+  playerMovement: {fileID: 0}
 --- !u!1 &2121056278
 GameObject:
   m_ObjectHideFlags: 0

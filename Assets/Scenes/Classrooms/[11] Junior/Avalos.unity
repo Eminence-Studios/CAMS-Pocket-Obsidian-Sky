@@ -410,7 +410,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::CanvasChanger
   oldCanvas: {fileID: 0}
   newCanvas: {fileID: 1664738527}
-  player: {fileID: 0}
 --- !u!50 &206288566
 Rigidbody2D:
   serializedVersion: 5
@@ -1147,7 +1146,7 @@ MonoBehaviour:
   rollButton: {fileID: 1185557758}
   progress: {fileID: 1888644464}
   isManager: 1
-  playerPrefVariable: AvalosPuzzle
+  teacherName: Avalos
   playerMovement: {fileID: 213539030}
   other: {fileID: 775438382}
   successSound: {fileID: 870301510}
@@ -1780,15 +1779,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LoadScene
   loadLocation: 0
-  playerPrefLocation: 
+  locationIndex: 0
   player: {fileID: 0}
   loadTrigger: 1
-  playerPrefTrigger:
-  - AvalosPuzzle
+  totalPuzzleCount: 1
+  teacherName: Avalos
   triggers:
   - {fileID: 206288563}
   agulto: {fileID: 0}
   hallways: []
+  sceneMap: {fileID: 0}
   spellbookManager: {fileID: 0}
 --- !u!1 &733990568
 GameObject:
@@ -1939,7 +1939,7 @@ MonoBehaviour:
   rollButton: {fileID: 0}
   progress: {fileID: 0}
   isManager: 0
-  playerPrefVariable: 
+  teacherName: 
   playerMovement: {fileID: 0}
   other: {fileID: 0}
   successSound: {fileID: 0}
@@ -2540,6 +2540,8 @@ MonoBehaviour:
   dialoguePopUp: {fileID: 188390945}
   dialogueManager: {fileID: 2140464427}
   spellSelectionScreen: {fileID: 0}
+  element: 
+  totalNumOfElementSpells: 0
   initalLines:
   - Hello there! You interested in chance?
   - Oh, magic.
@@ -5393,6 +5395,8 @@ MonoBehaviour:
   teacherInteractionManager: {fileID: 870140102}
   hasNextScene: 0
   nextScreen: {fileID: 0}
+  changePlayerMovement: 0
+  playerMovement: {fileID: 0}
 --- !u!1 &2145248219
 GameObject:
   m_ObjectHideFlags: 0

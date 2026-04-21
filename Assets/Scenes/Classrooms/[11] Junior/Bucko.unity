@@ -464,6 +464,9 @@ MonoBehaviour:
   teacherName: Bucko
   dialoguePopUp: {fileID: 1256853252}
   dialogueManager: {fileID: 1682790333}
+  spellSelectionScreen: {fileID: 0}
+  element: 
+  totalNumOfElementSpells: 0
   initalLines:
   - Good morning.
   - Are you here for the deep-reaching magic of plants?
@@ -1020,15 +1023,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LoadCampusMap
   loadLocation: 0
-  playerPrefLocation: 
+  locationIndex: 0
   player: {fileID: 0}
   loadTrigger: 1
-  playerPrefTrigger:
-  - BuckoPuzzle
+  totalPuzzleCount: 1
+  teacherName: Bucko
   triggers:
   - {fileID: 707915787}
   agulto: {fileID: 0}
   hallways: []
+  sceneMap: {fileID: 0}
   spellbookManager: {fileID: 0}
 --- !u!1 &707915787
 GameObject:
@@ -1064,7 +1068,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::CanvasChanger
   oldCanvas: {fileID: 0}
   newCanvas: {fileID: 1283408668}
-  player: {fileID: 0}
 --- !u!50 &707915789
 Rigidbody2D:
   serializedVersion: 5
@@ -3175,6 +3178,8 @@ MonoBehaviour:
   teacherInteractionManager: {fileID: 150576266}
   hasNextScene: 0
   nextScreen: {fileID: 0}
+  changePlayerMovement: 0
+  playerMovement: {fileID: 0}
 --- !u!1 &1687967705
 GameObject:
   m_ObjectHideFlags: 0
@@ -3524,7 +3529,7 @@ MonoBehaviour:
   collider: {fileID: 707915787}
   gameScreen: {fileID: 1283408667}
   playerMovement: {fileID: 916875898}
-  PlayerPrefVariable: BuckoPuzzle
+  teacherName: Bucko
   scoreText: {fileID: 2030107089}
   resultText: {fileID: 1713336497}
   retryButton: {fileID: 2081118199}

@@ -348,8 +348,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SceneChanger
   sceneID: 22
-  playerPrefVariable: 2000Location
-  playerPrefValue: 2
+  locationIndex: 2
+  locationValue: 2
 --- !u!50 &155675245
 Rigidbody2D:
   serializedVersion: 5
@@ -520,8 +520,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SceneChanger
   sceneID: 16
-  playerPrefVariable: 2000Location
-  playerPrefValue: 1
+  locationIndex: 2
+  locationValue: 1
 --- !u!50 &171101087
 Rigidbody2D:
   serializedVersion: 5
@@ -1011,15 +1011,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LoadCampusMap
   loadLocation: 1
-  playerPrefLocation: 2000Location
+  locationIndex: 2
   player: {fileID: 34342682}
   loadTrigger: 0
-  playerPrefTrigger: []
+  totalPuzzleCount: 0
+  teacherName: 
   triggers:
   - {fileID: 171101084}
   - {fileID: 155675242}
   - {fileID: 1887566215}
   - {fileID: 1734224875}
+  agulto: {fileID: 0}
+  hallways: []
+  sceneMap: {fileID: 0}
+  spellbookManager: {fileID: 0}
 --- !u!114 &1002540052
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1542,8 +1547,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SceneChanger
   sceneID: 17
-  playerPrefVariable: 2000Location
-  playerPrefValue: 4
+  locationIndex: 2
+  locationValue: 4
 --- !u!50 &1734224878
 Rigidbody2D:
   serializedVersion: 5
@@ -1798,8 +1803,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SceneChanger
   sceneID: 24
-  playerPrefVariable: 2000Location
-  playerPrefValue: 3
+  locationIndex: 2
+  locationValue: 3
 --- !u!50 &1887566218
 Rigidbody2D:
   serializedVersion: 5
@@ -2338,8 +2343,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SceneChanger
   sceneID: 2
-  playerPrefVariable: 2000Location
-  playerPrefValue: 0
+  locationIndex: 2
+  locationValue: 0
 --- !u!58 &2125169691
 CircleCollider2D:
   m_ObjectHideFlags: 0

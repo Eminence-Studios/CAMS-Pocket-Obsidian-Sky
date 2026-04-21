@@ -636,6 +636,8 @@ MonoBehaviour:
   dialoguePopUp: {fileID: 1256853252}
   dialogueManager: {fileID: 1682790333}
   spellSelectionScreen: {fileID: 0}
+  element: 
+  totalNumOfElementSpells: 0
   initalLines:
   - "Kon\u2019nichiwa! Hello and welcome in!"
   - "As long as you work hard, you\u2019ll be fluent in light magic in no time."
@@ -1215,7 +1217,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::CanvasChanger
   oldCanvas: {fileID: 0}
   newCanvas: {fileID: 2116886328}
-  player: {fileID: 0}
 --- !u!50 &253542728
 Rigidbody2D:
   serializedVersion: 5
@@ -1568,7 +1569,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::CanvasChanger
   oldCanvas: {fileID: 0}
   newCanvas: {fileID: 650623401}
-  player: {fileID: 0}
 --- !u!50 &260336668
 Rigidbody2D:
   serializedVersion: 5
@@ -2245,9 +2245,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62a5e50abbdb9b5438c89a1c02d0c170, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MultiPuzzleManager
-  mainPuzzleName: NishiyamaPuzzle
+  teacherName: 
   numOfPuzzles: 5
-  isTwoStep: 0
+  startSearchIndex: 0
 --- !u!4 &360859488
 Transform:
   m_ObjectHideFlags: 0
@@ -2542,6 +2542,8 @@ MonoBehaviour:
   teacherInteractionManager: {fileID: 0}
   hasNextScene: 0
   nextScreen: {fileID: 0}
+  changePlayerMovement: 0
+  playerMovement: {fileID: 0}
 --- !u!1 &410280158
 GameObject:
   m_ObjectHideFlags: 0
@@ -4313,7 +4315,7 @@ MonoBehaviour:
   successSound: {fileID: 2075370896}
   failureSound: {fileID: 2057202010}
   code: 24013
-  playerPrefVariable: NishiyamaPuzzle0
+  teacherName: 
   progressTexts:
   - Match each meaning to the correct tanzaku color
   - Reading wishes
@@ -5025,20 +5027,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LoadCampusMap
   loadLocation: 0
-  playerPrefLocation: 
+  locationIndex: 0
   player: {fileID: 0}
   loadTrigger: 1
-  playerPrefTrigger:
-  - NishiyamaPuzzle0
-  - NishiyamaNotReady
-  - NishiyamaPuzzle1
-  - NishiyamaPuzzle2
-  - NishiyamaPuzzle3
-  - NishiyamaPuzzle4
-  - NishiyamaPuzzle5
+  totalPuzzleCount: 6
+  teacherName: Nishiyama
   triggers:
   - {fileID: 1411225885}
-  - {fileID: 1587316533}
   - {fileID: 1629789022}
   - {fileID: 253542725}
   - {fileID: 929888553}
@@ -5046,6 +5041,7 @@ MonoBehaviour:
   - {fileID: 260336665}
   agulto: {fileID: 0}
   hallways: []
+  sceneMap: {fileID: 0}
   spellbookManager: {fileID: 0}
 --- !u!1 &686530110
 GameObject:
@@ -5255,6 +5251,8 @@ MonoBehaviour:
   teacherInteractionManager: {fileID: 0}
   hasNextScene: 0
   nextScreen: {fileID: 0}
+  changePlayerMovement: 0
+  playerMovement: {fileID: 0}
 --- !u!1 &708006487
 GameObject:
   m_ObjectHideFlags: 0
@@ -5313,6 +5311,8 @@ MonoBehaviour:
   teacherInteractionManager: {fileID: 0}
   hasNextScene: 0
   nextScreen: {fileID: 0}
+  changePlayerMovement: 0
+  playerMovement: {fileID: 0}
 --- !u!1 &715506703
 GameObject:
   m_ObjectHideFlags: 0
@@ -5887,6 +5887,8 @@ MonoBehaviour:
   teacherInteractionManager: {fileID: 0}
   hasNextScene: 0
   nextScreen: {fileID: 0}
+  changePlayerMovement: 0
+  playerMovement: {fileID: 0}
 --- !u!1 &811498091
 GameObject:
   m_ObjectHideFlags: 0
@@ -6930,7 +6932,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::CanvasChanger
   oldCanvas: {fileID: 0}
   newCanvas: {fileID: 2061308768}
-  player: {fileID: 0}
 --- !u!50 &929888556
 Rigidbody2D:
   serializedVersion: 5
@@ -7094,12 +7095,12 @@ MonoBehaviour:
   bud: {fileID: 6929814024863328386, guid: bca209db24fad7e4f809b715ac15ea16, type: 3}
   flower: {fileID: -6140787510195819535, guid: d30642d3038699549aaab941230f86c7, type: 3}
   close: {fileID: 1325190777}
-  puzzleManager: {fileID: 360859487}
   playerMovement: {fileID: 916875898}
   notStartedText: Hold the bamboo to hang the white tanzaku
   inProgressText: Hanging...
   completedText: White tanzaku hung!
-  PlayerPrefVariable: NishiyamaPuzzle4
+  teacherName: 
+  puzzleIndex: 0
   successSound: {fileID: 2075370896}
 --- !u!114 &964717502
 MonoBehaviour:
@@ -7344,6 +7345,8 @@ MonoBehaviour:
   teacherInteractionManager: {fileID: 0}
   hasNextScene: 0
   nextScreen: {fileID: 0}
+  changePlayerMovement: 0
+  playerMovement: {fileID: 0}
 --- !u!1 &1007944326
 GameObject:
   m_ObjectHideFlags: 0
@@ -9110,12 +9113,12 @@ MonoBehaviour:
   bud: {fileID: 6929814024863328386, guid: bca209db24fad7e4f809b715ac15ea16, type: 3}
   flower: {fileID: 833730840114228799, guid: 900fc574e582e8e4996a6f1ac945bc1a, type: 3}
   close: {fileID: 327378522}
-  puzzleManager: {fileID: 360859487}
   playerMovement: {fileID: 916875898}
   notStartedText: Hold the bamboo to hang the blue tanzaku
   inProgressText: Hanging...
   completedText: Blue tanzaku hung!
-  PlayerPrefVariable: NishiyamaPuzzle1
+  teacherName: 
+  puzzleIndex: 0
   successSound: {fileID: 2075370896}
 --- !u!114 &1291508197
 MonoBehaviour:
@@ -10149,7 +10152,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::CanvasChanger
   oldCanvas: {fileID: 0}
   newCanvas: {fileID: 410280162}
-  player: {fileID: 0}
 --- !u!50 &1403104204
 Rigidbody2D:
   serializedVersion: 5
@@ -10454,7 +10456,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::CanvasChanger
   oldCanvas: {fileID: 0}
   newCanvas: {fileID: 2145104466}
-  player: {fileID: 0}
 --- !u!50 &1411225888
 Rigidbody2D:
   serializedVersion: 5
@@ -10851,7 +10852,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::CanvasChanger
   oldCanvas: {fileID: 0}
   newCanvas: {fileID: 1348044631}
-  player: {fileID: 0}
 --- !u!50 &1451781948
 Rigidbody2D:
   serializedVersion: 5
@@ -11206,7 +11206,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::CanvasChanger
   oldCanvas: {fileID: 0}
   newCanvas: {fileID: 1324222030}
-  player: {fileID: 0}
 --- !u!50 &1472824677
 Rigidbody2D:
   serializedVersion: 5
@@ -11592,7 +11591,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::CanvasChanger
   oldCanvas: {fileID: 0}
   newCanvas: {fileID: 1506732882}
-  player: {fileID: 0}
 --- !u!50 &1530083589
 Rigidbody2D:
   serializedVersion: 5
@@ -12196,12 +12194,12 @@ MonoBehaviour:
   bud: {fileID: 6929814024863328386, guid: bca209db24fad7e4f809b715ac15ea16, type: 3}
   flower: {fileID: 8387456174508176798, guid: 92055c9eb47b5ab41beedbb1f1e31525, type: 3}
   close: {fileID: 1216455764}
-  puzzleManager: {fileID: 360859487}
   playerMovement: {fileID: 916875898}
   notStartedText: Hold the bamboo to hang the yellow tanzaku
   inProgressText: Hanging...
   completedText: Yellow tanzaku hung!
-  PlayerPrefVariable: NishiyamaPuzzle5
+  teacherName: 
+  puzzleIndex: 0
   successSound: {fileID: 2075370896}
 --- !u!114 &1609334073
 MonoBehaviour:
@@ -12490,7 +12488,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::CanvasChanger
   oldCanvas: {fileID: 0}
   newCanvas: {fileID: 259417604}
-  player: {fileID: 0}
 --- !u!50 &1629789025
 Rigidbody2D:
   serializedVersion: 5
@@ -13022,6 +13019,8 @@ MonoBehaviour:
   teacherInteractionManager: {fileID: 150576266}
   hasNextScene: 0
   nextScreen: {fileID: 0}
+  changePlayerMovement: 0
+  playerMovement: {fileID: 0}
 --- !u!1 &1687967705
 GameObject:
   m_ObjectHideFlags: 0
@@ -13955,7 +13954,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::CanvasChanger
   oldCanvas: {fileID: 0}
   newCanvas: {fileID: 357747783}
-  player: {fileID: 0}
 --- !u!50 &1794568527
 Rigidbody2D:
   serializedVersion: 5
@@ -14163,7 +14161,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::CanvasChanger
   oldCanvas: {fileID: 0}
   newCanvas: {fileID: 1645306570}
-  player: {fileID: 0}
 --- !u!50 &1842974040
 Rigidbody2D:
   serializedVersion: 5
@@ -14629,12 +14626,12 @@ MonoBehaviour:
   bud: {fileID: 6929814024863328386, guid: bca209db24fad7e4f809b715ac15ea16, type: 3}
   flower: {fileID: -8133720705632758022, guid: 9a2fd39c8c61ac4409f08eea3c9e337d, type: 3}
   close: {fileID: 559382977}
-  puzzleManager: {fileID: 360859487}
   playerMovement: {fileID: 916875898}
   notStartedText: Hold the bamboo to hang the purple tanzaku
   inProgressText: Hanging...
   completedText: Purple tanzaku hung!
-  PlayerPrefVariable: NishiyamaPuzzle2
+  teacherName: 
+  puzzleIndex: 0
   successSound: {fileID: 2075370896}
 --- !u!114 &1961398504
 MonoBehaviour:
@@ -16030,12 +16027,12 @@ MonoBehaviour:
   bud: {fileID: 6929814024863328386, guid: bca209db24fad7e4f809b715ac15ea16, type: 3}
   flower: {fileID: 4330225139154692377, guid: b0614c1ad4afd0740b54108d7dc48cf6, type: 3}
   close: {fileID: 1266734057}
-  puzzleManager: {fileID: 360859487}
   playerMovement: {fileID: 916875898}
   notStartedText: Hold the bamboo to hang the red tanzaku
   inProgressText: Hanging...
   completedText: Red tanzaku hung!
-  PlayerPrefVariable: NishiyamaPuzzle3
+  teacherName: 
+  puzzleIndex: 0
   successSound: {fileID: 2075370896}
 --- !u!114 &2138891508
 MonoBehaviour:

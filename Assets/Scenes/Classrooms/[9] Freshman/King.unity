@@ -350,6 +350,8 @@ MonoBehaviour:
   teacherInteractionManager: {fileID: 1424452862}
   hasNextScene: 0
   nextScreen: {fileID: 0}
+  changePlayerMovement: 0
+  playerMovement: {fileID: 0}
 --- !u!1 &107978675
 GameObject:
   m_ObjectHideFlags: 0
@@ -1619,7 +1621,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::CanvasChanger
   oldCanvas: {fileID: 0}
   newCanvas: {fileID: 1920886677}
-  player: {fileID: 0}
 --- !u!50 &378664235
 Rigidbody2D:
   serializedVersion: 5
@@ -1897,7 +1898,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::CanvasChanger
   oldCanvas: {fileID: 0}
   newCanvas: {fileID: 1454239096}
-  player: {fileID: 0}
 --- !u!50 &391247630
 Rigidbody2D:
   serializedVersion: 5
@@ -2899,12 +2899,12 @@ MonoBehaviour:
   bud: {fileID: 21300000, guid: 1d4526536bd16c74ca18f88b62da3b08, type: 3}
   flower: {fileID: 21300000, guid: e20413675788d6243a483af9d4108386, type: 3}
   close: {fileID: 631855957}
-  puzzleManager: {fileID: 1300310726}
   playerMovement: {fileID: 922991732}
   notStartedText: Hold the plant to water it!
   inProgressText: Watering...
   completedText: Plant watered!
-  PlayerPrefVariable: KingPuzzle4
+  teacherName: King
+  puzzleIndex: 3
   successSound: {fileID: 2146660210}
 --- !u!114 &640004991
 MonoBehaviour:
@@ -4401,7 +4401,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::CanvasChanger
   oldCanvas: {fileID: 0}
   newCanvas: {fileID: 1422687413}
-  player: {fileID: 0}
 --- !u!50 &978615774
 Rigidbody2D:
   serializedVersion: 5
@@ -5084,12 +5083,12 @@ MonoBehaviour:
   bud: {fileID: 21300000, guid: 1d4526536bd16c74ca18f88b62da3b08, type: 3}
   flower: {fileID: 21300000, guid: 73bfd7b8edd4a44458fb37d15ae9efce, type: 3}
   close: {fileID: 1782461174}
-  puzzleManager: {fileID: 1300310726}
   playerMovement: {fileID: 922991732}
   notStartedText: Hold the plant to water it!
   inProgressText: Watering...
   completedText: Plant watered!
-  PlayerPrefVariable: KingPuzzle2
+  teacherName: King
+  puzzleIndex: 1
   successSound: {fileID: 2146660210}
 --- !u!114 &1068007748
 MonoBehaviour:
@@ -5362,7 +5361,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::CanvasChanger
   oldCanvas: {fileID: 0}
   newCanvas: {fileID: 390082062}
-  player: {fileID: 0}
 --- !u!50 &1171037370
 Rigidbody2D:
   serializedVersion: 5
@@ -5783,7 +5781,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1300310725}
-  - component: {fileID: 1300310726}
   m_Layer: 0
   m_Name: Puzzles
   m_TagString: Untagged
@@ -5812,21 +5809,6 @@ Transform:
   - {fileID: 1920886678}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1300310726
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1300310724}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 62a5e50abbdb9b5438c89a1c02d0c170, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::MultiPuzzleManager
-  mainPuzzleName: KingPuzzle
-  numOfPuzzles: 5
-  isTwoStep: 0
 --- !u!1 &1307658855
 GameObject:
   m_ObjectHideFlags: 0
@@ -6053,15 +6035,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LoadScene
   loadLocation: 0
-  playerPrefLocation: 
+  locationIndex: 0
   player: {fileID: 0}
   loadTrigger: 1
-  playerPrefTrigger:
-  - KingPuzzle1
-  - KingPuzzle2
-  - KingPuzzle3
-  - KingPuzzle4
-  - KingPuzzle5
+  totalPuzzleCount: 5
+  teacherName: King
   triggers:
   - {fileID: 1398462874}
   - {fileID: 1171037366}
@@ -6070,6 +6048,7 @@ MonoBehaviour:
   - {fileID: 378664231}
   agulto: {fileID: 0}
   hallways: []
+  sceneMap: {fileID: 0}
   spellbookManager: {fileID: 0}
 --- !u!1 &1398462874
 GameObject:
@@ -6157,7 +6136,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::CanvasChanger
   oldCanvas: {fileID: 0}
   newCanvas: {fileID: 1248676845}
-  player: {fileID: 0}
 --- !u!50 &1398462878
 Rigidbody2D:
   serializedVersion: 5
@@ -6386,6 +6364,8 @@ MonoBehaviour:
   dialoguePopUp: {fileID: 518127579}
   dialogueManager: {fileID: 51559320}
   spellSelectionScreen: {fileID: 0}
+  element: 
+  totalNumOfElementSpells: 0
   initalLines:
   - Hey, charName!
   - Here for plant magic?
@@ -8570,12 +8550,12 @@ MonoBehaviour:
   bud: {fileID: 21300000, guid: 1d4526536bd16c74ca18f88b62da3b08, type: 3}
   flower: {fileID: 21300000, guid: 3673de1894c76b647b045a89ff74580d, type: 3}
   close: {fileID: 183281577}
-  puzzleManager: {fileID: 1300310726}
   playerMovement: {fileID: 922991732}
   notStartedText: Hold the plant to water it!
   inProgressText: Watering...
   completedText: Plant watered!
-  PlayerPrefVariable: KingPuzzle1
+  teacherName: King
+  puzzleIndex: 0
   successSound: {fileID: 2146660210}
 --- !u!1 &1885128826
 GameObject:
@@ -8993,12 +8973,12 @@ MonoBehaviour:
   bud: {fileID: 21300000, guid: 1d4526536bd16c74ca18f88b62da3b08, type: 3}
   flower: {fileID: 21300000, guid: 575abd28536a8b34aa2189bda3e1de4d, type: 3}
   close: {fileID: 1307658857}
-  puzzleManager: {fileID: 1300310726}
   playerMovement: {fileID: 922991732}
   notStartedText: Hold the plant to water it!
   inProgressText: Watering...
   completedText: Plant watered!
-  PlayerPrefVariable: KingPuzzle5
+  teacherName: King
+  puzzleIndex: 4
   successSound: {fileID: 2146660210}
 --- !u!114 &2039525739
 MonoBehaviour:
@@ -9143,12 +9123,12 @@ MonoBehaviour:
   bud: {fileID: 21300000, guid: 1d4526536bd16c74ca18f88b62da3b08, type: 3}
   flower: {fileID: 21300000, guid: 783af29466d00ce4d906dc2c810143ec, type: 3}
   close: {fileID: 1752178276}
-  puzzleManager: {fileID: 1300310726}
   playerMovement: {fileID: 922991732}
   notStartedText: Hold the plant to water it!
   inProgressText: Watering...
   completedText: Plant watered!
-  PlayerPrefVariable: KingPuzzle3
+  teacherName: King
+  puzzleIndex: 2
   successSound: {fileID: 2146660210}
 --- !u!114 &2047787778
 MonoBehaviour:

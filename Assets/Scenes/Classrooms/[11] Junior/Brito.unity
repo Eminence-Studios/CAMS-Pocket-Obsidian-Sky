@@ -572,6 +572,9 @@ MonoBehaviour:
   teacherName: Brito
   dialoguePopUp: {fileID: 1256853252}
   dialogueManager: {fileID: 1682790333}
+  spellSelectionScreen: {fileID: 0}
+  element: 
+  totalNumOfElementSpells: 0
   initalLines:
   - "\xA1Hola! \xBFC\xF3mo est\xE1s?"
   - Hispanic culture is so diverse and beautiful.
@@ -1124,13 +1127,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LoadCampusMap
   loadLocation: 0
-  playerPrefLocation: 
+  locationIndex: 0
   player: {fileID: 0}
   loadTrigger: 1
-  playerPrefTrigger:
-  - BritoPuzzle
+  totalPuzzleCount: 1
+  teacherName: Brito
   triggers:
   - {fileID: 1411225885}
+  agulto: {fileID: 0}
+  hallways: []
+  sceneMap: {fileID: 0}
   spellbookManager: {fileID: 0}
 --- !u!1 &712861044
 GameObject:
@@ -3354,12 +3360,17 @@ MonoBehaviour:
   dialogueScreen: {fileID: 1256853255}
   lines: []
   hasCharName: 0
+  isTutorial: 0
+  inputPopup: {fileID: 0}
+  userInputField: {fileID: 0}
   changeScene: 0
   sceneID: 0
   isTeacherDialogue: 1
   teacherInteractionManager: {fileID: 150576266}
   hasNextScene: 0
   nextScreen: {fileID: 0}
+  changePlayerMovement: 0
+  playerMovement: {fileID: 0}
 --- !u!1 &1687967705
 GameObject:
   m_ObjectHideFlags: 0
@@ -3821,7 +3832,7 @@ MonoBehaviour:
   collider: {fileID: 1411225885}
   gameScreen: {fileID: 57723821}
   playerMovement: {fileID: 916875898}
-  PlayerPrefVariable: GallardoPuzzle
+  teacherName: 
   scoreText: {fileID: 794164790}
   resultText: {fileID: 712861045}
   retryButton: {fileID: 1305231425}
@@ -3836,6 +3847,8 @@ MonoBehaviour:
   catchAmt: 0
   dodgeTime: 30
   jumpForce: 0
+  successSound: {fileID: 0}
+  failureSound: {fileID: 0}
 --- !u!50 &1866874428
 Rigidbody2D:
   serializedVersion: 5

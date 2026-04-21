@@ -13,7 +13,7 @@ public class DodgingObjectManager : MonoBehaviour
     [SerializeField] GameObject gameScreen;
 
     public Movement playerMovement;
-    public string PlayerPrefVariable;
+    public string teacherName;
 
     public static DodgingObjectManager instance;
     [SerializeField] TextMeshProUGUI scoreText;
@@ -216,7 +216,8 @@ public class DodgingObjectManager : MonoBehaviour
             collider.SetActive(false);
             resultText.text = "Success!";
             successSound.Play();
-            PlayerPrefs.SetInt(PlayerPrefVariable, 1);
+            GameManager.Instance.setPuzzleCompeletion(teacherName, 0);
+            GameManager.Instance.SaveGame();
             Time.timeScale = 1f;
             Invoke("closePuzzle", 2);
         }

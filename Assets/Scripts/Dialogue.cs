@@ -126,7 +126,7 @@ public class Dialogue : MonoBehaviour
 
     void replaceCharName()
     {
-        charName = PlayerPrefs.GetString("charName", "Coyote");
+        charName = GameManager.Instance.currentData.playerName ?? "Coyote"; ;
 
         for (int i = 0; i < lines.Length; i++)
         {
@@ -157,7 +157,8 @@ public class Dialogue : MonoBehaviour
         {
             if (isTutorial)
             {
-                PlayerPrefs.SetInt("tutorialFinished", 1);
+                GameManager.Instance.currentData.tutorialComplete = true;
+                GameManager.Instance.SaveGame();
                 Debug.Log("changed");
             }
             else if (SpellbookManager.instance != null)
@@ -171,8 +172,7 @@ public class Dialogue : MonoBehaviour
 
     public void nameEntered()
     {
-        PlayerPrefs.SetString("charName", userInputField.text);
-        PlayerPrefs.Save();
+        GameManager.Instance.currentData.playerName = userInputField.text;
         // replaceCharName();
         inputPopup.gameObject.SetActive(false);
         index++;

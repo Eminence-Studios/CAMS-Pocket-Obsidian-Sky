@@ -19,7 +19,7 @@ public class OrderPuzzle : MonoBehaviour
     public AudioSource failureSound;
 
     public string code;
-    public string playerPrefVariable;
+    public string teacherName;
 
     // instructions, attemping, failed, success
     public string[] progressTexts;
@@ -75,14 +75,28 @@ public class OrderPuzzle : MonoBehaviour
         {
             progress.text = progressTexts[3];
 
-            PlayerPrefs.SetInt(playerPrefVariable, 1);
+            if (teacherName == "Nishiyama")
+            {
+                GameManager.Instance.setPuzzleCompeletion("Nishiyama", 0);
+                nextPuzzleTriggers.SetActive(true);
+                
+            }
+            else
+            {
+                GameManager.Instance.setPuzzleCompeletion(teacherName, 0);
+            }
+            GameManager.Instance.SaveGame();
             successSound.Play();
             collider.gameObject.SetActive(false);
-            if (playerPrefVariable == "NishiyamaPuzzle0")
+
+            /*
+            if (teacherName == "NishiyamaPuzzle0")
             {
                 PlayerPrefs.SetInt("NishiyamaNotReady", 0);
                 nextPuzzleTriggers.SetActive(true);
             }
+            */
+
             Invoke("closePuzzle", 2);
 
         }

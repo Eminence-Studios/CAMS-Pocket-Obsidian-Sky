@@ -416,6 +416,8 @@ MonoBehaviour:
   dialoguePopUp: {fileID: 1256853252}
   dialogueManager: {fileID: 1682790333}
   spellSelectionScreen: {fileID: 0}
+  element: 
+  totalNumOfElementSpells: 0
   initalLines:
   - Hey there, welcome in.
   - "When working with fire, it\u2019s important to not be in a rush, keeping proper
@@ -1918,15 +1920,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LoadCampusMap
   loadLocation: 0
-  playerPrefLocation: 
+  locationIndex: 0
   player: {fileID: 0}
   loadTrigger: 1
-  playerPrefTrigger:
-  - MaestasPuzzle
+  totalPuzzleCount: 1
+  teacherName: Maestas
   triggers:
   - {fileID: 1411225885}
   agulto: {fileID: 0}
   hallways: []
+  sceneMap: {fileID: 0}
   spellbookManager: {fileID: 0}
 --- !u!1 &822229935
 GameObject:
@@ -3422,7 +3425,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::CanvasChanger
   oldCanvas: {fileID: 0}
   newCanvas: {fileID: 612396577}
-  player: {fileID: 0}
 --- !u!50 &1411225888
 Rigidbody2D:
   serializedVersion: 5
@@ -4247,6 +4249,8 @@ MonoBehaviour:
   teacherInteractionManager: {fileID: 150576266}
   hasNextScene: 0
   nextScreen: {fileID: 0}
+  changePlayerMovement: 0
+  playerMovement: {fileID: 0}
 --- !u!1 &1686821027
 GameObject:
   m_ObjectHideFlags: 0
@@ -4282,7 +4286,7 @@ MonoBehaviour:
   collider: {fileID: 1411225885}
   gameScreen: {fileID: 612396574}
   playerMovement: {fileID: 916875898}
-  PlayerPrefVariable: MaestasPuzzle
+  teacherName: Maestas
   scoreText: {fileID: 935019734}
   resultText: {fileID: 822229936}
   retryButton: {fileID: 2048811959}

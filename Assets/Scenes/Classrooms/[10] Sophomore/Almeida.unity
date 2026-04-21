@@ -1103,6 +1103,8 @@ MonoBehaviour:
   dialoguePopUp: {fileID: 208243415}
   dialogueManager: {fileID: 1165950374}
   spellSelectionScreen: {fileID: 0}
+  element: 
+  totalNumOfElementSpells: 0
   initalLines:
   - Hello! Bonjour! Ciao! Hej!
   - Welcome in, charName!
@@ -1638,15 +1640,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LoadCampusMap
   loadLocation: 0
-  playerPrefLocation: 
+  locationIndex: 0
   player: {fileID: 0}
   loadTrigger: 1
-  playerPrefTrigger:
-  - AlmeidaPuzzle
+  totalPuzzleCount: 1
+  teacherName: Almeida
   triggers:
   - {fileID: 1321290312}
   agulto: {fileID: 0}
   hallways: []
+  sceneMap: {fileID: 0}
   spellbookManager: {fileID: 0}
 --- !u!1 &689902237
 GameObject:
@@ -2648,6 +2651,8 @@ MonoBehaviour:
   teacherInteractionManager: {fileID: 620195738}
   hasNextScene: 0
   nextScreen: {fileID: 0}
+  changePlayerMovement: 0
+  playerMovement: {fileID: 0}
 --- !u!4 &1165950375
 Transform:
   m_ObjectHideFlags: 0
@@ -2800,7 +2805,7 @@ MonoBehaviour:
   collider: {fileID: 1321290312}
   gameScreen: {fileID: 1187093725}
   playerMovement: {fileID: 916875898}
-  PlayerPrefVariable: AlmeidaPuzzle
+  teacherName: Almeida
   scoreText: {fileID: 945913902}
   resultText: {fileID: 1051685447}
   retryButton: {fileID: 232421220}
@@ -3549,7 +3554,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::CanvasChanger
   oldCanvas: {fileID: 0}
   newCanvas: {fileID: 1187093726}
-  player: {fileID: 0}
 --- !u!50 &1321290315
 Rigidbody2D:
   serializedVersion: 5

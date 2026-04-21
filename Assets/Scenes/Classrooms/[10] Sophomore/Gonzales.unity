@@ -1105,7 +1105,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::CanvasChanger
   oldCanvas: {fileID: 0}
   newCanvas: {fileID: 2280403}
-  player: {fileID: 0}
 --- !u!50 &209546487
 Rigidbody2D:
   serializedVersion: 5
@@ -1762,15 +1761,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LoadCampusMap
   loadLocation: 0
-  playerPrefLocation: 
+  locationIndex: 0
   player: {fileID: 0}
   loadTrigger: 1
-  playerPrefTrigger:
-  - GonzalesPuzzle
+  totalPuzzleCount: 1
+  teacherName: Gonzales
   triggers:
   - {fileID: 209546484}
   agulto: {fileID: 0}
   hallways: []
+  sceneMap: {fileID: 0}
   spellbookManager: {fileID: 0}
 --- !u!114 &430907262
 MonoBehaviour:
@@ -2255,6 +2255,8 @@ MonoBehaviour:
   teacherInteractionManager: {fileID: 0}
   hasNextScene: 0
   nextScreen: {fileID: 0}
+  changePlayerMovement: 0
+  playerMovement: {fileID: 0}
 --- !u!1 &527322471
 GameObject:
   m_ObjectHideFlags: 0
@@ -2351,7 +2353,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::CanvasChanger
   oldCanvas: {fileID: 0}
   newCanvas: {fileID: 485955917}
-  player: {fileID: 0}
 --- !u!50 &527322475
 Rigidbody2D:
   serializedVersion: 5
@@ -2587,6 +2588,8 @@ MonoBehaviour:
   teacherInteractionManager: {fileID: 0}
   hasNextScene: 0
   nextScreen: {fileID: 0}
+  changePlayerMovement: 0
+  playerMovement: {fileID: 0}
 --- !u!1 &650704266
 GameObject:
   m_ObjectHideFlags: 0
@@ -4286,6 +4289,8 @@ MonoBehaviour:
   teacherInteractionManager: {fileID: 0}
   hasNextScene: 0
   nextScreen: {fileID: 0}
+  changePlayerMovement: 0
+  playerMovement: {fileID: 0}
 --- !u!1 &868659408
 GameObject:
   m_ObjectHideFlags: 0
@@ -6005,7 +6010,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::CanvasChanger
   oldCanvas: {fileID: 0}
   newCanvas: {fileID: 1005970071}
-  player: {fileID: 0}
 --- !u!50 &1211976262
 Rigidbody2D:
   serializedVersion: 5
@@ -6280,6 +6284,8 @@ MonoBehaviour:
   dialoguePopUp: {fileID: 1682159503}
   dialogueManager: {fileID: 1703683720}
   spellSelectionScreen: {fileID: 0}
+  element: 
+  totalNumOfElementSpells: 0
   initalLines:
   - Hey there!
   - Learning more about life magic are we?
@@ -6995,6 +7001,8 @@ MonoBehaviour:
   teacherInteractionManager: {fileID: 0}
   hasNextScene: 0
   nextScreen: {fileID: 0}
+  changePlayerMovement: 0
+  playerMovement: {fileID: 0}
 --- !u!1 &1398385250
 GameObject:
   m_ObjectHideFlags: 0
@@ -7332,7 +7340,7 @@ MonoBehaviour:
   successSound: {fileID: 753775940}
   failureSound: {fileID: 1159555977}
   code: 23104
-  playerPrefVariable: GonzalesPuzzle
+  teacherName: Gonzales
   progressTexts:
   - Match each DNA strand to their plant
   - Attempting to read DNA sequence...
@@ -7775,7 +7783,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::CanvasChanger
   oldCanvas: {fileID: 0}
   newCanvas: {fileID: 485955917}
-  player: {fileID: 0}
 --- !u!50 &1642336565
 Rigidbody2D:
   serializedVersion: 5
@@ -8171,6 +8178,8 @@ MonoBehaviour:
   teacherInteractionManager: {fileID: 0}
   hasNextScene: 0
   nextScreen: {fileID: 0}
+  changePlayerMovement: 0
+  playerMovement: {fileID: 0}
 --- !u!1 &1724446647
 GameObject:
   m_ObjectHideFlags: 0
@@ -9119,7 +9128,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::CanvasChanger
   oldCanvas: {fileID: 0}
   newCanvas: {fileID: 463749352}
-  player: {fileID: 0}
 --- !u!50 &1901865233
 Rigidbody2D:
   serializedVersion: 5
@@ -9437,7 +9445,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::CanvasChanger
   oldCanvas: {fileID: 0}
   newCanvas: {fileID: 126423684}
-  player: {fileID: 0}
 --- !u!50 &1916128631
 Rigidbody2D:
   serializedVersion: 5
@@ -10156,6 +10163,8 @@ MonoBehaviour:
   teacherInteractionManager: {fileID: 0}
   hasNextScene: 0
   nextScreen: {fileID: 0}
+  changePlayerMovement: 0
+  playerMovement: {fileID: 0}
 --- !u!1 &2041667052
 GameObject:
   m_ObjectHideFlags: 0

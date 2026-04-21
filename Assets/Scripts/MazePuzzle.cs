@@ -12,7 +12,7 @@ public class MazePuzzle : MonoBehaviour
     [SerializeField] Button closeButton;
     [SerializeField] Collider2D collider;
 
-    public string puzzleName;
+    public string teacherName;
 
     public int speed;
 
@@ -60,7 +60,8 @@ public class MazePuzzle : MonoBehaviour
     {
         if (col.gameObject.name == "End")
         {
-            PlayerPrefs.SetInt(puzzleName, 1);
+            GameManager.Instance.setPuzzleCompeletion(teacherName, 0);
+            GameManager.Instance.SaveGame();
             closeButton.gameObject.SetActive(false);
             progress.text = "You reached the end!";
             successSound.Play();

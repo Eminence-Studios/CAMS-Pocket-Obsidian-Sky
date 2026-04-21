@@ -574,6 +574,8 @@ MonoBehaviour:
   dialoguePopUp: {fileID: 1256853252}
   dialogueManager: {fileID: 1682790333}
   spellSelectionScreen: {fileID: 0}
+  element: 
+  totalNumOfElementSpells: 0
   initalLines:
   - Do you know the relationship between numbers and the world?
   - Numbers are formulaic, each equation forming an answer, and each equation can
@@ -1573,15 +1575,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LoadCampusMap
   loadLocation: 0
-  playerPrefLocation: 
+  locationIndex: 0
   player: {fileID: 0}
   loadTrigger: 1
-  playerPrefTrigger:
-  - DreyfusPuzzle
+  totalPuzzleCount: 1
+  teacherName: Dreyfus
   triggers:
   - {fileID: 1411225885}
   agulto: {fileID: 0}
   hallways: []
+  sceneMap: {fileID: 0}
   spellbookManager: {fileID: 0}
 --- !u!1 &712861044
 GameObject:
@@ -3201,7 +3204,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::CanvasChanger
   oldCanvas: {fileID: 0}
   newCanvas: {fileID: 57723822}
-  player: {fileID: 0}
 --- !u!50 &1411225888
 Rigidbody2D:
   serializedVersion: 5
@@ -4026,6 +4028,8 @@ MonoBehaviour:
   teacherInteractionManager: {fileID: 150576266}
   hasNextScene: 0
   nextScreen: {fileID: 0}
+  changePlayerMovement: 0
+  playerMovement: {fileID: 0}
 --- !u!1 &1687967705
 GameObject:
   m_ObjectHideFlags: 0
@@ -4409,7 +4413,7 @@ MonoBehaviour:
   collider: {fileID: 1411225885}
   gameScreen: {fileID: 57723821}
   playerMovement: {fileID: 916875898}
-  PlayerPrefVariable: FuentesPuzzle
+  teacherName: 
   scoreText: {fileID: 794164790}
   resultText: {fileID: 712861045}
   retryButton: {fileID: 1305231425}
