@@ -56,11 +56,15 @@ public class LoadScene : MonoBehaviour
             numOfElements = GameManager.Instance.currentData.numOfMasteredElements;
             // location = PlayerPrefs.GetInt(playerPrefLocation, 0);
 
+            SpellbookManager.instance.gameObject.SetActive(true);
+
             if (locationIndex == 0)
             {
                 player.position = locationsCampus[GameManager.Instance.currentData.currentLocations[0]];
-                GameObject rootCanvas = spellbookManager.transform.root.gameObject;
 
+                /*
+                GameObject rootCanvas = spellbookManager.transform.root.gameObject;
+                
                 if (SpellbookManager.instance != null && SpellbookManager.instance != spellbookManager)
                 {
                     updateOverlay();
@@ -68,9 +72,11 @@ public class LoadScene : MonoBehaviour
                     Destroy(rootCanvas);
                     return;
                 }
+                
 
                 SpellbookManager.instance = spellbookManager;
                 DontDestroyOnLoad(rootCanvas);
+                */
                 updateOverlay();
             }
             else if (locationIndex == 1)
@@ -254,7 +260,7 @@ public class LoadScene : MonoBehaviour
             return;
         }
 
-        GameObject root = SpellbookManager.instance.transform.root.gameObject;
+        GameObject root = SpellbookManager.instance.gameObject;
 
         if (!GameManager.Instance.currentData.tutorialComplete)
         {

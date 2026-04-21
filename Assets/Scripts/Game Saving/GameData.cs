@@ -21,6 +21,11 @@ public class GameData
     // Tracks spells learned for each element
     public List<ElementCount> elementSpellsLearned = new List<ElementCount>();
 
+
+    // Track all spells
+    public List<string> learnedSpellNames = new List<string>();
+    public string[] hotbarSpellNames = new string[5];
+
     // List of mastered elements (in order)
     public int numOfMasteredElements;
     public List<string> masteredElements = new List<string>();

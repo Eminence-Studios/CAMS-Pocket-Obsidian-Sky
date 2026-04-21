@@ -52,7 +52,7 @@ public class TeacherInteraction : MonoBehaviour
         {
             dialogueManager.lines = initalLines;
         }
-        SpellbookManager.instance.transform.root.gameObject.SetActive(false);
+        SpellbookManager.instance.gameObject.SetActive(false);
         dialoguePopUp.SetActive(true);
     }
 
@@ -74,7 +74,7 @@ public class TeacherInteraction : MonoBehaviour
         else
         {
             playerMovement.enableMovement = true;
-            SpellbookManager.instance.transform.root.gameObject.SetActive(true);
+            SpellbookManager.instance.gameObject.SetActive(true);
         }
     }
 
@@ -90,7 +90,7 @@ public class TeacherInteraction : MonoBehaviour
         spellSelectionScreen.SetActive(false);
         dialogueManager.lines = afterSpellLines;
 
-        SpellbookManager.instance.transform.root.gameObject.SetActive(false);
+        SpellbookManager.instance.gameObject.SetActive(false);
         dialoguePopUp.SetActive(true);
     }
 

@@ -10,13 +10,12 @@ public class GameManager : MonoBehaviour
     public GameData currentData;
     public int activeSlot = 1;
 
+    public GameObject uiOverlay;
+
     void Awake()
     {
         if (Instance == null) { Instance = this; DontDestroyOnLoad(gameObject); }
         else { Destroy(gameObject); }
-
-        // Load game on startup
-        LoadGame(activeSlot);
     }
 
     public void SaveGame() => SaveSystem.Save(currentData, activeSlot);
@@ -61,6 +60,12 @@ public class GameManager : MonoBehaviour
     public void SelectSlotAndProceed(int slot)
     {
         activeSlot = slot;
+
+        if (SpellbookManager.instance == null)
+        {
+            Instantiate(uiOverlay);
+            SpellbookManager.instance.gameObject.SetActive(false);
+        }
         LoadGame(slot);
 
         // New Game
@@ -75,6 +80,9 @@ public class GameManager : MonoBehaviour
             // Load the scene the player was last in
             SceneManager.LoadScene(currentData.lastLocation);
         }
+        SpellbookManager.instance.loadSpellbook();
+
+
     }
     public void addSpelltoElement(string element, int totalSpellsInElement)
     {

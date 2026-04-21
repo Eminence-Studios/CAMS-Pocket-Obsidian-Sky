@@ -30,7 +30,7 @@ public class MazePuzzle : MonoBehaviour
     {
         playerMovement.enableMovement = false;
         enableMovement = true;
-        SpellbookManager.instance.transform.root.gameObject.SetActive(false);
+        SpellbookManager.instance.gameObject.SetActive(false);
 
     }
 
@@ -50,7 +50,7 @@ public class MazePuzzle : MonoBehaviour
     public void close()
     {
         playerMovement.enableMovement = true;
-        SpellbookManager.instance.transform.root.gameObject.SetActive(true);
+        SpellbookManager.instance.gameObject.SetActive(true);
         enableMovement = false;
         puzzle.SetActive(false);
 

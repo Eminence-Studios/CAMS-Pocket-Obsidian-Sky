@@ -31,14 +31,14 @@ public class RandomDicePuzzle : MonoBehaviour
         if (isManager)
         {
             playerMovement.enableMovement = false;
-            SpellbookManager.instance.transform.root.gameObject.SetActive(false);
+            SpellbookManager.instance.gameObject.SetActive(false);
         }
     }
 
     public void closePuzzle()
     {
         playerMovement.enableMovement = true;
-        SpellbookManager.instance.transform.root.gameObject.SetActive(true);
+        SpellbookManager.instance.gameObject.SetActive(true);
         puzzle.gameObject.SetActive(false);
 
     }

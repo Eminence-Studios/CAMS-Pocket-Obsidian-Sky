@@ -61,7 +61,7 @@ public class DodgingObjectManager : MonoBehaviour
         transform.localPosition = new Vector3(transform.localPosition.x, ground + 10, 0);
 
         playerMovement.enableMovement = false;
-        SpellbookManager.instance.transform.root.gameObject.SetActive(false);
+        SpellbookManager.instance.gameObject.SetActive(false);
 
         resultText.text = startingText;
         buttonText.text = "Start";
@@ -239,7 +239,7 @@ public class DodgingObjectManager : MonoBehaviour
     public void closePuzzle()
     {
         playerMovement.enableMovement = true;
-        SpellbookManager.instance.transform.root.gameObject.SetActive(true);
+        SpellbookManager.instance.gameObject.SetActive(true);
         gameScreen.SetActive(false);
     }
 

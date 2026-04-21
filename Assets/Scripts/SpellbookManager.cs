@@ -41,20 +41,11 @@ public class SpellbookManager : MonoBehaviour
 
     void Awake()
     {
-        /*
-        GameObject rootCanvas = transform.root.gameObject;
-
-        if (instance != null && instance != this)
-        {
-            Destroy(rootCanvas);
-            return;
-        }
-
-        instance = this;
+        
+        GameObject rootCanvas = gameObject;        
         DontDestroyOnLoad(rootCanvas);
-        */
-        spellbookSlots = GetComponentsInChildren<SpellSlot>(true);
-        hotbarSlots = hotbar.GetComponentsInChildren<SpellSlot>(true);
+        
+        instance = this;
 
     }
 
@@ -93,10 +84,25 @@ public class SpellbookManager : MonoBehaviour
         mapIcon.gameObject.SetActive(true);
     }
 
+    /*
     public void learnSpell(Spell newSpell)
     {
         Debug.Log("learnedSpell");
         spellbookSlots[learnedSpells++].setSpell(newSpell);
+    }
+    */
+
+    public void learnSpell(Spell newSpell)
+    {
+        spellbookSlots[learnedSpells].setSpell(newSpell);
+        spellbookSlots[learnedSpells].GetComponent<Button>().interactable = true;
+        learnedSpells++;
+
+        if (!GameManager.Instance.currentData.learnedSpellNames.Contains(newSpell.spellName))
+        {
+            GameManager.Instance.currentData.learnedSpellNames.Add(newSpell.spellName);
+            GameManager.Instance.SaveGame();
+        }
     }
 
     public void addSpelltoHotbar(Spell spellData, Button slotButton)
@@ -211,5 +217,77 @@ public class SpellbookManager : MonoBehaviour
             type.text = $"Increases energy by {spellData.damage}";
         }
 
+    }
+
+    public void saveSpellbook()
+    {
+        var data = GameManager.Instance.currentData;
+
+        // Save Hotbar
+        for (int i = 0; i < hotbarSlots.Length; i++)
+        {
+            if (hotbarSlots[i].hasSpell)
+                data.hotbarSpellNames[i] = hotbarSlots[i].spellData.spellName;
+            else
+                data.hotbarSpellNames[i] = "";
+        }
+
+        GameManager.Instance.SaveGame();
+    }
+
+    public void loadSpellbook()
+    {
+        spellbookSlots = GetComponentsInChildren<SpellSlot>(true);
+        hotbarSlots = hotbar.GetComponentsInChildren<SpellSlot>(true);
+
+        var data = GameManager.Instance.currentData;
+        learnedSpells = 0;
+        numHotbarSpells = 0;
+
+        // Clear all slots first
+        foreach (var slot in spellbookSlots) slot.clear();
+        foreach (var slot in hotbarSlots) slot.clear();
+
+        // Load Learned Spells
+        foreach (string spellName in data.learnedSpellNames)
+        {
+            Spell spellAsset = Resources.Load<Spell>($"Spells/{spellName}");
+            if (spellAsset != null)
+            {
+                learnSpell(spellAsset);
+            }
+        }
+
+        // Load Hotbar
+        for (int i = 0; i < data.hotbarSpellNames.Length; i++)
+        {
+            string spellName = data.hotbarSpellNames[i];
+            if (!string.IsNullOrEmpty(spellName))
+            {
+                Spell spellAsset = Resources.Load<Spell>($"Spells/{spellName}");
+                if (spellAsset != null)
+                {
+                    hotbarSlots[i].setSpell(spellAsset);
+                    numHotbarSpells++;
+
+                    // Re-link the original slot button so it remains non-interactable
+                    linkHotbar(hotbarSlots[i], spellName);
+                }
+            }
+        }
+    }
+
+    private void linkHotbar(SpellSlot hotbarSlot, string spellName)
+    {
+        foreach (var spellSlot in spellbookSlots)
+        {
+            if (spellSlot.hasSpell && spellSlot.spellData.spellName == spellName)
+            {
+                Button btn = spellSlot.GetComponent<Button>();
+                hotbarSlot.originalSpellSlot = btn;
+                btn.interactable = false;
+                break;
+            }
+        }
     }
 }
