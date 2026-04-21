@@ -529,13 +529,20 @@ public class BattleSystem : MonoBehaviour
         yield return new WaitForSeconds(2f);
 
         int choice = bossDecision(); // will be 0 if the boss decides not to
-        bool isDead = playerUnit.takeDamage(choice,enemyUnit.specialization);
-        if (playerUnit.unitHp == playerHUD.hpSlider.value && choice == 0)
+        Debug.Log(choice);
+        bool isDead = false;
+        if (choice != 0)
+        {
+            isDead = playerUnit.takeDamage(choice,enemyUnit.specialization);
+            // player shouldn't take damage otherwise if choice IS zero
+        }
+
+        if ((playerUnit.unitHp == playerHUD.hpSlider.value) && (choice == 0))
         {
             // do nothing
             // skipping the buff parameters portion since the boss decided to skip
         }
-        else if (playerUnit.unitHp == playerHUD.hpSlider.value && choice != 0)
+        else if ((playerUnit.unitHp == playerHUD.hpSlider.value) && (choice != 0))
         {
             // still goes through with the buffs despite no damage being done
             enemyMoveset.changeUniqueMove(true);

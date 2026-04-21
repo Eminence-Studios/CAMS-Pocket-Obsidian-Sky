@@ -49,8 +49,8 @@ public class UniqueMoves : MonoBehaviour
         }
         if (moveBeingUsed == 4) // flamethrower
         {
-            moveParameters = new List<int> { 2, 0, 0, 0, 1 }; // +2 atk, inflicts burn status effect
-            Debug.Log(unitComponent.unitName + " used Flamethrower! Attack may increase by 2");
+            moveParameters = new List<int> { 3, 0, 0, 0, 1 }; // +3 atk, inflicts burn status effect
+            Debug.Log(unitComponent.unitName + " used Flamethrower! Attack may increase by 3");
             return moveParameters;
         }
         if (moveBeingUsed == 5) // slam dunk
@@ -64,6 +64,13 @@ public class UniqueMoves : MonoBehaviour
         {
             moveParameters = new List<int> { 0, 1, 0, 0, 0 }; // +1 def
             Debug.Log(unitComponent.unitName + " used Guard! Chance to increase defense by 1");
+            moveType.specialization = 0;
+            return moveParameters;
+        }
+        if (moveBeingUsed == 7) // scales
+        {
+            moveParameters = new List<int> { 0, 2, 0, 0, 0 }; // +2 def
+            Debug.Log(unitComponent.unitName + " used Scales! Chance to increase defense by 2");
             moveType.specialization = 0;
             return moveParameters;
         }
@@ -87,13 +94,18 @@ public class UniqueMoves : MonoBehaviour
         moveBeingUsed = newMoveNumber;
     }
 
+    public void changeSpecialization(int newSpecialization) // will be called by the button methods to change the unit's specialization
+    {
+        Unit unitSpecialization = GetComponent<Unit>();
+        unitSpecialization.specialization = newSpecialization;
+    }
     public void changeUniqueMove(bool isBossTurn) // overloaded method for bosses to switch between normal and boss turns
     {
         Unit unitSpecialization = GetComponent<Unit>();
         UniqueMoves unitComponent = GetComponent<Unit>().GetComponent<UniqueMoves>();  
         if (isBossTurn)
         {
-            moveBeingUsed = unitComponent.moveNumber; // will use main move on boss turns
+            moveBeingUsed = moveNumber; // will use main move on boss turns
         }
         else
         {
