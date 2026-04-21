@@ -558,42 +558,42 @@ public class BattleSystem : MonoBehaviour
         }
     }
     bool CheckNeutralTurn()
-{
-    if ((turnCount % 6 == 0) || (turnCount % 8 == 0))
     {
-        if (enemyUnit.statusCondition == 4)
+        if ((turnCount % 6 == 0) || (turnCount % 8 == 0))
+        {
+            if (enemyUnit.statusCondition == 4)
             {
                 playerUnit.buffStatsNoChance(new List<int>{0, 99, 0, 0, 0});
                 StartCoroutine(bossEnemyTurn());
                 return true;
             }
+            else
+            {
+                StartCoroutine(bossEnemyTurn());
+                return true;
+            }
+            
+        }
         else
         {
-            StartCoroutine(bossEnemyTurn());
-            return true;
-        }
-        
-    }
-    else
-    {
-        if (enemyUnit.statusCondition == 4)
+            if (enemyUnit.statusCondition == 4)
             {
                 playerUnit.buffStatsNoChance(new List<int>{0, 99, 0, 0, 0});
                 StartCoroutine(basicEnemyTurn());
                 return true;
             }
-        else
-        {
-        StartCoroutine(basicEnemyTurn());
-        return true;
+            else
+            {
+                StartCoroutine(basicEnemyTurn());
+                return true;
+            }
         }
+        return false;
     }
-    return false;
-}
 
     public void shieldAbility()
     {
-        enemyUnit.statusCondition = 4;
+        enemyUnit.buffStats(new List<int>{0, 0, 0, 0, 4});
         Debug.Log("Shield Used");
         NextTurn();
     }

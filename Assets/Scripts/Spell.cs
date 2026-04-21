@@ -6,6 +6,7 @@ public class Spell : ScriptableObject
 {
     // public Boolean isSpell;
     public string spellName;
+    public int spellNumber;
     public string spellDescription;
     public Sprite spellIcon;
     public enum spellType { Attack, Defense, Healing, Energy }
