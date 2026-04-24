@@ -37,11 +37,11 @@ public class GameData
 
     public GameData()
     {
-        masterVolume = 0.8f;
+        masterVolume = 1f;
         resolutionIndex = 0;
         isFullscreen = false;
         vsyncCount = 1;
-        numOfMasteredElements = 0;
+        numOfMasteredElements = 4;
         teacherProgress = new List<TeacherProgress>();
         elementSpellsLearned = new List<ElementCount>();
         masteredElements = new List<string>();

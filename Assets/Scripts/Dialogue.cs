@@ -1,9 +1,10 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
-using UnityEngine.SceneManagement;
-using UnityEngine;
-using UnityEngine.UI;
 using TMPro;
+using UnityEngine;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class Dialogue : MonoBehaviour
 {
@@ -83,7 +84,7 @@ public class Dialogue : MonoBehaviour
     {
         if (SpellbookManager.instance != null)
         {
-            SpellbookManager.instance.transform.root.gameObject.SetActive(false);
+            SpellbookManager.instance.gameObject.SetActive(false);
         }
         if (changePlayerMovement)
         {
@@ -108,6 +109,7 @@ public class Dialogue : MonoBehaviour
         }
         else if (changePlayerMovement)
         {
+            SpellbookManager.instance.gameObject.SetActive(true);
             playerMovement.enabled = true;
         }
     }
@@ -126,7 +128,7 @@ public class Dialogue : MonoBehaviour
 
     void replaceCharName()
     {
-        charName = GameManager.Instance.currentData.playerName ?? "Coyote"; ;
+        charName = GameManager.Instance.currentData.playerName ?? "Coyote";
 
         for (int i = 0; i < lines.Length; i++)
         {
@@ -161,10 +163,6 @@ public class Dialogue : MonoBehaviour
                 GameManager.Instance.SaveGame();
                 Debug.Log("changed");
             }
-            else if (SpellbookManager.instance != null)
-            {
-                SpellbookManager.instance.transform.root.gameObject.SetActive(true);
-            }
             dialogueScreen.gameObject.SetActive(false);
         }
         // if (hasSwitchSpeakers) { alternateSpeaker(); }
@@ -172,12 +170,16 @@ public class Dialogue : MonoBehaviour
 
     public void nameEntered()
     {
-        GameManager.Instance.currentData.playerName = userInputField.text;
-        // replaceCharName();
-        inputPopup.gameObject.SetActive(false);
-        index++;
-        lines[index + 1] = lines[index + 1].Replace("Coyote", userInputField.text);
-        printNext();
+        if (!string.IsNullOrWhiteSpace(userInputField.text))
+        {
+            GameManager.Instance.currentData.playerName = userInputField.text;
+            // replaceCharName();
+            inputPopup.gameObject.SetActive(false);
+            index++;
+            lines[index + 1] = lines[index + 1].Replace("Coyote", userInputField.text);
+            printNext();
+        }
+        
     }
 
        

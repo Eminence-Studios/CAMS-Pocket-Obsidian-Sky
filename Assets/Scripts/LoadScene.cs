@@ -253,6 +253,14 @@ public class LoadScene : MonoBehaviour
         }
     }
 
+    void hideHallways()
+    {
+        foreach (var trigger in hallways)
+        {
+            trigger.gameObject.SetActive(false);
+        }
+    }
+
     void updateOverlay()
     {
         if (SpellbookManager.instance == null)
@@ -266,6 +274,7 @@ public class LoadScene : MonoBehaviour
         {
             agulto.SetActive(true);
             root.SetActive(false);
+            hideHallways();
         }
         else
         {
@@ -294,7 +303,7 @@ public class LoadScene : MonoBehaviour
         // campus, Dreyfus, Johns, Virak, Bucko
         locations4000 = new Vector3[] { new Vector3(-1200, 0, 0), new Vector3(-950, 100, 0), new Vector3(-600, 100, 0), new Vector3(750, 100, 0), new Vector3(1100, 100, 0) };
 
-        // campus, King, Fuentes, Johnson, Carpenter, Marquez, Gallardo, Brito, Avalos, Luna
+        // campus, King, Fuentes, Johnson, Carpenter, Marquez, Gallardo, Brito, Avalos, idLuna
         locations6000 = new Vector3[] {new Vector3(0, 2300, 0), new Vector3(-600, 2000, 0), new Vector3(-600, 500, 0), new Vector3(-600, 0, 0)
         , new Vector3(600, 250, 0), new Vector3(600, -800, 0), new Vector3(600, -1250, 0), new Vector3(-600, -1500, 0)
         , new Vector3(600, -2000, 0), new Vector3(-600, -2000, 0) };

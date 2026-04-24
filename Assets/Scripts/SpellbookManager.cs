@@ -37,7 +37,7 @@ public class SpellbookManager : MonoBehaviour
     public static SpellbookManager instance;
 
     private SpellSlot[] spellbookSlots;
-    private SpellSlot[] hotbarSlots;
+    public SpellSlot[] hotbarSlots;
 
     void Awake()
     {

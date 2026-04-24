@@ -23,4 +23,10 @@ public static class SaveSystem
         string json = Encoding.UTF8.GetString(Convert.FromBase64String(encoded));
         return JsonUtility.FromJson<GameData>(json);
     }
+
+    public static Boolean hasSlotData(int slot)
+    {
+        string path = GetPath(slot);
+        return File.Exists(path);
+    }
 }

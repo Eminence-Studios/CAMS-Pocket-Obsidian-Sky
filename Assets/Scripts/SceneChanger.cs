@@ -26,6 +26,11 @@ public class SceneChanger : MonoBehaviour
         
     }
 
+    public void startGame(int slot)
+    {
+        GameManager.Instance.startSlotGame(slot);
+    }
+
     public void MoveToScene()
     {
         GameManager.Instance.currentData.currentLocations[locationIndex] = locationValue;

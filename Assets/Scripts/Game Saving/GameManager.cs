@@ -57,7 +57,7 @@ public class GameManager : MonoBehaviour
     }
     */
 
-    public void SelectSlotAndProceed(int slot)
+    public void startSlotGame(int slot)
     {
         activeSlot = slot;
 
