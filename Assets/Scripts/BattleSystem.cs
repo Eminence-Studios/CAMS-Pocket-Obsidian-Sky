@@ -598,6 +598,8 @@ public class BattleSystem : MonoBehaviour
         NextTurn();
     }
 
+
+
     void NextTurn()
     {
         turnCount++;
@@ -615,4 +617,13 @@ public class BattleSystem : MonoBehaviour
             playerTurn();
         }
     }
+
+    void spell1()
+    {
+        playerMoveset.changeUniqueMove(SpellbookManager.instance.hotbarSlots[0].spellData.spellNumber);
+        onSpecialAttackButton();
+
+    }
+
+    
 }
