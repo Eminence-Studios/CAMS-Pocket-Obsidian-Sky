@@ -79,8 +79,11 @@ public class SpellSlot : MonoBehaviour, IPointerEnterHandler, IPointerExitHandle
         image.sprite = spell.spellIcon;
         hasSpell = true;
     }
+
     public void clear()
     {
+        Spell emptySpell = Resources.Load<Spell>($"Spells/EmptySpell");
+
         spellData = emptySpell;
         image.sprite = emptySpell.spellIcon;
         originalSpellSlot = null;

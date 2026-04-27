@@ -1,9 +1,10 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
-using UnityEngine.SceneManagement;
-using UnityEngine;
-using UnityEngine.UI;
 using TMPro;
+using UnityEngine;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class Dialogue : MonoBehaviour
 {
@@ -12,6 +13,11 @@ public class Dialogue : MonoBehaviour
     
     public string[] lines;
     public bool hasCharName;
+
+    [Header("User Input Parameters")]
+    public bool isTutorial;
+    [SerializeField] Canvas inputPopup;
+    [SerializeField] TMP_InputField userInputField;
 
     [Header("Changing Scene Parameters")]
     public bool changeScene;
@@ -25,6 +31,11 @@ public class Dialogue : MonoBehaviour
     [Header("Following Canvas Parameters")]
     public bool hasNextScene;
     [SerializeField] Canvas nextScreen;
+
+    [Header("Player Movement Parameters")]
+    public bool changePlayerMovement;
+    public Movement playerMovement;
+
 
     // public bool hasSwitchSpeakers;
     // [SerializeField] Canvas otherSpeaker;
@@ -51,7 +62,15 @@ public class Dialogue : MonoBehaviour
         {
             if (textBox.text == lines[index])
             {
-                printNext();
+                if (index < lines.Length - 1 && lines[index + 1] == "userInput")
+                {
+                    StopAllCoroutines();
+                    inputPopup.gameObject.SetActive(true);
+                }
+                else
+                {
+                    printNext();
+                }
             }
             else
             {
@@ -63,6 +82,14 @@ public class Dialogue : MonoBehaviour
 
     private void OnEnable()
     {
+        if (SpellbookManager.instance != null)
+        {
+            SpellbookManager.instance.gameObject.SetActive(false);
+        }
+        if (changePlayerMovement)
+        {
+            playerMovement.enabled = false;
+        }
         startDialogue();
     }
 
@@ -80,24 +107,34 @@ public class Dialogue : MonoBehaviour
         {
             nextScreen.gameObject.SetActive(true);
         }
+        else if (changePlayerMovement)
+        {
+            SpellbookManager.instance.gameObject.SetActive(true);
+            playerMovement.enabled = true;
+        }
     }
 
     public void startDialogue()
     {
         if (hasCharName)
         {
-            charName = PlayerPrefs.GetString("charName", "Coyote");
-
-            for (int i = 0; i < lines.Length; i++)
-            {
-                lines[i] = lines[i].Replace("charName", charName);
-                Debug.Log(lines[i]);
-            }
+            replaceCharName();
         }
         index = 0;
         textBox.text = string.Empty;
         StartCoroutine(printLine());
         // if (hasSwitchSpeakers) { alternateSpeaker(); };
+    }
+
+    void replaceCharName()
+    {
+        charName = GameManager.Instance.currentData.playerName ?? "Coyote";
+
+        for (int i = 0; i < lines.Length; i++)
+        {
+            lines[i] = lines[i].Replace("charName", charName);
+            Debug.Log(lines[i]);
+        }
     }
 
     IEnumerator printLine()
@@ -116,13 +153,35 @@ public class Dialogue : MonoBehaviour
             index++;
             textBox.text = string.Empty;
             StartCoroutine(printLine());
+                
         }
         else
         {
+            if (isTutorial)
+            {
+                GameManager.Instance.currentData.tutorialComplete = true;
+                GameManager.Instance.SaveGame();
+                Debug.Log("changed");
+            }
             dialogueScreen.gameObject.SetActive(false);
         }
         // if (hasSwitchSpeakers) { alternateSpeaker(); }
     }
+
+    public void nameEntered()
+    {
+        if (!string.IsNullOrWhiteSpace(userInputField.text))
+        {
+            GameManager.Instance.currentData.playerName = userInputField.text;
+            // replaceCharName();
+            inputPopup.gameObject.SetActive(false);
+            index++;
+            lines[index + 1] = lines[index + 1].Replace("Coyote", userInputField.text);
+            printNext();
+        }
+        
+    }
+
        
     /*
     void alternateSpeaker()

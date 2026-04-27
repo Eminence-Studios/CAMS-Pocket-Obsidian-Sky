@@ -452,6 +452,9 @@ MonoBehaviour:
   teacherName: Imatomi
   dialoguePopUp: {fileID: 1256853252}
   dialogueManager: {fileID: 1682790333}
+  spellSelectionScreen: {fileID: 0}
+  element: 
+  totalNumOfElementSpells: 0
   initalLines:
   - Welcome in, sweetie!
   - One of the best ways to learn fire magic is to see how other creatures utilize
@@ -822,13 +825,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LoadCampusMap
   loadLocation: 0
-  playerPrefLocation: 
+  locationIndex: 0
   player: {fileID: 0}
   loadTrigger: 1
-  playerPrefTrigger:
-  - ImatomiPuzzle
+  totalPuzzleCount: 1
+  teacherName: Imatomi
   triggers:
   - {fileID: 1411225885}
+  agulto: {fileID: 0}
+  hallways: []
+  sceneMap: {fileID: 0}
+  spellbookManager: {fileID: 0}
 --- !u!1 &752959372
 GameObject:
   m_ObjectHideFlags: 0
@@ -2419,12 +2426,17 @@ MonoBehaviour:
   dialogueScreen: {fileID: 1256853255}
   lines: []
   hasCharName: 0
+  isTutorial: 0
+  inputPopup: {fileID: 0}
+  userInputField: {fileID: 0}
   changeScene: 0
   sceneID: 0
   isTeacherDialogue: 1
   teacherInteractionManager: {fileID: 150576266}
   hasNextScene: 0
   nextScreen: {fileID: 0}
+  changePlayerMovement: 0
+  playerMovement: {fileID: 0}
 --- !u!1 &1687967705
 GameObject:
   m_ObjectHideFlags: 0

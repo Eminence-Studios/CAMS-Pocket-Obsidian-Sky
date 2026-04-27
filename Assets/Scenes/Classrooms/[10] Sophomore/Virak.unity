@@ -1060,10 +1060,27 @@ MonoBehaviour:
   teacherName: Virak
   dialoguePopUp: {fileID: 208243415}
   dialogueManager: {fileID: 1165950374}
-  initalLines: []
-  afterPuzzleLines: []
-  afterBattleLines: []
-  afterSpellLines: []
+  spellSelectionScreen: {fileID: 0}
+  element: 
+  totalNumOfElementSpells: 0
+  initalLines:
+  - "What\u2019s up?"
+  - "Other than me, I know I\u2019m pretty tall."
+  - "Earth magic is such a broad term for so many different magic focuses, and I
+    think that \u2018rocks\u2019."
+  - From crystals to rocks and metals to sand, control over our surroundings is a
+    lot to juggle.
+  - Once you get to my level you can even create golems like the one over there.
+  - "How about you test your \u2018metal\u2019 against my bot?"
+  afterPuzzleLines:
+  - Done already?
+  - Then we should begin a proper time trial.
+  afterBattleLines:
+  - Zero errors. Well done.
+  - Take this rubber ducky in case you run into larger errors in the future.
+  afterSpellLines:
+  - Remember, all complex problems can be broken down, just as all complex structures
+    stem from simple components like rocks, sands, or metals.
 --- !u!70 &620195739
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -1279,13 +1296,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LoadCampusMap
   loadLocation: 0
-  playerPrefLocation: 
+  locationIndex: 0
   player: {fileID: 0}
   loadTrigger: 1
-  playerPrefTrigger:
-  - VirakPuzzle
+  totalPuzzleCount: 1
+  teacherName: Virak
   triggers:
   - {fileID: 1411225885}
+  agulto: {fileID: 0}
+  hallways: []
+  sceneMap: {fileID: 0}
+  spellbookManager: {fileID: 0}
 --- !u!1 &689902237
 GameObject:
   m_ObjectHideFlags: 0
@@ -1875,8 +1896,10 @@ MonoBehaviour:
   collider: {fileID: 1411225889}
   closeButton: {fileID: 934314146}
   clearButton: {fileID: 1311640675}
+  successSound: {fileID: 0}
+  failureSound: {fileID: 0}
   code: 123
-  playerPrefVariable: SarnoPuzzle
+  teacherName: 
   progressTexts:
   - 'Enter the runes in the correct order to cast the spell '
   - "Attempting to cast spell\u2026 "
@@ -2824,12 +2847,17 @@ MonoBehaviour:
   dialogueScreen: {fileID: 208243416}
   lines: []
   hasCharName: 0
+  isTutorial: 0
+  inputPopup: {fileID: 0}
+  userInputField: {fileID: 0}
   changeScene: 0
   sceneID: 0
   isTeacherDialogue: 1
   teacherInteractionManager: {fileID: 620195738}
   hasNextScene: 0
   nextScreen: {fileID: 0}
+  changePlayerMovement: 0
+  playerMovement: {fileID: 0}
 --- !u!4 &1165950375
 Transform:
   m_ObjectHideFlags: 0

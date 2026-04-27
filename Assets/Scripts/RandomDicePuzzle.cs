@@ -18,29 +18,37 @@ public class RandomDicePuzzle : MonoBehaviour
 
     private int rollCount = 0;
 
-    public string playerPrefVariable;
+    public string teacherName;
 
     public Movement playerMovement;
     public RandomDicePuzzle other;
+
+    public AudioSource successSound;
+    public AudioSource failureSound;
 
     void OnEnable()
     {
         if (isManager)
         {
             playerMovement.enableMovement = false;
+            SpellbookManager.instance.gameObject.SetActive(false);
         }
     }
 
     public void closePuzzle()
     {
         playerMovement.enableMovement = true;
+        SpellbookManager.instance.gameObject.SetActive(true);
         puzzle.gameObject.SetActive(false);
+
     }
 
     private void success()
     {
         progress.text = "Success!";
-        PlayerPrefs.SetInt(playerPrefVariable, 1);
+        successSound.Play();
+        GameManager.Instance.setPuzzleCompeletion(teacherName, 0);
+        GameManager.Instance.SaveGame(); 
         collider.gameObject.SetActive(false);
         Invoke("closePuzzle", 2);
     }
@@ -62,6 +70,7 @@ public class RandomDicePuzzle : MonoBehaviour
         }
         else
         {
+            failureSound.Play();
             closeButton.gameObject.SetActive(true);
             rollButton.interactable = true;
         }    

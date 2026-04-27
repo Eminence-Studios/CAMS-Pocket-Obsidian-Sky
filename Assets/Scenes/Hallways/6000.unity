@@ -316,7 +316,7 @@ Transform:
   m_GameObject: {fileID: 113367325}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 1, w: 0}
-  m_LocalPosition: {x: -900, y: 0, z: 0}
+  m_LocalPosition: {x: -900, y: 500, z: 0}
   m_LocalScale: {x: 200, y: 250, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -336,8 +336,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SceneChanger
   sceneID: 9
-  playerPrefVariable: 6000Location
-  playerPrefValue: 3
+  locationIndex: 5
+  locationValue: 3
 --- !u!50 &113367328
 Rigidbody2D:
   serializedVersion: 5
@@ -685,8 +685,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SceneChanger
   sceneID: 2
-  playerPrefVariable: 6000Location
-  playerPrefValue: 0
+  locationIndex: 5
+  locationValue: 0
 --- !u!58 &364725783
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -1053,8 +1053,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SceneChanger
   sceneID: 11
-  playerPrefVariable: 6000Location
-  playerPrefValue: 5
+  locationIndex: 5
+  locationValue: 5
 --- !u!50 &685742817
 Rigidbody2D:
   serializedVersion: 5
@@ -1225,8 +1225,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SceneChanger
   sceneID: 23
-  playerPrefVariable: 6000Location
-  playerPrefValue: 9
+  locationIndex: 5
+  locationValue: 9
 --- !u!50 &710275415
 Rigidbody2D:
   serializedVersion: 5
@@ -1827,8 +1827,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SceneChanger
   sceneID: 26
-  playerPrefVariable: 6000Location
-  playerPrefValue: 7
+  locationIndex: 5
+  locationValue: 7
 --- !u!50 &908936023
 Rigidbody2D:
   serializedVersion: 5
@@ -2381,8 +2381,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SceneChanger
   sceneID: 28
-  playerPrefVariable: 6000Location
-  playerPrefValue: 6
+  locationIndex: 5
+  locationValue: 6
 --- !u!50 &1346046578
 Rigidbody2D:
   serializedVersion: 5
@@ -2721,8 +2721,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SceneChanger
   sceneID: 15
-  playerPrefVariable: 6000Location
-  playerPrefValue: 8
+  locationIndex: 5
+  locationValue: 8
 --- !u!50 &1448050071
 Rigidbody2D:
   serializedVersion: 5
@@ -2893,8 +2893,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SceneChanger
   sceneID: 12
-  playerPrefVariable: 6000Location
-  playerPrefValue: 4
+  locationIndex: 5
+  locationValue: 4
 --- !u!50 &1468596629
 Rigidbody2D:
   serializedVersion: 5
@@ -3045,7 +3045,7 @@ Transform:
   m_GameObject: {fileID: 1478061701}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 1, w: 0}
-  m_LocalPosition: {x: -900, y: 500, z: 0}
+  m_LocalPosition: {x: -900, y: 0, z: 0}
   m_LocalScale: {x: 200, y: 250, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -3065,8 +3065,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SceneChanger
   sceneID: 30
-  playerPrefVariable: 6000Location
-  playerPrefValue: 2
+  locationIndex: 5
+  locationValue: 2
 --- !u!50 &1478061704
 Rigidbody2D:
   serializedVersion: 5
@@ -3237,8 +3237,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SceneChanger
   sceneID: 10
-  playerPrefVariable: 6000Location
-  playerPrefValue: 1
+  locationIndex: 5
+  locationValue: 1
 --- !u!50 &1510978797
 Rigidbody2D:
   serializedVersion: 5
@@ -3592,15 +3592,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LoadCampusMap
   loadLocation: 1
-  playerPrefLocation: 6000Location
+  locationIndex: 5
   player: {fileID: 857817115}
   loadTrigger: 0
-  playerPrefTrigger: []
+  totalPuzzleCount: 0
+  teacherName: 
   triggers:
   - {fileID: 1478061701}
   - {fileID: 1346046575}
   - {fileID: 908936020}
   - {fileID: 710275412}
+  agulto: {fileID: 0}
+  hallways: []
+  sceneMap: {fileID: 2642053492378982893, guid: 93bb2783e42c0af48b6261db8aa98445, type: 3}
+  spellbookManager: {fileID: 0}
 --- !u!114 &1986714800
 MonoBehaviour:
   m_ObjectHideFlags: 0

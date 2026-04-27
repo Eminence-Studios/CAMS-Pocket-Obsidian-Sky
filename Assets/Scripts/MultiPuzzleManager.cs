@@ -4,11 +4,12 @@ using UnityEngine;
 
 public class MultiPuzzleManager : MonoBehaviour
 {
-    public string mainPuzzleName;
+    public string teacherName;
     public int numOfPuzzles;
     private string[] componentPuzzles;
 
-    public Boolean isTwoStep;
+    // public Boolean isTwoStep;
+    public int startSearchIndex;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -22,17 +23,26 @@ public class MultiPuzzleManager : MonoBehaviour
 
     }
 
+    /*
     public void checkAllComplete()
     {
-        int sum = 0;
-        for (int i = 1; i <= numOfPuzzles; i++)
+        int completedCount = 0;
+        // Set startSearchIndex to 1 for Nishiyama, 0 for others
+        for (int i = startSearchIndex; i < (startSearchIndex + numOfPuzzles); i++)
         {
-            sum += PlayerPrefs.GetInt(mainPuzzleName + i, 0);
+            if (GameManager.Instance.isPuzzleComplete(teacherName, i))
+            {
+                completedCount++;
+            }
         }
-        if (sum == numOfPuzzles)
+
+        if (completedCount >= numOfPuzzles)
         {
-            PlayerPrefs.SetInt(mainPuzzleName, 1);
-            // Debug.Log("all puzzles solved");
+            TeacherProgress data = GameManager.Instance.getTeacher(teacherName);
+            data.puzzle = true;
+            GameManager.Instance.SaveGame();
         }
+    
     }
+    */
 }

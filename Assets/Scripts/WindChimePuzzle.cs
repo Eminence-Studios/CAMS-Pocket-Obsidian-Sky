@@ -15,6 +15,8 @@ public class WindChimePuzzle : MonoBehaviour
     private string melody = "012345";
     public Movement playerMovement;
 
+    public AudioSource successSound;
+
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -25,6 +27,7 @@ public class WindChimePuzzle : MonoBehaviour
     private void OnEnable()
     {
         playerMovement.enableMovement = false;
+        SpellbookManager.instance.gameObject.SetActive(false);
     }
 
     // Update is called once per frame
@@ -36,8 +39,10 @@ public class WindChimePuzzle : MonoBehaviour
             if (input.text == melody)
             {
                 close.gameObject.SetActive(false);
-                PlayerPrefs.SetInt("JohnsonPuzzle", 1);
+                GameManager.Instance.setPuzzleCompeletion("Johnson", 0);
+                GameManager.Instance.SaveGame();
                 progress.text = "Beautiful tune!";
+                successSound.Play();
                 collider.gameObject.SetActive(false);
                 Invoke("closePuzzle", 2);
 
@@ -59,9 +64,11 @@ public class WindChimePuzzle : MonoBehaviour
     public void closePuzzle()
     {
         playerMovement.enableMovement = true;
+        SpellbookManager.instance.gameObject.SetActive(true);
         puzzle.gameObject.SetActive(false);
+
     }
-    
-    
+
+
 
 }

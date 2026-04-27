@@ -15,8 +15,11 @@ public class OrderPuzzle : MonoBehaviour
     [SerializeField] Button closeButton;
     [SerializeField] Button clearButton;
 
+    public AudioSource successSound;
+    public AudioSource failureSound;
+
     public string code;
-    public string playerPrefVariable;
+    public string teacherName;
 
     // instructions, attemping, failed, success
     public string[] progressTexts;
@@ -30,6 +33,8 @@ public class OrderPuzzle : MonoBehaviour
     public Movement playerMovement;
 
     public GameObject nextPuzzleTriggers;
+
+    
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -61,20 +66,37 @@ public class OrderPuzzle : MonoBehaviour
     private void OnEnable()
     {
         playerMovement.enableMovement = false;
+        SpellbookManager.instance.gameObject.SetActive(false);
     }
+
     private void checkCode()
     {
         if (input.text == code)
         {
             progress.text = progressTexts[3];
 
-            PlayerPrefs.SetInt(playerPrefVariable, 1);
+            if (teacherName == "Nishiyama")
+            {
+                GameManager.Instance.setPuzzleCompeletion("Nishiyama", 0);
+                nextPuzzleTriggers.SetActive(true);
+                
+            }
+            else
+            {
+                GameManager.Instance.setPuzzleCompeletion(teacherName, 0);
+            }
+            GameManager.Instance.SaveGame();
+            successSound.Play();
             collider.gameObject.SetActive(false);
-            if (playerPrefVariable == "NishiyamaPuzzle0")
+
+            /*
+            if (teacherName == "NishiyamaPuzzle0")
             {
                 PlayerPrefs.SetInt("NishiyamaNotReady", 0);
                 nextPuzzleTriggers.SetActive(true);
             }
+            */
+
             Invoke("closePuzzle", 2);
 
         }
@@ -83,6 +105,7 @@ public class OrderPuzzle : MonoBehaviour
             progress.text = progressTexts[2];
             clear();
             Invoke("clearProgress", 1);
+            failureSound.Play();
             isCheck = false;
             closeButton.gameObject.SetActive(true);
             clearButton.gameObject.SetActive(true);
@@ -113,6 +136,7 @@ public class OrderPuzzle : MonoBehaviour
     public void closePuzzle()
     {
         playerMovement.enableMovement = true;
+        SpellbookManager.instance.gameObject.SetActive(true);
         puzzle.gameObject.SetActive(false);
     }
 
