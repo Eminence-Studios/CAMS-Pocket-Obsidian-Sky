@@ -6,7 +6,7 @@ public class GameData
     // Settings
     public float masterVolume;
     public int resolutionIndex;
-    public bool isFullscreen;
+    // public bool isFullscreen;
     public int vsyncCount;
 
     // Player
@@ -38,8 +38,8 @@ public class GameData
     public GameData()
     {
         masterVolume = 1f;
-        resolutionIndex = 0;
-        isFullscreen = false;
+        resolutionIndex = -1;
+        // isFullscreen = false;
         vsyncCount = 1;
         numOfMasteredElements = 4;
         teacherProgress = new List<TeacherProgress>();
