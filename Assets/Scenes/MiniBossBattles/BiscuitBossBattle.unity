@@ -352,9 +352,33 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 200727242}
+        m_TargetAssemblyTypeName: UniqueMoves, Assembly-CSharp
+        m_MethodName: changeUniqueMove
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 4
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 200727242}
+        m_TargetAssemblyTypeName: UniqueMoves, Assembly-CSharp
+        m_MethodName: changeSpecialization
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 257947101}
         m_TargetAssemblyTypeName: BattleSystem, Assembly-CSharp
-        m_MethodName: onBuffButton
+        m_MethodName: onFourthButton
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -402,6 +426,22 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 192054739}
   m_CullTransparentMesh: 1
+--- !u!4 &200727241 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2262498036058601663, guid: 9e76053bdee5a8243a7b3cb3efdb1f41, type: 3}
+  m_PrefabInstance: {fileID: 684641687}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &200727242 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: -3893745703522269357, guid: 9e76053bdee5a8243a7b3cb3efdb1f41, type: 3}
+  m_PrefabInstance: {fileID: 684641687}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 407411748}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5ba745fa70966c84aaaf539ba944547d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::uniqueMoves
 --- !u!1 &253364742
 GameObject:
   m_ObjectHideFlags: 0
@@ -506,8 +546,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 42313b35a89fafe419e3a4fcd3f93319, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BattleSystem
-  playerPrefab: {fileID: 7447560617879348617, guid: 9e76053bdee5a8243a7b3cb3efdb1f41, type: 3}
-  enemyPrefab: {fileID: 7779419570542410751, guid: 7638c1d8a8533854b8ffe40e0e84ec06, type: 3}
+  playerPrefab: {fileID: 407411748}
+  enemyPrefab: {fileID: 6326979869521894091, guid: cb5a69611a281b0429990add1bf93639, type: 3}
   playerBattleStation: {fileID: 0}
   enemyBattleStation: {fileID: 0}
   state: 0
@@ -854,6 +894,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::BattleHUD
   hpSlider: {fileID: 565514472}
   energySlider: {fileID: 1142235247}
+--- !u!1 &407411748 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7447560617879348617, guid: 9e76053bdee5a8243a7b3cb3efdb1f41, type: 3}
+  m_PrefabInstance: {fileID: 684641687}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &409040853
 GameObject:
   m_ObjectHideFlags: 0
@@ -1484,6 +1529,87 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 649771691}
   m_CullTransparentMesh: 1
+--- !u!1001 &684641687
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 1252187421}
+    m_Modifications:
+    - target: {fileID: -3893745703522269357, guid: 9e76053bdee5a8243a7b3cb3efdb1f41, type: 3}
+      propertyPath: moveNumber
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2262498036058601663, guid: 9e76053bdee5a8243a7b3cb3efdb1f41, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 6.9869714
+      objectReference: {fileID: 0}
+    - target: {fileID: 2262498036058601663, guid: 9e76053bdee5a8243a7b3cb3efdb1f41, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 6.9869714
+      objectReference: {fileID: 0}
+    - target: {fileID: 2262498036058601663, guid: 9e76053bdee5a8243a7b3cb3efdb1f41, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 2.3289905
+      objectReference: {fileID: 0}
+    - target: {fileID: 2262498036058601663, guid: 9e76053bdee5a8243a7b3cb3efdb1f41, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -1029.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2262498036058601663, guid: 9e76053bdee5a8243a7b3cb3efdb1f41, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -515.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2262498036058601663, guid: 9e76053bdee5a8243a7b3cb3efdb1f41, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2262498036058601663, guid: 9e76053bdee5a8243a7b3cb3efdb1f41, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2262498036058601663, guid: 9e76053bdee5a8243a7b3cb3efdb1f41, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2262498036058601663, guid: 9e76053bdee5a8243a7b3cb3efdb1f41, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2262498036058601663, guid: 9e76053bdee5a8243a7b3cb3efdb1f41, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2262498036058601663, guid: 9e76053bdee5a8243a7b3cb3efdb1f41, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2262498036058601663, guid: 9e76053bdee5a8243a7b3cb3efdb1f41, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2262498036058601663, guid: 9e76053bdee5a8243a7b3cb3efdb1f41, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5050496893894536983, guid: 9e76053bdee5a8243a7b3cb3efdb1f41, type: 3}
+      propertyPath: unitDef
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5050496893894536983, guid: 9e76053bdee5a8243a7b3cb3efdb1f41, type: 3}
+      propertyPath: unitSpDef
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7447560617879348617, guid: 9e76053bdee5a8243a7b3cb3efdb1f41, type: 3}
+      propertyPath: m_Name
+      value: Circle
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 9e76053bdee5a8243a7b3cb3efdb1f41, type: 3}
 --- !u!1 &700884782
 GameObject:
   m_ObjectHideFlags: 0
@@ -2268,6 +2394,7 @@ RectTransform:
   - {fileID: 1596102222}
   - {fileID: 315610510}
   - {fileID: 257947102}
+  - {fileID: 200727241}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -2358,9 +2485,33 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 200727242}
+        m_TargetAssemblyTypeName: UniqueMoves, Assembly-CSharp
+        m_MethodName: changeUniqueMove
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 2
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 200727242}
+        m_TargetAssemblyTypeName: UniqueMoves, Assembly-CSharp
+        m_MethodName: changeSpecialization
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 257947101}
         m_TargetAssemblyTypeName: BattleSystem, Assembly-CSharp
-        m_MethodName: onSpecialAttackButton
+        m_MethodName: onSecondButton
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2697,10 +2848,22 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 257947101}
-        m_TargetAssemblyTypeName: BattleSystem, Assembly-CSharp
-        m_MethodName: onThirdButton
-        m_Mode: 1
+      - m_Target: {fileID: 200727242}
+        m_TargetAssemblyTypeName: UniqueMoves, Assembly-CSharp
+        m_MethodName: changeUniqueMove
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 3
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 200727242}
+        m_TargetAssemblyTypeName: UniqueMoves, Assembly-CSharp
+        m_MethodName: changeSpecialization
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -2709,26 +2872,14 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: -3893745703522269357, guid: 9e76053bdee5a8243a7b3cb3efdb1f41, type: 3}
-        m_TargetAssemblyTypeName: UniqueMoves, Assembly-CSharp
-        m_MethodName: changeUniqueMove
-        m_Mode: 3
+      - m_Target: {fileID: 257947101}
+        m_TargetAssemblyTypeName: BattleSystem, Assembly-CSharp
+        m_MethodName: onThirdButton
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 2
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 832918974}
-        m_TargetAssemblyTypeName: ButtonInventory, Assembly-CSharp
-        m_MethodName: changeButton
-        m_Mode: 3
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 2
+          m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
