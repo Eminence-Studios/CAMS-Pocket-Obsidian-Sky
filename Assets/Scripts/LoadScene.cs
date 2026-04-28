@@ -1,25 +1,44 @@
+using System.Linq;
+using Unity.VisualScripting;
+using UnityEditor;
 using UnityEngine;
 
 public class LoadScene : MonoBehaviour
 {
 
-    private int location;
+    // private int location;
 
+    [Header("Location Parameters")]
     public bool loadLocation;
-    public string playerPrefLocation;
+    public int locationIndex;
     [SerializeField] Transform player;
 
+    [Header("Trigger Parameters")]
     public bool loadTrigger;
-    public string[] playerPrefTrigger;
+    public int totalPuzzleCount;
+    public string teacherName;
     public GameObject[] triggers;
+
+    [Header("Campus Map Parameters")]
+    public GameObject agulto;
+    public GameObject[] hallways;
+
+    [Header("Corner Map Parameters")]
+    public Sprite sceneMap;
 
     public SpellbookManager spellbookManager;
 
     private Vector3[] locationsCampus;
+
+    private Vector3[] locationsHallways;
+
+    /*
     private Vector3[] locations1000;
     private Vector3[] locations2000;
     private Vector3[] locations3000;
     private Vector3[] locations4000;
+    */
+
     private Vector3[] locations6000;
 
     private int currentTrigger;
@@ -28,26 +47,34 @@ public class LoadScene : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        /*
         if (!PlayerPrefs.HasKey("NishiyamaNotReady"))
         {
             PlayerPrefs.SetInt("NishiyamaNotReady", 1);
-            PlayerPrefs.SetFloat("SFXVolume", 1f);
+            // PlayerPrefs.SetFloat("SFXVolume", 1f);
         }
+        */
 
         if (loadLocation)
-        { 
+        {
+
             createLocations();
-            numOfElements = PlayerPrefs.GetInt("numOfMasteredElements", 0);
-            location = PlayerPrefs.GetInt(playerPrefLocation, 0);
+            numOfElements = GameManager.Instance.currentData.numOfMasteredElements;
+            // location = PlayerPrefs.GetInt(playerPrefLocation, 0);
 
-            if (playerPrefLocation.Equals("CampusLocation"))
+            SpellbookManager.instance.gameObject.SetActive(true);
+
+            if (locationIndex == 0)
             {
-                player.position = locationsCampus[location];
-                GameObject rootCanvas = spellbookManager.transform.root.gameObject;
+                player.localPosition = locationsCampus[GameManager.Instance.currentData.currentLocations[0]];
 
+                /*
+                GameObject rootCanvas = spellbookManager.transform.root.gameObject;
                 
-                if (SpellbookManager.instance != null && spellbookManager != SpellbookManager.instance)
+                if (SpellbookManager.instance != null && SpellbookManager.instance != spellbookManager)
                 {
+                    updateOverlay();
+
                     Destroy(rootCanvas);
                     return;
                 }
@@ -55,38 +82,71 @@ public class LoadScene : MonoBehaviour
 
                 SpellbookManager.instance = spellbookManager;
                 DontDestroyOnLoad(rootCanvas);
+                */
+                updateOverlay();
             }
-            else if (playerPrefLocation.Equals("1000Location"))
+            else if (locationIndex == 1)
             {
-                player.position = locations1000[location];
+                player.localPosition = locationsHallways[GameManager.Instance.currentData.currentLocations[1]];
+                SpellbookManager.instance.showMapIcon();
+                SpellbookManager.instance.updateMap(sceneMap);
                 load1000Hallway();
             }
-            else if (playerPrefLocation.Equals("2000Location"))
+            else if (locationIndex == 2)
             {
-                player.position = locations2000[location];
+                player.localPosition = locationsHallways[GameManager.Instance.currentData.currentLocations[2]];
+                SpellbookManager.instance.showMapIcon();
+                SpellbookManager.instance.updateMap(sceneMap);
                 load2000Hallway();
             }
-            else if (playerPrefLocation.Equals("3000Location"))
+            else if (locationIndex == 3)
             {
-                player.position = locations3000[location];
+                player.localPosition = locationsHallways[GameManager.Instance.currentData.currentLocations[3]];
+                SpellbookManager.instance.showMapIcon();
+                SpellbookManager.instance.updateMap(sceneMap);
                 load3000Hallway();
             }
-            else if (playerPrefLocation.Equals("4000Location"))
+            else if (locationIndex == 4)
             {
-                player.position = locations4000[location];
+                player.localPosition = locationsHallways[GameManager.Instance.currentData.currentLocations[4]];
+                SpellbookManager.instance.showMapIcon();
+                SpellbookManager.instance.updateMap(sceneMap);
                 load4000Hallway();
             }
-            else if (playerPrefLocation.Equals("6000Location"))
+            else if (locationIndex == 5)
             {
-                player.position = locations6000[location];
+                player.localPosition = locations6000[GameManager.Instance.currentData.currentLocations[5]];
+                SpellbookManager.instance.showMapIcon();
+                SpellbookManager.instance.updateMap(sceneMap);
                 load6000Hallway();
             }
         }
         if (loadTrigger)
         {
-            for (int i = 0; i < playerPrefTrigger.Length; i++)
+            SpellbookManager.instance.hideMapIcon();
+
+            GameManager.Instance.createTeacher(teacherName, totalPuzzleCount);
+            TeacherProgress data = GameManager.Instance.getTeacher(teacherName);
+
+            int startSearchIndex = 0;
+            if (teacherName.Equals("Nishiyama"))
             {
-                if (PlayerPrefs.GetInt(playerPrefTrigger[i], 0) == 1)
+                if (data.subPuzzles[0] == true)
+                {
+                    triggers[0].SetActive(false);
+                    startSearchIndex = 1;
+                }
+                else
+                {
+                    foreach(var trigger in triggers)
+                    {
+                        trigger.SetActive(false);
+                    }
+                }
+            }
+            for (int i = startSearchIndex; i < startSearchIndex + data.subPuzzles.Length; i++)
+            {
+                if (data.subPuzzles[i])
                 {
                     triggers[i].SetActive(false);
                 }
@@ -199,25 +259,62 @@ public class LoadScene : MonoBehaviour
         }
     }
 
+    void hideHallways()
+    {
+        foreach (var trigger in hallways)
+        {
+            trigger.gameObject.SetActive(false);
+        }
+    }
+
+    void updateOverlay()
+    {
+        if (SpellbookManager.instance == null)
+        {
+            return;
+        }
+
+        GameObject root = SpellbookManager.instance.gameObject;
+
+        if (!GameManager.Instance.currentData.tutorialComplete)
+        {
+            agulto.SetActive(true);
+            root.SetActive(false);
+            hideHallways();
+        }
+        else
+        {
+            agulto.SetActive(false); // Make sure Agulto is gone
+            root.SetActive(true);
+            SpellbookManager.instance.showMapIcon();
+            SpellbookManager.instance.updateMap(sceneMap);
+        }
+    }
+
 
     void createLocations()
     {
-        // 1000. 2000, 3000, 4000, 6000
-        locationsCampus = new Vector3[] { new Vector3(963, -2268, 0), new Vector3(1465, -1166, 0), new Vector3(1462, 317, 0), new Vector3(1454, 1539, 0), new Vector3(-1215, -436, 0) };
+        // default, 1000. 2000, 3000, 4000, 6000
+        locationsCampus = new Vector3[] { new Vector3(300, -2000, 0), new Vector3(963, -2268, 0), new Vector3(1465, -1166, 0), new Vector3(1462, 317, 0), new Vector3(1454, 1539, 0), new Vector3(-1215, -436, 0) };
 
+        // campus, door 1, door 2, door 3, door 4
+        locationsHallways = new Vector3[] { new Vector3(-402, -91, 0), new Vector3(-340, -83, 0), new Vector3(-190, -83, 0), new Vector3(180, -83, 0), new Vector3(335, -83, 0) };
+
+        /*
         // campus, Brodeur, Davis, Imatomi, Gonzales
-        locations1000 = new Vector3[] { new Vector3(-1400, 80, 0), new Vector3(-1000, -50, 0), new Vector3(-600, -50, 0), new Vector3(700, -50, 0), new Vector3(1100, -50, 0)};
-
+        locations1000 = new Vector3[] { new Vector3(-441, -83, 0), new Vector3(-340, -83, 0), new Vector3(-190, -83, 0), new Vector3(180, -83, 0), new Vector3(335, -83, 0)};
+        
         // campus, Sarno, Almeida, Brown, Luu
-        locations2000 = new Vector3[] { new Vector3(-1200, 0, 0), new Vector3(-950, 100, 0), new Vector3(-600, 100, 0), new Vector3(750, 100, 0), new Vector3(1100, 100, 0) };
+        locations2000 = new Vector3[] { new Vector3(-402, -91, 0), new Vector3(-340, -83, 0), new Vector3(-190, -83, 0), new Vector3(180, -83, 0), new Vector3(335, -83, 0) };
 
         // campus, Maestas, Lee, Nishiyama
         locations3000 = new Vector3[] { new Vector3(-1200, 50, 0), new Vector3(-600, 100, 0), new Vector3(750, 100, 0), new Vector3(1100, 100, 0)};
 
         // campus, Dreyfus, Johns, Virak, Bucko
         locations4000 = new Vector3[] { new Vector3(-1200, 0, 0), new Vector3(-950, 100, 0), new Vector3(-600, 100, 0), new Vector3(750, 100, 0), new Vector3(1100, 100, 0) };
+        */
 
-        // campus, King, Fuentes, Johnson, Carpenter, Marquez, Gallardo, Brito, Avalos, Luna
+        // campus, King, Fuentes, Johnson, Carpenter, Marquez, Gallardo, Brito, Avalos, idLuna
         locations6000 = new Vector3[] {new Vector3(0, 2300, 0), new Vector3(-600, 2000, 0), new Vector3(-600, 500, 0), new Vector3(-600, 0, 0)
         , new Vector3(600, 250, 0), new Vector3(600, -800, 0), new Vector3(600, -1250, 0), new Vector3(-600, -1500, 0)
         , new Vector3(600, -2000, 0), new Vector3(-600, -2000, 0) };

@@ -20,7 +20,7 @@ public class HoldButtonPuzzle : MonoBehaviour, IPointerDownHandler, IPointerUpHa
     [SerializeField] Sprite bud;
     [SerializeField] Sprite flower;
     [SerializeField] Button close;
-    [SerializeField] MultiPuzzleManager puzzleManager;
+    // [SerializeField] MultiPuzzleManager puzzleManager;
 
     public Movement playerMovement;
 
@@ -28,8 +28,10 @@ public class HoldButtonPuzzle : MonoBehaviour, IPointerDownHandler, IPointerUpHa
     public string inProgressText;
     public string completedText;
 
-    public string PlayerPrefVariable;
+    public string teacherName;
+    public int puzzleIndex;
 
+    public AudioSource successSound;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -67,21 +69,26 @@ public class HoldButtonPuzzle : MonoBehaviour, IPointerDownHandler, IPointerUpHa
     private void OnEnable()
     {
         playerMovement.enableMovement = false;
+        SpellbookManager.instance.gameObject.SetActive(false);
     }
 
     private void puzzleComplete()
     {
-        plant.sprite = flower;
-        progress.text = completedText;
-        gauge.value = requiredTime;
+        SetCompletedState();
+
+        GameManager.Instance.setPuzzleCompeletion(teacherName, puzzleIndex);
+        // puzzleManager.checkAllComplete();
+        GameManager.Instance.SaveGame();
+
+        successSound.Play();
         collider.SetActive(false);
-        PlayerPrefs.SetInt(PlayerPrefVariable, 1);
-        puzzleManager.checkAllComplete();
+        // puzzleManager.checkAllComplete();
         Invoke("closePuzzle", 2);
     }
     public void closePuzzle()
     {
         playerMovement.enableMovement = true;
+        SpellbookManager.instance.gameObject.SetActive(true);
         puzzle.SetActive(false);
     }
     public void OnPointerDown(PointerEventData eventData)
@@ -92,6 +99,14 @@ public class HoldButtonPuzzle : MonoBehaviour, IPointerDownHandler, IPointerUpHa
     public void OnPointerUp(PointerEventData eventData)
     {
         isHold = false;
+    }
+
+    private void SetCompletedState()
+    {
+        completed = true;
+        plant.sprite = flower;
+        progress.text = completedText;
+        gauge.value = requiredTime;
     }
 
 

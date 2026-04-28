@@ -527,7 +527,7 @@ Transform:
   m_GameObject: {fileID: 150576260}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -859, y: 102, z: 0}
+  m_LocalPosition: {x: -708, y: 70, z: 0}
   m_LocalScale: {x: 15, y: 15, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -635,12 +635,36 @@ MonoBehaviour:
   teacherName: Nishiyama
   dialoguePopUp: {fileID: 1256853252}
   dialogueManager: {fileID: 1682790333}
-  initalLines: []
-  afterPuzzleLines: []
-  afterBattleLines: []
-  afterSpellLines: []
---- !u!61 &150576267
-BoxCollider2D:
+  spellSelectionScreen: {fileID: 0}
+  element: 
+  totalNumOfElementSpells: 0
+  initalLines:
+  - "Kon\u2019nichiwa! Hello and welcome in!"
+  - "As long as you work hard, you\u2019ll be fluent in light magic in no time."
+  - "In Japanese culture, among many folktales and festivals, there\u2019s one that\u2019s
+    very closely related to the stars and light magic. This is the tale of Tanabata.
+    There is a pair of lovers, Orihime the Weaver Princess and Hikoboshi the Cowherd."
+  - "They are separated by the Milky Way which is like an impassable river. Once
+    a year, on the night of Tanabata or the Japanese Star Festival, the lovers\u2019
+    wish to be reunited comes true if there are clear skies. The magpies form a bridge
+    for them."
+  - "People make their own wishes on this night, writing their wishes on special
+    papers called Tanzaku. Though it really doesn\u2019t matter what color paper
+    you use, there are traditional meanings to each color."
+  - "If you can understand them, it\u2019ll boost your light powers. Ganbatte!"
+  afterPuzzleLines:
+  - Did you notice that each Tanzaku had the image of a star on it?
+  - Feel the light energy flowing through you even more!
+  - "Let\u2019s have a discussion\u2014show me what you remember from the folktale
+    I told you! Ikimashou!"
+  afterBattleLines:
+  - Subarashii! Excellent job.
+  - "Your light shines brighter with every moment. You\u2019re ready for a new spell."
+  afterSpellLines:
+  - "Bring light to this world! Keep a positive attitude and you\u2019ll go very
+    far!"
+--- !u!60 &150576267
+PolygonCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -683,8 +707,115 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 17.18, y: 20.15}
-  m_EdgeRadius: 0
+  m_Points:
+    m_Paths:
+    - - {x: 1.99422, y: -4.763515}
+      - {x: 2.0137513, y: -4.8221087}
+      - {x: 2.0528138, y: -4.9588275}
+      - {x: 2.2090638, y: -5.076015}
+      - {x: 2.4825013, y: -5.1346087}
+      - {x: 2.93172, y: -5.1150775}
+      - {x: 3.0293763, y: -5.0564837}
+      - {x: 3.1856263, y: -4.919765}
+      - {x: 3.2246888, y: -4.8221087}
+      - {x: 3.2637513, y: -4.68539}
+      - {x: 3.2637513, y: -4.21664}
+      - {x: 3.322345, y: -4.1580462}
+      - {x: 3.3418763, y: -4.0408587}
+      - {x: 3.3418763, y: -3.357265}
+      - {x: 3.3028138, y: -2.9861712}
+      - {x: 3.08797, y: -2.419765}
+      - {x: 2.853595, y: -1.9705462}
+      - {x: 2.5215638, y: -1.5213275}
+      - {x: 2.5215638, y: -1.24789}
+      - {x: 2.3262513, y: -0.8182025}
+      - {x: 1.7793763, y: -0.056483746}
+      - {x: 1.52547, y: 0.25601625}
+      - {x: 1.291095, y: 0.5099225}
+      - {x: 0.978595, y: 0.78336}
+      - {x: 1.0957825, y: 0.9005475}
+      - {x: 1.3106263, y: 1.3888288}
+      - {x: 1.3301575, y: 1.87711}
+      - {x: 1.2715638, y: 2.2091413}
+      - {x: 1.1543763, y: 2.736485}
+      - {x: 1.0762513, y: 3.2442975}
+      - {x: 1.2325013, y: 3.361485}
+      - {x: 1.4668763, y: 3.6153913}
+      - {x: 1.603595, y: 3.90836}
+      - {x: 1.6426575, y: 4.1232038}
+      - {x: 1.68172, y: 4.9435163}
+      - {x: 1.68172, y: 5.236485}
+      - {x: 1.5450013, y: 5.4317975}
+      - {x: 1.447345, y: 5.47086}
+      - {x: 1.1934388, y: 5.47086}
+      - {x: 1.0176575, y: 5.392735}
+      - {x: 0.5489075, y: 5.0216413}
+      - {x: 0.17781377, y: 4.6310163}
+      - {x: -0.05656123, y: 4.1817975}
+      - {x: -0.21281123, y: 4.2403913}
+      - {x: -0.5448425, y: 4.2794538}
+      - {x: -1.3260925, y: 4.2599225}
+      - {x: -1.59953, y: 4.2013288}
+      - {x: -1.75578, y: 4.4942975}
+      - {x: -2.1854675, y: 5.0216413}
+      - {x: -2.5565612, y: 5.31461}
+      - {x: -2.8299987, y: 5.47086}
+      - {x: -3.1034362, y: 5.47086}
+      - {x: -3.16203, y: 5.4513288}
+      - {x: -3.2987487, y: 5.2950788}
+      - {x: -3.3378112, y: 5.236485}
+      - {x: -3.3378112, y: 4.68961}
+      - {x: -3.31828, y: 4.2794538}
+      - {x: -3.2596862, y: 3.9669538}
+      - {x: -3.1424987, y: 3.673985}
+      - {x: -3.0643737, y: 3.5567975}
+      - {x: -2.84953, y: 3.3224225}
+      - {x: -2.8299987, y: 3.1857038}
+      - {x: -2.8885925, y: 2.9122663}
+      - {x: -2.8885925, y: 2.6778913}
+      - {x: -3.00578, y: 2.2872663}
+      - {x: -3.0643737, y: 1.87711}
+      - {x: -3.0643737, y: 1.40836}
+      - {x: -2.9862487, y: 1.2130475}
+      - {x: -2.9081237, y: 1.0567975}
+      - {x: -2.6542175, y: 0.6661725}
+      - {x: -2.8104675, y: 0.45132875}
+      - {x: -2.9667175, y: 0.15836}
+      - {x: -3.0643737, y: -0.1932025}
+      - {x: -3.16203, y: -0.701015}
+      - {x: -3.2010925, y: -1.0330462}
+      - {x: -3.1815612, y: -1.2869525}
+      - {x: -3.1424987, y: -1.40414}
+      - {x: -3.00578, y: -1.5994525}
+      - {x: -2.7518737, y: -3.201015}
+      - {x: -2.7909362, y: -3.826015}
+      - {x: -2.927655, y: -4.2361712}
+      - {x: -3.0643737, y: -4.451015}
+      - {x: -3.1815612, y: -4.6267962}
+      - {x: -3.1229675, y: -5.0174212}
+      - {x: -3.0253112, y: -5.1932025}
+      - {x: -2.84953, y: -5.3689837}
+      - {x: -2.7323425, y: -5.4080462}
+      - {x: -2.2440612, y: -5.4275775}
+      - {x: -1.9706237, y: -5.3689837}
+      - {x: -1.6581237, y: -5.2127337}
+      - {x: -1.4823425, y: -5.0174212}
+      - {x: -1.3456237, y: -4.763515}
+      - {x: -1.365155, y: -4.37289}
+      - {x: -1.1698425, y: -4.5682025}
+      - {x: -0.896405, y: -4.68539}
+      - {x: -0.42765498, y: -4.7830462}
+      - {x: 0.15828252, y: -4.763515}
+      - {x: 0.33406377, y: -4.9392962}
+      - {x: 0.49031377, y: -5.1932025}
+      - {x: 0.64656377, y: -5.3299212}
+      - {x: 0.822345, y: -5.4275775}
+      - {x: 1.0957825, y: -5.46664}
+      - {x: 1.3301575, y: -5.46664}
+      - {x: 1.68172, y: -5.4275775}
+      - {x: 1.8965638, y: -5.2713275}
+      - {x: 1.9746888, y: -5.076015}
+  m_UseDelaunayMesh: 0
 --- !u!1 &180424569
 GameObject:
   m_ObjectHideFlags: 0
@@ -2114,9 +2245,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62a5e50abbdb9b5438c89a1c02d0c170, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MultiPuzzleManager
-  mainPuzzleName: NishiyamaPuzzle
+  teacherName: 
   numOfPuzzles: 5
-  isTwoStep: 0
+  startSearchIndex: 0
 --- !u!4 &360859488
 Transform:
   m_ObjectHideFlags: 0
@@ -2402,12 +2533,17 @@ MonoBehaviour:
   lines:
   - Red (Fire) Tanzaku\nWishes regarding gratitude and ancestors
   hasCharName: 0
+  isTutorial: 0
+  inputPopup: {fileID: 0}
+  userInputField: {fileID: 0}
   changeScene: 0
   sceneID: 0
   isTeacherDialogue: 0
   teacherInteractionManager: {fileID: 0}
   hasNextScene: 0
   nextScreen: {fileID: 0}
+  changePlayerMovement: 0
+  playerMovement: {fileID: 0}
 --- !u!1 &410280158
 GameObject:
   m_ObjectHideFlags: 0
@@ -4176,8 +4312,10 @@ MonoBehaviour:
   collider: {fileID: 1411225889}
   closeButton: {fileID: 1386572950}
   clearButton: {fileID: 1406961861}
+  successSound: {fileID: 2075370896}
+  failureSound: {fileID: 2057202010}
   code: 24013
-  playerPrefVariable: NishiyamaPuzzle0
+  teacherName: 
   progressTexts:
   - Match each meaning to the correct tanzaku color
   - Reading wishes
@@ -4889,25 +5027,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LoadCampusMap
   loadLocation: 0
-  playerPrefLocation: 
+  locationIndex: 0
   player: {fileID: 0}
   loadTrigger: 1
-  playerPrefTrigger:
-  - NishiyamaPuzzle0
-  - NishiyamaNotReady
-  - NishiyamaPuzzle1
-  - NishiyamaPuzzle2
-  - NishiyamaPuzzle3
-  - NishiyamaPuzzle4
-  - NishiyamaPuzzle5
+  totalPuzzleCount: 6
+  teacherName: Nishiyama
   triggers:
   - {fileID: 1411225885}
-  - {fileID: 1587316533}
   - {fileID: 1629789022}
   - {fileID: 253542725}
   - {fileID: 929888553}
   - {fileID: 1403104201}
   - {fileID: 260336665}
+  agulto: {fileID: 0}
+  hallways: []
+  sceneMap: {fileID: 0}
+  spellbookManager: {fileID: 0}
 --- !u!1 &686530110
 GameObject:
   m_ObjectHideFlags: 0
@@ -5107,12 +5242,17 @@ MonoBehaviour:
   lines:
   - Blue (Wood) Tanzaku\nWishes regarding self-improvement and calmness
   hasCharName: 0
+  isTutorial: 0
+  inputPopup: {fileID: 0}
+  userInputField: {fileID: 0}
   changeScene: 0
   sceneID: 0
   isTeacherDialogue: 0
   teacherInteractionManager: {fileID: 0}
   hasNextScene: 0
   nextScreen: {fileID: 0}
+  changePlayerMovement: 0
+  playerMovement: {fileID: 0}
 --- !u!1 &708006487
 GameObject:
   m_ObjectHideFlags: 0
@@ -5162,12 +5302,17 @@ MonoBehaviour:
   lines:
   - Purple (Water) Tanzaku\nWishes regarding academics and skills
   hasCharName: 0
+  isTutorial: 0
+  inputPopup: {fileID: 0}
+  userInputField: {fileID: 0}
   changeScene: 0
   sceneID: 0
   isTeacherDialogue: 0
   teacherInteractionManager: {fileID: 0}
   hasNextScene: 0
   nextScreen: {fileID: 0}
+  changePlayerMovement: 0
+  playerMovement: {fileID: 0}
 --- !u!1 &715506703
 GameObject:
   m_ObjectHideFlags: 0
@@ -5733,12 +5878,17 @@ MonoBehaviour:
   lines:
   - White (Metal) Tanzaku\nWishes regarding duty and responsibility
   hasCharName: 0
+  isTutorial: 0
+  inputPopup: {fileID: 0}
+  userInputField: {fileID: 0}
   changeScene: 0
   sceneID: 0
   isTeacherDialogue: 0
   teacherInteractionManager: {fileID: 0}
   hasNextScene: 0
   nextScreen: {fileID: 0}
+  changePlayerMovement: 0
+  playerMovement: {fileID: 0}
 --- !u!1 &811498091
 GameObject:
   m_ObjectHideFlags: 0
@@ -6945,12 +7095,13 @@ MonoBehaviour:
   bud: {fileID: 6929814024863328386, guid: bca209db24fad7e4f809b715ac15ea16, type: 3}
   flower: {fileID: -6140787510195819535, guid: d30642d3038699549aaab941230f86c7, type: 3}
   close: {fileID: 1325190777}
-  puzzleManager: {fileID: 360859487}
   playerMovement: {fileID: 916875898}
   notStartedText: Hold the bamboo to hang the white tanzaku
   inProgressText: Hanging...
   completedText: White tanzaku hung!
-  PlayerPrefVariable: NishiyamaPuzzle4
+  teacherName: 
+  puzzleIndex: 0
+  successSound: {fileID: 2075370896}
 --- !u!114 &964717502
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7185,12 +7336,17 @@ MonoBehaviour:
   lines:
   - Yellow (Earth) Tanzaku\nWishes regarding friendships and relationships
   hasCharName: 0
+  isTutorial: 0
+  inputPopup: {fileID: 0}
+  userInputField: {fileID: 0}
   changeScene: 0
   sceneID: 0
   isTeacherDialogue: 0
   teacherInteractionManager: {fileID: 0}
   hasNextScene: 0
   nextScreen: {fileID: 0}
+  changePlayerMovement: 0
+  playerMovement: {fileID: 0}
 --- !u!1 &1007944326
 GameObject:
   m_ObjectHideFlags: 0
@@ -7450,9 +7606,9 @@ MonoBehaviour:
   m_ComponentVersion: 2
   m_LightType: 3
   m_BlendStyleIndex: 0
-  m_FalloffIntensity: 0.38
-  m_Color: {r: 1, g: 0.33887702, b: 0, a: 1}
-  m_Intensity: 1
+  m_FalloffIntensity: 0.389
+  m_Color: {r: 1, g: 0.6164294, b: 0, a: 1}
+  m_Intensity: 0.7
   m_LightVolumeIntensity: 1
   m_LightVolumeEnabled: 1
   m_ApplyToSortingLayers: cda5edd3
@@ -7475,8 +7631,8 @@ MonoBehaviour:
     m_Extent: {x: 0.9985302, y: 0.99853027, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
-  m_PointLightInnerRadius: 50
-  m_PointLightOuterRadius: 200
+  m_PointLightInnerRadius: 20
+  m_PointLightOuterRadius: 150
   m_ShapeLightParametricSides: 5
   m_ShapeLightParametricAngleOffset: 0
   m_ShapeLightParametricRadius: 1
@@ -8957,12 +9113,13 @@ MonoBehaviour:
   bud: {fileID: 6929814024863328386, guid: bca209db24fad7e4f809b715ac15ea16, type: 3}
   flower: {fileID: 833730840114228799, guid: 900fc574e582e8e4996a6f1ac945bc1a, type: 3}
   close: {fileID: 327378522}
-  puzzleManager: {fileID: 360859487}
   playerMovement: {fileID: 916875898}
   notStartedText: Hold the bamboo to hang the blue tanzaku
   inProgressText: Hanging...
   completedText: Blue tanzaku hung!
-  PlayerPrefVariable: NishiyamaPuzzle1
+  teacherName: 
+  puzzleIndex: 0
+  successSound: {fileID: 2075370896}
 --- !u!114 &1291508197
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12037,12 +12194,13 @@ MonoBehaviour:
   bud: {fileID: 6929814024863328386, guid: bca209db24fad7e4f809b715ac15ea16, type: 3}
   flower: {fileID: 8387456174508176798, guid: 92055c9eb47b5ab41beedbb1f1e31525, type: 3}
   close: {fileID: 1216455764}
-  puzzleManager: {fileID: 360859487}
   playerMovement: {fileID: 916875898}
   notStartedText: Hold the bamboo to hang the yellow tanzaku
   inProgressText: Hanging...
   completedText: Yellow tanzaku hung!
-  PlayerPrefVariable: NishiyamaPuzzle5
+  teacherName: 
+  puzzleIndex: 0
+  successSound: {fileID: 2075370896}
 --- !u!114 &1609334073
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12852,12 +13010,17 @@ MonoBehaviour:
   dialogueScreen: {fileID: 1256853255}
   lines: []
   hasCharName: 0
+  isTutorial: 0
+  inputPopup: {fileID: 0}
+  userInputField: {fileID: 0}
   changeScene: 0
   sceneID: 0
   isTeacherDialogue: 1
   teacherInteractionManager: {fileID: 150576266}
   hasNextScene: 0
   nextScreen: {fileID: 0}
+  changePlayerMovement: 0
+  playerMovement: {fileID: 0}
 --- !u!1 &1687967705
 GameObject:
   m_ObjectHideFlags: 0
@@ -14463,12 +14626,13 @@ MonoBehaviour:
   bud: {fileID: 6929814024863328386, guid: bca209db24fad7e4f809b715ac15ea16, type: 3}
   flower: {fileID: -8133720705632758022, guid: 9a2fd39c8c61ac4409f08eea3c9e337d, type: 3}
   close: {fileID: 559382977}
-  puzzleManager: {fileID: 360859487}
   playerMovement: {fileID: 916875898}
   notStartedText: Hold the bamboo to hang the purple tanzaku
   inProgressText: Hanging...
   completedText: Purple tanzaku hung!
-  PlayerPrefVariable: NishiyamaPuzzle2
+  teacherName: 
+  puzzleIndex: 0
+  successSound: {fileID: 2075370896}
 --- !u!114 &1961398504
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14901,6 +15065,139 @@ Transform:
   - {fileID: 1794568525}
   m_Father: {fileID: 1472734445}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2057202009
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2057202011}
+  - component: {fileID: 2057202010}
+  m_Layer: 5
+  m_Name: Failure
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!82 &2057202010
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2057202009}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_Resource: {fileID: 8300000, guid: d12550abb2732ad4db799cfcec19b643, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!224 &2057202011
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2057202009}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0, y: 0, z: 0}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &2061308764
 GameObject:
   m_ObjectHideFlags: 0
@@ -15007,6 +15304,139 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 4
   m_TargetDisplay: 0
+--- !u!1 &2075370895
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2075370897}
+  - component: {fileID: 2075370896}
+  m_Layer: 5
+  m_Name: Success
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!82 &2075370896
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2075370895}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_Resource: {fileID: 8300000, guid: 2a9ca6da33bf38d43a5d4aa96d931d6c, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!224 &2075370897
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2075370895}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0, y: 0, z: 0}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &2111088854
 GameObject:
   m_ObjectHideFlags: 0
@@ -15597,12 +16027,13 @@ MonoBehaviour:
   bud: {fileID: 6929814024863328386, guid: bca209db24fad7e4f809b715ac15ea16, type: 3}
   flower: {fileID: 4330225139154692377, guid: b0614c1ad4afd0740b54108d7dc48cf6, type: 3}
   close: {fileID: 1266734057}
-  puzzleManager: {fileID: 360859487}
   playerMovement: {fileID: 916875898}
   notStartedText: Hold the bamboo to hang the red tanzaku
   inProgressText: Hanging...
   completedText: Red tanzaku hung!
-  PlayerPrefVariable: NishiyamaPuzzle3
+  teacherName: 
+  puzzleIndex: 0
+  successSound: {fileID: 2075370896}
 --- !u!114 &2138891508
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16127,6 +16558,8 @@ SceneRoots:
   m_Roots:
   - {fileID: 1784737743}
   - {fileID: 886600915}
+  - {fileID: 2057202011}
+  - {fileID: 2075370897}
   - {fileID: 360859488}
   - {fileID: 1642650194}
   - {fileID: 2145104467}

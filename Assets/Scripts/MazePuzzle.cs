@@ -12,11 +12,13 @@ public class MazePuzzle : MonoBehaviour
     [SerializeField] Button closeButton;
     [SerializeField] Collider2D collider;
 
-    public string puzzleName;
+    public string teacherName;
 
     public int speed;
 
     private bool enableMovement = false;
+
+    public AudioSource successSound;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -28,6 +30,8 @@ public class MazePuzzle : MonoBehaviour
     {
         playerMovement.enableMovement = false;
         enableMovement = true;
+        SpellbookManager.instance.gameObject.SetActive(false);
+
     }
 
     // Update is called once per frame
@@ -46,17 +50,21 @@ public class MazePuzzle : MonoBehaviour
     public void close()
     {
         playerMovement.enableMovement = true;
+        SpellbookManager.instance.gameObject.SetActive(true);
         enableMovement = false;
         puzzle.SetActive(false);
+
     }
 
     void OnCollisionEnter2D(Collision2D col)
     {
         if (col.gameObject.name == "End")
         {
-            PlayerPrefs.SetInt(puzzleName, 1);
+            GameManager.Instance.setPuzzleCompeletion(teacherName, 0);
+            GameManager.Instance.SaveGame();
             closeButton.gameObject.SetActive(false);
             progress.text = "You reached the end!";
+            successSound.Play();
             collider.gameObject.SetActive(false);
             Invoke("close", 2);
 

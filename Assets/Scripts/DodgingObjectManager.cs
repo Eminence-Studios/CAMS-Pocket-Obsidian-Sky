@@ -13,7 +13,7 @@ public class DodgingObjectManager : MonoBehaviour
     [SerializeField] GameObject gameScreen;
 
     public Movement playerMovement;
-    public string PlayerPrefVariable;
+    public string teacherName;
 
     public static DodgingObjectManager instance;
     [SerializeField] TextMeshProUGUI scoreText;
@@ -43,6 +43,8 @@ public class DodgingObjectManager : MonoBehaviour
     private bool isGrounded = true;
     private float rotationY = 0;
 
+    public AudioSource successSound;
+    public AudioSource failureSound;
     void Awake()
     {
         instance = this;
@@ -59,6 +61,8 @@ public class DodgingObjectManager : MonoBehaviour
         transform.localPosition = new Vector3(transform.localPosition.x, ground + 10, 0);
 
         playerMovement.enableMovement = false;
+        SpellbookManager.instance.gameObject.SetActive(false);
+
         resultText.text = startingText;
         buttonText.text = "Start";
         scoreText.gameObject.SetActive(false);
@@ -202,6 +206,7 @@ public class DodgingObjectManager : MonoBehaviour
         {
             resultText.text = "Fail";
             buttonText.text = "Retry";
+            failureSound.Play();
             closeButton.gameObject.SetActive(true);
             retryButton.gameObject.SetActive(true);
         }
@@ -210,7 +215,9 @@ public class DodgingObjectManager : MonoBehaviour
             ObjectSpawner.instance.gameObject.SetActive(false);
             collider.SetActive(false);
             resultText.text = "Success!";
-            PlayerPrefs.SetInt(PlayerPrefVariable, 1);
+            successSound.Play();
+            GameManager.Instance.setPuzzleCompeletion(teacherName, 0);
+            GameManager.Instance.SaveGame();
             Time.timeScale = 1f;
             Invoke("closePuzzle", 2);
         }
@@ -232,6 +239,7 @@ public class DodgingObjectManager : MonoBehaviour
     public void closePuzzle()
     {
         playerMovement.enableMovement = true;
+        SpellbookManager.instance.gameObject.SetActive(true);
         gameScreen.SetActive(false);
     }
 
