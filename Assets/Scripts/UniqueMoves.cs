@@ -29,20 +29,20 @@ public class UniqueMoves : MonoBehaviour
     {
         Unit moveType = GetComponent<Unit>();
         Unit unitComponent = GetComponent<Unit>();
-        if (moveBeingUsed == 1) // sonic boom
+        if (moveBeingUsed == 1) // Place Holder
         {
             moveParameters = new List<int> { 0, 5, 2, 0, 0 };
             Debug.Log(unitComponent.unitName + " used Sonic Boom! Chance to increase defense by 5 and speed by 2!");
             moveType.specialization = 1;
             return moveParameters;
         }
-        if (moveBeingUsed == 2) // thunderbolt
+        if (moveBeingUsed == 2) // Place Honder
         {
             moveParameters = new List<int> { 0, 2, 2, 2, 0 };
             Debug.Log(unitComponent.unitName + " used Thunderbolt! Chance to increase defense by 2, speed by 2, and accuracy by 2!");
             return moveParameters;
         }
-        if (moveBeingUsed == 3) // wall of foliage
+        if (moveBeingUsed == 3) // Place Holder
         {
             moveParameters = new List<int> { 0, 2, 0, 0, 0 };
             Debug.Log(unitComponent.unitName + " used Wall of Foliage! Chance to increase defense by 2");
@@ -54,31 +54,31 @@ public class UniqueMoves : MonoBehaviour
             Debug.Log(unitComponent.unitName + " used Flamethrower! Attack may increase by 2");
             return moveParameters;
         }
-        if (moveBeingUsed == 5) //slam dunk
+        if (moveBeingUsed == 5) //flaming shuriken
         {
             moveParameters = new List<int> { 1, 0, 0, 0, 0}; //+1 atk
-            Debug.Log(unitComponent.unitName + "used Slam Dunk! Attack may increase by 1");
+            Debug.Log(unitComponent.unitName + "used Flaming Shuriken! Attack may increase by 1");
             moveType.specialization = 0;
             return moveParameters;
         }
-        if (moveBeingUsed == 6) //guard
+        if (moveBeingUsed == 6) //ankle breaker
         {
-            moveParameters = new List<int> { 0, 1, 0, 0, 0}; //+1 def
-            Debug.Log(unitComponent.unitName + "used Guard! Defense may increase by 1");
+            moveParameters = new List<int> { 0, 0, 1, 0, 0}; //+1 speed, DODGE
+            Debug.Log(unitComponent.unitName + "used Guard! Speed may increase by 1");
             moveType.specialization = 0;
             return moveParameters;
         }
-        if (moveBeingUsed == 7) //aerial blast
+        if (moveBeingUsed == 7) //coin toss
         {
             moveParameters = new List<int> { -1, 0, 0, 0, 0}; //-1 atk
-            Debug.Log(unitComponent.unitName + "used Aerial Blast! Attack may decrease by 1");
+            Debug.Log(unitComponent.unitName + "used Coin Toss! Attack may decrease by 1");
             moveType.specialization = 0;
             return moveParameters;
         }
-        if (moveBeingUsed == 8) //sonic boom
+        if (moveBeingUsed == 8) //printed shield
         {
-            moveParameters = new List<int> { 1, 0, 0, 0, 0}; //+1 atk
-            Debug.Log(unitComponent.unitName + "used Sonic Boom! Attack may increase by 1");
+            moveParameters = new List<int> { 0, 1, 0, 0, 0}; //+1 atk
+            Debug.Log(unitComponent.unitName + "used Printed Shield! Defense may increase by 1");
             moveType.specialization = 1;
             return moveParameters;
         }
@@ -117,10 +117,10 @@ public class UniqueMoves : MonoBehaviour
             moveType.specialization = 0;
             return moveParameters;
         }
-        if (moveBeingUsed == 14) //Burrow
+        if (moveBeingUsed == 14) //Lullaby
         {
             moveParameters = new List<int> { 0, 3, 0, 0, 0}; //+3 def 
-            Debug.Log(unitComponent.unitName + "used Burrow! Defense may increase by 3");
+            Debug.Log(unitComponent.unitName + "used Lullaby! Defense may increase by 3");
             moveType.specialization = 0;
             return moveParameters;
         }
@@ -138,24 +138,24 @@ public class UniqueMoves : MonoBehaviour
             moveType.specialization = 1;
             return moveParameters;
         }
-        if (moveBeingUsed == 17) //headbutt
+        if (moveBeingUsed == 17) //stempede
         {
             moveParameters = new List<int> { 2, -1, 0, 0, 0}; //+2 atk -1 def
-            Debug.Log(unitComponent.unitName + "used Headbutt! Attack may increase by 2, decrease def by 1");
+            Debug.Log(unitComponent.unitName + "used Stampede! Attack may increase by 2, decrease def by 1");
             moveType.specialization = 0;
             return moveParameters;
         }
-        if (moveBeingUsed == 18) //stampede
+        if (moveBeingUsed == 18) //herd behavior
         {
             moveParameters = new List<int> { 0, 2, 0, 0, 0}; //+2 def
-            Debug.Log(unitComponent.unitName + "used Stampede! Defense may increase by 2");
+            Debug.Log(unitComponent.unitName + "used Herd Behavior! Defense may increase by 2");
             moveType.specialization = 1;
             return moveParameters;
         }
-        if (moveBeingUsed == 19) //whistling wind
+        if (moveBeingUsed == 19) //whistling wind now earthen core
         {
             moveParameters = new List<int> { 1, 1, 1, 1, 1}; //+1 everything
-            Debug.Log(unitComponent.unitName + "used Whistling Wind! Every stat may increase by 1");
+            Debug.Log(unitComponent.unitName + "used Earthen Core! Every stat may increase by 1");
             moveType.specialization = 1;
             return moveParameters;
         }
@@ -187,17 +187,17 @@ public class UniqueMoves : MonoBehaviour
             moveType.specialization = 1;
             return moveParameters;
         }
-        if (moveBeingUsed == 24) //curd ball
+        if (moveBeingUsed == 24) //chance of the cell
         {
             moveParameters = new List<int> { 1, 1, 1, 1, 1}; //+1 everything
-            Debug.Log(unitComponent.unitName + "used Curd Ball! Every stat may increase by 1");
+            Debug.Log(unitComponent.unitName + "used Chance of the Cell! Every stat may increase by 1");
             moveType.specialization = 0;
             return moveParameters;
         }
-        if (moveBeingUsed == 25) //crispr explosion
+        if (moveBeingUsed == 25) //herb ball
         {
-            moveParameters = new List<int> { 2, 2, 2, 2, 2}; //+1 everything
-            Debug.Log(unitComponent.unitName + "used Crispr Explosion! Every stat may increase by 1");
+            moveParameters = new List<int> { 2, 2, 2, 2, 2}; //+2 everything
+            Debug.Log(unitComponent.unitName + "used Herb Ball! Every stat may increase by 2");
             moveType.specialization = 1;
             return moveParameters;
         }
@@ -215,10 +215,10 @@ public class UniqueMoves : MonoBehaviour
             moveType.specialization = 1;
             return moveParameters;
         }
-        if (moveBeingUsed == 28) //slap
+        if (moveBeingUsed == 28) //octoslap
         {
             moveParameters = new List<int> { 1, 0, 0, 0, 0}; //+1 atk
-            Debug.Log(unitComponent.unitName + "used Slap! Attack may increase by 1");
+            Debug.Log(unitComponent.unitName + "used Octoslap! Attack may increase by 1");
             moveType.specialization = 0;
             return moveParameters;
         }
@@ -285,24 +285,35 @@ public class UniqueMoves : MonoBehaviour
             moveType.specialization = 0;
             return moveParameters;
         }
-        if (moveBeingUsed == 38) //avalanche
+        if (moveBeingUsed == 38) //roll of the dice
         {
-            moveParameters = new List<int> { 1, 0, 0, 0, 0}; //+1 atk
-            Debug.Log(unitComponent.unitName + "used Avalanche! Attack may increase by 1");
-            moveType.specialization = 1;
-            return moveParameters;
+            int roll = UnityEngine.Random.Range(1,3);
+            if (roll == 1)
+            {
+                moveParameters = new List<int> { -6, -6, -6, -6, 0}; //
+                Debug.Log(unitComponent.unitName + "used Roll of the Dice! All your stats were lowered by 6!");
+                moveType.specialization = 1;
+                return moveParameters;
+            }
+            else
+            {
+                moveParameters = new List<int> { 6, 6, 6, 6, 0}; //
+                Debug.Log(unitComponent.unitName + "used Roll of the Dice! All your stats were raised by 6!");
+                moveType.specialization = 1;
+                return moveParameters;
+            }
         }
-        if (moveBeingUsed == 39) //ice armor
+        if (moveBeingUsed == 39) //ice wall
         {
-            moveParameters = new List<int> { 0, 1, 0, 0, 0}; //+1 def
-            Debug.Log(unitComponent.unitName + "used Ice Armor! Defense may increase by 1");
+            moveParameters = new List<int> { 0, 0, 0, 0, 4}; //shield
+            Debug.Log(unitComponent.unitName + "used Ice Armor!");
             moveType.specialization = 0;
             return moveParameters;
         }
-        if (moveBeingUsed == 40) //e.coli infection
+        if (moveBeingUsed == 40) //eroding blade
         {
             moveParameters = new List<int> { -1, 0, 0, 0, 0}; //-1 atk
-            Debug.Log(unitComponent.unitName + "used E.Coli Infection! Attack may decrease by 1");
+            Debug.Log(unitComponent.unitName + "used Eroded Blade! Attack may decrease by 1");
             moveType.specialization = 1;
             return moveParameters;
         }
@@ -327,24 +338,24 @@ public class UniqueMoves : MonoBehaviour
             moveType.specialization = 0;
             return moveParameters;
         }
-        if (moveBeingUsed == 44) //slimy slap
+        if (moveBeingUsed == 44) //slug
         {
             moveParameters = new List<int> { 1, 0, 0, 0, 0}; //+1 atk
-            Debug.Log(unitComponent.unitName + "used Slimy Slap! Attack may increase by 1");
+            Debug.Log(unitComponent.unitName + "used Slug! Attack may increase by 1");
             moveType.specialization = 0;
             return moveParameters;
         }
-        if (moveBeingUsed == 45) //mucus
+        if (moveBeingUsed == 45) //Syrupy sweet
         {
             moveParameters = new List<int> { 0, -1, 0, 0, 0}; //-1 def
-            Debug.Log(unitComponent.unitName + "used Mucus! Defense may decrease by 1");
+            Debug.Log(unitComponent.unitName + "used Syrupy Sweet! Defense may decrease by 1");
             moveType.specialization = 0;
             return moveParameters;
         }
-        if (moveBeingUsed == 46) //toxic tusk slap
+        if (moveBeingUsed == 46) //tusk tackle
         {
             moveParameters = new List<int> { 1, 0, 0, 0, 0}; //+1 dmg
-            Debug.Log(unitComponent.unitName + "used Toxic Tusk Slap! Attack may increase by 1");
+            Debug.Log(unitComponent.unitName + "used Tusk Tackle! Attack may increase by 1");
             moveType.specialization = 1;
             return moveParameters;
         }
@@ -369,17 +380,17 @@ public class UniqueMoves : MonoBehaviour
             moveType.specialization = 0;
             return moveParameters;
         }
-        if (moveBeingUsed == 50) //surf
+        if (moveBeingUsed == 50) //light wave
         {
             moveParameters = new List<int> { 1, 0, 0, 0, 0}; //+1 dmg
-            Debug.Log(unitComponent.unitName + "used Surf! Attack may increase by 1");
+            Debug.Log(unitComponent.unitName + "used Light Wave! Attack may increase by 1");
             moveType.specialization = 0;
             return moveParameters;
         }
-        if (moveBeingUsed == 51) //bulldog guard
+        if (moveBeingUsed == 51) //photon surf
         {
             moveParameters = new List<int> { 0, 1, 0, 0, 0}; //+1 def
-            Debug.Log(unitComponent.unitName + "used Bulldog Guard! Defense may increase by 1");
+            Debug.Log(unitComponent.unitName + "used Photon Surf! Defense may increase by 1");
             moveType.specialization = 0;
             return moveParameters;
         }
