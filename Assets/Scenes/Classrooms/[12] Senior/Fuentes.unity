@@ -568,10 +568,18 @@ MonoBehaviour:
   spellSelectionScreen: {fileID: 0}
   element: 
   totalNumOfElementSpells: 0
-  initalLines: []
-  afterPuzzleLines: []
-  afterBattleLines: []
-  afterSpellLines: []
+  initalLines:
+  - "\xA1Bienvenidos! You tryna learn my poison magic?"
+  - To learn magic you have to feel it and experience its power.
+  - "You gotta be a bit loco if you\u2019re here to feel my magic."
+  - "If you\u2019re feeling brave try to catch my poison and feel its effects."
+  afterPuzzleLines:
+  - "You\u2019re more than a little loco. How far will that craziness take you with
+    magic?"
+  afterBattleLines:
+  - Remember me, when you make it big.
+  afterSpellLines:
+  - "Have a proud cor\xE1zon as you go on and become a great spellcaster."
 --- !u!61 &150576267
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2268,8 +2276,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SceneChanger
   sceneID: 7
-  playerPrefVariable: 
-  playerPrefValue: 0
+  locationIndex: 0
+  locationValue: 0
 --- !u!50 &1203069844
 Rigidbody2D:
   serializedVersion: 5
@@ -3087,6 +3095,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::CanvasChanger
   oldCanvas: {fileID: 0}
   newCanvas: {fileID: 57723822}
+  player: {fileID: 0}
+  disablePlayer: 0
 --- !u!50 &1411225888
 Rigidbody2D:
   serializedVersion: 5
