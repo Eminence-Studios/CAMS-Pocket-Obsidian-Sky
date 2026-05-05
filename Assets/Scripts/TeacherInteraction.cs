@@ -79,6 +79,24 @@ public class TeacherInteraction : MonoBehaviour
         }
     }
 
+    public void battleDone(bool isWon)
+    {
+        if (isWon)
+        {
+            GameManager.Instance.setBattleWon(teacherName);
+            battleScreen.gameObject.SetActive(false);
+            dialogueManager.lines = afterBattleLines;
+            SpellbookManager.instance.gameObject.SetActive(false);
+            dialoguePopUp.SetActive(true);
+        }
+        else
+        {
+            playerMovement.movementEnabled = true;
+            SpellbookManager.instance.gameObject.SetActive(true);
+        }
+            
+    }
+
     public void selectSpell(Spell spell)
     {
         SpellbookManager.instance.learnSpell(spell);
