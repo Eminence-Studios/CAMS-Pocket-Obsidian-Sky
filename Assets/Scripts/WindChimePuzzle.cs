@@ -26,7 +26,7 @@ public class WindChimePuzzle : MonoBehaviour
 
     private void OnEnable()
     {
-        playerMovement.enableMovement = false;
+        playerMovement.movementEnabled = false;
         SpellbookManager.instance.gameObject.SetActive(false);
     }
 
@@ -63,7 +63,7 @@ public class WindChimePuzzle : MonoBehaviour
 
     public void closePuzzle()
     {
-        playerMovement.enableMovement = true;
+        playerMovement.movementEnabled = true;
         SpellbookManager.instance.gameObject.SetActive(true);
         puzzle.gameObject.SetActive(false);
 

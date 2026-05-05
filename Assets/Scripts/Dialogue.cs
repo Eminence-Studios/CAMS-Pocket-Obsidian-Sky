@@ -88,7 +88,7 @@ public class Dialogue : MonoBehaviour
         }
         if (changePlayerMovement)
         {
-            playerMovement.enabled = false;
+            playerMovement.movementEnabled = false;
         }
         startDialogue();
     }
@@ -110,7 +110,7 @@ public class Dialogue : MonoBehaviour
         else if (changePlayerMovement)
         {
             SpellbookManager.instance.gameObject.SetActive(true);
-            playerMovement.enabled = true;
+            playerMovement.movementEnabled = true;
         }
     }
 

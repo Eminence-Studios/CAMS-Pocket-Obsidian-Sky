@@ -62,11 +62,15 @@ public class LoadScene : MonoBehaviour
             numOfElements = GameManager.Instance.currentData.numOfMasteredElements;
             // location = PlayerPrefs.GetInt(playerPrefLocation, 0);
 
+            Debug.Log(GameManager.Instance.currentData.currentLocations.ToString());
+
             SpellbookManager.instance.gameObject.SetActive(true);
+            SpellbookManager.instance.hallwayMap();
 
             if (locationIndex == 0)
             {
                 player.localPosition = locationsCampus[GameManager.Instance.currentData.currentLocations[0]];
+                SpellbookManager.instance.campusMap();
 
                 /*
                 GameObject rootCanvas = spellbookManager.transform.root.gameObject;
@@ -124,6 +128,7 @@ public class LoadScene : MonoBehaviour
         if (loadTrigger)
         {
             SpellbookManager.instance.hideMapIcon();
+            SpellbookManager.instance.gameObject.SetActive(true);
 
             GameManager.Instance.createTeacher(teacherName, totalPuzzleCount);
             TeacherProgress data = GameManager.Instance.getTeacher(teacherName);

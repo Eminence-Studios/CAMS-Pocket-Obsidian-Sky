@@ -25,6 +25,7 @@ public class SpellbookManager : MonoBehaviour
 
     [Header("Map Canvas")]
     public GameObject mapCanvas;
+    public Button closeMap;
     public Button mapIcon;
     public Image mapImage;
 
@@ -91,6 +92,30 @@ public class SpellbookManager : MonoBehaviour
         spellbookSlots[learnedSpells++].setSpell(newSpell);
     }
     */
+
+    public void hallwayMap()
+    {
+        RectTransform mapIconSize = mapIcon.GetComponent<RectTransform>();
+        mapIconSize.sizeDelta = new Vector2(400, 280);
+        mapIconSize.anchoredPosition = new Vector2(-230, -120);
+
+        RectTransform mapSize = mapImage.GetComponent<RectTransform>();
+        mapSize.sizeDelta = new Vector2(1500, 900);
+
+        closeMap.transform.localPosition = new Vector2(800, 300);
+    }
+
+    public void campusMap()
+    {
+        RectTransform mapIconSize = mapIcon.GetComponent<RectTransform>();
+        mapIconSize.sizeDelta = new Vector2(245, 280);
+        mapIconSize.anchoredPosition = new Vector2(-150, -170);
+
+        RectTransform mapSize = mapImage.GetComponent<RectTransform>();
+        mapSize.sizeDelta = new Vector2(900, 900);
+
+        closeMap.transform.localPosition = new Vector2(450, 450);
+    }
 
     public void learnSpell(Spell newSpell)
     {

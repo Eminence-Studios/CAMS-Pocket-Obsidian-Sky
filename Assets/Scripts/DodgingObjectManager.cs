@@ -60,7 +60,7 @@ public class DodgingObjectManager : MonoBehaviour
         // ground += camera.transform.position.y;
         transform.localPosition = new Vector3(transform.localPosition.x, ground + 10, 0);
 
-        playerMovement.enableMovement = false;
+        playerMovement.movementEnabled = false;
         SpellbookManager.instance.gameObject.SetActive(false);
 
         resultText.text = startingText;
@@ -238,7 +238,7 @@ public class DodgingObjectManager : MonoBehaviour
 
     public void closePuzzle()
     {
-        playerMovement.enableMovement = true;
+        playerMovement.movementEnabled = true;
         SpellbookManager.instance.gameObject.SetActive(true);
         gameScreen.SetActive(false);
     }

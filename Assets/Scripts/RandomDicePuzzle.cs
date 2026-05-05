@@ -30,14 +30,14 @@ public class RandomDicePuzzle : MonoBehaviour
     {
         if (isManager)
         {
-            playerMovement.enableMovement = false;
+            playerMovement.movementEnabled = false;
             SpellbookManager.instance.gameObject.SetActive(false);
         }
     }
 
     public void closePuzzle()
     {
-        playerMovement.enableMovement = true;
+        playerMovement.movementEnabled = true;
         SpellbookManager.instance.gameObject.SetActive(true);
         puzzle.gameObject.SetActive(false);
 
