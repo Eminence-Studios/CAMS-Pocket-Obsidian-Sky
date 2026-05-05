@@ -8,6 +8,7 @@ public class TeacherInteraction : MonoBehaviour
     [SerializeField] GameObject dialoguePopUp;
     [SerializeField] Dialogue dialogueManager;
     [SerializeField] GameObject spellSelectionScreen;
+    [SerializeField] GameObject battleScreen;
 
     public string element;
     public int totalNumOfElementSpells;
@@ -68,7 +69,7 @@ public class TeacherInteraction : MonoBehaviour
         // if puzzle completed
         else if (data.puzzle)
         {
-            // open battle canvas
+            battleScreen.SetActive(true);
             Debug.Log("Open Battle");
         }
         else

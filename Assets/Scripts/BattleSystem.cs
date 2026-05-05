@@ -30,6 +30,8 @@ public class BattleSystem : MonoBehaviour
 {
     public static BattleSystem instance;
 
+    public GameObject battleCanvas;
+
     public GameObject playerPrefab;
     public GameObject enemyPrefab;
     // player sprites ^^
@@ -454,6 +456,7 @@ public class BattleSystem : MonoBehaviour
         if (state == BattleState.WON)
         {
             Debug.Log("You won the battle!");
+            battleCanvas.gameObject.SetActive(false);
         }
         else if (state == BattleState.LOST)
         {
