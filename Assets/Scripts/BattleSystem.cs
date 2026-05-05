@@ -3,6 +3,7 @@ using System;
 using System.Collections;
 using System.Data.Common;
 using System.Collections.Generic;
+using TMPro;
 /*
     - Deals with the main fuctions of the battle mechaincs
     - Has functions for each of the four button actions the user can do 
@@ -631,4 +632,23 @@ public class BattleSystem : MonoBehaviour
             return true;
         }
     }
+    public void spellButton(int button)
+    {
+        playerMoveset.changeUniqueMove(SpellbookManager.instance.hotbarSlots[button].spellData.spellNumber);
+        onSecondButton();
+
+    }
+    [SerializeField] public TextMeshProUGUI spell1;
+    [SerializeField] public TextMeshProUGUI spell2;
+    [SerializeField] public TextMeshProUGUI spell3;
+    [SerializeField] public TextMeshProUGUI spell4;
+
+    void Awake()
+    {
+        spell1.text = SpellbookManager.instance.hotbarSlots[0].spellData.spellName;
+        spell2.text = SpellbookManager.instance.hotbarSlots[1].spellData.spellName;
+        spell3.text = SpellbookManager.instance.hotbarSlots[2].spellData.spellName;
+        spell4.text = SpellbookManager.instance.hotbarSlots[3].spellData.spellName;
+    }
+    
 }
