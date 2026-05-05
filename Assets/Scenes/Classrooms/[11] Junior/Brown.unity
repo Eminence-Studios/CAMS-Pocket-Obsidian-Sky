@@ -244,6 +244,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::CanvasChanger
   oldCanvas: {fileID: 0}
   newCanvas: {fileID: 150260670}
+  player: {fileID: 0}
+  disablePlayer: 0
 --- !u!50 &91039863
 Rigidbody2D:
   serializedVersion: 5
@@ -490,6 +492,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::CanvasChanger
   oldCanvas: {fileID: 0}
   newCanvas: {fileID: 658992200}
+  player: {fileID: 0}
+  disablePlayer: 0
 --- !u!50 &102377410
 Rigidbody2D:
   serializedVersion: 5
@@ -877,6 +881,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::CanvasChanger
   oldCanvas: {fileID: 0}
   newCanvas: {fileID: 1922935393}
+  player: {fileID: 0}
+  disablePlayer: 0
 --- !u!50 &126571463
 Rigidbody2D:
   serializedVersion: 5
@@ -1453,6 +1459,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::CanvasChanger
   oldCanvas: {fileID: 0}
   newCanvas: {fileID: 536977349}
+  player: {fileID: 0}
+  disablePlayer: 0
 --- !u!50 &151359844
 Rigidbody2D:
   serializedVersion: 5
@@ -2219,8 +2227,8 @@ MonoBehaviour:
   teacherInteractionManager: {fileID: 0}
   hasNextScene: 0
   nextScreen: {fileID: 0}
-  changePlayerMovement: 0
-  playerMovement: {fileID: 0}
+  changePlayerMovement: 1
+  playerMovement: {fileID: 916875898}
 --- !u!1 &378631590
 GameObject:
   m_ObjectHideFlags: 0
@@ -2526,8 +2534,8 @@ MonoBehaviour:
   teacherInteractionManager: {fileID: 0}
   hasNextScene: 0
   nextScreen: {fileID: 0}
-  changePlayerMovement: 0
-  playerMovement: {fileID: 0}
+  changePlayerMovement: 1
+  playerMovement: {fileID: 916875898}
 --- !u!1 &468141161
 GameObject:
   m_ObjectHideFlags: 0
@@ -5108,6 +5116,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::CanvasChanger
   oldCanvas: {fileID: 0}
   newCanvas: {fileID: 493979815}
+  player: {fileID: 0}
+  disablePlayer: 0
 --- !u!50 &877477967
 Rigidbody2D:
   serializedVersion: 5
@@ -5685,8 +5695,8 @@ MonoBehaviour:
   teacherInteractionManager: {fileID: 0}
   hasNextScene: 0
   nextScreen: {fileID: 0}
-  changePlayerMovement: 0
-  playerMovement: {fileID: 0}
+  changePlayerMovement: 1
+  playerMovement: {fileID: 916875898}
 --- !u!1 &964247516
 GameObject:
   m_ObjectHideFlags: 0
@@ -5820,8 +5830,8 @@ MonoBehaviour:
   teacherInteractionManager: {fileID: 0}
   hasNextScene: 0
   nextScreen: {fileID: 0}
-  changePlayerMovement: 0
-  playerMovement: {fileID: 0}
+  changePlayerMovement: 1
+  playerMovement: {fileID: 916875898}
 --- !u!1 &1025816320
 GameObject:
   m_ObjectHideFlags: 0
@@ -5956,8 +5966,8 @@ MonoBehaviour:
   teacherInteractionManager: {fileID: 0}
   hasNextScene: 0
   nextScreen: {fileID: 0}
-  changePlayerMovement: 0
-  playerMovement: {fileID: 0}
+  changePlayerMovement: 1
+  playerMovement: {fileID: 916875898}
 --- !u!1 &1061376025
 GameObject:
   m_ObjectHideFlags: 0
@@ -6016,8 +6026,8 @@ MonoBehaviour:
   teacherInteractionManager: {fileID: 0}
   hasNextScene: 0
   nextScreen: {fileID: 0}
-  changePlayerMovement: 0
-  playerMovement: {fileID: 0}
+  changePlayerMovement: 1
+  playerMovement: {fileID: 916875898}
 --- !u!1 &1075348656
 GameObject:
   m_ObjectHideFlags: 0
@@ -6161,8 +6171,8 @@ MonoBehaviour:
   teacherInteractionManager: {fileID: 0}
   hasNextScene: 0
   nextScreen: {fileID: 0}
-  changePlayerMovement: 0
-  playerMovement: {fileID: 0}
+  changePlayerMovement: 1
+  playerMovement: {fileID: 916875898}
 --- !u!1 &1095844500
 GameObject:
   m_ObjectHideFlags: 0
@@ -6528,8 +6538,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SceneChanger
   sceneID: 4
-  playerPrefVariable: 
-  playerPrefValue: 0
+  locationIndex: -1
+  locationValue: 0
 --- !u!50 &1203069844
 Rigidbody2D:
   serializedVersion: 5
@@ -8074,6 +8084,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::CanvasChanger
   oldCanvas: {fileID: 0}
   newCanvas: {fileID: 800255206}
+  player: {fileID: 0}
+  disablePlayer: 0
 --- !u!50 &1400831463
 Rigidbody2D:
   serializedVersion: 5
@@ -8245,6 +8257,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::CanvasChanger
   oldCanvas: {fileID: 0}
   newCanvas: {fileID: 1664738527}
+  player: {fileID: 0}
+  disablePlayer: 0
 --- !u!50 &1411225888
 Rigidbody2D:
   serializedVersion: 5
@@ -9365,6 +9379,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::CanvasChanger
   oldCanvas: {fileID: 0}
   newCanvas: {fileID: 1820391663}
+  player: {fileID: 0}
+  disablePlayer: 0
 --- !u!50 &1642044415
 Rigidbody2D:
   serializedVersion: 5
@@ -10695,8 +10711,8 @@ MonoBehaviour:
   teacherInteractionManager: {fileID: 0}
   hasNextScene: 0
   nextScreen: {fileID: 0}
-  changePlayerMovement: 0
-  playerMovement: {fileID: 0}
+  changePlayerMovement: 1
+  playerMovement: {fileID: 916875898}
 --- !u!1 &1830842548
 GameObject:
   m_ObjectHideFlags: 0
@@ -10909,6 +10925,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::CanvasChanger
   oldCanvas: {fileID: 0}
   newCanvas: {fileID: 1157293242}
+  player: {fileID: 0}
+  disablePlayer: 0
 --- !u!50 &1893927050
 Rigidbody2D:
   serializedVersion: 5

@@ -34,7 +34,7 @@ public class CanvasChanger : MonoBehaviour
 
         if (disablePlayer)
         {
-            player.enableMovement = false;
+            player.movementEnabled = false;
         }
         
     }
@@ -49,7 +49,7 @@ public class CanvasChanger : MonoBehaviour
 
     public void closePopUp()
     {
-        player.enableMovement = true;
+        player.movementEnabled = true;
         oldCanvas.gameObject.SetActive(false);
     }
 

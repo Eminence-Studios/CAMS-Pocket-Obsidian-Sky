@@ -2764,8 +2764,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SceneChanger
   sceneID: 7
-  playerPrefVariable: 
-  playerPrefValue: 0
+  locationIndex: -1
+  locationValue: 0
 --- !u!50 &1203069844
 Rigidbody2D:
   serializedVersion: 5
@@ -3499,6 +3499,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::CanvasChanger
   oldCanvas: {fileID: 0}
   newCanvas: {fileID: 6707135}
+  player: {fileID: 0}
+  disablePlayer: 0
 --- !u!50 &1411225888
 Rigidbody2D:
   serializedVersion: 5

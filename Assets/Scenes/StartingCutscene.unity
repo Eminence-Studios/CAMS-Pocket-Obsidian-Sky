@@ -254,7 +254,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 3079535235117709999, guid: 5d25a07e66c2e6e40ba850c597abf5f0, type: 3}
+  m_Sprite: {fileID: 6007319118996106775, guid: 01339439f655d404cbf114890238415d, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1483,6 +1483,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::CanvasChanger
   oldCanvas: {fileID: 606406054}
   newCanvas: {fileID: 2133404808}
+  player: {fileID: 0}
+  disablePlayer: 0
 --- !u!114 &1214363749
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1766,6 +1768,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::CanvasChanger
   oldCanvas: {fileID: 919963805}
   newCanvas: {fileID: 442817611}
+  player: {fileID: 0}
+  disablePlayer: 0
 --- !u!114 &1374552004
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1962,15 +1966,15 @@ RectTransform:
   m_GameObject: {fileID: 1615580656}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.38113424, y: 0.38113424, z: 0.38113424}
+  m_LocalScale: {x: 1, y: 1, z: 0.38113424}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1800531722}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.2, y: 0.3}
   m_AnchorMax: {x: 0.2, y: 0.3}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 374.68298, y: 471.42102}
+  m_AnchoredPosition: {x: 0, y: 25}
+  m_SizeDelta: {x: 125, y: 125}
   m_Pivot: {x: 0.5, y: 0}
 --- !u!114 &1615580658
 MonoBehaviour:
@@ -1985,16 +1989,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 0, b: 0, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: -9073005176156816340, guid: 2dd62cff506a47946b192163265560a1, type: 3}
   m_Type: 0
-  m_PreserveAspect: 0
+  m_PreserveAspect: 1
   m_FillCenter: 1
   m_FillMethod: 4
   m_FillAmount: 1
@@ -2309,7 +2313,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 3079535235117709999, guid: 5d25a07e66c2e6e40ba850c597abf5f0, type: 3}
+  m_Sprite: {fileID: 6007319118996106775, guid: 01339439f655d404cbf114890238415d, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1

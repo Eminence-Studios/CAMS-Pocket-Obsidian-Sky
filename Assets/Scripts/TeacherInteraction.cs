@@ -32,7 +32,7 @@ public class TeacherInteraction : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D col)
     {
-        playerMovement.enableMovement = false;
+        playerMovement.movementEnabled = false;
 
         TeacherProgress data = GameManager.Instance.getTeacher(teacherName);
 
@@ -73,7 +73,7 @@ public class TeacherInteraction : MonoBehaviour
         }
         else
         {
-            playerMovement.enableMovement = true;
+            playerMovement.movementEnabled = true;
             SpellbookManager.instance.gameObject.SetActive(true);
         }
     }

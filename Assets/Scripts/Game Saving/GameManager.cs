@@ -84,7 +84,6 @@ public class GameManager : MonoBehaviour
         }
         SpellbookManager.instance.loadSpellbook();
 
-
     }
     public void addSpelltoElement(string element, int totalSpellsInElement)
     {

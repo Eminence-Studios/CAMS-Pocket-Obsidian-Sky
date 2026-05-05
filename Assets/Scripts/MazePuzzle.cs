@@ -28,7 +28,7 @@ public class MazePuzzle : MonoBehaviour
 
     private void OnEnable()
     {
-        playerMovement.enableMovement = false;
+        playerMovement.movementEnabled = false;
         enableMovement = true;
         SpellbookManager.instance.gameObject.SetActive(false);
 
@@ -49,7 +49,7 @@ public class MazePuzzle : MonoBehaviour
 
     public void close()
     {
-        playerMovement.enableMovement = true;
+        playerMovement.movementEnabled = true;
         SpellbookManager.instance.gameObject.SetActive(true);
         enableMovement = false;
         puzzle.SetActive(false);
