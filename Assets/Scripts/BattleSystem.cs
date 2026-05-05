@@ -47,6 +47,8 @@ public class BattleSystem : MonoBehaviour
     UniqueMoves playerMoveset;
     UniqueMoves enemyMoveset;
     public int turnCount = 1;
+    public Canvas battleCanvas;
+
     // unit references that will be used across other scripts for stats 
     void Start()
     {
@@ -454,6 +456,8 @@ public class BattleSystem : MonoBehaviour
         if (state == BattleState.WON)
         {
             Debug.Log("You won the battle!");
+            battleCanvas.gameObject.SetActive(false);
+            
         }
         else if (state == BattleState.LOST)
         {

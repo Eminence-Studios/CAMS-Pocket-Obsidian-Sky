@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class TeacherInteraction : MonoBehaviour
 {
@@ -11,6 +12,8 @@ public class TeacherInteraction : MonoBehaviour
 
     public string element;
     public int totalNumOfElementSpells;
+    public Canvas battleCanvas;
+    public EventSystem eventSystem;
 
     [Header("Teacher Lines")]
     public string[] initalLines;
@@ -70,6 +73,8 @@ public class TeacherInteraction : MonoBehaviour
         {
             // open battle canvas
             Debug.Log("Open Battle");
+            battleCanvas.gameObject.SetActive(true);
+            playerMovement.enableMovement = true;
         }
         else
         {
