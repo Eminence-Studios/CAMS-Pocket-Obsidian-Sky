@@ -1,13 +1,20 @@
 using System;
+using System.Net.NetworkInformation;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 /* 
     Doesn't do much but act as a script for the HP sliders to work in unity
 */
 public class BattleHUD : MonoBehaviour
 {
+    
     public Slider hpSlider;
     public Slider energySlider;
+    
+
+    
+    
     public void setHUD(Unit unit)
     {
         hpSlider.maxValue = unit.unitMaxHp;
