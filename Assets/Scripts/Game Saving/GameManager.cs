@@ -42,6 +42,13 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    public void setBattleWon(string teacher)
+    {
+        var data = getTeacher(teacher);
+        data.puzzle = true;
+        SaveGame();
+    }
+
     public void setPuzzleCompeletion(string teacher, int index)
     {
         var data = getTeacher(teacher);

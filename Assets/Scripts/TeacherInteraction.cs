@@ -8,6 +8,7 @@ public class TeacherInteraction : MonoBehaviour
     [SerializeField] GameObject dialoguePopUp;
     [SerializeField] Dialogue dialogueManager;
     [SerializeField] GameObject spellSelectionScreen;
+    [SerializeField] GameObject battleScreen;
 
     public string element;
     public int totalNumOfElementSpells;
@@ -68,7 +69,7 @@ public class TeacherInteraction : MonoBehaviour
         // if puzzle completed
         else if (data.puzzle)
         {
-            // open battle canvas
+            battleScreen.SetActive(true);
             Debug.Log("Open Battle");
         }
         else
@@ -76,6 +77,24 @@ public class TeacherInteraction : MonoBehaviour
             playerMovement.movementEnabled = true;
             SpellbookManager.instance.gameObject.SetActive(true);
         }
+    }
+
+    public void battleDone(bool isWon)
+    {
+        if (isWon)
+        {
+            GameManager.Instance.setBattleWon(teacherName);
+            battleScreen.gameObject.SetActive(false);
+            dialogueManager.lines = afterBattleLines;
+            SpellbookManager.instance.gameObject.SetActive(false);
+            dialoguePopUp.SetActive(true);
+        }
+        else
+        {
+            playerMovement.movementEnabled = true;
+            SpellbookManager.instance.gameObject.SetActive(true);
+        }
+            
     }
 
     public void selectSpell(Spell spell)

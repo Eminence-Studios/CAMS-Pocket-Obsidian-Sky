@@ -30,6 +30,9 @@ public class BattleSystem : MonoBehaviour
 {
     public static BattleSystem instance;
 
+    public GameObject battleCanvas;
+    public TeacherInteraction teacherInteractionScript;
+
     public GameObject playerPrefab;
     public GameObject enemyPrefab;
     // player sprites ^^
@@ -454,10 +457,12 @@ public class BattleSystem : MonoBehaviour
         if (state == BattleState.WON)
         {
             Debug.Log("You won the battle!");
+            teacherInteractionScript.battleDone(true);
         }
         else if (state == BattleState.LOST)
         {
             Debug.Log("You were defeated.");
+            teacherInteractionScript.battleDone(false);
         }
     }
 
