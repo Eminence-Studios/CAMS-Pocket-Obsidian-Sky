@@ -53,10 +53,10 @@ public class UniqueMoves : MonoBehaviour
             Debug.Log(unitComponent.unitName + " used Flamethrower! Attack may increase by 2");
             return moveParameters;
         }
-        if (moveBeingUsed == 5) //slam dunk
+        if (moveBeingUsed == 5) //flaming shuriken
         {
             moveParameters = new List<int> { 1, 0, 0, 0, 0}; //+1 atk
-            Debug.Log(unitComponent.unitName + "used Slam Dunk! Attack may increase by 1");
+            Debug.Log(unitComponent.unitName + "used Flaming Shuriken! Attack may increase by 1");
             moveType.specialization = 0;
             return moveParameters;
         }

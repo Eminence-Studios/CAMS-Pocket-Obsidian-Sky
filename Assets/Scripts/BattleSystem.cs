@@ -54,8 +54,9 @@ public class BattleSystem : MonoBehaviour
     void Start()
     {
         state = BattleState.START;
+        UpdateSpellTexts();
         StartCoroutine(setupBattle());
-
+        
     }
 
     IEnumerator setupBattle()
@@ -643,8 +644,20 @@ public class BattleSystem : MonoBehaviour
     [SerializeField] public TextMeshProUGUI spell3;
     [SerializeField] public TextMeshProUGUI spell4;
 
-    void Awake()
+    void UpdateSpellTexts()
     {
+        if (SpellbookManager.instance == null)
+        {
+            Debug.LogError("SpellbookManager instance is null");
+            return;
+        }
+
+        if (SpellbookManager.instance.hotbarSlots == null)
+        {
+            Debug.LogError("hotbarSlots is null");
+            return;
+        }
+
         spell1.text = SpellbookManager.instance.hotbarSlots[0].spellData.spellName;
         spell2.text = SpellbookManager.instance.hotbarSlots[1].spellData.spellName;
         spell3.text = SpellbookManager.instance.hotbarSlots[2].spellData.spellName;
