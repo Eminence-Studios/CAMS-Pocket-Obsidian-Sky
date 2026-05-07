@@ -865,6 +865,7 @@ MonoBehaviour:
   dialoguePopUp: {fileID: 1256853252}
   dialogueManager: {fileID: 1682790333}
   spellSelectionScreen: {fileID: 0}
+  battleScreen: {fileID: 0}
   element: 
   totalNumOfElementSpells: 0
   initalLines:
@@ -876,6 +877,8 @@ MonoBehaviour:
   - Flowers are very powerful ways to communicate thoughts and feelings without words
   - "Study my beloved flowers and their meanings\u2026deduce which ones belong together
     and which are quiet poisons lying in wait!"
+  - Oh and one last thing!
+  - Once you determine which flowers go together, put them in rainbow order.
   afterPuzzleLines:
   - Wow! Good work!
   - Think of this as some on the spot practical analysis now.
@@ -920,9 +923,9 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0.0586465, y: 0}
-  m_Size: {x: 3.9035425, y: 4.57}
-  m_Direction: 0
+  m_Offset: {x: 0.04773924, y: -0.45807523}
+  m_Size: {x: 5.146852, y: 4.1435103}
+  m_Direction: 1
 --- !u!1 &177645006
 GameObject:
   m_ObjectHideFlags: 0
@@ -2984,15 +2987,15 @@ MonoBehaviour:
   input: {fileID: 1532447768}
   progress: {fileID: 1600455634}
   puzzle: {fileID: 550295691}
-  collider: {fileID: 0}
+  collider: {fileID: 368709313}
   closeButton: {fileID: 301550677}
   clearButton: {fileID: 1565917502}
   successSound: {fileID: 597759803}
   failureSound: {fileID: 846581262}
-  code: 0123
+  code: 4205
   teacherName: Johns
   progressTexts:
-  - Choose and order the flowers based on their meaning
+  - Choose the flowers whose meanings go together
   - Translating flower language
   - Translation failed
   - 'Success! Flowers translated! '
@@ -3007,7 +3010,7 @@ MonoBehaviour:
   - {fileID: 1865845391}
   - {fileID: 599007006}
   - {fileID: 1702532019}
-  - {fileID: 1702532019}
+  - {fileID: 1345958589}
   playerMovement: {fileID: 916875898}
   nextPuzzleTriggers: {fileID: 0}
 --- !u!212 &567205147
@@ -3056,7 +3059,7 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 2
+  m_SortingOrder: 4
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
   m_Color: {r: 0.19607845, g: 0, b: 0, a: 0.8784314}
   m_FlipX: 0
@@ -7600,8 +7603,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 40
-  m_fontSizeBase: 40
+  m_fontSize: 35
+  m_fontSizeBase: 35
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -9033,7 +9036,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 410}
+  m_AnchoredPosition: {x: 0, y: 400}
   m_SizeDelta: {x: 1174.9469, y: 57.4109}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1602823109
