@@ -12,16 +12,16 @@ public class Settings : MonoBehaviour
     [Header("UI Components")]
     public TMP_Dropdown resolutionDropdown;
     public Slider volumeSlider;
-    // public Toggle fullscreenToggle;
     public Toggle vsyncToggle;
 
     private Resolution[] resolutions;
+    public bool startingScreen;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         setUpResolutions();
-        loadSettings();
+        LoadEffectiveSettings();
     }
 
     // Update is called once per frame
@@ -29,48 +29,6 @@ public class Settings : MonoBehaviour
     {
 
     }
-
-    /*
-    private void setUpResolutions()
-    {
-        Resolution[] allResolutions = Screen.resolutions;
-        List<Resolution> uniqueResolutions = new List<Resolution>();
-        List<string> options = new List<string>();
-
-        // We define the target aspect ratio (16:9 = 1.77777...)
-        float targetAspect = 16f / 9f;
-        float marginOfError = 0.01f; // To catch small rounding differences
-
-        for (int i = 0; i < allResolutions.Length; i++)
-        {
-            float currentAspect = (float)allResolutions[i].width / allResolutions[i].height;
-
-            // 1. Check if it matches 16:9
-            if (Mathf.Abs(currentAspect - targetAspect) <= marginOfError)
-            {
-                // 2. Check if it's already in our unique list (to avoid refresh rate dupes)
-                if (!uniqueResolutions.Exists(r => r.width == allResolutions[i].width && r.height == allResolutions[i].height))
-                {
-                    uniqueResolutions.Add(allResolutions[i]);
-                    string option = allResolutions[i].width + " x " + allResolutions[i].height;
-                    options.Add(option);
-                }
-            }
-        }
-
-        resolutions = uniqueResolutions.ToArray();
-
-        resolutionDropdown.ClearOptions();
-        resolutionDropdown.AddOptions(options);
-
-        // Ensure the saved index is still valid for this new filtered list
-        int savedIndex = GameManager.Instance.currentData.resolutionIndex;
-        resolutionDropdown.value = (savedIndex < resolutions.Length) ? savedIndex : resolutions.Length - 1;
-
-        resolutionDropdown.RefreshShownValue();
-        setResolution();
-    }
-    */
 
     private void setUpResolutions()
     {
@@ -108,42 +66,36 @@ public class Settings : MonoBehaviour
         resolutionDropdown.ClearOptions();
         resolutionDropdown.AddOptions(options);
 
-        // --- THE "NEW VS OLD" CHECK ---
-        int savedIndex = GameManager.Instance.currentData.resolutionIndex;
-
-        // Logic: If it's a new save (index is -1) and we found 1080p, use 1080p.
-        // Otherwise, use the savedIndex.
-        if (savedIndex == -1 && fallback1080Index != -1)
+        if (!startingScreen)
         {
-            resolutionDropdown.value = fallback1080Index;
-            // Update the data immediately so it's "set"
-            GameManager.Instance.currentData.resolutionIndex = fallback1080Index;
+            // --- THE "NEW VS OLD" CHECK ---
+            int savedIndex = GameManager.Instance.currentData.resolutionIndex;
+
+            // Logic: If it's a new save (index is -1) and we found 1080p, use 1080p.
+            // Otherwise, use the savedIndex.
+            if (savedIndex == -1 && fallback1080Index != -1)
+            {
+                resolutionDropdown.value = fallback1080Index;
+                // Update the data immediately so it's "set"
+                GameManager.Instance.currentData.resolutionIndex = fallback1080Index;
+            }
+            else
+            {
+                // Use the previous choice (ensuring it's not out of bounds)
+                resolutionDropdown.value = Mathf.Clamp(savedIndex, 0, resolutions.Length - 1);
+            }
         }
         else
         {
-            // Use the previous choice (ensuring it's not out of bounds)
-            resolutionDropdown.value = Mathf.Clamp(savedIndex, 0, resolutions.Length - 1);
+            resolutionDropdown.value = fallback1080Index;
         }
 
         resolutionDropdown.RefreshShownValue();
     }
 
-    public void saveAndExit()
-    {
-        SpellbookManager.instance.closeCanvas("Settings");
-        GameManager.Instance.currentData.lastLocation = SceneManager.GetActiveScene().buildIndex;
-        Destroy(SpellbookManager.instance.gameObject);
-        GameManager.Instance.SaveGame();
-        SceneManager.LoadScene(0);
-    }
+    
 
-    public void setVolume()
-    {
-        AudioListener.volume = volumeSlider.value;
-
-        GameManager.Instance.currentData.masterVolume = volumeSlider.value;
-    }
-
+    /*
     private void loadSettings()
     {
         var data = GameManager.Instance.currentData;
@@ -160,48 +112,77 @@ public class Settings : MonoBehaviour
 
         setResolution();
     }
-
-    /*
-    public void setResolution()
-    {
-        int resIndex = resolutionDropdown.value;
-        if (resIndex >= resolutions.Length) return;
-
-        Resolution res = resolutions[resIndex];
-        Screen.SetResolution(res.width, res.height, Screen.fullScreen);
-        GameManager.Instance.currentData.resolutionIndex = resIndex;
-    }
     */
-    public void setResolution()
+
+    private void LoadEffectiveSettings()
     {
-        int resIndex = resolutionDropdown.value;
-        if (resIndex >= resolutions.Length) return;
+        if (startingScreen)
+        {
+            // Load from Global PlayerPrefs (the last settings used on this PC)
+            volumeSlider.value = PlayerPrefs.GetFloat("GlobalVolume", 0.8f);
+            vsyncToggle.isOn = PlayerPrefs.GetInt("GlobalVSync", 1) == 1;
 
-        Resolution res = resolutions[resIndex];
+            // For Resolution, we use the saved Global Index
+            int globalRes = PlayerPrefs.GetInt("GlobalResIndex", -1);
+            if (globalRes != -1) resolutionDropdown.value = globalRes;
+        }
+        else
+        {
+            // Inside a game: Load from the specific slot data
+            var data = GameManager.Instance.currentData;
+            volumeSlider.value = data.masterVolume;
+            vsyncToggle.isOn = (data.vsyncCount == 1);
+            resolutionDropdown.value = data.resolutionIndex;
+        }
 
-        // This forces the game to stay in a maximized, borderless state
-        // but renders the game at the specific resolution chosen.
-        Screen.SetResolution(res.width, res.height, FullScreenMode.FullScreenWindow);
-
-        GameManager.Instance.currentData.resolutionIndex = resIndex;
+        // Apply them visually and to the engine
+        ApplyAllSettings();
     }
 
-    /*
-    public void setFullscreen()
+
+    public void ApplyAllSettings()
     {
-        Screen.fullScreen = fullscreenToggle.isOn;
-        GameManager.Instance.currentData.isFullscreen = fullscreenToggle.isOn;
+        setVolume();
+        setVSync();
+        setResolution();
     }
-    */
+
+    public void setVolume()
+    {
+        AudioListener.volume = volumeSlider.value;
+        PlayerPrefs.SetFloat("GlobalVolume", volumeSlider.value); // Always update global
+
+        if (!startingScreen && GameManager.Instance.currentData != null)
+        {
+            GameManager.Instance.currentData.masterVolume = volumeSlider.value;
+        }
+    }
+
     public void setVSync()
     {
-        // 0 = Off, 1 = On (Standard)
-        int index = 0;
-        if (vsyncToggle.isOn)
-        {
-            index = 1;   
-        }
+        int index = vsyncToggle.isOn ? 1 : 0;
         QualitySettings.vSyncCount = index;
-        GameManager.Instance.currentData.vsyncCount = index;
+        PlayerPrefs.SetInt("GlobalVSync", index); // Always update global
+
+        if (!startingScreen && GameManager.Instance.currentData != null)
+        {
+            GameManager.Instance.currentData.vsyncCount = index;
+        }
+    }
+
+    public void setResolution()
+    {
+        int resIndex = resolutionDropdown.value;
+        if (resolutions == null || resIndex >= resolutions.Length) return;
+
+        Resolution res = resolutions[resIndex];
+        Screen.SetResolution(res.width, res.height, FullScreenMode.FullScreenWindow);
+
+        PlayerPrefs.SetInt("GlobalResIndex", resIndex); // Always update global
+
+        if (!startingScreen && GameManager.Instance.currentData != null)
+        {
+            GameManager.Instance.currentData.resolutionIndex = resIndex;
+        }
     }
 }

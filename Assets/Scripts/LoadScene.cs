@@ -136,7 +136,7 @@ public class LoadScene : MonoBehaviour
             int startSearchIndex = 0;
             if (teacherName.Equals("Nishiyama"))
             {
-                if (data.subPuzzles[0] == true)
+                if (data.subPuzzles[0])
                 {
                     triggers[0].SetActive(false);
                     startSearchIndex = 1;
@@ -156,6 +156,7 @@ public class LoadScene : MonoBehaviour
                     triggers[i].SetActive(false);
                 }
             }
+
         }
     }
 

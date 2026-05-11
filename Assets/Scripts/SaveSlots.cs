@@ -31,6 +31,7 @@ public class LoadSlots : MonoBehaviour
                 }
                 else
                 {
+                    SaveSystem.DeleteSave(i);
                     names[i - 1].text = "new game";
                 }
             }

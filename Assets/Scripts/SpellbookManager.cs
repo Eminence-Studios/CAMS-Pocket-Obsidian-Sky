@@ -1,5 +1,6 @@
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using static UnityEngine.RuleTile.TilingRuleOutput;
 
@@ -29,8 +30,8 @@ public class SpellbookManager : MonoBehaviour
     public Button mapIcon;
     public Image mapImage;
 
-    [Header("Settings Canvas")]
-    public GameObject settingsCanvas;
+    [Header("Paused Canvas")]
+    public GameObject pausedCanvas;
 
     [Header("Icon Canvas")]
     public GameObject icons;
@@ -160,7 +161,7 @@ public class SpellbookManager : MonoBehaviour
         }
         else
         {
-            settingsCanvas.gameObject.SetActive(false);
+            pausedCanvas.gameObject.SetActive(false);
         }
         icons.gameObject.SetActive(true);
         Time.timeScale = 1f;
@@ -178,7 +179,7 @@ public class SpellbookManager : MonoBehaviour
         }
         else
         {
-            settingsCanvas.gameObject.SetActive(true);
+            pausedCanvas.gameObject.SetActive(true);
         }
         icons.gameObject.SetActive(false);
         
@@ -314,5 +315,16 @@ public class SpellbookManager : MonoBehaviour
                 break;
             }
         }
+    }
+
+    public void saveAndExit()
+    {
+        SpellbookManager.instance.closeCanvas("Settings");
+
+        GameManager.Instance.currentData.lastLocation = SceneManager.GetActiveScene().buildIndex;
+        GameManager.Instance.SaveGame();
+
+        Destroy(SpellbookManager.instance.gameObject);
+        SceneManager.LoadScene(0);
     }
 }

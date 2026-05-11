@@ -160,6 +160,7 @@ public class Dialogue : MonoBehaviour
             if (isTutorial)
             {
                 GameManager.Instance.currentData.tutorialComplete = true;
+                GameManager.Instance.currentData.lastLocation = 2;
                 GameManager.Instance.SaveGame();
                 Debug.Log("changed");
             }
@@ -176,7 +177,7 @@ public class Dialogue : MonoBehaviour
             // replaceCharName();
             inputPopup.gameObject.SetActive(false);
             index++;
-            lines[index + 1] = lines[index + 1].Replace("Coyote", userInputField.text);
+            lines[index + 1] = "Nice to meet you, " + userInputField.text + ".";
             printNext();
         }
         

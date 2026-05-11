@@ -17,11 +17,39 @@ public class GameManager : MonoBehaviour
     {
         if (Instance == null) { Instance = this; DontDestroyOnLoad(gameObject); }
         else { Destroy(gameObject); }
-        Screen.SetResolution(1920, 1080, FullScreenMode.FullScreenWindow);
+        ApplyGlobalHardwareSettings();
+        // CleanupIncompleteSlots();
     }
 
     public void SaveGame() => SaveSystem.Save(currentData, activeSlot);
     public void LoadGame(int slot) { activeSlot = slot; currentData = SaveSystem.Load(slot); }
+
+
+    private void ApplyGlobalHardwareSettings()
+    {
+        float vol = PlayerPrefs.GetFloat("GlobalVolume", 0.8f);
+        int vsync = PlayerPrefs.GetInt("GlobalVSync", 1);
+        AudioListener.volume = vol;
+        QualitySettings.vSyncCount = vsync;
+    }
+
+    /*
+    private void CleanupIncompleteSlots()
+    {
+        for (int i = 1; i <= 4; i++) // Assuming you have 3 slots
+        {
+            GameData data = SaveSystem.Load(i);
+            if (data != null)
+            {
+                if (string.IsNullOrEmpty(data.playerName))
+                {
+                    SaveSystem.DeleteSave(i); // Make sure SaveSystem has a Delete method!
+                    Debug.Log($"Slot {i} was incomplete and has been erased.");
+                }
+            }
+        }
+    }
+    */
 
     public TeacherProgress getTeacher(string name)
     {
@@ -80,7 +108,9 @@ public class GameManager : MonoBehaviour
         // New Game
         if (currentData.lastLocation == 0)
         {
-            currentData.lastLocation = 1; // Default start scene
+            currentData.masterVolume = PlayerPrefs.GetFloat("GlobalVolume", 0.8f);
+            currentData.vsyncCount = PlayerPrefs.GetInt("GlobalVSync", 1);
+            currentData.resolutionIndex = PlayerPrefs.GetInt("GlobalResIndex", -1);
             SaveGame();
             SceneManager.LoadScene(1);
         }
@@ -115,4 +145,5 @@ public class GameManager : MonoBehaviour
 
         SaveGame();
     }
+
 }
