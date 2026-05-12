@@ -458,6 +458,8 @@ public class BattleSystem : MonoBehaviour
         if (state == BattleState.WON)
         {
             Debug.Log("You won the battle!");
+            enemyPrefab.SetActive(false);
+            Debug.Log("Enemy prefab deactivated.");
             battleCanvas.gameObject.SetActive(false);
             
         }
