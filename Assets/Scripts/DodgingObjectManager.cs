@@ -151,7 +151,7 @@ public class DodgingObjectManager : MonoBehaviour
         isGrounded = true;
         velocity = Vector3.zero;
         transform.localPosition = new Vector3(transform.localPosition.x, ground + 10, 0);
-        
+
         StartCoroutine(waitUntilScreenCleared());
         Time.timeScale = 1f;
 
@@ -159,6 +159,9 @@ public class DodgingObjectManager : MonoBehaviour
         closeButton.gameObject.SetActive(false);
         retryButton.gameObject.SetActive(false);
         scoreText.gameObject.SetActive(true);
+
+        ObjectSpawner.instance.doSpawn = true;
+
         Debug.Log("restarted");
         
 
@@ -197,6 +200,7 @@ public class DodgingObjectManager : MonoBehaviour
     public void endGame()
     {
         Time.timeScale = 0f;
+        ObjectSpawner.instance.doSpawn = false;
 
         StartCoroutine(waitUntilScreenCleared());
         
@@ -238,9 +242,10 @@ public class DodgingObjectManager : MonoBehaviour
 
     public void closePuzzle()
     {
-        playerMovement.movementEnabled = true;
-        SpellbookManager.instance.gameObject.SetActive(true);
         gameScreen.SetActive(false);
+        Time.timeScale = 1f;
+        SpellbookManager.instance.gameObject.SetActive(true);
+        playerMovement.movementEnabled = true;
     }
 
 }

@@ -1027,6 +1027,7 @@ GameObject:
   - component: {fileID: 942322669}
   - component: {fileID: 942322668}
   - component: {fileID: 942322667}
+  - component: {fileID: 942322670}
   m_Layer: 0
   m_Name: EventSystem
   m_TagString: Untagged
@@ -1095,6 +1096,20 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &942322670
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 942322666}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f5cfe613cdde78c4fa9b263c0da29abe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SceneMusicLoader
+  intro: {fileID: 8300000, guid: 98dc55bc58b0b0a4aa9aaa543bd316e3, type: 3}
+  loop: {fileID: 8300000, guid: 8e9d8c26753cddc4fbca46a0e9915eb6, type: 3}
 --- !u!1 &972417730
 GameObject:
   m_ObjectHideFlags: 0

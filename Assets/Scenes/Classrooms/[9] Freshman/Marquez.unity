@@ -8074,6 +8074,7 @@ GameObject:
   - component: {fileID: 1670252462}
   - component: {fileID: 1670252461}
   - component: {fileID: 1670252464}
+  - component: {fileID: 1670252465}
   m_Layer: 0
   m_Name: EventSystem
   m_TagString: Untagged
@@ -8170,6 +8171,20 @@ MonoBehaviour:
   hallways: []
   sceneMap: {fileID: 0}
   spellbookManager: {fileID: 0}
+--- !u!114 &1670252465
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1670252460}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f5cfe613cdde78c4fa9b263c0da29abe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SceneMusicLoader
+  intro: {fileID: 8300000, guid: c2f3252f33fa6104d9824d088d38ccc9, type: 3}
+  loop: {fileID: 8300000, guid: fc2396cfaf5b4e845b2ba64057114bd2, type: 3}
 --- !u!1 &1697977733
 GameObject:
   m_ObjectHideFlags: 0

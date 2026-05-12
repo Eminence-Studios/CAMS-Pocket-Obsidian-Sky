@@ -319,7 +319,7 @@ public class SpellbookManager : MonoBehaviour
 
     public void saveAndExit()
     {
-        SpellbookManager.instance.closeCanvas("Settings");
+        SpellbookManager.instance.closeCanvas("Paused");
 
         GameManager.Instance.currentData.lastLocation = SceneManager.GetActiveScene().buildIndex;
         GameManager.Instance.SaveGame();

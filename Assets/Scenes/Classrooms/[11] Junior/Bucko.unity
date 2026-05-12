@@ -1990,6 +1990,7 @@ GameObject:
   - component: {fileID: 655455827}
   - component: {fileID: 655455826}
   - component: {fileID: 655455829}
+  - component: {fileID: 655455830}
   m_Layer: 0
   m_Name: EventSystem
   m_TagString: Untagged
@@ -2082,6 +2083,20 @@ MonoBehaviour:
   hallways: []
   sceneMap: {fileID: 0}
   spellbookManager: {fileID: 0}
+--- !u!114 &655455830
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 655455825}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f5cfe613cdde78c4fa9b263c0da29abe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SceneMusicLoader
+  intro: {fileID: 8300000, guid: b3c15675c6b4af74ca4acd5a4caba3fd, type: 3}
+  loop: {fileID: 8300000, guid: 8808164ffb898a34b984398024286bc3, type: 3}
 --- !u!1 &665543556
 GameObject:
   m_ObjectHideFlags: 0
@@ -2945,7 +2960,7 @@ Transform:
   m_GameObject: {fileID: 1078376652}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -500, z: 10}
+  m_LocalPosition: {x: 0, y: -700, z: 10}
   m_LocalScale: {x: 108.023895, y: 108.023895, z: 108.023895}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2963,10 +2978,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 328443b45973de44ab7eee60b8390073, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  xoffset: 600
+  xoffset: 800
   spawnrate: 0.5
   spawnedObject:
   - {fileID: 2160349991492344572, guid: a899da5ba06723748a3b4ca720800529, type: 3}
+  doSpawn: 0
 --- !u!1 &1203069841
 GameObject:
   m_ObjectHideFlags: 0
@@ -3303,7 +3319,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Retry
+  m_text: Start
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 14ae4e24f65d26142942c28891e0ca23, type: 2}
   m_sharedMaterial: {fileID: -6039880892069049728, guid: 14ae4e24f65d26142942c28891e0ca23, type: 2}
@@ -4372,8 +4388,8 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1572985476}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -127.024796}
-  m_LocalScale: {x: 1920, y: 1080, z: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1600, y: 1080, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1465382501}
@@ -4654,8 +4670,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Dodge rising roots for 30 seconds
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 14ae4e24f65d26142942c28891e0ca23, type: 2}
-  m_sharedMaterial: {fileID: -6039880892069049728, guid: 14ae4e24f65d26142942c28891e0ca23, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 6a1c19864c7c5a74890361753fa20942, type: 2}
+  m_sharedMaterial: {fileID: -6133767721480794579, guid: 6a1c19864c7c5a74890361753fa20942, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
