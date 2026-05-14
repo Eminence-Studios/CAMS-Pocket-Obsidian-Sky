@@ -73,6 +73,7 @@ public class TeacherInteraction : MonoBehaviour
         {
             // open battle canvas
             Debug.Log("Open Battle");
+            GetComponent<SpriteRenderer>().enabled = false;
             battleCanvas.gameObject.SetActive(true);
             playerMovement.enableMovement = true;
         }
