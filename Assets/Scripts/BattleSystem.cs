@@ -49,6 +49,7 @@ public class BattleSystem : MonoBehaviour
     UniqueMoves enemyMoveset;
     public int turnCount = 1;
     public Canvas battleCanvas;
+    [SerializeField] public TextMeshProUGUI console;
 
     // unit references that will be used across other scripts for stats 
     void Start()
@@ -104,7 +105,7 @@ public class BattleSystem : MonoBehaviour
 
         if (unit.unitSpd >= Threshold)
         {
-            Debug.Log(unit.unitName + " is so fast they get an extra turn!");
+            console.text = (unit.unitName + " is so fast they get an extra turn!");
             if (unit.playerName != null)
             {
                 state = BattleState.PLAYERTURN;
@@ -124,7 +125,7 @@ public class BattleSystem : MonoBehaviour
         // even though the player will get the +1 energy, for now this punishes exhausting all energy
         if (playerUnit.energy <= 0)
         {
-            Debug.Log("No energy available – skipping player's turn."); 
+            console.text = ("No energy available – skipping player's turn."); 
             playerUnit.energy += 1; // still recharge for next cycle
             playerHUD.setEnergyHUD(playerUnit);
 
@@ -134,7 +135,7 @@ public class BattleSystem : MonoBehaviour
 
         playerUnit.energy += 1;
         playerHUD.setEnergyHUD(playerUnit);
-        Debug.Log("What will you do?");
+        console.text = ("What will you do?");
     }
 
     public void onFirstButton()
@@ -225,7 +226,7 @@ public class BattleSystem : MonoBehaviour
         // skip turn if player is frozen
         if (playerUnit.statusCondition == 2)
         {
-            Debug.Log(playerUnit.unitName + " is frozen and cannot act!");
+            console.text = (playerUnit.unitName + " is frozen and cannot act!");
             yield return new WaitForSeconds(2f);
             NextTurn();
             yield return new WaitForSeconds(2f);
@@ -238,19 +239,19 @@ public class BattleSystem : MonoBehaviour
             if (playerUnit.specialization == 0)
             {
                 damage = playerUnit.unitAtk;
-                Debug.Log("Performing first move as physical attack"); //temp
+                console.text = ("Performing first move as physical attack"); //temp
             }
             else
             {
                 damage = playerUnit.unitSpAtk;
-                Debug.Log("Performing first move as special attack");//temp
+                console.text = ("Performing first move as special attack");//temp
             }
 
             bool isDead = enemyUnit.takeDamage(damage, playerUnit.specialization);
             bool success = enemyHUD.setHP(enemyUnit.unitHp);
             
             List<int> buffParameters = playerMoveset.determineUniqueMove();
-            Debug.Log(playerMoveset.moveBeingUsed);
+            console.text = (playerMoveset.moveBeingUsed).ToString();
             if (buffParameters != null)
             {
                 playerUnit.buffStats(buffParameters);
@@ -281,7 +282,7 @@ public class BattleSystem : MonoBehaviour
         // skip turn if player is frozen
         if (playerUnit.statusCondition == 2)
         {
-            Debug.Log(playerUnit.unitName + " is frozen and cannot act!");
+            console.text = (playerUnit.unitName + " is frozen and cannot act!");
             yield return new WaitForSeconds(2f);
             NextTurn();
             yield return new WaitForSeconds(2f);
@@ -294,19 +295,19 @@ public class BattleSystem : MonoBehaviour
             if (playerUnit.specialization == 0)
             {
                 damage = playerUnit.unitAtk;
-                Debug.Log("Performing second move as physical attack"); //temp
+                console.text = ("Performing second move as physical attack"); //temp
             }
             else
             {
                 damage = playerUnit.unitSpAtk;
-                Debug.Log("Performing second move as special attack");//temp
+                console.text = ("Performing second move as special attack");//temp
             }
 
             bool isDead = enemyUnit.takeDamage(damage, playerUnit.specialization);
             bool success = enemyHUD.setHP(enemyUnit.unitHp);
             
             List<int> buffParameters = playerMoveset.determineUniqueMove();
-            Debug.Log(playerMoveset.moveBeingUsed);
+            console.text = (playerMoveset.moveBeingUsed).ToString();
             if (buffParameters != null)
             {
                 playerUnit.buffStats(buffParameters);
@@ -337,7 +338,7 @@ public class BattleSystem : MonoBehaviour
         // skip turn if player is frozen
         if (playerUnit.statusCondition == 2)
         {
-            Debug.Log(playerUnit.unitName + " is frozen and cannot act!");
+            console.text = (playerUnit.unitName + " is frozen and cannot act!");
             yield return new WaitForSeconds(2f);
             NextTurn();
             yield return new WaitForSeconds(2f);
@@ -350,19 +351,19 @@ public class BattleSystem : MonoBehaviour
             if (playerUnit.specialization == 0)
             {
                 damage = playerUnit.unitAtk;
-                Debug.Log("Performing third move as physical attack"); //temp
+                console.text = ("Performing third move as physical attack"); //temp
             }
             else
             {
                 damage = playerUnit.unitSpAtk;
-                Debug.Log("Performing third move as special attack");//temp
+                console.text = ("Performing third move as special attack");//temp
             }
 
             bool isDead = enemyUnit.takeDamage(damage, playerUnit.specialization);
             bool success = enemyHUD.setHP(enemyUnit.unitHp);
             
             List<int> buffParameters = playerMoveset.determineUniqueMove();
-            Debug.Log(playerMoveset.moveBeingUsed);
+            console.text = (playerMoveset.moveBeingUsed).ToString();
             if (buffParameters != null)
             {
                 playerUnit.buffStats(buffParameters);
@@ -393,7 +394,7 @@ public class BattleSystem : MonoBehaviour
         // skip turn if player is frozen
         if (playerUnit.statusCondition == 2)
         {
-            Debug.Log(playerUnit.unitName + " is frozen and cannot act!");
+            console.text = (playerUnit.unitName + " is frozen and cannot act!");
             yield return new WaitForSeconds(2f);
             NextTurn();
             yield return new WaitForSeconds(2f);
@@ -406,19 +407,19 @@ public class BattleSystem : MonoBehaviour
             if (playerUnit.specialization == 0)
             {
                 damage = playerUnit.unitAtk;
-                Debug.Log("Performing fourth move as physical attack"); //temp
+                console.text = ("Performing fourth move as physical attack"); //temp
             }
             else
             {
                 damage = playerUnit.unitSpAtk;
-                Debug.Log("Performing fourth move as special attack");//temp
+                console.text = ("Performing fourth move as special attack");//temp
             }
 
             bool isDead = enemyUnit.takeDamage(damage, playerUnit.specialization);
             bool success = enemyHUD.setHP(enemyUnit.unitHp);
             
             List<int> buffParameters = playerMoveset.determineUniqueMove();
-            Debug.Log(playerMoveset.moveBeingUsed);
+            console.text = (playerMoveset.moveBeingUsed).ToString();
             if (buffParameters != null)
             {
                 playerUnit.buffStats(buffParameters);
@@ -443,7 +444,7 @@ public class BattleSystem : MonoBehaviour
 
     IEnumerator playerSkipTurn()
     {
-        Debug.Log("Player skips turn to preserve and gain energy.");
+        console.text = ("Player skips turn to preserve and gain energy.");
         yield return new WaitForSeconds(2f);
 
         // Gain additional energy for skipping (in addition to the +1 from playerTurn)
@@ -457,15 +458,15 @@ public class BattleSystem : MonoBehaviour
     {
         if (state == BattleState.WON)
         {
-            Debug.Log("You won the battle!");
+            console.text = ("You won the battle!");
             enemyPrefab.SetActive(false);
-            Debug.Log("Enemy prefab deactivated.");
+            console.text = ("Enemy prefab deactivated.");
             battleCanvas.gameObject.SetActive(false);
             
         }
         else if (state == BattleState.LOST)
         {
-            Debug.Log("You were defeated.");
+            console.text = ("You were defeated.");
         }
     }
 
@@ -474,7 +475,7 @@ public class BattleSystem : MonoBehaviour
         state = BattleState.ENEMYTURN;
         enemyUnit.energy += 1;
 
-        Debug.Log("Enemy's turn!");
+        console.text = ("Enemy's turn!");
 
         yield return new WaitForSeconds(2f);
 
@@ -488,7 +489,7 @@ public class BattleSystem : MonoBehaviour
 
         if (playerUnit.unitHp == playerHUD.hpSlider.value)
         {
-            Debug.Log("The attack couldn't break through the defense!");
+            console.text = ("The attack couldn't break through the defense!");
         }
         playerHUD.setHP(playerUnit.unitHp);
 
@@ -508,12 +509,12 @@ public class BattleSystem : MonoBehaviour
     IEnumerator bossEnemyTurn()
     {
         state = BattleState.ENEMYTURN;
-        Debug.Log(enemyUnit.unitName + "'s Boss Turn");
+        console.text = (enemyUnit.unitName + "'s Boss Turn");
 
         yield return new WaitForSeconds(2f);
 
         int choice = bossDecision(); // will be 0 if the boss decides not to
-        Debug.Log(choice);
+        console.text = (choice.ToString());
         bool isDead = false;
         if (choice != 0)
         {
@@ -536,7 +537,7 @@ public class BattleSystem : MonoBehaviour
                 enemyUnit.buffStats(buffParameters); // will proc the chance for it's special move to buff stats
             }
             yield return new WaitForSeconds(2f);
-            Debug.Log("The attack couldn't break through the defense!");
+            console.text = ("The attack couldn't break through the defense!");
         
             playerHUD.setHP(playerUnit.unitHp);
 
@@ -580,17 +581,17 @@ public class BattleSystem : MonoBehaviour
         {
             if (enemyUnit.specialization == 0)
             {
-                Debug.Log("Powerful Physical Attack");
+                console.text = ("Powerful Physical Attack");
                 return enemyUnit.unitAtk;
             }
             else
             {
-                Debug.Log("Powerful Magical Attack");
+                console.text = ("Powerful Magical Attack");
                 return enemyUnit.unitSpAtk;
             }
         }
         else
-        {   Debug.Log(enemyUnit.unitName + " decides not to attack");
+        {   console.text = (enemyUnit.unitName + " decides not to attack");
             return 0; // boss will do no damage, essentially skipping turn
         }
     }
@@ -645,6 +646,7 @@ public class BattleSystem : MonoBehaviour
     [SerializeField] public TextMeshProUGUI spell2;
     [SerializeField] public TextMeshProUGUI spell3;
     [SerializeField] public TextMeshProUGUI spell4;
+    
 
     void UpdateSpellTexts()
     {
