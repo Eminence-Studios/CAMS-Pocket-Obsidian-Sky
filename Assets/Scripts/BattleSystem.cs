@@ -31,6 +31,9 @@ public class BattleSystem : MonoBehaviour
 {
     public static BattleSystem instance;
 
+    public GameObject battleCanvas;
+    public TeacherInteraction teacherInteractionScript;
+
     public GameObject playerPrefab;
     public GameObject enemyPrefab;
     // player sprites ^^

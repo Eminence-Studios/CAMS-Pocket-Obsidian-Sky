@@ -8,6 +8,8 @@ public class ObjectSpawner : MonoBehaviour
     public GameObject [] spawnedObject;
     public static ObjectSpawner instance;
 
+    public bool doSpawn;
+
     private int index = 0;
 
 
@@ -16,24 +18,45 @@ public class ObjectSpawner : MonoBehaviour
         instance = this;
 
     }
+
     void Update()
     {
-        if (time < spawnrate)
+        if (doSpawn)
         {
-            time += Time.deltaTime;
-        }
-        else
-        {
-            spawnObject();
-            Debug.Log(index);
-            time = 0;
+            if (time < spawnrate)
+            {
+                time += Time.deltaTime;
+            }
+            else
+            {
+                spawnObject();
+                Debug.Log(index);
+                time = 0;
+            }
         }
     }
+
     void spawnObject()
     {
+        /*
         float lowestX = transform.position.x - xoffset;
         float highestX = transform.position.x + xoffset;
-        Instantiate(spawnedObject[index++], new Vector3(Random.Range(lowestX, highestX), transform.localPosition.y, 0), transform.rotation);
+        Instantiate(spawnedObject[index++], new Vector3(Random.Range(lowestX, highestX), transform.position.y, 0), transform.rotation, transform.parent);
+        if (index > spawnedObject.Length - 1)
+        {
+            index = 0;
+        }
+        */
+
+        float lowestX = -xoffset;
+        float highestX = xoffset;
+        float randomX = UnityEngine.Random.Range(lowestX, highestX);
+
+        GameObject newObj = Instantiate(spawnedObject[index++], transform.parent);
+
+        newObj.transform.localPosition = new Vector3(transform.localPosition.x + randomX, transform.localPosition.y, 0);
+        newObj.transform.localRotation = transform.localRotation;
+
         if (index > spawnedObject.Length - 1)
         {
             index = 0;

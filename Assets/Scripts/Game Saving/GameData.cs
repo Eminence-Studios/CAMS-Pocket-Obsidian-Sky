@@ -41,7 +41,7 @@ public class GameData
         resolutionIndex = -1;
         // isFullscreen = false;
         vsyncCount = 1;
-        numOfMasteredElements = 4;
+        numOfMasteredElements = 0;
         teacherProgress = new List<TeacherProgress>();
         elementSpellsLearned = new List<ElementCount>();
         masteredElements = new List<string>();

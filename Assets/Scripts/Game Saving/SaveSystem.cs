@@ -29,4 +29,14 @@ public static class SaveSystem
         string path = GetPath(slot);
         return File.Exists(path);
     }
+
+    public static void DeleteSave(int slot)
+    {
+        string path = GetPath(slot);
+        if (File.Exists(path))
+        {
+            File.Delete(path);
+            Debug.Log($"File at {path} deleted successfully.");
+        }
+    }
 }

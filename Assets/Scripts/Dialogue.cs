@@ -36,6 +36,10 @@ public class Dialogue : MonoBehaviour
     public bool changePlayerMovement;
     public Movement playerMovement;
 
+    [Header("Music Parameters")]
+    public bool changeMusic;
+    public AudioSource newMusic;
+
 
     // public bool hasSwitchSpeakers;
     // [SerializeField] Canvas otherSpeaker;
@@ -88,7 +92,12 @@ public class Dialogue : MonoBehaviour
         }
         if (changePlayerMovement)
         {
-            playerMovement.enabled = false;
+            playerMovement.movementEnabled = false;
+        }
+        if (changeMusic)
+        {
+            MusicManager.instance.pauseBackgroundTrack();
+            newMusic.Play();
         }
         startDialogue();
     }
@@ -110,7 +119,12 @@ public class Dialogue : MonoBehaviour
         else if (changePlayerMovement)
         {
             SpellbookManager.instance.gameObject.SetActive(true);
-            playerMovement.enabled = true;
+            playerMovement.movementEnabled = true;
+        }
+        if (changeMusic)
+        {
+            MusicManager.instance.resumeBackgroundTrack();
+            newMusic.Stop();
         }
     }
 
@@ -160,6 +174,7 @@ public class Dialogue : MonoBehaviour
             if (isTutorial)
             {
                 GameManager.Instance.currentData.tutorialComplete = true;
+                GameManager.Instance.currentData.lastLocation = 2;
                 GameManager.Instance.SaveGame();
                 Debug.Log("changed");
             }
@@ -176,7 +191,7 @@ public class Dialogue : MonoBehaviour
             // replaceCharName();
             inputPopup.gameObject.SetActive(false);
             index++;
-            lines[index + 1] = lines[index + 1].Replace("Coyote", userInputField.text);
+            lines[index + 1] = "Nice to meet you, " + userInputField.text + ".";
             printNext();
         }
         

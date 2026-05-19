@@ -65,7 +65,7 @@ public class OrderPuzzle : MonoBehaviour
     }
     private void OnEnable()
     {
-        playerMovement.enableMovement = false;
+        playerMovement.movementEnabled = false;
         SpellbookManager.instance.gameObject.SetActive(false);
     }
 
@@ -88,6 +88,7 @@ public class OrderPuzzle : MonoBehaviour
             GameManager.Instance.SaveGame();
             successSound.Play();
             collider.gameObject.SetActive(false);
+            Invoke("closePuzzle", 2);
 
             /*
             if (teacherName == "NishiyamaPuzzle0")
@@ -96,9 +97,6 @@ public class OrderPuzzle : MonoBehaviour
                 nextPuzzleTriggers.SetActive(true);
             }
             */
-
-            Invoke("closePuzzle", 2);
-
         }
         else
         {
@@ -135,7 +133,7 @@ public class OrderPuzzle : MonoBehaviour
 
     public void closePuzzle()
     {
-        playerMovement.enableMovement = true;
+        playerMovement.movementEnabled = true;
         SpellbookManager.instance.gameObject.SetActive(true);
         puzzle.gameObject.SetActive(false);
     }

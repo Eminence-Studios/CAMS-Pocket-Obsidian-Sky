@@ -17,9 +17,9 @@ public class FallingObject : MonoBehaviour
     }
     void Update()
     {
-        transform.position += (Vector3.down * moveSpeed) * Time.deltaTime;
+        transform.localPosition += (Vector3.down * moveSpeed) * Time.deltaTime;
 
-        if (transform.position.y < ydeadzone)
+        if (transform.localPosition.y < ydeadzone)
         {
             if (isCatch)
             {

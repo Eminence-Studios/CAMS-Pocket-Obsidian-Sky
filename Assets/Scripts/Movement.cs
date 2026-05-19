@@ -10,7 +10,7 @@ public class Movement : MonoBehaviour
     private int currentY;
 
     private SpriteRenderer spriteRenderer;
-    public bool enableMovement = true;
+    public bool movementEnabled = true;
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -25,7 +25,7 @@ public class Movement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (enableMovement)
+        if (movementEnabled)
         {
             body.linearVelocity = new Vector2(Input.GetAxis("Horizontal") * speed, Input.GetAxis("Vertical") * speed);
 

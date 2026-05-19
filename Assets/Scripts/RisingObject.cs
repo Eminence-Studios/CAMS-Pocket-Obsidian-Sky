@@ -20,17 +20,17 @@ public class RisingObject : MonoBehaviour
     {
         if (movingup)
         {
-            transform.position += (Vector3.up * upmovespeed) * Time.deltaTime;
-            if (transform.position.y >= maxHeight)
+            transform.localPosition += (Vector3.up * upmovespeed) * Time.deltaTime;
+            if (transform.localPosition.y >= maxHeight)
             {
                 movingup = false;
             }
         }
         else
         {
-            transform.position += (Vector3.down * downmovespeed) * Time.deltaTime;
+            transform.localPosition += (Vector3.down * downmovespeed) * Time.deltaTime;
         }
-        if (transform.position.y < ydeadzone)
+        if (transform.localPosition.y < ydeadzone)
         {
             Destroy(gameObject);
         }

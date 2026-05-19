@@ -1101,6 +1101,7 @@ MonoBehaviour:
   dialoguePopUp: {fileID: 208243415}
   dialogueManager: {fileID: 1165950374}
   spellSelectionScreen: {fileID: 0}
+  battleScreen: {fileID: 0}
   element: 
   totalNumOfElementSpells: 0
   initalLines:
@@ -1357,6 +1358,7 @@ GameObject:
   - component: {fileID: 655455827}
   - component: {fileID: 655455826}
   - component: {fileID: 655455829}
+  - component: {fileID: 655455830}
   m_Layer: 0
   m_Name: EventSystem
   m_TagString: Untagged
@@ -1449,6 +1451,20 @@ MonoBehaviour:
   hallways: []
   sceneMap: {fileID: 0}
   spellbookManager: {fileID: 0}
+--- !u!114 &655455830
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 655455825}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f5cfe613cdde78c4fa9b263c0da29abe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SceneMusicLoader
+  intro: {fileID: 8300000, guid: 457f08689b716d945ad4b97866f8d100, type: 3}
+  loop: {fileID: 8300000, guid: 0f69ab58afb44904fb3573111d40beac, type: 3}
 --- !u!1 &689902237
 GameObject:
   m_ObjectHideFlags: 0
@@ -2218,7 +2234,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Movement
   speed: 400
-  enableMovement: 1
+  movementEnabled: 1
 --- !u!212 &916875899
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2772,7 +2788,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SceneChanger
   sceneID: 7
-  locationIndex: 0
+  locationIndex: -1
   locationValue: 0
 --- !u!50 &1203069844
 Rigidbody2D:
@@ -3329,6 +3345,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::CanvasChanger
   oldCanvas: {fileID: 0}
   newCanvas: {fileID: 812911550}
+  player: {fileID: 0}
+  disablePlayer: 0
 --- !u!50 &1411225888
 Rigidbody2D:
   serializedVersion: 5

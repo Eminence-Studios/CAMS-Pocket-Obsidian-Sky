@@ -9,6 +9,7 @@ public class TeacherInteraction : MonoBehaviour
     [SerializeField] GameObject dialoguePopUp;
     [SerializeField] Dialogue dialogueManager;
     [SerializeField] GameObject spellSelectionScreen;
+    [SerializeField] GameObject battleScreen;
 
     public string element;
     public int totalNumOfElementSpells;
@@ -35,7 +36,7 @@ public class TeacherInteraction : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D col)
     {
-        playerMovement.enableMovement = false;
+        playerMovement.movementEnabled = false;
 
         TeacherProgress data = GameManager.Instance.getTeacher(teacherName);
 
@@ -63,15 +64,14 @@ public class TeacherInteraction : MonoBehaviour
     {
         TeacherProgress data = GameManager.Instance.getTeacher(teacherName);
 
-        if (data.battle)
+        if (data.battle && !data.spell)
         {
             spellSelectionScreen.SetActive(true);
             Debug.Log("Open Spell");
         }
-        // if puzzle completed
-        else if (data.puzzle)
+        else if (data.puzzle && !data.battle)
         {
-            // open battle canvas
+            battleScreen.SetActive(true);
             Debug.Log("Open Battle");
             GetComponent<SpriteRenderer>().enabled = false;
             battleCanvas.gameObject.SetActive(true);
@@ -79,9 +79,31 @@ public class TeacherInteraction : MonoBehaviour
         }
         else
         {
-            playerMovement.enableMovement = true;
+            playerMovement.movementEnabled = true;
+            SpellbookManager.instance.gameObject.SetActive(true);
+            if (data.spell && GameManager.Instance.elementJustCompleted(element, totalNumOfElementSpells))
+            {
+                SpellbookManager.instance.openCanvas("Congratulations");
+            }
+        }
+    }
+
+    public void battleDone(bool isWon)
+    {
+        if (isWon)
+        {
+            GameManager.Instance.setBattleWon(teacherName);
+            battleScreen.gameObject.SetActive(false);
+            dialogueManager.lines = afterBattleLines;
+            SpellbookManager.instance.gameObject.SetActive(false);
+            dialoguePopUp.SetActive(true);
+        }
+        else
+        {
+            playerMovement.movementEnabled = true;
             SpellbookManager.instance.gameObject.SetActive(true);
         }
+            
     }
 
     public void selectSpell(Spell spell)
