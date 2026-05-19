@@ -61,13 +61,12 @@ public class TeacherInteraction : MonoBehaviour
     {
         TeacherProgress data = GameManager.Instance.getTeacher(teacherName);
 
-        if (data.battle)
+        if (data.battle && !data.spell)
         {
             spellSelectionScreen.SetActive(true);
             Debug.Log("Open Spell");
         }
-        // if puzzle completed
-        else if (data.puzzle)
+        else if (data.puzzle && !data.battle)
         {
             battleScreen.SetActive(true);
             Debug.Log("Open Battle");
@@ -76,6 +75,10 @@ public class TeacherInteraction : MonoBehaviour
         {
             playerMovement.movementEnabled = true;
             SpellbookManager.instance.gameObject.SetActive(true);
+            if (data.spell && GameManager.Instance.elementJustCompleted(element, totalNumOfElementSpells))
+            {
+                SpellbookManager.instance.openCanvas("Congratulations");
+            }
         }
     }
 

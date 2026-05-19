@@ -73,7 +73,7 @@ public class GameManager : MonoBehaviour
     public void setBattleWon(string teacher)
     {
         var data = getTeacher(teacher);
-        data.puzzle = true;
+        data.battle = true;
         SaveGame();
     }
 
@@ -136,14 +136,19 @@ public class GameManager : MonoBehaviour
 
         elementData.count++;
 
-        // Check element mastery
+        SaveGame();
+    }
+
+    public bool elementJustCompleted(string element, int totalSpellsInElement)
+    {
+        var elementData = currentData.elementSpellsLearned.FirstOrDefault(e => e.elementName == element);
+
         if (elementData.count >= totalSpellsInElement && !currentData.masteredElements.Contains(element))
         {
             currentData.numOfMasteredElements++;
             currentData.masteredElements.Add(element);
+            return true;
         }
-
-        SaveGame();
+        return false;
     }
-
 }

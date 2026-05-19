@@ -1,3 +1,4 @@
+using System;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -32,6 +33,13 @@ public class SpellbookManager : MonoBehaviour
 
     [Header("Paused Canvas")]
     public GameObject pausedCanvas;
+
+    [Header("Congratulations Canvas")]
+    public GameObject congratulationsCanvas;
+    public TextMeshProUGUI titleText;
+    public TextMeshProUGUI elementText;
+    public TextMeshProUGUI classesText;
+    public AudioSource graduationSong;
 
     [Header("Icon Canvas")]
     public GameObject icons;
@@ -161,6 +169,33 @@ public class SpellbookManager : MonoBehaviour
 
     }
 
+    public void updateCongratulations()
+    {
+        int index = GameManager.Instance.currentData.numOfMasteredElements - 1;
+        elementText.text = "You've successfully mastered " + GameManager.Instance.currentData.masteredElements[index] + "!";
+
+
+        if (index < 3)
+        {
+            string[] years = { "sophomore", "junior", "senior" };
+            classesText.text = "We've unlocked the " + years[index] + " classes for you!\nKeep up the great work and best of luck!";
+        }
+        else
+        {
+            classesText.text = "You've completed 4 years at CAMS! Happy Graduation!";
+        }
+
+    }
+
+    public void endGameCongratulations()
+    {
+        MusicManager.instance.pauseBackgroundTrack();
+        graduationSong.Play();
+        titleText.text = "Happy Graduation!";
+        elementText.text = "Elements Mastered: " + GameManager.Instance.currentData.masteredElements.ToString();
+        classesText.text = "You can continue exploring campus, and once you're ready to leave, wipe this save slot in the main menu to let another student experience CAMS.";
+    }
+
     public void closeCanvas(string whichCanvas)
     {
         if (whichCanvas.Equals("Map"))
@@ -170,6 +205,18 @@ public class SpellbookManager : MonoBehaviour
         else if (whichCanvas.Equals("Spellbook"))
         {
             spellbookCanvas.gameObject.SetActive(false);
+        }
+        else if (whichCanvas.Equals("Congratulations"))
+        {
+            if (GameManager.Instance.currentData.numOfMasteredElements == 4)
+            {
+                endGameCongratulations();
+            }
+            else
+            {
+                congratulationsCanvas.gameObject.SetActive(false);
+                MusicManager.instance.resumeBackgroundTrack();
+            }
         }
         else
         {
@@ -188,6 +235,11 @@ public class SpellbookManager : MonoBehaviour
         else if (whichCanvas.Equals("Spellbook"))
         {
             spellbookCanvas.gameObject.SetActive(true);
+        }
+        else if (whichCanvas.Equals("Congratulations"))
+        {
+            updateCongratulations();
+            congratulationsCanvas.gameObject.SetActive(true);
         }
         else
         {

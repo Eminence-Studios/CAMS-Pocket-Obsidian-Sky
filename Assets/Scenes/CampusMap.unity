@@ -2163,6 +2163,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::SceneMusicLoader
   intro: {fileID: 8300000, guid: 98dc55bc58b0b0a4aa9aaa543bd316e3, type: 3}
   loop: {fileID: 8300000, guid: 8e9d8c26753cddc4fbca46a0e9915eb6, type: 3}
+  changeMusic: 0
+  afterSong: {fileID: 0}
 --- !u!1 &396483764
 GameObject:
   m_ObjectHideFlags: 0
@@ -2590,7 +2592,7 @@ SpriteRenderer:
   m_Size: {x: 60.443226, y: 67.130005}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &438179505
@@ -7534,6 +7536,8 @@ MonoBehaviour:
   nextScreen: {fileID: 1266051552}
   changePlayerMovement: 0
   playerMovement: {fileID: 0}
+  changeMusic: 0
+  newMusic: {fileID: 0}
 --- !u!4 &1376351071
 Transform:
   m_ObjectHideFlags: 0
