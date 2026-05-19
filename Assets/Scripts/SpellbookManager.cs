@@ -106,6 +106,18 @@ public class SpellbookManager : MonoBehaviour
         closeMap.transform.localPosition = new Vector2(800, 300);
     }
 
+    public void hallway6000Map()
+    {
+        RectTransform mapIconSize = mapIcon.GetComponent<RectTransform>();
+        mapIconSize.sizeDelta = new Vector2(150, 300);
+        mapIconSize.anchoredPosition = new Vector2(-125, -190);
+
+        RectTransform mapSize = mapImage.GetComponent<RectTransform>();
+        mapSize.sizeDelta = new Vector2(500, 950);
+
+        closeMap.transform.localPosition = new Vector2(275, 450);
+    }
+
     public void campusMap()
     {
         RectTransform mapIconSize = mapIcon.GetComponent<RectTransform>();

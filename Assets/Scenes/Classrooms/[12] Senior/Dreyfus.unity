@@ -446,7 +446,7 @@ MonoBehaviour:
   m_LightType: 3
   m_BlendStyleIndex: 0
   m_FalloffIntensity: 0.38
-  m_Color: {r: 1, g: 0, b: 0, a: 1}
+  m_Color: {r: 1, g: 0.07570003, b: 0, a: 1}
   m_Intensity: 1
   m_LightVolumeIntensity: 1
   m_LightVolumeEnabled: 1
@@ -468,10 +468,10 @@ MonoBehaviour:
   m_LocalBounds:
     m_Center: {x: 0, y: -0.00000011920929, z: 0}
     m_Extent: {x: 0.9985302, y: 0.99853027, z: 0}
-  m_PointLightInnerAngle: 156.7742
+  m_PointLightInnerAngle: 359.99997
   m_PointLightOuterAngle: 359.99997
   m_PointLightInnerRadius: 50
-  m_PointLightOuterRadius: 300
+  m_PointLightOuterRadius: 400
   m_ShapeLightParametricSides: 5
   m_ShapeLightParametricAngleOffset: 0
   m_ShapeLightParametricRadius: 1
@@ -3018,7 +3018,7 @@ GameObject:
   - component: {fileID: 1411225887}
   - component: {fileID: 1411225891}
   m_Layer: 5
-  m_Name: Mini Boss Battle
+  m_Name: Taylor Bear Battle Trigger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3033,8 +3033,8 @@ Transform:
   m_GameObject: {fileID: 1411225885}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 645, y: -294, z: 0}
-  m_LocalScale: {x: -202.40503, y: 335.2182, z: 1}
+  m_LocalPosition: {x: 643, y: -275, z: 0}
+  m_LocalScale: {x: 18, y: 18, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 105451920}
@@ -3130,7 +3130,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
+  m_Sprite: {fileID: 3060268899199570050, guid: 7aa1d00ae4b0dc04d8e3e05d75e1bac7, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -3175,17 +3175,17 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.06349015, y: 0.12220669}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
+    oldSize: {x: 9.589999, y: 19.055471}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 9.885328, y: 19.561365}
   m_EdgeRadius: 0
 --- !u!1 &1433809718
 GameObject:
@@ -3519,6 +3519,8 @@ MonoBehaviour:
   nextScreen: {fileID: 0}
   changePlayerMovement: 0
   playerMovement: {fileID: 0}
+  changeMusic: 0
+  newMusic: {fileID: 0}
 --- !u!1 &1708689406
 GameObject:
   m_ObjectHideFlags: 0

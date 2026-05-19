@@ -8,6 +8,12 @@ public class MusicManager : MonoBehaviour
     public AudioSource introSource;
     public AudioSource loopSource;
 
+    private bool isPaused = false;
+    private double pauseDspTime;
+    private double scheduledLoopStartTime;
+    private double introDuration;
+
+
     private void Awake()
     {
         if (instance == null) { instance = this; DontDestroyOnLoad(gameObject); }
@@ -16,31 +22,68 @@ public class MusicManager : MonoBehaviour
 
     public void PlayFullTrack(AudioClip introClip, AudioClip loopClip)
     {
-        // 1. If we are already playing this loop, don't restart it
-        if (loopSource.clip == loopClip && loopSource.isPlaying) return;
+        if (loopSource.clip == loopClip && (loopSource.isPlaying || isPaused)) return;
 
-        // 2. Stop everything current
+        isPaused = false;
         introSource.Stop();
         loopSource.Stop();
 
-        // 3. Assign the new clips
         introSource.clip = introClip;
         loopSource.clip = loopClip;
 
-        // 4. Set the loop source to actually loop
         introSource.loop = false;
         loopSource.loop = true;
 
-        // 5. Calculate the timing
-        // We get the exact duration of the intro clip
-        double introLength = (double)introClip.samples / introClip.frequency;
+        introDuration = (double)introClip.samples / introClip.frequency;
 
-        // Pick a start time slightly in the future to allow for buffering
         double startTime = AudioSettings.dspTime + 0.1;
-        double loopStartTime = startTime + introLength;
+        scheduledLoopStartTime = startTime + introDuration;
 
-        // 6. Schedule them
         introSource.PlayScheduled(startTime);
-        loopSource.PlayScheduled(loopStartTime);
+        loopSource.PlayScheduled(scheduledLoopStartTime);
+    }
+
+    public void pauseBackgroundTrack()
+    {
+        if (isPaused) return;
+
+        isPaused = true;
+        pauseDspTime = AudioSettings.dspTime;
+
+        introSource.Pause();
+        loopSource.Pause();
+    }
+
+    public void wait(int time)
+    {
+        Invoke("resumeBackgroundTrack", time);
+    }
+
+    public void resumeBackgroundTrack()
+    {
+        if (!isPaused) return;
+        isPaused = false;
+
+        // If the intro was STILL playing when we paused, we must reschedule the loop
+        if (introSource.clip != null && introSource.time < introDuration)
+        {
+            double elapsedBeforePause = pauseDspTime - (scheduledLoopStartTime - introDuration);
+            double remainingIntroTime = introDuration - elapsedBeforePause;
+
+            if (remainingIntroTime > 0)
+            {
+                double currentDspTime = AudioSettings.dspTime;
+                scheduledLoopStartTime = currentDspTime + remainingIntroTime;
+
+                introSource.UnPause();
+                loopSource.Stop(); // Reset the old schedule link
+                loopSource.PlayScheduled(scheduledLoopStartTime);
+                return;
+            }
+        }
+
+        // Standard unpause if they were already seamlessly looping on the main track
+        introSource.UnPause();
+        loopSource.UnPause();
     }
 }

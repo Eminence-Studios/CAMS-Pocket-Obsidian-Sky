@@ -120,6 +120,7 @@ public class LoadScene : MonoBehaviour
             else if (locationIndex == 5)
             {
                 player.localPosition = locations6000[GameManager.Instance.currentData.currentLocations[5]];
+                SpellbookManager.instance.hallway6000Map();
                 SpellbookManager.instance.showMapIcon();
                 SpellbookManager.instance.updateMap(sceneMap);
                 load6000Hallway();
@@ -320,9 +321,11 @@ public class LoadScene : MonoBehaviour
         locations4000 = new Vector3[] { new Vector3(-1200, 0, 0), new Vector3(-950, 100, 0), new Vector3(-600, 100, 0), new Vector3(750, 100, 0), new Vector3(1100, 100, 0) };
         */
 
-        // campus, King, Fuentes, Johnson, Carpenter, Marquez, Gallardo, Brito, Avalos, idLuna
-        locations6000 = new Vector3[] {new Vector3(0, 2300, 0), new Vector3(-600, 2000, 0), new Vector3(-600, 500, 0), new Vector3(-600, 0, 0)
-        , new Vector3(600, 250, 0), new Vector3(600, -800, 0), new Vector3(600, -1250, 0), new Vector3(-600, -1500, 0)
-        , new Vector3(600, -2000, 0), new Vector3(-600, -2000, 0) };
+        // campus, King, Johnson, Fuentes
+        // Carpenter, Marquez, Gallardo, Brito
+        // Luna, Avalos
+        locations6000 = new Vector3[] {new Vector3(0, 480, 0), new Vector3(-130, 450, 0), new Vector3(-180, 100, 0), new Vector3(-190, -90, 0)
+        , new Vector3(190, 50, 0), new Vector3(220, -240, 0), new Vector3(240, -400, 0), new Vector3(-240, -420, 0)
+        , new Vector3(-250, -600, 0), new Vector3(250, -600, 0) };
     }
 }
