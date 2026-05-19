@@ -81,6 +81,11 @@ public class BattleSystem : MonoBehaviour
         
     }
 
+    void Awake()
+    {
+        instance = this;
+    }
+
     IEnumerator setupBattle()
     {
         GameObject playerGO = playerPrefab;
