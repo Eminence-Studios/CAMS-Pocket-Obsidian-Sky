@@ -503,7 +503,7 @@ MonoBehaviour:
   gauge: {fileID: 1888544457}
   progress: {fileID: 721132133}
   plant: {fileID: 114194950}
-  collider: {fileID: 0}
+  collider: {fileID: 892325520}
   puzzle: {fileID: 358656434}
   stem: {fileID: 6209248598994936250, guid: 81f15c82f57ff37429e29416593a231e, type: 3}
   bud: {fileID: -7613956453667226090, guid: 47c5286d9e222854c9088861cd18b4d9, type: 3}
@@ -680,7 +680,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f453f694addf4275988fac205bc91968, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Unity.Cinemachine::Unity.Cinemachine.CinemachineConfiner2D
-  BoundingShape2D: {fileID: 0}
+  BoundingShape2D: {fileID: 1716915006}
   Damping: 0.5
   SlowingDistance: 5
   OversizeWindow:
@@ -3511,7 +3511,7 @@ MonoBehaviour:
   gauge: {fileID: 1731521997}
   progress: {fileID: 2081852078}
   plant: {fileID: 801067111}
-  collider: {fileID: 0}
+  collider: {fileID: 1047185273}
   puzzle: {fileID: 549263691}
   stem: {fileID: 6209248598994936250, guid: 81f15c82f57ff37429e29416593a231e, type: 3}
   bud: {fileID: -7613956453667226090, guid: 47c5286d9e222854c9088861cd18b4d9, type: 3}
@@ -4371,7 +4371,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 955377800}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -15}
+  m_LocalPosition: {x: 0, y: 0, z: -9}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -6373,7 +6373,7 @@ SpriteRenderer:
   m_SortingLayerID: -739400243
   m_SortingLayer: -1
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: 665d4c039dd9a574d9df4df893e6f9f6, type: 3}
+  m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -6381,7 +6381,7 @@ SpriteRenderer:
   m_Size: {x: 48, y: 27}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &1398379763
@@ -8074,6 +8074,7 @@ GameObject:
   - component: {fileID: 1670252462}
   - component: {fileID: 1670252461}
   - component: {fileID: 1670252464}
+  - component: {fileID: 1670252465}
   m_Layer: 0
   m_Name: EventSystem
   m_TagString: Untagged
@@ -8170,6 +8171,20 @@ MonoBehaviour:
   hallways: []
   sceneMap: {fileID: 0}
   spellbookManager: {fileID: 0}
+--- !u!114 &1670252465
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1670252460}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f5cfe613cdde78c4fa9b263c0da29abe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SceneMusicLoader
+  intro: {fileID: 8300000, guid: c2f3252f33fa6104d9824d088d38ccc9, type: 3}
+  loop: {fileID: 8300000, guid: fc2396cfaf5b4e845b2ba64057114bd2, type: 3}
 --- !u!1 &1697977733
 GameObject:
   m_ObjectHideFlags: 0
@@ -8753,7 +8768,7 @@ MonoBehaviour:
   gauge: {fileID: 414064867}
   progress: {fileID: 1275562671}
   plant: {fileID: 1754045349}
-  collider: {fileID: 0}
+  collider: {fileID: 1835050887}
   puzzle: {fileID: 1834858954}
   stem: {fileID: 6209248598994936250, guid: 81f15c82f57ff37429e29416593a231e, type: 3}
   bud: {fileID: -7613956453667226090, guid: 47c5286d9e222854c9088861cd18b4d9, type: 3}
@@ -9576,7 +9591,7 @@ SpriteRenderer:
   m_SortingLayer: -1
   m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 6042bf4f10d33644c987a3d92a9e6811, type: 3}
-  m_Color: {r: 0.8726415, g: 0.8726415, b: 0.8726415, a: 1}
+  m_Color: {r: 0.9575472, g: 0.9575472, b: 0.9575472, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -9800,7 +9815,7 @@ MonoBehaviour:
   gauge: {fileID: 91975971}
   progress: {fileID: 2052161854}
   plant: {fileID: 1943359707}
-  collider: {fileID: 0}
+  collider: {fileID: 798337522}
   puzzle: {fileID: 422019514}
   stem: {fileID: 6209248598994936250, guid: 81f15c82f57ff37429e29416593a231e, type: 3}
   bud: {fileID: -7613956453667226090, guid: 47c5286d9e222854c9088861cd18b4d9, type: 3}
@@ -9951,8 +9966,8 @@ Camera:
   m_GameObject: {fileID: 1968031906}
   m_Enabled: 1
   serializedVersion: 2
-  m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_ClearFlags: 2
+  m_BackGroundColor: {r: 0.015686275, g: 0.003921569, b: 0.21176471, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -10002,7 +10017,7 @@ Transform:
   m_GameObject: {fileID: 1968031906}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 849.6, y: 1571.3999, z: -10}
+  m_LocalPosition: {x: 900.4224, y: 1571.3999, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -10321,7 +10336,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2029128396}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -10}
+  m_LocalPosition: {x: 0, y: 0, z: -8}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

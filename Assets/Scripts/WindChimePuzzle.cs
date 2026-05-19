@@ -12,10 +12,12 @@ public class WindChimePuzzle : MonoBehaviour
     [SerializeField] Collider2D collider;
     [SerializeField] Button close;
 
-    private string melody = "012345";
+    private string melody = "254312";
     public Movement playerMovement;
 
     public AudioSource successSound;
+
+    private bool solved = false;
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -28,6 +30,7 @@ public class WindChimePuzzle : MonoBehaviour
     {
         playerMovement.movementEnabled = false;
         SpellbookManager.instance.gameObject.SetActive(false);
+        MusicManager.instance.pauseBackgroundTrack();
     }
 
     // Update is called once per frame
@@ -43,7 +46,9 @@ public class WindChimePuzzle : MonoBehaviour
                 GameManager.Instance.SaveGame();
                 progress.text = "Beautiful tune!";
                 successSound.Play();
+                solved = true;
                 collider.gameObject.SetActive(false);
+                MusicManager.instance.wait(37);
                 Invoke("closePuzzle", 2);
 
             }
@@ -66,9 +71,9 @@ public class WindChimePuzzle : MonoBehaviour
         playerMovement.movementEnabled = true;
         SpellbookManager.instance.gameObject.SetActive(true);
         puzzle.gameObject.SetActive(false);
-
+        if (!solved)
+        {
+            MusicManager.instance.resumeBackgroundTrack();
+        }
     }
-
-
-
 }

@@ -36,6 +36,8 @@ public class SceneChanger : MonoBehaviour
         if (locationIndex != -1)
         {
             GameManager.Instance.currentData.currentLocations[locationIndex] = locationValue;
+            GameManager.Instance.currentData.lastLocation = sceneID;
+            GameManager.Instance.SaveGame();
         }
         SceneManager.LoadScene(sceneID);
     }

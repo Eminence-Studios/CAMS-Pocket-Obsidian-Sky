@@ -847,6 +847,8 @@ MonoBehaviour:
   nextScreen: {fileID: 0}
   changePlayerMovement: 1
   playerMovement: {fileID: 916875898}
+  changeMusic: 0
+  newMusic: {fileID: 0}
 --- !u!1 &72819452
 GameObject:
   m_ObjectHideFlags: 0
@@ -2457,6 +2459,8 @@ MonoBehaviour:
   nextScreen: {fileID: 0}
   changePlayerMovement: 1
   playerMovement: {fileID: 916875898}
+  changeMusic: 0
+  newMusic: {fileID: 0}
 --- !u!1 &242074257
 GameObject:
   m_ObjectHideFlags: 0
@@ -3061,6 +3065,8 @@ MonoBehaviour:
   nextScreen: {fileID: 0}
   changePlayerMovement: 1
   playerMovement: {fileID: 916875898}
+  changeMusic: 0
+  newMusic: {fileID: 0}
 --- !u!1 &313946392
 GameObject:
   m_ObjectHideFlags: 0
@@ -4191,6 +4197,8 @@ MonoBehaviour:
   nextScreen: {fileID: 0}
   changePlayerMovement: 1
   playerMovement: {fileID: 916875898}
+  changeMusic: 0
+  newMusic: {fileID: 0}
 --- !u!1 &457184898
 GameObject:
   m_ObjectHideFlags: 0
@@ -5592,6 +5600,7 @@ GameObject:
   - component: {fileID: 655455827}
   - component: {fileID: 655455826}
   - component: {fileID: 655455829}
+  - component: {fileID: 655455830}
   m_Layer: 0
   m_Name: EventSystem
   m_TagString: Untagged
@@ -5684,6 +5693,22 @@ MonoBehaviour:
   hallways: []
   sceneMap: {fileID: 0}
   spellbookManager: {fileID: 0}
+--- !u!114 &655455830
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 655455825}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f5cfe613cdde78c4fa9b263c0da29abe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SceneMusicLoader
+  intro: {fileID: 8300000, guid: 0b1cba1fa5600614fbaba391eaab6c64, type: 3}
+  loop: {fileID: 8300000, guid: 0cb5901587b08b44593e45bcf0c63aa1, type: 3}
+  changeMusic: 0
+  afterSong: {fileID: 0}
 --- !u!1 &658213697
 GameObject:
   m_ObjectHideFlags: 0
@@ -8902,6 +8927,8 @@ MonoBehaviour:
   nextScreen: {fileID: 0}
   changePlayerMovement: 1
   playerMovement: {fileID: 916875898}
+  changeMusic: 0
+  newMusic: {fileID: 0}
 --- !u!1 &1064238922
 GameObject:
   m_ObjectHideFlags: 0
@@ -8962,6 +8989,8 @@ MonoBehaviour:
   nextScreen: {fileID: 0}
   changePlayerMovement: 1
   playerMovement: {fileID: 916875898}
+  changeMusic: 0
+  newMusic: {fileID: 0}
 --- !u!1 &1075348656
 GameObject:
   m_ObjectHideFlags: 0
@@ -14914,6 +14943,8 @@ MonoBehaviour:
   nextScreen: {fileID: 0}
   changePlayerMovement: 0
   playerMovement: {fileID: 0}
+  changeMusic: 0
+  newMusic: {fileID: 0}
 --- !u!1 &1708689406
 GameObject:
   m_ObjectHideFlags: 0
