@@ -8,6 +8,7 @@ public class Spell : ScriptableObject
     public string spellName;
     public string spellDescription;
     public Sprite spellIcon;
+    public int spellNumber;
     public enum spellType { Attack, Defense, Healing, Energy }
     public spellType chosenType;
     public int damage;

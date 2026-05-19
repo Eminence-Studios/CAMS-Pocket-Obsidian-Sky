@@ -347,7 +347,7 @@ public class SpellbookManager : MonoBehaviour
                 learnSpell(spellAsset);
             }
         }
-
+        
         // Load Hotbar
         for (int i = 0; i < data.hotbarSpellNames.Length; i++)
         {
