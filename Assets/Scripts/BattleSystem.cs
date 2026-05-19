@@ -47,6 +47,7 @@ public class BattleSystem : MonoBehaviour
     Unit enemyUnit;
     UniqueMoves playerMoveset;
     UniqueMoves enemyMoveset;
+    GameObject enemyGO;  // Store the instantiated enemy clone
     public int turnCount = 1;
     public Canvas battleCanvas;
     [SerializeField] public TextMeshProUGUI console;
@@ -63,7 +64,7 @@ public class BattleSystem : MonoBehaviour
     IEnumerator setupBattle()
     {
         GameObject playerGO = playerPrefab;
-        GameObject enemyGO = Instantiate(enemyPrefab);
+        enemyGO = Instantiate(enemyPrefab);
         // reference to the player and enemy game objects that are being spawned 
 
         playerUnit = playerGO.GetComponent<Unit>();
@@ -459,7 +460,8 @@ public class BattleSystem : MonoBehaviour
         if (state == BattleState.WON)
         {
             console.text = ("You won the battle!");
-            enemyPrefab.SetActive(false);
+            enemyGO.SetActive(false);
+            Debug.Log("Enemy prefab deactivated.");
             console.text = ("Enemy prefab deactivated.");
             battleCanvas.gameObject.SetActive(false);
             
@@ -467,6 +469,9 @@ public class BattleSystem : MonoBehaviour
         else if (state == BattleState.LOST)
         {
             console.text = ("You were defeated.");
+            enemyGO.SetActive(false);
+            console.text = ("Enemy prefab deactivated.");
+            battleCanvas.gameObject.SetActive(false);
         }
     }
 
