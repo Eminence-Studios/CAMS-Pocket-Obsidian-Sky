@@ -52,7 +52,6 @@ public class BattleSystem : MonoBehaviour
     UniqueMoves enemyMoveset;
     GameObject enemyGO;  // Store the instantiated enemy clone
     public int turnCount = 1;
-    public Canvas battleCanvas;
     [SerializeField] public TextMeshProUGUI console;
 
     private Queue<string> consoleMessageQueue = new Queue<string>();
@@ -493,7 +492,7 @@ public class BattleSystem : MonoBehaviour
             enemyGO.SetActive(false);
             Debug.Log("Enemy prefab deactivated.");
             console.text = ("Enemy prefab deactivated.");
-            battleCanvas.gameObject.SetActive(false);
+            battleCanvas.SetActive(false);
             
         }
         else if (state == BattleState.LOST)
@@ -501,7 +500,7 @@ public class BattleSystem : MonoBehaviour
             console.text = ("You were defeated.");
             enemyGO.SetActive(false);
             console.text = ("Enemy prefab deactivated.");
-            battleCanvas.gameObject.SetActive(false);
+            battleCanvas.SetActive(false);
         }
     }
 

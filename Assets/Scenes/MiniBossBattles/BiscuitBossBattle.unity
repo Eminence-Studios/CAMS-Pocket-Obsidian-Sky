@@ -511,6 +511,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 42313b35a89fafe419e3a4fcd3f93319, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BattleSystem
+  battleCanvas: {fileID: 1252187417}
+  teacherInteractionScript: {fileID: 0}
   playerPrefab: {fileID: 407411748}
   enemyPrefab: {fileID: 6326979869521894091, guid: cb5a69611a281b0429990add1bf93639, type: 3}
   playerBattleStation: {fileID: 0}
@@ -519,7 +521,6 @@ MonoBehaviour:
   playerHUD: {fileID: 1596102223}
   enemyHUD: {fileID: 315610511}
   turnCount: 1
-  battleCanvas: {fileID: 1252187420}
   console: {fileID: 1246401323}
   spell1: {fileID: 623871887}
   spell2: {fileID: 1171158164}
@@ -2791,7 +2792,7 @@ GameObject:
   - component: {fileID: 1252187419}
   - component: {fileID: 1252187418}
   m_Layer: 5
-  m_Name: Canvas
+  m_Name: BattleCanvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

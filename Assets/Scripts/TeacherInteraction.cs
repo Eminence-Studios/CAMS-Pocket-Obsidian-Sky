@@ -71,11 +71,12 @@ public class TeacherInteraction : MonoBehaviour
         }
         else if (data.puzzle && !data.battle)
         {
-            battleScreen.SetActive(true);
+           // battleScreen.SetActive(true);
+            
             Debug.Log("Open Battle");
             GetComponent<SpriteRenderer>().enabled = false;
             battleCanvas.gameObject.SetActive(true);
-            playerMovement.enableMovement = true;
+          //  playerMovement.enableMovement = true;
         }
         else
         {
