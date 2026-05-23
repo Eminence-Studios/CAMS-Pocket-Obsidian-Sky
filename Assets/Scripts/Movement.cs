@@ -6,6 +6,10 @@ public class Movement : MonoBehaviour
     private Rigidbody2D body;
     public int speed;
 
+    public Sprite Front;
+    public Sprite Back;
+    public Sprite Side;
+
     private int currentX;
     private int currentY;
 
@@ -58,13 +62,14 @@ public class Movement : MonoBehaviour
     {
         if (direction == 0)
         {
+            spriteRenderer.sprite = Side;
             if (currentX == 1)
             {
-                // change sprite to look left
+                transform.localScale = transform.localScale * new Vector2(-1, 1);
             }
             else
             {
-                // change sprite to look right
+                transform.localScale = transform.localScale * new Vector2(1, 1);
             }
             currentX *= -1;
             PlayerPrefs.SetInt("xDirection", currentX);
@@ -73,11 +78,11 @@ public class Movement : MonoBehaviour
         {
             if (currentY == 1)
             {
-                // change sprite to look down
+                spriteRenderer.sprite = Front;
             }
             else
             {
-                // change sprite to look up
+                spriteRenderer.sprite = Back;
             }
             currentY *= -1;
             PlayerPrefs.SetInt("yDirection", currentY);
