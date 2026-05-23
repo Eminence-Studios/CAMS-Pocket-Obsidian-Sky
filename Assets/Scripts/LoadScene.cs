@@ -246,23 +246,26 @@ public class LoadScene : MonoBehaviour
 
     void load6000Hallway()
     {
-        // triggers: Fuentes, Gallardo, Brito, Avalos
+        // triggers: Tomas, Fuentes, Gallardo, Brito, Avalos
 
-        // no sophomore classes in 6000 hallway
-        
+        if (numOfElements < 1)
+        {
+            // hide sophomore classes
+            triggers[0].SetActive(false);
+        }
         // Sophomore Year
         if (numOfElements < 2)
         {
             // hide junior classes
-            triggers[1].SetActive(false);
             triggers[2].SetActive(false);
             triggers[3].SetActive(false);
+            triggers[4].SetActive(false);
         }
         // Junior Year
         if (numOfElements < 3)
         {
             // hide senior classes
-            triggers[0].SetActive(false);
+            triggers[1].SetActive(false);
         }
     }
 
@@ -321,11 +324,11 @@ public class LoadScene : MonoBehaviour
         locations4000 = new Vector3[] { new Vector3(-1200, 0, 0), new Vector3(-950, 100, 0), new Vector3(-600, 100, 0), new Vector3(750, 100, 0), new Vector3(1100, 100, 0) };
         */
 
-        // campus, King, Johnson, Fuentes
-        // Carpenter, Marquez, Gallardo, Brito
-        // Luna, Avalos
-        locations6000 = new Vector3[] {new Vector3(0, 480, 0), new Vector3(-130, 450, 0), new Vector3(-180, 100, 0), new Vector3(-190, -90, 0)
-        , new Vector3(190, 50, 0), new Vector3(220, -240, 0), new Vector3(240, -400, 0), new Vector3(-240, -420, 0)
-        , new Vector3(-250, -600, 0), new Vector3(250, -600, 0) };
+        // campus, King, Tomas, Johnson
+        // Fuentes, Carpenter, Marquez, Gallardo
+        // Brito, Luna, Avalos
+        locations6000 = new Vector3[] {new Vector3(0, 480, 0), new Vector3(-130, 450, 0), new Vector3(-180, 260, 0), new Vector3(-180, 100, 0)
+        , new Vector3(-190, -90, 0), new Vector3(190, 50, 0), new Vector3(220, -240, 0), new Vector3(240, -400, 0)
+        , new Vector3(-240, -420, 0), new Vector3(-250, -600, 0), new Vector3(250, -600, 0) };
     }
 }
