@@ -403,7 +403,7 @@ Canvas:
   m_Enabled: 1
   serializedVersion: 3
   m_RenderMode: 1
-  m_Camera: {fileID: 0}
+  m_Camera: {fileID: 1784737742}
   m_PlaneDistance: 100
   m_PixelPerfect: 0
   m_ReceivesEvents: 1
@@ -1415,8 +1415,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 4578591244471777430, guid: 3933443be5d5ac6468523232f88dfd85, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -2102,7 +2102,7 @@ MonoBehaviour:
   oldCanvas: {fileID: 0}
   newCanvas: {fileID: 2065968937}
   player: {fileID: 0}
-  disablePlayer: 1
+  disablePlayer: 0
 --- !u!50 &509664330
 Rigidbody2D:
   serializedVersion: 5
@@ -3574,7 +3574,7 @@ MonoBehaviour:
   hasNextScene: 0
   nextScreen: {fileID: 0}
   changePlayerMovement: 1
-  playerMovement: {fileID: 0}
+  playerMovement: {fileID: 911315172}
   changeMusic: 1
   newMusic: {fileID: 446711438}
 --- !u!1 &733990568
@@ -4013,7 +4013,7 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 3
+  m_SortingOrder: 4
   m_Sprite: {fileID: -5818930888772373320, guid: d38499703372253458b16c5116848136, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -4042,7 +4042,7 @@ MonoBehaviour:
   puzzle: {fileID: 1664738527}
   collider: {fileID: 206288569}
   close: {fileID: 838458071}
-  playerMovement: {fileID: 0}
+  playerMovement: {fileID: 911315172}
   successSound: {fileID: 605315047}
 --- !u!1 &826803609
 GameObject:
@@ -4818,7 +4818,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae309fc9b93c4434b888290b1d747f9a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TeacherInteraction
-  playerMovement: {fileID: 0}
+  playerMovement: {fileID: 911315172}
   teacherName: Johnson
   dialoguePopUp: {fileID: 188390945}
   dialogueManager: {fileID: 2140464427}
@@ -6122,7 +6122,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
-  m_Color: {r: 0.13207549, g: 0.13207549, b: 0.13207549, a: 0.8784314}
+  m_Color: {r: 0.26432896, g: 0.27347767, b: 0.2830189, a: 0.972549}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -7201,8 +7201,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4281479730
-  m_fontColor: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+    rgba: 4281663490
+  m_fontColor: {r: 0.007843138, g: 0, b: 0.20784315, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -8355,8 +8355,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 4578591244471777430, guid: 3933443be5d5ac6468523232f88dfd85, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -9650,8 +9650,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Click the notes in the right order to play the tune
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 14ae4e24f65d26142942c28891e0ca23, type: 2}
-  m_sharedMaterial: {fileID: -6039880892069049728, guid: 14ae4e24f65d26142942c28891e0ca23, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 6a1c19864c7c5a74890361753fa20942, type: 2}
+  m_sharedMaterial: {fileID: -6133767721480794579, guid: 6a1c19864c7c5a74890361753fa20942, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -11202,6 +11202,7 @@ SceneRoots:
   m_Roots:
   - {fileID: 1784737743}
   - {fileID: 1664738528}
+  - {fileID: 2065968938}
   - {fileID: 605315046}
   - {fileID: 188390949}
   - {fileID: 1924792827}
@@ -11210,5 +11211,4 @@ SceneRoots:
   - {fileID: 655455828}
   - {fileID: 2145248223}
   - {fileID: 844314113}
-  - {fileID: 2065968938}
   - {fileID: 1859879418}

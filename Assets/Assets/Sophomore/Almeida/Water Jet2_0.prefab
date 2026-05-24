@@ -81,7 +81,7 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 4
+  m_SortingOrder: 5
   m_Sprite: {fileID: -1321298526376170595, guid: c33d334e0f7136e448747a04346f5198, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -105,10 +105,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e0f168f4d236e3145b5f95baab169607, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::RisingObject
-  upmovespeed: 400
+  upmovespeed: 450
   downmovespeed: 300
-  ydeadzone: -500
-  maxHeight: -100
+  ydeadzone: -775
+  maxHeight: -350
 --- !u!50 &2478422703426384546
 Rigidbody2D:
   serializedVersion: 5
@@ -170,7 +170,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0.2382257, y: 0.16756415}
+  m_Offset: {x: 0.08239925, y: 0.16756439}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -180,5 +180,5 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 2.1792529, y: 16.28709}
+  m_Size: {x: 2.936124, y: 16.28709}
   m_EdgeRadius: 0

@@ -411,7 +411,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 328443b45973de44ab7eee60b8390073, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  xoffset: 350
+  xoffset: 675
   spawnrate: 1
   spawnedObject:
   - {fileID: 568392439462542870, guid: add421b2f6662ae44a6e8c2dc0aebec4, type: 3}
@@ -819,7 +819,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae309fc9b93c4434b888290b1d747f9a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TeacherInteraction
-  playerMovement: {fileID: 0}
+  playerMovement: {fileID: 1572501739}
   teacherName: Fuentes
   dialoguePopUp: {fileID: 1256853252}
   dialogueManager: {fileID: 1682790333}
@@ -1589,8 +1589,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: -4347532159779508366, guid: b3f11ccf70c753546a7296a94ba9d33c, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -1697,7 +1697,7 @@ MonoBehaviour:
   m_StreamingVersion: 20241001
   m_LegacyPriority: 0
   Target:
-    TrackingTarget: {fileID: 0}
+    TrackingTarget: {fileID: 1572501736}
     LookAtTarget: {fileID: 0}
     CustomLookAtTarget: 0
   Lens:
@@ -1729,7 +1729,7 @@ Transform:
   m_GameObject: {fileID: 543162151}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3043.7998, y: 151.2, z: -10}
+  m_LocalPosition: {x: -3044.7, y: 105.479996, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2471,7 +2471,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Caught Items: 0'
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 14ae4e24f65d26142942c28891e0ca23, type: 2}
   m_sharedMaterial: {fileID: -6039880892069049728, guid: 14ae4e24f65d26142942c28891e0ca23, type: 2}
@@ -2803,8 +2803,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4281479730
-  m_fontColor: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+    rgba: 4284621102
+  m_fontColor: {r: 0.18039216, g: 0.12941177, b: 0.38431376, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -3777,8 +3777,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: -4347532159779508366, guid: b3f11ccf70c753546a7296a94ba9d33c, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -4514,8 +4514,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4278190185
-  m_fontColor: {r: 0.41176474, g: 0, b: 0, a: 1}
+    rgba: 4284621102
+  m_fontColor: {r: 0.18039216, g: 0.12941177, b: 0.38431376, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -5417,7 +5417,7 @@ Transform:
   m_GameObject: {fileID: 1784737740}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2924.8745, y: 151.20001, z: -10}
+  m_LocalPosition: {x: -2924.8745, y: 105.48001, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -5508,10 +5508,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1866874431}
-  - component: {fileID: 1866874430}
   - component: {fileID: 1866874428}
   - component: {fileID: 1866874429}
   - component: {fileID: 1866874427}
+  - component: {fileID: 1866874432}
   m_Layer: 6
   m_Name: CatchingPlayer
   m_TagString: Untagged
@@ -5533,7 +5533,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::CatchingObjUIManager
   collider: {fileID: 1411225885}
   gameScreen: {fileID: 57723821}
-  playerMovement: {fileID: 0}
+  playerMovement: {fileID: 1572501739}
   teacherName: Fuentes
   scoreText: {fileID: 794164790}
   resultText: {fileID: 712861045}
@@ -5625,7 +5625,7 @@ SpriteRenderer:
   m_SortingLayerID: 1766652909
   m_SortingLayer: 1
   m_SortingOrder: 4
-  m_Sprite: {fileID: 423971171140905283, guid: 66ad8ca1282165046b4a20c47d55e6c0, type: 3}
+  m_Sprite: {fileID: 5579949240760156496, guid: b52c5c429d44e5a4cab0b32add897567, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -5636,8 +5636,23 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!58 &1866874430
-CircleCollider2D:
+--- !u!4 &1866874431
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1866874426}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: -350.00003, z: 1}
+  m_LocalScale: {x: 25, y: 25, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1392081230}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!70 &1866874432
+CapsuleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -5670,23 +5685,9 @@ CircleCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
-  m_Radius: 8
---- !u!4 &1866874431
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1866874426}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -350.00003, z: 1}
-  m_LocalScale: {x: 10, y: 10, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1392081230}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_Offset: {x: -0.049464177, y: 0}
+  m_Size: {x: 3.2163846, y: 11.5599985}
+  m_Direction: 0
 --- !u!1 &1879800404
 GameObject:
   m_ObjectHideFlags: 0

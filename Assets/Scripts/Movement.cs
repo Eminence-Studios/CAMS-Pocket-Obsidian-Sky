@@ -33,7 +33,30 @@ public class Movement : MonoBehaviour
         {
             body.linearVelocity = new Vector2(Input.GetAxis("Horizontal") * speed, Input.GetAxis("Vertical") * speed);
 
-            turnCheck();
+
+            if (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow))
+
+            {
+                spriteRenderer.sprite = Back;
+                transform.localScale = transform.localScale * new Vector2(1, 1);
+            }
+            else if (Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.DownArrow))
+            {
+                spriteRenderer.sprite = Front;
+                transform.localScale = transform.localScale * new Vector2(1, 1);
+            }
+            else if (Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.LeftArrow))
+            {
+                spriteRenderer.sprite = Side;
+                transform.localScale = transform.localScale * new Vector2(-1, 1);
+            }
+            else if (Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.RightArrow))
+            {
+                spriteRenderer.sprite = Side;
+                transform.localScale = transform.localScale * new Vector2(1, 1);
+            }
+
+            // turnCheck();
         }
         else
         {

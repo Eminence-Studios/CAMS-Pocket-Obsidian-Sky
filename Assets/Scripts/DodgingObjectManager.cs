@@ -21,7 +21,6 @@ public class DodgingObjectManager : MonoBehaviour
     [SerializeField] Button retryButton;
     [SerializeField] Button closeButton;
     [SerializeField] TextMeshProUGUI buttonText;
-    // [SerializeField] Camera camera;
 
     private int score = 0;
     public string startingText;
@@ -41,7 +40,7 @@ public class DodgingObjectManager : MonoBehaviour
     public float jumpForce;
     private Vector3 velocity = Vector3.zero;
     private bool isGrounded = true;
-    private float rotationY = 0;
+    private bool isPlaying;
 
     public AudioSource successSound;
     public AudioSource failureSound;
@@ -57,7 +56,7 @@ public class DodgingObjectManager : MonoBehaviour
 
     private void OnEnable()
     {
-        // ground += camera.transform.position.y;
+        isPlaying = false;
         transform.localPosition = new Vector3(transform.localPosition.x, ground + 10, 0);
 
         playerMovement.movementEnabled = false;
@@ -72,31 +71,7 @@ public class DodgingObjectManager : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        /*
-        body.linearVelocity = new Vector2(Input.GetAxis("Horizontal") * speed, 0);
-
-        Vector3 currentRotation = transform.eulerAngles;
-        Vector3 newRotation = new Vector3(currentRotation.x, currentRotation.y, 0);
-        transform.eulerAngles = newRotation;
-        */
-
-        
-        if (Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.LeftArrow))
-        {
-            rotationY = 0f;
-        }
-        else if (Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.RightArrow))
-        {
-            rotationY = 180f;
-        }
-
-        transform.rotation = Quaternion.Euler(0, rotationY, 0);
-
-
-        
-        // Debug.Log("y" + transform.position.y);
-        // Debug.Log("x" + transform.position.x);
-        
+        if (!isPlaying) return;
 
         if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
         {
@@ -131,6 +106,8 @@ public class DodgingObjectManager : MonoBehaviour
 
     void Update()
     {
+        if (!isPlaying) return;
+
         if (isCatch)
         {
             scoreText.text = "Caught Items: " + score.ToString();
@@ -151,6 +128,7 @@ public class DodgingObjectManager : MonoBehaviour
         isGrounded = true;
         velocity = Vector3.zero;
         transform.localPosition = new Vector3(transform.localPosition.x, ground + 10, 0);
+        
 
         StartCoroutine(waitUntilScreenCleared());
         Time.timeScale = 1f;
@@ -162,12 +140,9 @@ public class DodgingObjectManager : MonoBehaviour
 
         ObjectSpawner.instance.doSpawn = true;
 
-        Debug.Log("restarted");
-        
-
-
         score = 0;
         time = dodgeTime + 1;
+        isPlaying = true;
     }
 
     public bool clearScreen()
@@ -230,6 +205,8 @@ public class DodgingObjectManager : MonoBehaviour
 
     void OnCollisionEnter2D (Collision2D collision)
     {
+        if (!isPlaying) return;
+
         if (isCatch)
         {
             score++;
