@@ -16,6 +16,9 @@ public class Movement : MonoBehaviour
     private SpriteRenderer spriteRenderer;
     public bool movementEnabled = true;
 
+    private float xScale;
+    private float yScale;
+
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -24,6 +27,8 @@ public class Movement : MonoBehaviour
         currentX = PlayerPrefs.GetInt("xDirection", 1);
         currentY = PlayerPrefs.GetInt("yDirection", 1);
         spriteRenderer = gameObject.GetComponent<SpriteRenderer>();
+        xScale = transform.localScale.x;
+        yScale = transform.localScale.y;
     }
 
     // Update is called once per frame
@@ -35,25 +40,24 @@ public class Movement : MonoBehaviour
 
 
             if (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow))
-
             {
                 spriteRenderer.sprite = Back;
-                transform.localScale = transform.localScale * new Vector2(1, 1);
+                transform.localScale = new Vector2(xScale, yScale);
             }
             else if (Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.DownArrow))
             {
                 spriteRenderer.sprite = Front;
-                transform.localScale = transform.localScale * new Vector2(1, 1);
+                transform.localScale = new Vector2(xScale, yScale);
             }
             else if (Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.LeftArrow))
             {
                 spriteRenderer.sprite = Side;
-                transform.localScale = transform.localScale * new Vector2(-1, 1);
+                transform.localScale = new Vector2(-xScale, yScale);
             }
             else if (Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.RightArrow))
             {
                 spriteRenderer.sprite = Side;
-                transform.localScale = transform.localScale * new Vector2(1, 1);
+                transform.localScale = new Vector2(xScale, yScale);
             }
 
             // turnCheck();
