@@ -23,7 +23,7 @@ public class GameData
 
 
     // Track all spells
-    public List<string> learnedSpellNames = new List<string>();
+    public List<string> learnedSpellNames = new List<string>() { "Punch", "Rock Throw", "Guard", "Dirt Wall" };
     public string[] hotbarSpellNames = new string[5];
 
     // List of mastered elements (in order)

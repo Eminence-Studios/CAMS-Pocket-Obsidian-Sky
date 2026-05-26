@@ -493,7 +493,8 @@ public class BattleSystem : MonoBehaviour
             Debug.Log("Enemy prefab deactivated.");
             console.text = ("Enemy prefab deactivated.");
             battleCanvas.SetActive(false);
-            
+            teacherInteractionScript.battleDone(true);
+
         }
         else if (state == BattleState.LOST)
         {
@@ -501,8 +502,11 @@ public class BattleSystem : MonoBehaviour
             enemyGO.SetActive(false);
             console.text = ("Enemy prefab deactivated.");
             battleCanvas.SetActive(false);
+            teacherInteractionScript.battleDone(false);
         }
     }
+
+    
 
     IEnumerator basicEnemyTurn()
     {

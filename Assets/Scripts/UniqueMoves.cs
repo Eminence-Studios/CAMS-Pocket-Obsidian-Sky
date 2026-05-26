@@ -36,29 +36,29 @@ public class UniqueMoves : MonoBehaviour
     {
         Unit moveType = GetComponent<Unit>();
         Unit unitComponent = GetComponent<Unit>();
-        if (moveBeingUsed == 1) // Place Holder
+        if (moveBeingUsed == 1) // Punch
         {
-            moveParameters = new List<int> { 0, 5, 2, 0, 0 };
-            ReportMove(unitComponent.unitName + " used Sonic Boom! Chance to increase defense by 5 and speed by 2!");
+            moveParameters = new List<int> { 0, 0, 0, 0, 0 };
+            ReportMove(unitComponent.unitName + " used Punch!");
             moveType.specialization = 1;
             return moveParameters;
         }
-        if (moveBeingUsed == 2) // Place Honder
+        if (moveBeingUsed == 2) // Rock Throw
         {
-            moveParameters = new List<int> { 0, 2, 2, 2, 0 };
-            ReportMove(unitComponent.unitName + " used Thunderbolt! Chance to increase defense by 2, speed by 2, and accuracy by 2!");
+            moveParameters = new List<int> { 0, 0, 0, 0, 0 };
+            ReportMove(unitComponent.unitName + " used Rock Throw!");
             return moveParameters;
         }
-        if (moveBeingUsed == 3) // Place Holder
+        if (moveBeingUsed == 3) // Guard
         {
-            moveParameters = new List<int> { 0, 2, 0, 0, 0 };
-            ReportMove(unitComponent.unitName + " used Wall of Foliage! Chance to increase defense by 2");
+            moveParameters = new List<int> { 0, 1, 0, 0, 0 }; //+1 def
+            ReportMove(unitComponent.unitName + " used Guard! Defense may increase by 1");
             return moveParameters;
         }
-        if (moveBeingUsed == 4) // flamethrower
+        if (moveBeingUsed == 4) // Dirt Wall
         {
-            moveParameters = new List<int> { 2, 0, 0, 0, 1 }; // +2 atk, inflicts burn status effect
-            ReportMove(unitComponent.unitName + " used Flamethrower! Attack may increase by 2");
+            moveParameters = new List<int> { 0, 1, 0, 0, 0}; // +1 def
+            ReportMove(unitComponent.unitName + " used Dirt Wall! Defense may increase by 1");
             return moveParameters;
         }
         if (moveBeingUsed == 5) //flaming shuriken
@@ -84,7 +84,7 @@ public class UniqueMoves : MonoBehaviour
         }
         if (moveBeingUsed == 8) //printed shield
         {
-            moveParameters = new List<int> { 0, 1, 0, 0, 0}; //+1 atk
+            moveParameters = new List<int> { 0, 1, 0, 0, 0}; //+1 def
             ReportMove(unitComponent.unitName + " used Printed Shield! Defense may increase by 1");
             moveType.specialization = 1;
             return moveParameters;
@@ -140,7 +140,7 @@ public class UniqueMoves : MonoBehaviour
         }
         if (moveBeingUsed == 16) //thermoblast
         {
-            moveParameters = new List<int> { 0, 0, 0, 0, 0}; //+1 def 
+            moveParameters = new List<int> { 0, 1, 0, 0, 0}; //+1 def 
             ReportMove(unitComponent.unitName + " used Thermoblast! Defense may increase by 1");
             moveType.specialization = 1;
             return moveParameters;
@@ -166,10 +166,10 @@ public class UniqueMoves : MonoBehaviour
             moveType.specialization = 1;
             return moveParameters;
         }
-        if (moveBeingUsed == 20) //bamboo shot
+        if (moveBeingUsed == 20) //bamboo shoot
         {
             moveParameters = new List<int> { 1, 0, 0, 0, 0}; //+1 atk
-            ReportMove(unitComponent.unitName + " used Bamboo Shot! Attack may increase by 1");
+            ReportMove(unitComponent.unitName + " used Bamboo Shoot! Attack may increase by 1");
             moveType.specialization = 0;
             return moveParameters;
         }
@@ -327,21 +327,21 @@ public class UniqueMoves : MonoBehaviour
         if (moveBeingUsed == 41) //web trap
         {
             moveParameters = new List<int> { 0, 1, 0, 0, 0}; //+1 def
-            ReportMove(unitComponent.unitName + " used Web Trap! Attack may increase by 1");
+            ReportMove(unitComponent.unitName + " used Web Trap! Defense may increase by 1");
             moveType.specialization = 0;
             return moveParameters;
         }
         if (moveBeingUsed == 42) //ionized beam
         {
             moveParameters = new List<int> { -1, 0, 0, 0, 0}; //-1 atk
-            ReportMove(unitComponent.unitName + " used Ionized Beam! Attack may increase by 1");
+            ReportMove(unitComponent.unitName + " used Ionized Beam! Attack may decrease by 1");
             moveType.specialization = 0;
             return moveParameters;
         }
         if (moveBeingUsed == 43) //dig
         {
             moveParameters = new List<int> { 0, 1, 0, 0, 0}; //+1 def
-            ReportMove(unitComponent.unitName + " used Dig! Attack may increase by 1");
+            ReportMove(unitComponent.unitName + " used Dig! Defense may increase by 1");
             moveType.specialization = 0;
             return moveParameters;
         }
@@ -361,7 +361,7 @@ public class UniqueMoves : MonoBehaviour
         }
         if (moveBeingUsed == 46) //tusk tackle
         {
-            moveParameters = new List<int> { 1, 0, 0, 0, 0}; //+1 dmg
+            moveParameters = new List<int> { 1, 0, 0, 0, 0}; //+1 atk
             ReportMove(unitComponent.unitName + " used Tusk Tackle! Attack may increase by 1");
             moveType.specialization = 1;
             return moveParameters;
@@ -375,8 +375,8 @@ public class UniqueMoves : MonoBehaviour
         }
         if (moveBeingUsed == 48) //tidal flip
         {
-            moveParameters = new List<int> { 2, 0, 0, 0, 0}; //+2 dmg
-            ReportMove(unitComponent.unitName + " used Tidal Flip! Attack may increase by 1");
+            moveParameters = new List<int> { 2, 0, 0, 0, 0}; //+2 atk
+            ReportMove(unitComponent.unitName + " used Tidal Flip! Attack may increase by 2");
             moveType.specialization = 0;
             return moveParameters;
         }
@@ -389,7 +389,7 @@ public class UniqueMoves : MonoBehaviour
         }
         if (moveBeingUsed == 50) //light wave
         {
-            moveParameters = new List<int> { 1, 0, 0, 0, 0}; //+1 dmg
+            moveParameters = new List<int> { 1, 0, 0, 0, 0}; //+1 atk
             ReportMove(unitComponent.unitName + " used Light Wave! Attack may increase by 1");
             moveType.specialization = 0;
             return moveParameters;
@@ -403,7 +403,7 @@ public class UniqueMoves : MonoBehaviour
         }
         if (moveBeingUsed == 52) //seismic roll
         {
-            moveParameters = new List<int> { 1, 0, 1, 0, 0}; //+1 dmg, +1 spd
+            moveParameters = new List<int> { 1, 0, 1, 0, 0}; //+1 atk, +1 spd
             ReportMove(unitComponent.unitName + " used Seismic Roll! Attack may increase by 1, Speed may increase by 1");
             moveType.specialization = 0;
             return moveParameters;
@@ -424,8 +424,15 @@ public class UniqueMoves : MonoBehaviour
         }
         if (moveBeingUsed == 55) //static shield
         {
-            moveParameters = new List<int> { 0, 0, 0, 0, 0}; //+
-            ReportMove(unitComponent.unitName + " used Static Shield! Attack may increase by 1");
+            moveParameters = new List<int> { 0, 1, 0, 0, 0}; //+1 def
+            ReportMove(unitComponent.unitName + " used Static Shield! Defense may increase by 1");
+            moveType.specialization = 0;
+            return moveParameters;
+        }
+        if (moveBeingUsed == 56) //headbutt
+        {
+            moveParameters = new List<int> { 2, -1, 0, 0, 0 }; //+2 atk, -1 def
+            ReportMove(unitComponent.unitName + " used Headbutt! Attack may increase by 2, Defense may decrease by 1");
             moveType.specialization = 0;
             return moveParameters;
         }

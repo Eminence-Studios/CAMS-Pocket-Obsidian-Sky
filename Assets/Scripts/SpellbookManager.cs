@@ -290,13 +290,16 @@ public class SpellbookManager : MonoBehaviour
     {
         spellNameText.text = spellData.spellName;
         description.text = spellData.spellDescription;
+        type.text = spellData.statDescription;
+
+        /*
         if (spellData.chosenType == Spell.spellType.Attack)
         {
-            type.text = $"Deals {spellData.damage} damage";
+            type.text = $"Chance of {spellData.damage} attack";
         }
         else if (spellData.chosenType == Spell.spellType.Defense)
         {
-            type.text = $"Buffs by {spellData.damage}";
+            type.text = $"Chance of {spellData.damage} defense";
         }
         else if (spellData.chosenType == Spell.spellType.Healing)
         {
@@ -306,6 +309,7 @@ public class SpellbookManager : MonoBehaviour
         {
             type.text = $"Increases energy by {spellData.damage}";
         }
+        */
 
     }
 
