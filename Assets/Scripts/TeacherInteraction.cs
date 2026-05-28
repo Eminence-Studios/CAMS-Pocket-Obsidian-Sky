@@ -72,7 +72,7 @@ public class TeacherInteraction : MonoBehaviour
         else if (data.puzzle && !data.battle)
         {
             Debug.Log("Open Battle");
-            GetComponent<SpriteRenderer>().enabled = false;
+            // GetComponent<SpriteRenderer>().enabled = false;
             battleCanvas.gameObject.SetActive(true);
         }
         else

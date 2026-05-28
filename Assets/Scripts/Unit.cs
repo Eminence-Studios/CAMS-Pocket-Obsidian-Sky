@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 /*
@@ -26,6 +27,12 @@ public class Unit : MonoBehaviour
 
     public int energy = 0;
     public int maxEnergy = 6;
+
+    private void Awake()
+    {
+        unitName = GameManager.Instance.currentData.playerName ?? "Coyote";
+        playerName = GameManager.Instance.currentData.playerName ?? "Coyote";
+    }
     public bool takeDamage(int damage, int type) // type of damage here will be either 0 or 1, 0 for physcial, 1 for special 
     {
         statusEffect();
