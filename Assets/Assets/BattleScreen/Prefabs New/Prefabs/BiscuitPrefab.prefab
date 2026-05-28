@@ -29,7 +29,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 4.4, y: 1.28, z: 0}
-  m_LocalScale: {x: 0.733856, y: 0.480451, z: 1}
+  m_LocalScale: {x: 20, y: 20, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -60,7 +60,6 @@ MonoBehaviour:
   specialization: 1
   energy: 0
   maxEnergy: 6
-  bossBasicMove: 5
 --- !u!212 &2080674941170428800
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -107,8 +106,8 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_Sprite: {fileID: 3620592399563954057, guid: f6f2a93ae64e83d41aad865d588ab28b, type: 3}
+  m_SortingOrder: 7
+  m_Sprite: {fileID: 1970291717750316113, guid: c1f15ca04871b8644a93b70c8061b26f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -132,3 +131,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UniqueMoves
   moveNumber: 6
+  basicMoveNumber: 0
+  moveBeingUsed: 6

@@ -54,6 +54,8 @@ public class BattleSystem : MonoBehaviour
     public int turnCount = 1;
     [SerializeField] public TextMeshProUGUI console;
 
+    public bool isMiniBoss;
+
     private Queue<string> consoleMessageQueue = new Queue<string>();
     private bool consoleMessageActive = false;
 
@@ -92,7 +94,7 @@ public class BattleSystem : MonoBehaviour
     IEnumerator setupBattle()
     {
         GameObject playerGO = playerPrefab;
-        enemyGO = Instantiate(enemyPrefab);
+        enemyGO = Instantiate(enemyPrefab, transform.parent);
         // reference to the player and enemy game objects that are being spawned 
 
         playerUnit = playerGO.GetComponent<Unit>();
@@ -493,7 +495,14 @@ public class BattleSystem : MonoBehaviour
             Debug.Log("Enemy prefab deactivated.");
             console.text = ("Enemy prefab deactivated.");
             battleCanvas.SetActive(false);
-            teacherInteractionScript.battleDone(true);
+            if (isMiniBoss)
+            {
+                teacherInteractionScript.miniBossWon();
+            }
+            else
+            {
+                teacherInteractionScript.battleDone(true);
+            }
 
         }
         else if (state == BattleState.LOST)

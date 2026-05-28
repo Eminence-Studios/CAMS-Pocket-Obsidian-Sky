@@ -60,8 +60,6 @@ public class LoadScene : MonoBehaviour
 
             createLocations();
             numOfElements = GameManager.Instance.currentData.numOfMasteredElements;
-            // location = PlayerPrefs.GetInt(playerPrefLocation, 0);
-
             Debug.Log(GameManager.Instance.currentData.currentLocations.ToString());
 
             SpellbookManager.instance.gameObject.SetActive(true);
@@ -71,22 +69,6 @@ public class LoadScene : MonoBehaviour
             {
                 player.localPosition = locationsCampus[GameManager.Instance.currentData.currentLocations[0]];
                 SpellbookManager.instance.campusMap();
-
-                /*
-                GameObject rootCanvas = spellbookManager.transform.root.gameObject;
-                
-                if (SpellbookManager.instance != null && SpellbookManager.instance != spellbookManager)
-                {
-                    updateOverlay();
-
-                    Destroy(rootCanvas);
-                    return;
-                }
-                
-
-                SpellbookManager.instance = spellbookManager;
-                DontDestroyOnLoad(rootCanvas);
-                */
                 updateOverlay();
             }
             else if (locationIndex == 1)
@@ -305,10 +287,10 @@ public class LoadScene : MonoBehaviour
     void createLocations()
     {
         // default, 1000. 2000, 3000, 4000, 6000
-        locationsCampus = new Vector3[] { new Vector3(300, -2000, 0), new Vector3(963, -2268, 0), new Vector3(1465, -1166, 0), new Vector3(1462, 317, 0), new Vector3(1454, 1539, 0), new Vector3(-1215, -436, 0) };
+        locationsCampus = new Vector3[] { new Vector3(300, -2000, 0), new Vector3(963, -2268, 0), new Vector3(1465, -1200, 0), new Vector3(1462, 300, 0), new Vector3(1454, 1500, 0), new Vector3(-1215, -436, 0) };
 
         // campus, door 1, door 2, door 3, door 4
-        locationsHallways = new Vector3[] { new Vector3(-402, -91, 0), new Vector3(-340, -83, 0), new Vector3(-190, -83, 0), new Vector3(180, -83, 0), new Vector3(335, -83, 0) };
+        locationsHallways = new Vector3[] { new Vector3(-420, -60, 0), new Vector3(-340, -40, 0), new Vector3(-190, -40, 0), new Vector3(180, -40, 0), new Vector3(335, -40, 0) };
 
         /*
         // campus, Brodeur, Davis, Imatomi, Gonzales

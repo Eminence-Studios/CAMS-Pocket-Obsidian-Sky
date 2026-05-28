@@ -71,12 +71,9 @@ public class TeacherInteraction : MonoBehaviour
         }
         else if (data.puzzle && !data.battle)
         {
-           // battleScreen.SetActive(true);
-            
             Debug.Log("Open Battle");
             GetComponent<SpriteRenderer>().enabled = false;
             battleCanvas.gameObject.SetActive(true);
-          //  playerMovement.enableMovement = true;
         }
         else
         {
@@ -105,6 +102,14 @@ public class TeacherInteraction : MonoBehaviour
             SpellbookManager.instance.gameObject.SetActive(true);
         }
             
+    }
+
+    public void miniBossWon()
+    {
+        GameManager.Instance.setPuzzleCompeletion(teacherName, 0);
+        GameManager.Instance.SaveGame();
+        playerMovement.movementEnabled = true;
+        SpellbookManager.instance.gameObject.SetActive(true);
     }
 
     public void selectSpell(Spell spell)

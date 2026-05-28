@@ -59,8 +59,6 @@ public class Movement : MonoBehaviour
                 spriteRenderer.sprite = Side;
                 transform.localScale = new Vector2(xScale, yScale);
             }
-
-            // turnCheck();
         }
         else
         {
@@ -68,51 +66,54 @@ public class Movement : MonoBehaviour
         }
     }
 
-    // Check if player turns
-    private void turnCheck()
-    {
-        if ((Input.GetAxis("Horizontal") > 0 && currentX == -1)
-            || (Input.GetAxis("Horizontal") < 0 && currentX == 1))
-        {
-            turn(0);
-        }
-        else if ((Input.GetAxis("Vertical") > 0 && currentY == -1)
-            || (Input.GetAxis("Vertical") < 0 && currentY == 1))
-        {
-            turn(1);
-        }
-    }
+    /*
+   // Check if player turns
+   private void turnCheck()
+   {
+       if ((Input.GetAxis("Horizontal") > 0 && currentX == -1)
+           || (Input.GetAxis("Horizontal") < 0 && currentX == 1))
+       {
+           turn(0);
+       }
+       else if ((Input.GetAxis("Vertical") > 0 && currentY == -1)
+           || (Input.GetAxis("Vertical") < 0 && currentY == 1))
+       {
+           turn(1);
+       }
+   }
 
-    // direction = 0: x-axis
-    // direction = 1: y-axis
-    private void turn(int direction)
-    {
-        if (direction == 0)
-        {
-            spriteRenderer.sprite = Side;
-            if (currentX == 1)
-            {
-                transform.localScale = transform.localScale * new Vector2(-1, 1);
-            }
-            else
-            {
-                transform.localScale = transform.localScale * new Vector2(1, 1);
-            }
-            currentX *= -1;
-            PlayerPrefs.SetInt("xDirection", currentX);
-        }
-        else
-        {
-            if (currentY == 1)
-            {
-                spriteRenderer.sprite = Front;
-            }
-            else
-            {
-                spriteRenderer.sprite = Back;
-            }
-            currentY *= -1;
-            PlayerPrefs.SetInt("yDirection", currentY);
-        }
-    }
+
+   // direction = 0: x-axis
+   // direction = 1: y-axis
+   private void turn(int direction)
+   {
+       if (direction == 0)
+       {
+           spriteRenderer.sprite = Side;
+           if (currentX == 1)
+           {
+               transform.localScale = transform.localScale * new Vector2(-1, 1);
+           }
+           else
+           {
+               transform.localScale = transform.localScale * new Vector2(1, 1);
+           }
+           currentX *= -1;
+           PlayerPrefs.SetInt("xDirection", currentX);
+       }
+       else
+       {
+           if (currentY == 1)
+           {
+               spriteRenderer.sprite = Front;
+           }
+           else
+           {
+               spriteRenderer.sprite = Back;
+           }
+           currentY *= -1;
+           PlayerPrefs.SetInt("yDirection", currentY);
+       }
+   }
+   */
 }
