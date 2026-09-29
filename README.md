@@ -1,2 +1,2 @@
-# CAMS-Pocket-Obsidian-Sky
-NEW Project
+# Quadrivial Spellbook
+Code for Quadrivial Spellbook Game developed by Eminence Studios
